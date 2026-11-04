@@ -43,7 +43,7 @@
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), About</td></tr>
-<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>)</td></tr>
+<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>)</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>Shows tracks A01–A08 or B01–B08</td></tr>
@@ -100,6 +100,22 @@
   <li><b>ALL 3</b> puts all three into the current number and the next two. Chain them in SONG (e.g. BASIC ×3 → FILL ×1) for an instant arrangement.</li>
   <li>Templates use the 8 tracks of BANK A (kick to tom lo). You are asked before anything is overwritten. Undo (↶) brings them back (with TEMPO set to GLOBAL, the BPM is not undone).</li>
 </ul>
+<h3 id="demosongs">Listen to the demo songs</h3>
+<p>LOAD → “<b>Demo songs…</b>” loads two songs made only with DBR-1's own features. Press PLAY to hear them all the way through (PLAY mode is SONG). You can watch how they are built while they play: automation (AUTO), FX scenes, per-pattern tempo, basslines made with pitch locks and more.</p>
+<div class="cols">
+<figure class="small"><img src="img/demo_songs.webp" alt="Demo songs dialog"><figcaption>Demo songs…</figcaption></figure>
+<div>
+<table>
+<tr><th>Song</th><th>What it is</th></tr>
+<tr><td>Yard Lights</td><td>House (124 BPM) → dubstep (140 BPM). Filter sweeps, panned chords, wobble bass</td></tr>
+<tr><td>Iron Yard</td><td>Ambient (100 BPM) → industrial (130 BPM). Deep reverb and delay, a tape-like wobbling delay, distortion</td></tr>
+</table>
+<ul>
+  <li>A demo song loads as a project, so it replaces all patterns, the kit and the BPM (you are asked first, and ↶ brings them back). Save your work first if you want to keep it.</li>
+  <li>The 31 sounds of the songs are also in the SOUND tab's LOAD list (DEMO · YARD LIGHTS / DEMO · IRON YARD), ready for your own tracks.</li>
+</ul>
+</div>
+</div>
 <h3>Swiping</h3>
 <ul>
   <li><b>Swipe sideways</b> to set several steps of one track at once, every SWIPE interval (1/16, 1/8, 3/16, 1/4, 1/2).</li>
@@ -174,7 +190,7 @@
 <div>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone or audio interface → <a href="#sampling">below</a>) / built-in sounds</td></tr>
+<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone or audio interface → <a href="#sampling">below</a>) / built-in sounds (the kit and the demo songs)</td></tr>
 <tr><td>start / end</td><td>Which part of the sample plays</td></tr>
 <tr><td>volume / pan</td><td>Level and left-right position</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
@@ -481,7 +497,8 @@
 <tr><td>Sampling</td><td>Built-in mic / USB input, up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available)</td></tr>
 <tr><td>Channels</td><td>Played as mono (stereo files are mixed down)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
-<tr><td>Built-in sounds</td><td>20 (16 in the kit + 4 extra; 44.1 kHz / 24-bit)</td></tr>
+<tr><td>Built-in sounds</td><td>51 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 31 from the demo songs, 44.1 kHz / 16-bit)</td></tr>
+<tr><td>Demo songs</td><td>2 (Yard Lights / Iron Yard, about 1:50 each)</td></tr>
 <tr><td>Polyphony</td><td>One sound per track (a new hit quickly fades out the previous one)</td></tr>
 <tr><td>Play modes</td><td>ONE SHOT / GATE (one step) / BAR (until the end of the pattern); STOP silences everything</td></tr>
 <tr><td>start / end</td><td>0–127 (the part of the sample that plays)</td></tr>

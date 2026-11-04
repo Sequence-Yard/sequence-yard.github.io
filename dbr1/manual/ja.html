@@ -43,7 +43,7 @@
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、アプリの情報（About）</td></tr>
-<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読込（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）</td></tr>
+<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読込（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
@@ -100,6 +100,22 @@
   <li><b>ALL 3</b> は今の番号から 3 つ続けて入れます。SONG で「BASIC ×3 → FILL ×1」のように並べると曲らしくなります。</li>
   <li>BANK A の 8 トラック（kick〜tom lo）を使います。入れる先に内容があるときは確認が出ます。↶ で戻せます（TEMPO が GLOBAL のときは BPM は戻りません）。</li>
 </ul>
+<h3 id="demosongs">デモソングを聴く</h3>
+<p>LOAD →「<b>Demo songs…</b>」で、DBR-1 の機能だけで作った 2 曲を読み込めます。読み込んだら PLAY で最後まで流れます（PLAY モードは SONG）。オートメーション（AUTO）、FX シーン、パターンごとのテンポ、ピッチのロックで作ったベースラインなど、どう作られているかを見ながら聴けます。</p>
+<div class="cols">
+<figure class="small"><img src="img/demo_songs.webp" alt="Demo songs の画面"><figcaption>Demo songs…</figcaption></figure>
+<div>
+<table>
+<tr><th>曲</th><th>内容</th></tr>
+<tr><td>Yard Lights</td><td>ハウス（124 BPM）→ ダブステップ（140 BPM）。フィルターの開閉、コードのパン、ワブルベース</td></tr>
+<tr><td>Iron Yard</td><td>アンビエント（100 BPM）→ インダストリアル（130 BPM）。深いリバーブ・ディレイ、テープのように揺れるディレイ、歪み</td></tr>
+</table>
+<ul>
+  <li>プロジェクトとして読み込むので、今のパターン・キット・BPM はすべて置き換わります（確認が出ます。↶ で戻せます）。残したい内容は先に SAVE してください。</li>
+  <li>曲の音（31 音）は SOUND の LOAD の一覧（DEMO · YARD LIGHTS / DEMO · IRON YARD）にもあり、自分の曲に使えます。</li>
+</ul>
+</div>
+</div>
 <h3>なぞって入力</h3>
 <ul>
   <li><b>横になぞる</b>: 同じトラックの複数のステップをまとめて ON / OFF。SWIPE の間隔（1/16・1/8・3/16・1/4・1/2）ごとに点灯します。</li>
@@ -174,7 +190,7 @@
 <div>
 <table>
 <tr><th>項目</th><th>はたらき</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples…（保存フォルダの Samples から）/ From file…（端末やクラウドのファイル。WAV・MP3 など）/ ● Record (mic / audio input)…（マイク・オーディオインターフェースから録る → <a href="#sampling">下</a>）/ 内蔵の音</td></tr>
+<tr><td>LOAD</td><td>From DBR-1/Samples…（保存フォルダの Samples から）/ From file…（端末やクラウドのファイル。WAV・MP3 など）/ ● Record (mic / audio input)…（マイク・オーディオインターフェースから録る → <a href="#sampling">下</a>）/ 内蔵の音（キットの音とデモソングの音）</td></tr>
 <tr><td>start / end</td><td>サンプルの再生範囲</td></tr>
 <tr><td>volume / pan</td><td>音量と左右の位置</td></tr>
 <tr><td>pitch</td><td>音の高さ（−12〜+12 半音。音の長さも変わります）</td></tr>
@@ -481,7 +497,8 @@
 <tr><td>サンプリング</td><td>内蔵マイク / USB の入力機器から 60 秒まで（48kHz、モノラル。ステレオは L+R / L / R、3ch 以上の機器はチャンネルの番号で選ぶ）。WAV（16bit、RATE で 8〜32kHz にも）で保存。BIT 12 / 8 も選べる</td></tr>
 <tr><td>チャンネル</td><td>モノラルで再生（ステレオは左右を合わせる）</td></tr>
 <tr><td>メモリ</td><td>16bit で保持。メモリにあるのは今のキットの音だけ（16 音）</td></tr>
-<tr><td>内蔵の音</td><td>20 音（キット 16 音 + 追加 4 音。44.1kHz / 24bit）</td></tr>
+<tr><td>内蔵の音</td><td>51 音（キット 16 音 + 追加 4 音（44.1kHz / 24bit）、デモソングの音 31 音（44.1kHz / 16bit））</td></tr>
+<tr><td>デモソング</td><td>2 曲（Yard Lights / Iron Yard、各 約 1 分 50 秒）</td></tr>
 <tr><td>同時発音</td><td>トラックごとに 1 音（次の音で前の音を短くフェードして止める）</td></tr>
 <tr><td>鳴り方</td><td>ONE SHOT / GATE（1 ステップ）/ BAR（パターンの終わりまで）。STOP で全音停止</td></tr>
 <tr><td>start / end</td><td>0〜127（再生する範囲）</td></tr>
