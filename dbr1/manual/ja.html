@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="タブレットの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、アプリの情報（About）</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読込（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="スマートフォンの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読込、メトロノーム、Manual、MIDI…、Audio I/O…、About</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読込、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
@@ -328,7 +328,7 @@
   <li><b>KNOB REC</b>: <span class="key">REC</span> を点けて再生中に画面のつまみ（または MIDI の CC）を動かすと、その動きを記録します。DRAW（既定）= 線として、LOCK = 近いステップのロックとして。OFF = 記録せず、いつものとおり値を変えます。記録している間、元の値は変わりません。</li>
   <li>↶（元に戻す）で取り消せます。CLEAR（ヘッダー）はステップと一緒にロックも消し、線は残します。</li>
 </ul>
-<div class="tip">再生中は、オートメーションで動いている値が SOUND・FILTER・FX のつまみ、ミキサーの pan・EQ・フェーダー、全体フィルターのフェーダーにも表示されます。<br>ロックは Elektron のパラメーターロックに近い動きです。トラックごとの長さ（ポリリズム）を設定したトラックでは、DRAW の線の位置もそのトラックのステップで数えます。</div>
+<div class="tip">再生中は、オートメーションで動いている値が SOUND・FILTER・FX のつまみ、ミキサーの pan・EQ・フェーダー、全体フィルターのフェーダーにも表示されます。性能の低い端末で画面が重いときは、ロゴ（スマートフォンは ≡）のメニューの <b>Animate automation</b> を OFF にすると表示だけを止められます（音は変わりません。端末ごとの設定）。<br>ロックは Elektron のパラメーターロックに近い動きです。トラックごとの長さ（ポリリズム）を設定したトラックでは、DRAW の線の位置もそのトラックのステップで数えます。</div>
 </section>
 
 <!-- ============================================================ -->
