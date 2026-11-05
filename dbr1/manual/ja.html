@@ -27,7 +27,7 @@
     <li><a href="#perform">演奏用の機能（ROLL / REV / フィルター）</a></li>
     <li><a href="#pattern">パターンとソング</a></li>
     <li><a href="#tempo">テンポ</a></li>
-    <li><a href="#save">保存・読込・共有</a></li>
+    <li><a href="#save">保存・読み込み・共有</a></li>
     <li><a href="#midi">MIDI と USB オーディオ</a></li>
     <li><a href="#trouble">困ったとき</a></li>
     <li><a href="#spec">仕様</a></li>
@@ -43,14 +43,14 @@
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
-<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読込（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
+<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
-<tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中にパッドを叩くと記録されます（→ <a href="#rec">4</a>）</td></tr>
+<tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>メトロノームの ON / OFF</td></tr>
 <tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止</td></tr>
-<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す</td></tr>
+<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す（↶ で戻せます）</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>元に戻す / やり直す（最大 100 回）</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>リズムに合わせて叩くとテンポを設定</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>テンポ。タップでスライダー、長押しで数字入力（→ <a href="#tempo">9</a>）</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="スマートフォンの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読込、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
@@ -97,7 +97,7 @@
 <h3 id="templates">ジャンルのテンプレートから始める</h3>
 <p>LOAD →「<b>Templates…</b>」で、10 ジャンル（Hip-Hop・Trap・Lo-Fi・House・Techno・Drum &amp; Bass・Funk・Rock・Reggaeton・Afrobeats）の定番のビートを今のパターン番号に入れられます。BPM と SWING もそのジャンルに合わせて変わります。</p>
 <ul>
-  <li><b>BASIC</b> = 基本の形、<b>VARI</b>（VARIATION）= 少し変化をつけた形、<b>FILL</b> = 小節の終わりのおかず。</li>
+  <li><b>BASIC</b> = 基本の形、<b>VARI</b>（VARIATION）= 少し変化をつけた形、<b>FILL</b> = 小節の終わりのおかず（フィル）。</li>
   <li><b>ALL 3</b> は今の番号から 3 つ続けて入れます。SONG で「BASIC ×3 → FILL ×1」のように並べると曲らしくなります。</li>
   <li>BANK A の 8 トラック（kick〜tom lo）を使います。入れる先に内容があるときは確認が出ます。↶ で戻せます（TEMPO が GLOBAL のときは BPM は戻りません）。</li>
 </ul>
@@ -130,7 +130,7 @@
 <figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY タブ"><figcaption>VELOCITY タブ。下段の FIXED / POSITION はパッドの強さ（→ <a href="#rec">4</a>）</figcaption></figure>
 <h3>長さとページ</h3>
 <p><span class="key">LEN</span> をタップするとメニューが開き、パターンの長さを 1〜64 ステップ（1 ステップ = 16 分音符）で選べます。− / + で 1 ずつ、よく使う長さはボタンで選びます。長くすると、今の内容をくり返して埋めます。</p>
-<div class="tip">変拍子は 16 の倍数でない長さにします。3/4 拍子 = 12、7/8 拍子 = 14、5/4 拍子 = 20、7/4 拍子 = 28 ステップ。最後のページの長さの外のステップは薄く表示され、打ち込めません。メトロノームはパターンの頭で数え直すので、頭がいつも強拍になります。</div>
+<div class="tip">4/4 以外の拍子（変拍子を含む）は、拍子に合わせて長さを変えます。3/4 拍子 = 12、7/8 拍子 = 14、5/4 拍子 = 20、7/4 拍子 = 28 ステップ。最後のページの長さの外のステップは薄く表示され、打ち込めません。メトロノームはパターンの頭で数え直すので、頭がいつも強拍になります。</div>
 <p>1〜4 のボタンで表示するページを切り替えます（再生中のページには点が付きます）。ページの長押しで、そのページ（A / B 全トラック）のコピー / ペースト / 消去ができます。</p>
 <p><span class="key">FOLLOW</span> を ON にすると、再生中は表示するページが再生位置に付いていきます（演奏向け）。OFF のときは選んだページのままです（打ち込み向け）。</p>
 <h3>スウィング</h3>
@@ -149,7 +149,7 @@
 <tr><td>Rename…</td><td>トラック（パッド）の名前を変更（16 文字まで）</td></tr>
 <tr><td>Color…</td><td>トラック（パッド）の色を 20 色から選ぶか、Other… で自分で作る。パッド・ステップ・名前・SOUND タブの色が変わります</td></tr>
 <tr><td>Copy / Paste / Clear</td><td>このパターンのこのトラックのステップ</td></tr>
-<tr><td>Steps</td><td>1 ステップの長さ。<b>1/16</b>（今まで）/ <b>1/16T</b>（16 分の 3 連符、1 ページ 24 マス）/ <b>1/8T</b>（8 分の 3 連符、1 ページ 12 マス）。下を参照</td></tr>
+<tr><td>Steps</td><td>1 ステップの長さ。<b>1/16</b>（通常）/ <b>1/16T</b>（16 分の 3 連符、1 ページ 24 マス）/ <b>1/8T</b>（8 分の 3 連符、1 ページ 12 マス）。下を参照</td></tr>
 <tr><td>Length</td><td>このトラックだけの長さ（1〜パターンの長さ、AUTO = パターンに合わせる）。長さの違うトラックを重ねるとポリリズムになります。パターンを短くすると、それより長いトラックも同じ長さに縮みます（Steps が 1/16 のときだけ）</td></tr>
 </table>
 </div>
@@ -164,9 +164,9 @@
 <p>トラック名の長押しメニューの <b>Steps</b> で、そのトラックだけ 3 連符にできます。3 連符のトラックは 1 ページ（1 小節）の幅に 12 マス（1/8T）または 24 マス（1/16T）が並び、1 拍の幅に 3 / 6 マスが入るので、ほかのトラックの 16 分と縦の位置で見比べられます。名前の下に 1/8T・1/16T と表示されます。</p>
 <ul>
 <li>切り替えると、打ち込んだ音は時間の近いマスへ移ります（ロックは消えます。UNDO で戻せます）。描いたオートメーションは時間で持っているのでそのままです。</li>
-<li>swing は 16 分の裏だけにかかり、3 連符のタイミングは変わりません。</li>
+<li>SWING は 16 分の裏だけにかかり、3 連符のタイミングは変わりません。</li>
 <li>REC で叩くと、3 連符のマスの近いほうに記録します。VELOCITY タブ・オートメーションのロックも 3 連符のマスで並びます。</li>
-<li>変拍子と組み合わせられます（例: 14 ステップ × 1/8T = 10.5 マス → 最後のマスは途中で次の小節へ）。3 連符のトラックでは Length（独自の長さ）は使えません。</li>
+<li>変拍子と組み合わせられます（例: 7/8 拍子の 14 ステップを 1/8T にすると 10.5 マス分の長さになり、11 マス目は半分の長さでパターンの頭に戻ります）。3 連符のトラックでは Length（独自の長さ）は使えません。</li>
 </ul>
 <div class="cols">
 <figure class="small"><img src="img/track_color.webp" alt="Track color"><figcaption>Color… で開く色の選択。タップした色にすぐ変わります</figcaption></figure>
@@ -227,8 +227,8 @@
 <p>SOUND タブの LOAD →「● Record (mic / audio input)…」で、マイクやオーディオインターフェースから録った音を、選択中のトラックに入れられます。初めて開いたときはマイクの使用の許可を求められます（録音はこの画面でだけ使い、録った音は端末の外へ送りません）。</p>
 <figure><img src="img/sampler_input.webp" alt="IN / CH"><figcaption>入力の選び方: IN で機器、CH で録るチャンネル（Scarlett 6i6 なら 1+2 / 3+4 / 5+6 / 1〜6）</figcaption></figure>
 <ol>
-  <li><b>入力を選ぶ</b>: IN で内蔵マイク / USB の機器（オーディオインターフェースなど）。CH で録るチャンネルを選びます。ステレオの機器は L+R / L / R、3 チャンネル以上の機器は 1+2 / 3+4 / …（2 つを混ぜて録る）か、1 / 2 / …（1 チャンネルだけ）。レベルメーターで大きさを確かめます（右端が赤くなったら音が割れています）。</li>
-  <li><b>録る</b>: ● REC で録り始め、■ STOP で止めます（最長 60 秒）。<b>AUTO</b>（−40 / −30 / −20dB）にすると ● ARM → 音がメーターの線を超えたところから自動で録り始めます。直前 0.1 秒も残ります。ARM を押した直後の 0.4 秒は、タップの音で始まらないよう無視します。待っている間に雑音だけで線を超えてしまうときは、AUTO を大きい値にしてください。▶ PATTERN でパターンを鳴らしながら録ることもできます。</li>
+  <li><b>入力を選ぶ</b>: IN で内蔵マイク / USB の機器（オーディオインターフェースなど）。CH で録るチャンネルを選びます。ステレオの機器は L+R / L / R、3 チャンネル以上の機器は 1+2 / 3+4 / …（2 つを混ぜて録る）か、1 / 2 / …（1 チャンネルだけ）。レベルメーターで大きさを確かめます（右端が赤くなったら音が割れているか、割れる寸前です）。</li>
+  <li><b>録る</b>: ● REC で録り始め、■ STOP で止めます（最長 60 秒）。<b>AUTO</b>（−40 / −30 / −20dB）にすると ● ARM → 音がメーターの線を超えたところから自動で録り始めます。直前 0.1 秒も残ります。ARM を押した直後の 0.4 秒は、タップの音で始まらないよう無視します。待っている間に雑音だけで線を超えてしまうときは、AUTO の線を上げてください（−40 → −30 → −20dB）。▶ PATTERN でパターンを鳴らしながら録ることもできます。</li>
   <li><b>整える</b>: 波形の黄色いつまみをドラッグして使う範囲を選びます（つまみ以外をなぞると新しく選択、タップすると近い方のつまみがそこへ移ります）。</li>
 </ol>
 <table>
@@ -242,7 +242,7 @@
 <tr><td>FADE IN / FADE OUT</td><td>選んだ範囲を徐々に大きく / 小さくする</td></tr>
 <tr><td>REVERSE</td><td>選んだ範囲を逆向きにする</td></tr>
 <tr><td>↶ UNDO</td><td>直前の編集を取り消す</td></tr>
-<tr><td>RATE / BIT</td><td>（下の段）トラックに入れるときにサンプルレート（周波数。そのまま / 32k / 26k / 22k / 12k / 8k）とビット数（16 / 12 / 8）を下げ、昔のサンプラーのようなザラッとした音にします。PLAY の試聴にも反映されます。録った音そのものは変わりません</td></tr>
+<tr><td>RATE / BIT</td><td>（下の段）トラックに入れるときにサンプルレート（1 秒あたりのサンプル数。そのまま / 32k / 26k / 22k / 12k / 8k）とビット数（16 / 12 / 8）を下げ、昔のサンプラーのようなザラッとした音にします。PLAY の試聴にも反映されます。録った音そのものは変わりません</td></tr>
 <tr><td>● NEW TAKE</td><td>録り直す（今の録音は捨てる）</td></tr>
 </table>
 <p>名前を付けて <b>Use on A01</b>（選択中のトラック）を押すと、選んだ範囲がそのトラックの音になります。保存フォルダを選んでいれば <b>DBR-1/Samples</b> にも WAV で保存されるので、ほかのプロジェクトでも使えます。✕ で閉じると録音は使わずに終わります。</p>
@@ -266,7 +266,7 @@
 <tr><td>フェーダー</td><td>上下にドラッグ / ダブルタップ</td><td>音量（0〜127）。触った所へ飛ばず、動かした分だけ変わります。ダブルタップで 100（初期値）</td></tr>
 <tr><td>メーター</td><td>—</td><td>そのトラックの音の大きさ（音量・pan をかけた後、エフェクトの前）。−6dB より上は黄色</td></tr>
 <tr><td>S / M</td><td>タップ</td><td>ソロ / ミュート（シーケンサの S / M と同じ）</td></tr>
-<tr><td>MASTER</td><td>上下にドラッグ / ダブルタップ</td><td>全体の音量（0〜127、ダブルタップで 127）。メーターは出力の大きさ。出力の直前にリミッターがあり、音が重なって上限を超えそうなときは自動で抑えるので歪みません。それでも抑えきれないほど大きいと <b>CLIP</b> が赤く点きます</td></tr>
+<tr><td>MASTER</td><td>上下にドラッグ / ダブルタップ</td><td>全体の音量（0〜127、ダブルタップで 127）。メーターは出力の大きさ。出力の直前にリミッターがあり、音が重なって上限を超えそうなときは自動で抑えるので、ふつうは歪みません。それでも抑えきれないほど大きいと <b>CLIP</b> が赤く点きます</td></tr>
 </table>
 <div class="tip">EQ はトラックの音（キット）と一緒に保存されます。volume・pan・S / M は SOUND タブやシーケンサと同じ値です。どちらで変えても同じで、↶ で元に戻せます。MASTER はプロジェクトに保存され、書き出しにもかかります（↶ の対象外）。CLIP が点くとき（またはリミッターで音が詰まって聞こえるとき）は、MASTER か大きいトラックを下げてください。</div>
 </section>
@@ -364,8 +364,8 @@
 
 <!-- ============================================================ -->
 <section id="save">
-<h2>10. 保存・読込・共有</h2>
-<div class="tip">作業中の内容は自動で端末に保存され、次に起動したときに元に戻ります。SAVE は、作品を別のファイルとして残したり、ほかの端末に渡したりするときに使います。</div>
+<h2>10. 保存・読み込み・共有</h2>
+<div class="tip">作業中の内容は自動で端末に保存され（編集の約 3 秒後と、アプリを閉じたとき）、次に起動したときに元に戻ります。SAVE は、作品を別のファイルとして残したり、ほかの端末に渡したりするときに使います。</div>
 <table>
 <tr><th>種類</th><th>中身</th><th>拡張子</th></tr>
 <tr><td>Project</td><td>100 パターン・キット・BPM・ソング（読み込んだ音も含む）</td><td>.dbrproj</td></tr>
@@ -383,7 +383,7 @@
 <figure><img src="img/save_dialog.webp" alt="保存の画面"></figure>
 <p>SAVE → 種類を選ぶと名前の入力画面が出ます。そのまま <span class="key">Save</span> で保存できます。同じ名前のファイルがあるときは上書きしてよいか確認します。<span class="key">Other location…</span> を選ぶと Android の保存画面から Google ドライブなどのクラウドにも保存できます。</p>
 <h3>読み込む・共有する</h3>
-<figure><img src="img/load_list.webp" alt="読込の一覧"></figure>
+<figure><img src="img/load_list.webp" alt="読み込みの一覧"></figure>
 <ul>
   <li>LOAD → 種類を選ぶと、フォルダの中のファイルが新しい順に並びます。名前をタップすると、上書きの確認のあとで読み込みます。</li>
   <li><span class="key">Share</span>: メール・Google ドライブ・メッセージなどで送ります。<span class="key">✕</span>: 削除（確認あり）。</li>
@@ -401,7 +401,7 @@
 </table>
 <table>
 <tr><th>FORMAT</th><th>向いている使い方</th></tr>
-<tr><td>WAV</td><td>劣化なし（16bit ステレオ）。DAW などで編集するとき</td></tr>
+<tr><td>WAV</td><td>圧縮なし（16bit ステレオ）。DAW などで編集するとき</td></tr>
 <tr><td>M4A</td><td>AAC 256kbps。小さいので LINE・Discord・メール・クラウドに</td></tr>
 <tr><td>MP4 VIDEO</td><td>PATTERN / SONG はパターンの画像付きの動画（720×720）、RECORD は画面録画。X・Instagram・TikTok など、動画で投稿する SNS に</td></tr>
 <tr><td>MIDI</td><td>スタンダード MIDI ファイル（PATTERN / SONG のみ）。DAW やほかのリズムマシンで続きを作るときに。音ごとに 1 トラック（名前はトラック名）、すべて ch 10。ノート番号は MIDI… の NOTES の設定（PADS 36–51 / GM DRUMS）。swing・トラックごとの長さも入り、ミュート中（ソロのときはソロ以外）のトラックは入りません</td></tr>
@@ -415,7 +415,7 @@
   <li>端末が画面録画に対応していない場合は、パターンの画像付きの動画になります。</li>
 </ul>
 
-<div class="note">読み込めるファイルは 100MB まで、使うのは 1 つにつき最初の 60 秒までです。プロジェクトの読込はすべてのパターンを置き換えます。読込の直後なら ↶ で元に戻せます。</div>
+<div class="note">読み込めるファイルは 100MB まで、使うのは 1 つにつき最初の 60 秒までです。プロジェクトの読み込みはすべてのパターンを置き換えます。読み込みの直後なら ↶ で元に戻せます。</div>
 </section>
 
 <!-- ============================================================ -->
@@ -556,7 +556,7 @@
 <tr><td>MIDI 入力</td><td>USB-MIDI。ノートオンでトラックを鳴らす・録音（ベロシティ付き）。チャンネル ALL / 1〜16</td></tr>
 <tr><td>MIDI 出力</td><td>USB-MIDI 1 台。シーケンス・ロール・パッドをノートで送る（既定 10ch、ノートオフは 80ms 後）</td></tr>
 <tr><td>ノートの割り当て</td><td>PADS 36–51 / GM DRUMS</td></tr>
-<tr><td>MIDI クロック</td><td>送信（24 PPQN、Start / Stop）/ 受信（Start / Stop / テンポに追従。Start / Stop に従わない設定も可）</td></tr>
+<tr><td>MIDI クロック</td><td>送信（24 PPQN = 4 分音符あたり 24 個、Start / Stop）/ 受信（Start / Stop / テンポに追従。Start / Stop に従わない設定も可）</td></tr>
 <tr><td>MIDI CC</td><td>受信・送信。26 パラメーター（トラック 14・FX / MASTER 12）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）</td></tr>
 <tr><td>マルチアウト</td><td>USB の機器の出力が 3ch 以上のとき、トラックごとに出力のペアか 1 チャンネル（モノラル）を選べる（最大 16ch）。MAIN のペアも選べる。チャンネルごとのテスト音</td></tr>
 <tr><td>音声出力</td><td>ステレオ、端末の出力レート（多くは 48kHz）。低遅延の経路で再生。USB オーディオに対応（挿すと自動で切り替え）</td></tr>

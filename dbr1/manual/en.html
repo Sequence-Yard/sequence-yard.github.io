@@ -50,7 +50,7 @@
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>Arms recording. Pads you hit while playing are recorded (→ <a href="#rec">4</a>)</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>Metronome on / off</td></tr>
 <tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>Start and stop</td></tr>
-<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>Clears the steps of the bank on screen</td></tr>
+<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>Clears the steps of the bank on screen (↶ brings them back)</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>Undo / redo (up to 100 steps)</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>Tap along with the beat to set the tempo</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>Tempo. Tap for a slider, long-press to type a number (→ <a href="#tempo">9</a>)</td></tr>
@@ -130,7 +130,7 @@
 <figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY tab"><figcaption>VELOCITY tab. FIXED / POSITION at the bottom set how hard the pads play (→ <a href="#rec">4</a>)</figcaption></figure>
 <h3>Length and pages</h3>
 <p>Tap <span class="key">LEN</span> to open a menu and set the pattern length from 1 to 64 steps (1 step = a 16th note): − / + change it by one, and buttons pick common lengths. A longer pattern is filled by repeating what is already there.</p>
-<div class="tip">For odd time signatures, use a length that is not a multiple of 16: 3/4 = 12, 7/8 = 14, 5/4 = 20, 7/4 = 28 steps. Steps past the length on the last page are dimmed and cannot be entered. The metronome restarts its count at the top of the pattern, so the downbeat always lands on the first step.</div>
+<div class="tip">For time signatures other than 4/4 (including odd meters), change the length to match: 3/4 = 12, 7/8 = 14, 5/4 = 20, 7/4 = 28 steps. Steps past the length on the last page are dimmed and cannot be entered. The metronome restarts its count at the top of the pattern, so the downbeat always lands on the first step.</div>
 <p>Buttons 1–4 choose the page on screen (a dot marks the page that is playing). Long-press a page to copy / paste / clear it (all A/B tracks).</p>
 <p>With <span class="key">FOLLOW</span> on, the page on screen follows the playhead during playback (for live play). With it off, the page you chose stays put (for programming).</p>
 <h3>Swing</h3>
@@ -149,7 +149,7 @@
 <tr><td>Rename…</td><td>Rename the track (pad), up to 16 characters</td></tr>
 <tr><td>Color…</td><td>Pick the track (pad) color from 20 colors, or make your own with Other…. The pad, steps, name and SOUND tab change color</td></tr>
 <tr><td>Copy / Paste / Clear</td><td>This track's steps in this pattern</td></tr>
-<tr><td>Steps</td><td>How long one step is: <b>1/16</b> (as before) / <b>1/16T</b> (16th-note triplets, 24 cells per page) / <b>1/8T</b> (8th-note triplets, 12 cells per page). See below</td></tr>
+<tr><td>Steps</td><td>How long one step is: <b>1/16</b> (normal) / <b>1/16T</b> (16th-note triplets, 24 cells per page) / <b>1/8T</b> (8th-note triplets, 12 cells per page). See below</td></tr>
 <tr><td>Length</td><td>A length for this track only (1 up to the pattern length, AUTO = follow the pattern). Mixing lengths makes polyrhythms. Shortening the pattern also shortens longer tracks (only when Steps is 1/16)</td></tr>
 </table>
 </div>
@@ -164,9 +164,9 @@
 <p>Use <b>Steps</b> in the track-name long-press menu to turn a single track into triplets. A triplet track shows 12 cells (1/8T) or 24 cells (1/16T) across one page (one bar), with 3 or 6 cells per beat, so you can line it up by eye with the 16th notes on the other tracks. 1/8T or 1/16T appears under the track name.</p>
 <ul>
 <li>When you switch, existing notes move to the nearest cell in time (locks are cleared; Undo brings them back). Drawn automation is kept, as it is stored in time.</li>
-<li>Swing only delays the off-beat 16ths; triplet timing does not change.</li>
+<li>SWING only delays the off-beat 16ths; triplet timing does not change.</li>
 <li>REC records to the nearest triplet cell. The VELOCITY tab and automation locks also use the triplet cells.</li>
-<li>Works with odd time signatures (e.g. 14 steps × 1/8T = 10.5 cells, so the last cell runs into the next bar). Triplet tracks cannot use Length (their own loop length).</li>
+<li>Works with odd time signatures (e.g. 14 steps of 7/8 in 1/8T is 10.5 cells long, so the 11th cell is cut in half as the pattern loops). Triplet tracks cannot use Length (their own loop length).</li>
 </ul>
 <div class="cols">
 <figure class="small"><img src="img/track_color.webp" alt="Track color"><figcaption>The color picker from Color…; tap a color to apply it</figcaption></figure>
@@ -227,8 +227,8 @@
 <p>LOAD → “● Record (mic / audio input)…” in the SOUND tab records from a microphone or an audio interface and puts the sound on the selected track. The first time, Android asks for permission to use the microphone (it is used only on this screen, and recordings never leave your device).</p>
 <figure><img src="img/sampler_input.webp" alt="IN / CH"><figcaption>Choosing the input: IN picks the device, CH the channels to record (on a Scarlett 6i6: 1+2 / 3+4 / 5+6 / 1–6)</figcaption></figure>
 <ol>
-  <li><b>Choose the input</b>: IN selects the built-in mic or a USB device (audio interface etc.). CH picks the channels to record: L+R / L / R on stereo devices; on devices with 3 or more channels, 1+2 / 3+4 / … (two channels mixed) or 1 / 2 / … (a single channel). Check the level on the meter (red at the right end means the sound is clipping).</li>
-  <li><b>Record</b>: ● REC starts and ■ STOP ends the recording (up to 60 seconds). With <b>AUTO</b> (-40 / -30 / -20 dB), ● ARM waits and starts recording when the sound goes over the line on the meter (the 0.1 s before it is kept; the first 0.4 s after ARM is ignored so the tap itself does not start it. If noise alone is over the line, choose a higher AUTO level). ▶ PATTERN plays the pattern while you record.</li>
+  <li><b>Choose the input</b>: IN selects the built-in mic or a USB device (audio interface etc.). CH picks the channels to record: L+R / L / R on stereo devices; on devices with 3 or more channels, 1+2 / 3+4 / … (two channels mixed) or 1 / 2 / … (a single channel). Check the level on the meter (red at the right end means the sound is clipping or about to).</li>
+  <li><b>Record</b>: ● REC starts and ■ STOP ends the recording (up to 60 seconds). With <b>AUTO</b> (-40 / -30 / -20 dB), ● ARM waits and starts recording when the sound goes over the line on the meter (the 0.1 s before it is kept; the first 0.4 s after ARM is ignored so the tap itself does not start it. If noise alone is over the line, raise the AUTO line (-40 → -30 → -20 dB)). ▶ PATTERN plays the pattern while you record.</li>
   <li><b>Edit</b>: drag the yellow handles on the waveform to choose the part to use (drag elsewhere to make a new selection; tap to move the nearer handle there).</li>
 </ol>
 <table>
@@ -242,7 +242,7 @@
 <tr><td>FADE IN / FADE OUT</td><td>Fades the selection in / out</td></tr>
 <tr><td>REVERSE</td><td>Reverses the selection</td></tr>
 <tr><td>↶ UNDO</td><td>Undoes the last edit</td></tr>
-<tr><td>RATE / BIT</td><td>(bottom row) Lowers the sample rate (as recorded / 32k / 26k / 22k / 12k / 8k) and bit depth (16 / 12 / 8) when the sound goes onto the track, for a gritty vintage-sampler sound. PLAY lets you hear it first; the recording itself is not changed</td></tr>
+<tr><td>RATE / BIT</td><td>(bottom row) Lowers the sample rate (samples per second: as recorded / 32k / 26k / 22k / 12k / 8k) and bit depth (16 / 12 / 8) when the sound goes onto the track, for a gritty vintage-sampler sound. PLAY lets you hear it first; the recording itself is not changed</td></tr>
 <tr><td>● NEW TAKE</td><td>Records again (discards the current take)</td></tr>
 </table>
 <p>Give it a name and press <b>Use on A01</b> (the selected track): the selection becomes that track's sound. If a save folder is set, it is also saved as a WAV in <b>DBR-1/Samples</b> so you can use it in other projects. ✕ closes the screen without using the recording.</p>
@@ -266,7 +266,7 @@
 <tr><td>Fader</td><td>Drag up/down / double-tap</td><td>Volume (0–127). It moves by how far you drag, not to where you touch. Double-tap for 100 (default)</td></tr>
 <tr><td>Meter</td><td>—</td><td>The track's level (after volume and pan, before effects). Yellow above −6 dB</td></tr>
 <tr><td>S / M</td><td>Tap</td><td>Solo / mute (same as S / M in the sequencer)</td></tr>
-<tr><td>MASTER</td><td>Drag up/down / double-tap</td><td>Overall volume (0–127, double-tap for 127). Its meter shows the output. A limiter just before the output automatically holds back peaks when sounds pile up, so the output does not distort; <b>CLIP</b> lights red only when it is far too loud even for that</td></tr>
+<tr><td>MASTER</td><td>Drag up/down / double-tap</td><td>Overall volume (0–127, double-tap for 127). Its meter shows the output. A limiter just before the output automatically holds back peaks when sounds pile up, so the output normally does not distort; <b>CLIP</b> lights red only when it is far too loud even for that</td></tr>
 </table>
 <div class="tip">EQ is saved with each track's sound (the kit). Volume, pan and S / M are the same values as in the SOUND tab and the sequencer: change them in either place, and ↶ undoes them. MASTER is saved with the project and applies to exports too (not undoable). If CLIP lights (or the limiter makes the sound feel squashed), lower MASTER or the loudest tracks.</div>
 </section>
@@ -365,7 +365,7 @@
 <!-- ============================================================ -->
 <section id="save">
 <h2>10. Saving, loading and sharing</h2>
-<div class="tip">Your work is saved automatically on the device and comes back the next time you open the app. Use SAVE to keep a copy as a file or to move it to another device.</div>
+<div class="tip">Your work is saved automatically on the device (about 3 seconds after each edit and when you leave the app) and comes back the next time you open the app. Use SAVE to keep a copy as a file or to move it to another device.</div>
 <table>
 <tr><th>Type</th><th>Contains</th><th>File</th></tr>
 <tr><td>Project</td><td>All 100 patterns, kit, BPM and song (including sounds you loaded)</td><td>.dbrproj</td></tr>
@@ -401,7 +401,7 @@
 </table>
 <table>
 <tr><th>FORMAT</th><th>Best for</th></tr>
-<tr><td>WAV</td><td>Lossless (16-bit stereo). Editing in a DAW</td></tr>
+<tr><td>WAV</td><td>Uncompressed (16-bit stereo). Editing in a DAW</td></tr>
 <tr><td>M4A</td><td>AAC 256 kbps. Small files for LINE, Discord, email and cloud storage</td></tr>
 <tr><td>MIDI</td><td>Standard MIDI file (PATTERN / SONG only), for carrying on in a DAW or another drum machine. One track per sound (named after the track), all on channel 10. Note numbers follow NOTES in MIDI… (PADS 36–51 / GM DRUMS). Swing and per-track lengths are included; muted tracks (or non-solo tracks while soloing) are left out</td></tr>
 <tr><td>MP4 VIDEO</td><td>PATTERN / SONG: a video (720×720) with a picture of the pattern. RECORD: a screen recording. For X, Instagram, TikTok and other video-first networks</td></tr>
@@ -556,7 +556,7 @@
 <tr><td>MIDI in</td><td>USB-MIDI. Note-on plays and records tracks (with velocity). Channel ALL / 1–16</td></tr>
 <tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default, note-off after 80 ms)</td></tr>
 <tr><td>Note map</td><td>PADS 36–51 / GM DRUMS</td></tr>
-<tr><td>MIDI clock</td><td>Send (24 PPQN, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
+<tr><td>MIDI clock</td><td>Send (24 PPQN = 24 per quarter note, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
 <tr><td>MIDI CC</td><td>Receive and send. 26 parameters (14 per track, 12 FX / master), editable assignments and LEARN. Selected track / channel = track</td></tr>
 <tr><td>Multi-out</td><td>With a USB device that has more than 2 outputs, each track can use its own output pair or a single channel (mono), up to 16 ch. The MAIN pair is selectable too. Test tone per channel</td></tr>
 <tr><td>Audio output</td><td>Stereo at the device's output rate (usually 48 kHz), low-latency path. USB audio supported (switches automatically when plugged in)</td></tr>
