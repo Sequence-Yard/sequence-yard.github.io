@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="Tablet screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), About</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), the phone-style layout (Phone layout), About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>)</td></tr>
@@ -58,7 +58,7 @@
 <tr><td class="n"><span class="num">14</span></td><td>Position</td><td>The step that is playing. Lights red during the recording count-in</td></tr>
 <tr><td class="n"><span class="num">15</span></td><td>Track name, S, M</td><td>Tap to select, long-press for the track menu (→ <a href="#track">3</a>). S = solo, M = mute</td></tr>
 <tr><td class="n"><span class="num">16</span></td><td>Steps</td><td>Tap to turn on / off. The bar inside shows the velocity</td></tr>
-<tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (16–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
+<tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (1–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE, GAPS</td><td>Spacing used when you swipe across steps (→ <a href="#beat">2</a>)</td></tr>
 <tr><td class="n"><span class="num">19</span></td><td>FLT (master filter)</td><td>Up = high-pass, down = low-pass (→ <a href="#perform">7</a>)</td></tr>
 <tr><td class="n"><span class="num">20</span></td><td>ROLL, SLIP, REV</td><td>Performance buttons (→ <a href="#perform">7</a>)</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="Phone screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, About</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, About. On a tablet set to Phone layout, <b>Tablet layout</b> at the top switches back</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>Pattern number</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
@@ -82,6 +82,7 @@
 <figure><img src="img/phone_sound.webp" alt="SOUND view"><figcaption>SOUND and others: pick a track from the list on the left</figcaption></figure>
 <figure><img src="img/phone_mix.webp" alt="MIX view"><figcaption>MIX: the mixer (the EQ button swaps the faders for the EQ)</figcaption></figure>
 </div>
+<div class="tip">Tablets can use this layout too: <b>Phone layout</b> in the logo menu shows one screen at a time with larger buttons and text (the PADS screen gets big pads for playing). It is saved per device; <b>Tablet layout</b> in the ≡ menu switches back.</div>
 <div class="tip">On narrow phones, the roll length, SLIP and REV move into the <span class="key">⋯</span> button next to ROLL, and the pattern ◀ ▶ buttons are hidden — tap the number to type a pattern.</div>
 </section>
 
@@ -128,7 +129,9 @@
 <p><b>Long-press</b> a step until it vibrates, then drag up or down to set its velocity (0–127). The VELOCITY tab edits all 16 steps of the selected track at once.</p>
 <figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY tab"><figcaption>VELOCITY tab. FIXED / POSITION at the bottom set how hard the pads play (→ <a href="#rec">4</a>)</figcaption></figure>
 <h3>Length and pages</h3>
-<p>Tap <span class="key">LEN</span> to go 16 → 32 → 48 → 64 steps; a longer pattern is filled by repeating what is already there. Buttons 1–4 choose the page on screen (a dot marks the page that is playing). Long-press a page to copy / paste / clear it (all A/B tracks).</p>
+<p>Tap <span class="key">LEN</span> to open a menu and set the pattern length from 1 to 64 steps (1 step = a 16th note): − / + change it by one, and buttons pick common lengths. A longer pattern is filled by repeating what is already there.</p>
+<div class="tip">For odd time signatures, use a length that is not a multiple of 16: 3/4 = 12, 7/8 = 14, 5/4 = 20, 7/4 = 28 steps. Steps past the length on the last page are dimmed and cannot be entered. The metronome restarts its count at the top of the pattern, so the downbeat always lands on the first step.</div>
+<p>Buttons 1–4 choose the page on screen (a dot marks the page that is playing). Long-press a page to copy / paste / clear it (all A/B tracks).</p>
 <p>With <span class="key">FOLLOW</span> on, the page on screen follows the playhead during playback (for live play). With it off, the page you chose stays put (for programming).</p>
 <h3>Swing</h3>
 <p>Drag <span class="key">SWING</span> sideways (0–100). The off-beat 16th notes are delayed for a shuffled feel. Swing is saved per pattern.</p>
@@ -146,9 +149,18 @@
 <tr><td>Rename…</td><td>Rename the track (pad), up to 16 characters</td></tr>
 <tr><td>Color…</td><td>Pick the track (pad) color from 20 colors, or make your own with Other…. The pad, steps, name and SOUND tab change color</td></tr>
 <tr><td>Copy / Paste / Clear</td><td>This track's steps in this pattern</td></tr>
-<tr><td>Length</td><td>A length for this track only (1 up to the pattern length, AUTO = follow the pattern). Mixing lengths makes polyrhythms. Shortening the pattern also shortens longer tracks</td></tr>
+<tr><td>Steps</td><td>How long one step is: <b>1/16</b> (as before) / <b>1/16T</b> (16th-note triplets, 24 cells per page) / <b>1/8T</b> (8th-note triplets, 12 cells per page). See below</td></tr>
+<tr><td>Length</td><td>A length for this track only (1 up to the pattern length, AUTO = follow the pattern). Mixing lengths makes polyrhythms. Shortening the pattern also shortens longer tracks (only when Steps is 1/16)</td></tr>
 </table>
 </div>
+<h3>Triplets (Steps)</h3>
+<p>Use <b>Steps</b> in the track-name long-press menu to turn a single track into triplets. A triplet track shows 12 cells (1/8T) or 24 cells (1/16T) across one page (one bar), with 3 or 6 cells per beat, so you can line it up by eye with the 16th notes on the other tracks. 1/8T or 1/16T appears under the track name.</p>
+<ul>
+<li>When you switch, existing notes move to the nearest cell in time (locks are cleared; Undo brings them back). Drawn automation is kept, as it is stored in time.</li>
+<li>Swing only delays the off-beat 16ths; triplet timing does not change.</li>
+<li>REC records to the nearest triplet cell. The VELOCITY tab and automation locks also use the triplet cells.</li>
+<li>Works with odd time signatures (e.g. 14 steps × 1/8T = 10.5 cells, so the last cell runs into the next bar). Triplet tracks cannot use Length (their own loop length).</li>
+</ul>
 </div>
 <ul>
   <li><b>S (solo)</b> plays only the soloed tracks of the bank. <b>M (mute)</b> silences a track.</li>
@@ -481,7 +493,7 @@
 <table>
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>Tracks</td><td>16 (banks A / B × 8)</td></tr>
-<tr><td>Patterns</td><td>100 (00–99), each 16 / 32 / 48 / 64 steps (16th notes)</td></tr>
+<tr><td>Patterns</td><td>100 (00–99), each 1–64 steps (16th notes); each track 1/16, 1/16T or 1/8T</td></tr>
 <tr><td>Track length</td><td>1 to the pattern length (up to 64) per track (AUTO = follow the pattern)</td></tr>
 <tr><td>Velocity</td><td>0–127 per step</td></tr>
 <tr><td>Swing</td><td>0–100 per pattern (100 delays off-beat 16ths by half a step)</td></tr>
