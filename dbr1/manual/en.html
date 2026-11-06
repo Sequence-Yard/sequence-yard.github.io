@@ -74,7 +74,7 @@
 <tr><td class="n"><span class="num">2</span></td><td>Pattern number</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
-<tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / PADS / SOUND / FILTER / VEL / FX / SONG / MIX (mixer) / AUTO (automation)</td></tr>
+<tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / VEL / PADS / SOUND / FILTER / FX / AUTO (automation) / MIX (mixer) / SONG. <b>Long-press a tab (it vibrates) and drag up or down</b> to reorder them to suit your genre or workflow (saved on the device; "Reset tab order" in ≡ restores the default)</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / USER (available on every view)</td></tr>
 </table>
 <div class="cols">
@@ -336,7 +336,8 @@
 <p>Volume, pan, filter, EQ, sends, effects, master volume and more can move within a pattern. On a tablet, tap <span class="key">AUTO</span> in the header; on a phone, open <span class="key">AUTO</span> on the left. Automation is saved with each pattern.</p>
 <figure><img src="img/automation.webp" alt="Automation"><figcaption>The parameter list on the left shows each line in small. Lines drawn with LINE and WAVE on the ind kick cutoff</figcaption></figure>
 <ul>
-  <li><b>Left column</b>: <b>● track name ▾</b> at the top picks what to automate (one of the 8 tracks of the current bank, or <b>FX / MASTER</b> = reverb, delay and distortion settings, master volume, master filter). Below it is the parameter list, grouped into SOUND, FILTER, EQ and SEND (MASTER, REVERB, DELAY and DIST for FX / MASTER). Each row shows that parameter's lines and locks for the whole pattern in small, so you can see at a glance what moves. Tap to select.</li>
+  <li><b>Target</b>: pick it from the list: a row at the top on tablets, a column on the left on phones (the 8 tracks of the current bank and <b>FX / MASTER</b> = reverb, delay and distortion settings, master volume, master filter; "FX / MST" on phones).</li>
+  <li><b>Parameter list</b>: it is grouped into SOUND, FILTER, EQ and SEND (MASTER, REVERB, DELAY and DIST for FX / MASTER). Each row shows that parameter's lines and locks for the whole pattern in small, so you can see at a glance what moves. Tap to select.</li>
   <li><b>What you draw depends on how you move your finger</b> (no modes to switch):
     <ul>
       <li><b>Tap</b> = lock that step to the height you touched (parameter lock).</li>
@@ -352,7 +353,7 @@
       <li><b>WAVE</b> = a waveform. Drag sideways for its length; it moves between the height where you touched and your finger's height. With WAVE selected, a second row shows the shape (SIN / TRI / SAW / SQR) and one cycle (1/32 to 1 BAR, 1/8T = eighth-note triplets). Great for wobble bass, tremolo and auto-pan.</li>
     </ul>
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
-  <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
+  <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps; on phones in the second row, PAGE). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's USER adds to or subtracts from the result).</li>
