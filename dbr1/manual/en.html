@@ -115,7 +115,7 @@
 </table>
 <ul>
   <li>A demo song loads as a project, so it replaces all patterns, the kit and the BPM (you are asked first, and ↶ brings them back). Save your work first if you want to keep it.</li>
-  <li>The 63 sounds of the songs are also in the SOUND tab's LOAD list (DEMO · song name), ready for your own tracks. The demo songs stop at the end (→ ONCE in the SONG tab).</li>
+  <li>The 64 sounds of the songs are also in the SOUND tab's LOAD list (DEMO · song name), ready for your own tracks. The demo songs stop at the end (→ ONCE in the SONG tab).</li>
 </ul>
 </div>
 </div>
@@ -336,9 +336,9 @@
       <li><b>WAVE</b> = a waveform. Drag sideways for its length; it moves between the height where you touched and your finger's height. Shapes SIN / TRI / SAW / SQR, one cycle from 1/32 to 1 BAR (1/8T = eighth-note triplets). Great for wobble bass, tremolo and auto-pan.</li>
     </ul>
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
-  <li>Turn on <b>ERASE</b> and swipe to remove locks or line there. <b>CLEAR</b> removes all locks and lines of the selected parameter. 1–4 switch the page shown. With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both).</li>
+  <li>Turn on <b>ERASE</b> and swipe to remove locks or line there. <b>CLEAR</b> removes all locks and lines of the selected parameter. 1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value.</li>
-  <li><b>KNOB REC</b>: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
+  <li><b>KNOB REC</b> (shown as "REC" on phones and on patterns longer than 16 steps): with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
 </ul>
 <div class="tip">While playing, the values moved by automation also show on the SOUND, FILTER and FX knobs, the mixer's pan, EQ and faders, and the master filter fader. If the screen feels slow on a less powerful device, turn <b>Animate automation</b> OFF in the logo menu (≡ on phones) to stop only the display (the sound does not change; saved per device).<br>Locks work much like Elektron's parameter locks. On a track with its own length (polyrhythm), DRAW positions follow that track's steps.</div>
@@ -517,8 +517,8 @@
 <tr><td>Sampling</td><td>Built-in mic / USB input, up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available)</td></tr>
 <tr><td>Channels</td><td>Played as mono (stereo files are mixed down)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
-<tr><td>Built-in sounds</td><td>83 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 63 from the demo songs, 44.1 kHz / 16-bit)</td></tr>
-<tr><td>Demo songs</td><td>4 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard, 1½ to 2 minutes each)</td></tr>
+<tr><td>Built-in sounds</td><td>84 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 64 from the demo songs, 44.1 kHz / 16-bit)</td></tr>
+<tr><td>Demo songs</td><td>4 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard, about 2 minutes each)</td></tr>
 <tr><td>Polyphony</td><td>One sound per track (a new hit quickly fades out the previous one)</td></tr>
 <tr><td>Play modes</td><td>ONE SHOT / GATE (one step) / BAR (until the end of the pattern); STOP silences everything</td></tr>
 <tr><td>start / end</td><td>0–127 (the part of the sample that plays)</td></tr>
@@ -526,7 +526,7 @@
 <tr><td>decay</td><td>About 10 ms – 2 s; 127 = no decay</td></tr>
 <tr><td>pan</td><td>L64 – C – R63 (equal power; MIDI 0–127 with 64 at the center)</td></tr>
 <tr><td>Values</td><td>Amounts such as volume, sends and effects read 0–127, the same as MIDI (they match the CC values sent and received). Pitch is in semitones, EQ in dB, cutoff in Hz</td></tr>
-<tr><td>Mixer</td><td>Track EQ (LOW 100 Hz shelf / MID 1 kHz peak / HIGH 8 kHz shelf, ±12 dB each), volume 0–127, pan, S / M; MASTER 0–127 (saved); meters −48 to 0 dB</td></tr>
+<tr><td>Mixer</td><td>Track EQ (LO 100 Hz shelf / MID 1 kHz peak / HI 8 kHz shelf, ±12 dB each), volume 0–127, pan, S / M; MASTER 0–127 (saved); meters −48 to 0 dB</td></tr>
 <tr><td>Reverse</td><td>REV SEQ (step order) / REV SND (samples)</td></tr>
 </table>
 
