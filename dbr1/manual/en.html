@@ -128,7 +128,16 @@
 </ul>
 <h3>Velocity</h3>
 <p><b>Long-press</b> a step until it vibrates, then drag up or down to set its velocity (0–127). The VELOCITY tab edits all 16 steps of the selected track at once.</p>
-<figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY tab"><figcaption>VELOCITY tab. FIXED / POSITION at the bottom set how hard the pads play (→ <a href="#rec">4</a>)</figcaption></figure>
+<figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY tab"><figcaption>VELOCITY tab (with PROBABILITY chosen). FIXED / POSITION at the bottom set how hard the pads play (→ <a href="#rec">4</a>)</figcaption></figure>
+<h3 id="probability">Probability and ratchets</h3>
+<p>The three buttons at the top of the VELOCITY tab choose what the bars edit. Each is a per-step value of the selected track, saved with the pattern (↶ undoes it).</p>
+<table>
+<tr><th>Button</th><th>What it does</th></tr>
+<tr><td>VELOCITY</td><td>How hard the step plays (0–127)</td></tr>
+<tr><td>PROBABILITY</td><td>The chance that the step plays (0–100%, in 5% steps). The phrase changes a little every time, so a pattern stays fresh. Steps below 100% get a triangle in the top-right corner</td></tr>
+<tr><td>RATCHET</td><td>Splits one step into 1–4 hits (fast hi-hat runs and rolls). Steps with 2 or more get dots along the top. On swung steps and triplet tracks, the hits divide that step's own length</td></tr>
+</table>
+<div class="tip">Probability is rolled again on every pass. Exports (PATTERN / SONG) follow the probabilities too, and stems play on exactly the same steps as the mix. MIDI files ignore probability and write every note; ratchets are written as separate notes.</div>
 <h3>Length and pages</h3>
 <p>Tap <span class="key">LEN</span> to open a menu and set the pattern length from 1 to 64 steps (1 step = a 16th note): − / + change it by one, and buttons pick common lengths. A longer pattern is filled by repeating what is already there.</p>
 <div class="tip">For time signatures other than 4/4 (including odd meters), change the length to match: 3/4 = 12, 7/8 = 14, 5/4 = 20, 7/4 = 28 steps. Steps past the length on the last page are dimmed and cannot be entered. The metronome restarts its count at the top of the pattern, so the downbeat always lands on the first step.</div>
@@ -210,6 +219,7 @@
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
 <tr><td>decay</td><td>How the sound fades (127 = play to the end)</td></tr>
 <tr><td>ONE SHOT / GATE / BAR</td><td>Play mode (tap to change). ONE SHOT = play to the end, GATE = stop after one step, BAR = stop at the end of the pattern. Handy for long loops and vocals that should stop with the bar</td></tr>
+<tr><td>CHOKE</td><td>Choke group (tap: OFF → 1 → 2 → 3 → 4). When any track in a group plays, the other tracks in that group stop within about 5 ms. Put the closed and open hi-hat in the same group and the closed hat cuts the open hat's ring, like a real hi-hat. Saved with the kit</td></tr>
 </table>
 </div>
 </div>
@@ -446,6 +456,7 @@
 <tr><td>WAV</td><td>Uncompressed (16-bit stereo). Editing in a DAW</td></tr>
 <tr><td>M4A</td><td>AAC 256 kbps. Small files for LINE, Discord, email and cloud storage</td></tr>
 <tr><td>MIDI</td><td>Standard MIDI file (PATTERN / SONG only), for carrying on in a DAW or another drum machine. One track per sound (named after the track), all on channel 10. Note numbers follow NOTES in MIDI… (PADS 36–51 / GM DRUMS). Swing and per-track lengths are included; muted tracks (or non-solo tracks while soloing) are left out</td></tr>
+<tr><td>STEMS</td><td>A ZIP (PATTERN / SONG only) with the full mix (00_mix.wav) and one WAV per track that has steps (01_A01_kick.wav …), 16-bit 48 kHz stereo. Each track includes its own reverb, delay and FX; every file is the same length and starts at 0:00, so they line up as soon as you drop them into a DAW. Muted tracks are left out. It renders once per track, so it takes a little longer</td></tr>
 <tr><td>MP4 VIDEO</td><td>PATTERN / SONG: a video (720×720) with a picture of the pattern. RECORD: a screen recording. For X, Instagram, TikTok and other video-first networks</td></tr>
 </table>
 <figure class="small"><img src="img/recording_bar.webp" alt="Recording bar"><figcaption>While recording, the elapsed time and <span class="key">■ STOP</span> appear at the top left (this bar is not in the video)</figcaption></figure>
@@ -538,6 +549,7 @@
 <tr><td>Patterns</td><td>100 (00–99), each 1–64 steps (16th notes); each track 1/16, 1/16T or 1/8T</td></tr>
 <tr><td>Track length</td><td>1 to the pattern length (up to 64) per track (AUTO = follow the pattern)</td></tr>
 <tr><td>Velocity</td><td>0–127 per step</td></tr>
+<tr><td>Probability / ratchet</td><td>Probability 0–100% (5% steps), ratchet 1–4 hits, per step</td></tr>
 <tr><td>Swing</td><td>0–100 per pattern (100 delays off-beat 16ths by half a step)</td></tr>
 <tr><td>Tempo</td><td>20–300 BPM</td></tr>
 <tr><td>Song</td><td>Up to 99 rows; each row = pattern × 1–99 repeats</td></tr>
@@ -562,6 +574,7 @@
 <tr><td>Demo songs</td><td>4 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard, about 2 minutes each)</td></tr>
 <tr><td>Polyphony</td><td>One sound per track (a new hit quickly fades out the previous one)</td></tr>
 <tr><td>Play modes</td><td>ONE SHOT / GATE (one step) / BAR (until the end of the pattern); STOP silences everything</td></tr>
+<tr><td>Choke groups</td><td>4 (a sound in the group stops the others within about 5 ms)</td></tr>
 <tr><td>start / end</td><td>0–127 (the part of the sample that plays)</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (changes playback speed)</td></tr>
 <tr><td>decay</td><td>About 10 ms – 2 s; 127 = no decay</td></tr>
@@ -590,7 +603,7 @@
 <tr><td>Autosave</td><td>3 seconds after an edit and when the app closes (the previous version is kept as a backup)</td></tr>
 <tr><td>Files</td><td>.dbrproj (project, includes loaded sounds) / .dbrpatt (pattern) / .dbrkit (kit, includes loaded sounds)</td></tr>
 <tr><td>Location</td><td>DBR-1/Projects, Patterns, Kits and Samples inside the folder you choose; cloud via Android's save and share screens</td></tr>
-<tr><td>Export</td><td>Pattern (×1–16) / song / live recording (up to 10 minutes). MIDI (SMF type 1, 96 PPQ, channel 10; pattern and song only). WAV (16-bit, 48 kHz stereo; recordings use the device's output rate) / M4A (AAC 256 kbps) / MP4 (H.264 720×720 30 fps + AAC; screen recordings are 1280 wide in the screen's aspect ratio). Saved in DBR-1/Exports</td></tr>
+<tr><td>Export</td><td>Pattern (×1–16) / song / live recording (up to 10 minutes). MIDI (SMF type 1, 96 PPQ, channel 10; pattern and song only). STEMS (ZIP: mix + one WAV per track; pattern and song only). WAV (16-bit, 48 kHz stereo; recordings use the device's output rate) / M4A (AAC 256 kbps) / MP4 (H.264 720×720 30 fps + AAC; screen recordings are 1280 wide in the screen's aspect ratio). Saved in DBR-1/Exports</td></tr>
 </table>
 
 <h3>MIDI and audio</h3>

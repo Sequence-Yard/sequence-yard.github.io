@@ -128,7 +128,16 @@
 </ul>
 <h3>音の強さ（ベロシティ）</h3>
 <p>ステップを<b>長押し</b>すると振動します。そのまま上下にドラッグすると強さ（0〜127）が変わります。VELOCITY タブでは選択中のトラックの 16 ステップ分をまとめて編集できます。</p>
-<figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY タブ"><figcaption>VELOCITY タブ。下段の FIXED / POSITION はパッドの強さ（→ <a href="#rec">4</a>）</figcaption></figure>
+<figure class="small"><img src="img/tab_velocity.webp" alt="VELOCITY タブ"><figcaption>VELOCITY タブ（PROBABILITY を選んだところ）。下段の FIXED / POSITION はパッドの強さ（→ <a href="#rec">4</a>）</figcaption></figure>
+<h3 id="probability">確率とラチェット</h3>
+<p>VELOCITY タブの上の 3 つのボタンで、バーで描くものを切り替えます。どれも選択中のトラックのステップごとの値で、パターンと一緒に保存されます（↶ で戻せます）。</p>
+<table>
+<tr><th>ボタン</th><th>はたらき</th></tr>
+<tr><td>VELOCITY</td><td>強さ（0〜127）</td></tr>
+<tr><td>PROBABILITY</td><td>そのステップが鳴る確率（0〜100%、5% 刻み）。毎回少しずつ違うフレーズになり、同じパターンでも飽きにくくなります。100% 未満のステップは右上に三角が付きます</td></tr>
+<tr><td>RATCHET</td><td>1 ステップを 1〜4 回に分けて鳴らします（ハイハットの細かい連打やロールに）。2 回以上のステップには上に回数の点が付きます。swing・3 連符のトラックでも、そのステップの長さを等分します</td></tr>
+</table>
+<div class="tip">確率は再生のたびに変わります。書き出し（PATTERN / SONG）でも確率どおりに鳴り、ステムとまとめた音（mix）は同じ所で鳴ります。MIDI ファイルには確率を使わず全部のノートを書き、ラチェットは分けて書きます。</div>
 <h3>長さとページ</h3>
 <p><span class="key">LEN</span> をタップするとメニューが開き、パターンの長さを 1〜64 ステップ（1 ステップ = 16 分音符）で選べます。− / + で 1 ずつ、よく使う長さはボタンで選びます。長くすると、今の内容をくり返して埋めます。</p>
 <div class="tip">4/4 以外の拍子（変拍子を含む）は、拍子に合わせて長さを変えます。3/4 拍子 = 12、7/8 拍子 = 14、5/4 拍子 = 20、7/4 拍子 = 28 ステップ。最後のページの長さの外のステップは薄く表示され、打ち込めません。メトロノームはパターンの頭で数え直すので、頭がいつも強拍になります。</div>
@@ -210,6 +219,7 @@
 <tr><td>pitch</td><td>音の高さ（−12〜+12 半音。音の長さも変わります）</td></tr>
 <tr><td>decay</td><td>音の消え方（127 = 最後まで鳴らす）</td></tr>
 <tr><td>ONE SHOT / GATE / BAR</td><td>鳴り方（タップで切り替え）。ONE SHOT = 最後まで鳴らす、GATE = 1 ステップ分で止める、BAR = パターンの終わりで止める。長いループやボーカルを小節に合わせて止めたいときに</td></tr>
+<tr><td>CHOKE</td><td>チョークグループ（タップで OFF → 1 → 2 → 3 → 4）。同じ番号のトラックのどれかが鳴ると、ほかのトラックの音は約 5ms で止まります。例: クローズドハットとオープンハットを同じ番号にすると、クローズドハットでオープンハットの余韻が止まります（本物のハイハットと同じ）。キットの設定として保存されます</td></tr>
 </table>
 </div>
 </div>
@@ -447,6 +457,7 @@
 <tr><td>M4A</td><td>AAC 256kbps。小さいので LINE・Discord・メール・クラウドに</td></tr>
 <tr><td>MP4 VIDEO</td><td>PATTERN / SONG はパターンの画像付きの動画（720×720）、RECORD は画面録画。X・Instagram・TikTok など、動画で投稿する SNS に</td></tr>
 <tr><td>MIDI</td><td>スタンダード MIDI ファイル（PATTERN / SONG のみ）。DAW やほかのリズムマシンで続きを作るときに。音ごとに 1 トラック（名前はトラック名）、すべて ch 10。ノート番号は MIDI… の NOTES の設定（PADS 36–51 / GM DRUMS）。swing・トラックごとの長さも入り、ミュート中（ソロのときはソロ以外）のトラックは入りません</td></tr>
+<tr><td>STEMS</td><td>ZIP（PATTERN / SONG のみ）。まとめた音（00_mix.wav）と、ステップのあるトラックを 1 つずつ（01_A01_kick.wav …）の WAV（16bit・48kHz ステレオ）。各トラックは自分のリバーブ・ディレイ・FX も入った音で、全部同じ長さ・0:00 から始まるので、DAW に並べるだけでそろいます。ミュート中のトラックは入りません。トラックの数だけ書き出すので、少し時間がかかります</td></tr>
 </table>
 <figure class="small"><img src="img/recording_bar.webp" alt="録音中のバー"><figcaption>録音・録画中は左上に経過時間と <span class="key">■ STOP</span>（このバーは動画に映りません）</figcaption></figure>
 <p>PATTERN と SONG は、最後にリバーブ・ディレイの余韻が入ります。ファイルは <b>DBR-1/Exports</b> に保存され、終わったら <span class="key">Share</span> でそのまま SNS やメールに送れます。</p>
@@ -538,6 +549,7 @@
 <tr><td>パターン</td><td>100（00〜99）。1 パターン 1〜64 ステップ（16 分音符）。トラックごとに 1/16 / 1/16T / 1/8T</td></tr>
 <tr><td>トラックごとの長さ</td><td>1〜パターンの長さ（最大 64）ステップ（AUTO = パターンに合わせる）</td></tr>
 <tr><td>ベロシティ</td><td>0〜127（ステップごと）</td></tr>
+<tr><td>確率・ラチェット</td><td>確率 0〜100%（5% 刻み）、ラチェット 1〜4 回（ステップごと）</td></tr>
 <tr><td>スウィング</td><td>0〜100（パターンごと。100 で裏の 16 分音符が半ステップ遅れる）</td></tr>
 <tr><td>テンポ</td><td>20〜300 BPM</td></tr>
 <tr><td>ソング</td><td>99 行まで。1 行 = パターン × くり返し 1〜99 回</td></tr>
@@ -562,6 +574,7 @@
 <tr><td>デモソング</td><td>4 曲（Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard、各 約 2 分）</td></tr>
 <tr><td>同時発音</td><td>トラックごとに 1 音（次の音で前の音を短くフェードして止める）</td></tr>
 <tr><td>鳴り方</td><td>ONE SHOT / GATE（1 ステップ）/ BAR（パターンの終わりまで）。STOP で全音停止</td></tr>
+<tr><td>チョークグループ</td><td>4 つ（同じグループの音が鳴ると約 5ms で止める）</td></tr>
 <tr><td>start / end</td><td>0〜127（再生する範囲）</td></tr>
 <tr><td>pitch</td><td>−12〜+12 半音（再生速度を変える方式）</td></tr>
 <tr><td>decay</td><td>約 10ms〜2 秒、127 = 減衰なし</td></tr>
@@ -590,7 +603,7 @@
 <tr><td>自動保存</td><td>編集の 3 秒後とアプリを閉じたとき（直前の版を予備として保存）</td></tr>
 <tr><td>ファイル</td><td>.dbrproj（プロジェクト。読み込んだ音を含む）/ .dbrpatt（パターン）/ .dbrkit（キット。読み込んだ音を含む）</td></tr>
 <tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples。クラウドは Android の保存・共有から</td></tr>
-<tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 1・96 PPQ・ch 10、パターンとソングのみ）。WAV（16bit・48kHz ステレオ。録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
+<tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 1・96 PPQ・ch 10、パターンとソングのみ）。STEMS（ZIP: mix + トラックごとの WAV、パターンとソングのみ）。WAV（16bit・48kHz ステレオ。録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
 </table>
 
 <h3>MIDI・オーディオ</h3>
