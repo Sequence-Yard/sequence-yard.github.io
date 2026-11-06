@@ -242,11 +242,29 @@
 <tr><td>NORMALIZE</td><td>Raises the level of the selection so its loudest point is near full scale (if it already is, you see “Already at full level”)</td></tr>
 <tr><td>FADE IN / FADE OUT</td><td>Fades the selection in / out</td></tr>
 <tr><td>REVERSE</td><td>Reverses the selection</td></tr>
+<tr><td>STRETCH</td><td>Changes the length of the selection without changing its pitch (time stretch). <b>FIT TO BARS</b> (1/2 / 1 / 2 / 4 / 8 bars) makes it exactly that many bars at the current tempo; <b>FROM TEMPO</b> converts from the tempo it was recorded at (a guess is filled in) to the current tempo. 50–200%. Large changes make the sound waver. It may take a moment (WAIT…). UNDO goes back</td></tr>
 <tr><td>↶ UNDO</td><td>Undoes the last edit</td></tr>
 <tr><td>RATE / BIT</td><td>(bottom row) Lowers the sample rate (samples per second: as recorded / 32k / 26k / 22k / 12k / 8k) and bit depth (16 / 12 / 8) when the sound goes onto the track, for a gritty vintage-sampler sound. PLAY lets you hear it first; the recording itself is not changed</td></tr>
 <tr><td>● NEW TAKE</td><td>Records again (discards the current take)</td></tr>
 </table>
 <p>Give it a name and press <b>Use on A01</b> (the selected track): the selection becomes that track's sound. If a save folder is set, it is also saved as a WAV in <b>DBR-1/Samples</b> so you can use it in other projects. ✕ closes the screen without using the recording.</p>
+<h3 id="resample">Recording DBR-1 itself (resampling)</h3>
+<p>Choose <b>DBR-1 output (resample)</b> in IN to record what DBR-1 is playing, as you hear it (after the effects, MASTER and the master filter). Use it to turn a pattern into a single loop, or to make a new sound from an effected one (no microphone permission needed).</p>
+<ul>
+  <li><b>BARS</b> (OFF / 1 / 2 / 4 / 8): choose a number of bars and press <b>● REC N</b>. The pattern starts from the top and exactly that many bars are recorded from its first sound, then it stops (worked out from the current tempo, so the result loops cleanly).</li>
+  <li>With BARS off it works like a normal recording: ● REC to ■ STOP (AUTO also works). You can record ▶ PATTERN or your own pad playing.</li>
+  <li>It cannot be used while a live recording (RECORD in Export) is running.</li>
+</ul>
+<h3 id="slice">Slicing (cut a recording onto separate pads)</h3>
+<p>Cut a recorded rhythm into its hits and put each one on its own track (pad). Open it with <b>SLICE ▸</b> at the right end of the edit row (the part between the yellow handles is sliced).</p>
+<ul>
+  <li>When it opens, cuts are placed automatically at the start of each hit (kick, snare, …). Each press of <b>HITS · LOW / MID / HIGH</b> changes the sensitivity (HIGH cuts finer).</li>
+  <li><b>EVEN 4 / 8 / 16</b>: cut into equal parts (to split a loop by beats). <b>CLEAR</b>: remove all cuts.</li>
+  <li><b>Tap</b> the waveform to play that slice, <b>long-press</b> (vibrates) to add a cut (or remove the cut under your finger), <b>drag</b> a cut to move it. Up to 16 slices.</li>
+  <li><b>ASSIGN TO PADS…</b> opens a confirmation screen. For each slice, listen with ▶ and choose the track it goes to (by default, from the selected track onward; "Don't use" skips it). The sound it replaces is shown, and if two slices go to the same track they turn red and you cannot assign.</li>
+  <li>Tick "Also make pattern NN…" to create, in an empty pattern, a pattern that plays the slices in their original rhythm (placed on the nearest steps at the current tempo).</li>
+  <li>Each slice is saved as its own WAV (name-1, name-2, …), also in DBR-1/Samples if a save folder is set. ↶ (UNDO in the header) undoes the whole assignment.</li>
+</ul>
 <div class="note">There is no input monitoring while recording; use your audio interface's direct monitor. Switching to another app while recording stops the recording (what was recorded is kept). Once you have a recording, Back closes the screen only when done twice in a row, so a slip while dragging a handle does not lose it (✕ closes at once).</div>
 <div class="note">You are responsible for the rights (such as copyright) in the sounds you record or load, including songs, broadcasts and other people's work. Check the rights before you publish or distribute music made with them.</div>
 <h3>FILTER tab</h3>
@@ -538,7 +556,7 @@
 <tr><td>Sample rate</td><td>8–192 kHz (converted to the output rate on playback)</td></tr>
 <tr><td>Length</td><td>Up to 60 seconds each (only the first 60 seconds of a longer file are used)</td></tr>
 <tr><td>File size</td><td>Up to 100 MB</td></tr>
-<tr><td>Sampling</td><td>Built-in mic / USB input, up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available)</td></tr>
+<tr><td>Sampling</td><td>Built-in mic / USB input / DBR-1's own output (resampling, BARS 1–8), up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available). Up to 16 slices; time stretch 50–200% (pitch unchanged)</td></tr>
 <tr><td>Channels</td><td>Played as mono (stereo files are mixed down)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
 <tr><td>Built-in sounds</td><td>84 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 64 from the demo songs, 44.1 kHz / 16-bit)</td></tr>
