@@ -346,14 +346,14 @@
       <li><b>Hold (it vibrates), then swipe</b> = erase locks and lines where you swipe.</li>
     </ul></li>
   <li><b>Locks</b>: on a track, a locked hit plays with that value, and it holds until the next hit (or lock); hits without a lock go back to the normal value. For FX / MASTER, a lock lasts for that step only.</li>
-  <li><b>Lines</b>: where you drew, the line's value is used; elsewhere the normal value (dotted line). Each step has 8 points, smoothly joined. Three shapes:
+  <li><b>Lines</b>: where you drew, the line's value is used; elsewhere the normal value (dotted line). The strip at the very bottom of the drawing area is below 0: touching it still gives 0 (so you can draw 0 even on devices where a swipe up from the screen edge goes home). Each step has 8 points, smoothly joined. Three shapes:
     <ul>
       <li><b>FREE</b> = follows your finger.</li>
       <li><b>LINE</b> = a straight line from where you touch to where you let go (fades, a filter that slowly opens).</li>
       <li><b>WAVE</b> = a waveform. Drag sideways for its length; it moves between the height where you touched and your finger's height. With WAVE selected, a second row shows the shape (SIN / TRI / SAW / SQR) and one cycle (1/32 to 1 BAR, 1/8T = eighth-note triplets). Great for wobble bass, tremolo and auto-pan.</li>
     </ul>
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
-  <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps; on phones in the second row, PAGE). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
+  <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps; FOLLOW reads "FLW" on phones). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's USER adds to or subtracts from the result).</li>
