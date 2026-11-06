@@ -60,7 +60,7 @@
 <tr><td class="n"><span class="num">16</span></td><td>Steps</td><td>Tap to turn on / off. The bar inside shows the velocity</td></tr>
 <tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (1–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE, GAPS</td><td>Spacing used when you swipe across steps (→ <a href="#beat">2</a>)</td></tr>
-<tr><td class="n"><span class="num">19</span></td><td>FLT (master filter) / MACRO</td><td>Up = high-pass, down = low-pass. Tap the name above it to switch to MACRO (adds to / subtracts from assigned parameters) (→ <a href="#macro">7</a>)</td></tr>
+<tr><td class="n"><span class="num">19</span></td><td>FLT (master filter) / USER</td><td>Up = high-pass, down = low-pass. Tap the name above it to switch to USER1, USER2 … (adds to / subtracts from assigned parameters); long-press to assign (→ <a href="#macro">7</a>)</td></tr>
 <tr><td class="n"><span class="num">20</span></td><td>ROLL, SLIP, REV</td><td>Performance buttons (→ <a href="#perform">7</a>)</td></tr>
 <tr><td class="n"><span class="num">21</span></td><td>Pads</td><td>Hit to play the sound and select that track. While playing, the pad of each track that plays lights up</td></tr>
 <tr><td class="n"><span class="num">22</span></td><td>Tabs</td><td>SOUND / FILTER / VELOCITY / FX / SONG</td></tr>
@@ -75,7 +75,7 @@
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / PADS / SOUND / FILTER / VEL / FX / SONG / MIX (mixer) / AUTO (automation)</td></tr>
-<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / MACRO (available on every view)</td></tr>
+<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / USER (available on every view)</td></tr>
 </table>
 <div class="cols">
 <figure><img src="img/phone_pads.webp" alt="PADS view"><figcaption>PADS: the 16 pads</figcaption></figure>
@@ -302,13 +302,14 @@
 </table>
 <h3>Master filter (FLT)</h3>
 <p>Move the vertical fader up from the center for a high-pass (thinner sound) or down for a low-pass (darker sound). Around the center it is off. Change its type in the Master part of the FILTER tab.</p>
-<h3 id="macro">MACRO (move any parameters with the fader)</h3>
-<p><b>Tap</b> the name above the fader (<span class="key">FLT</span>) to switch the fader between <b>FLT</b> (master filter) and <b>MACRO</b>. In MACRO, the fader adds to or subtracts from the parameters you assign, all at once (for example: open the grinder's cutoff while deepening the reverb and pulling the kick down).</p>
+<h3 id="macro">USER (move any parameters with the fader)</h3>
+<p>Each <b>tap</b> on the name above the fader (<span class="key">FLT</span>) switches the fader through <b>FLT</b> (master filter) → <b>USER1</b> → <b>USER2</b> → … → FLT (USERs with nothing assigned are skipped). In a USER, the fader adds to or subtracts from the parameters you assign, all at once (for example: open the grinder's cutoff while deepening the reverb and pulling the kick down).</p>
 <ul>
-  <li><b>Long-press</b> it to open the assignments. <b>+ Add</b> adds a row; pick the target (one of the 16 tracks or FX / MASTER), the parameter and the amount (AMT: −100 to +100%) for each. Up to 8. The same parameter in several rows adds up. The screen also opens if you switch to MACRO with nothing assigned.</li>
+  <li><b>Long-press</b> it to open the assignments. Pick a USER with the tabs at the top; <b>+ USER</b> adds one (USER1 to USER8). <b>+ Add</b> adds a row; pick the target (one of the 16 tracks or FX / MASTER), the parameter and the amount (AMT: −100 to +100%) for each. Up to 16 per USER (enough for one on every track). The same parameter in several rows adds up. <b>Delete USERn</b> removes that USER (the later numbers move up). The screen also opens if you switch to a USER with nothing assigned.</li>
+  <li>The list scrolls. Buttons and sliders in it react when you lift your finger, so touching them to scroll does not select anything (change a slider by tapping or dragging sideways).</li>
   <li>Moving the fader <b>up from the center adds the amount, down subtracts it</b> (rows with a negative amount go the other way). At the end of the fader you get exactly the amount. It works on the current value (normal value, lock or line), so automation keeps moving; values stop at their limits.</li>
-  <li>Below the fader you see how much is added (+ / −), or the number of assignments (×2 etc.) when it is at the center. With AUTO RETURN on (FILTER tab), the fader returns to the center when you let go.</li>
-  <li>The mode and assignments are saved with the project (the fader position is not; undo does not cover them). Swapping tracks keeps the assignments on the swapped tracks. MACRO does not affect PATTERN / SONG exports; RECORD (recording your performance) captures it as you hear it.</li>
+  <li>Below the fader you see how much is added (+ / −), or the number of assignments (×2 etc.) when it is at the center. With AUTO RETURN on (FILTER tab), the fader returns to the center when you let go. Switching the role removes the previous role's effect.</li>
+  <li>The role and assignments are saved with the project (the fader position is not; undo does not cover them). Swapping tracks keeps the assignments on the swapped tracks. USER does not affect PATTERN / SONG exports; RECORD (recording your performance) captures it as you hear it.</li>
 </ul>
 </section>
 
@@ -354,7 +355,7 @@
   <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
-  <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's MACRO adds to or subtracts from the result).</li>
+  <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's USER adds to or subtracts from the result).</li>
   <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
 </ul>
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
@@ -557,7 +558,7 @@
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>Track filter</td><td>LP12, LP24, HP12, HP24, BP, NOTCH; cutoff 20 Hz – 20 kHz, reso</td></tr>
 <tr><td>Master filter (FLT)</td><td>LP / HP (fader down / up) or BP, 12 dB / 24 dB, reso, AUTO RETURN</td></tr>
-<tr><td>MACRO</td><td>Up to 8 assignments (16 tracks × 14 parameters / 12 FX & master parameters), amount −100 to +100% (5% steps). Adds to the current value and stops at the limits</td></tr>
+<tr><td>USER (main fader)</td><td>USER1 to USER8, up to 16 assignments each (16 tracks × 14 parameters / 12 FX & master parameters), amount −100 to +100% (5% steps). Adds to the current value and stops at the limits</td></tr>
 <tr><td>Reverb</td><td>size, damp, mix, pre-delay (0–200 ms); one shared reverb with a send per track</td></tr>
 <tr><td>Delay</td><td>time, feedback, mix, sync (1/4, 1/8, 1/16, 1/32, 3/8, dotted 1/8, FREE 10 ms – 1 s); stereo, one shared delay</td></tr>
 <tr><td>Distortion</td><td>drive, tone, level; per track</td></tr>
