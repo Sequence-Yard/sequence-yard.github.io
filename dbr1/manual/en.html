@@ -204,7 +204,7 @@
 <div>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone or audio interface → <a href="#sampling">below</a>) / built-in sounds (the kit and the demo songs)</td></tr>
+<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone, an audio interface or DBR-1 itself; slicing and time stretch are here too → <a href="#sampling">below</a>) / built-in sounds (the kit and the demo songs)</td></tr>
 <tr><td>start / end</td><td>Which part of the sample plays</td></tr>
 <tr><td>volume / pan</td><td>Level and left-right position</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
@@ -225,7 +225,7 @@
 <div class="tip">When you replace a sound, the track name follows the new sound if you had not renamed it.<br>“Built-in kit” in the LOAD menu returns all 16 tracks to the built-in sounds (patterns are kept).</div>
 <h3 id="sampling">Recording your own sounds (sampling)</h3>
 <figure><img src="img/sampler.webp" alt="SAMPLING"><figcaption>Record, choose the part, tidy it up, then Use on the track</figcaption></figure>
-<p>LOAD → “● Record (mic / audio input)…” in the SOUND tab records from a microphone or an audio interface and puts the sound on the selected track. The first time, Android asks for permission to use the microphone (it is used only on this screen, and recordings never leave your device).</p>
+<p>LOAD → “● Record (mic / audio input)…” in the SOUND tab records from a microphone or an audio interface and puts the sound on the selected track. The first time, Android asks for permission to use the microphone (it is used only on this screen, and recordings never leave your device). Recording DBR-1 itself (<a href="#resample">resampling</a>), cutting a rhythm onto separate pads (<a href="#slice">slicing</a>) and changing the length (STRETCH) are also done on this screen.</p>
 <figure><img src="img/sampler_input.webp" alt="IN / CH"><figcaption>Choosing the input: IN picks the device, CH the channels to record (on a Scarlett 6i6: 1+2 / 3+4 / 5+6 / 1–6)</figcaption></figure>
 <ol>
   <li><b>Choose the input</b>: IN selects the built-in mic or a USB device (audio interface etc.). CH picks the channels to record: L+R / L / R on stereo devices; on devices with 3 or more channels, 1+2 / 3+4 / … (two channels mixed) or 1 / 2 / … (a single channel). Check the level on the meter (red at the right end means the sound is clipping or about to). When the surroundings are loud or the sound is too hot, lower the recording level with <b>LEVEL</b> to the right of the meter (−30 to +12 dB, default 0 dB; quiet sounds can be raised). It applies to the meter, the AUTO trigger and the recording, can be changed while recording, and is kept on the device.<br><small>Android does not let apps change the microphone's own sensitivity, so LEVEL scales the sound after it arrives. A sound loud enough to distort in the microphone itself stays distorted when you lower LEVEL (move away from the mic instead).</small></li>
@@ -247,9 +247,11 @@
 <tr><td>RATE / BIT</td><td>(bottom row) Lowers the sample rate (samples per second: as recorded / 32k / 26k / 22k / 12k / 8k) and bit depth (16 / 12 / 8) when the sound goes onto the track, for a gritty vintage-sampler sound. PLAY lets you hear it first; the recording itself is not changed</td></tr>
 <tr><td>● NEW TAKE</td><td>Records again (discards the current take)</td></tr>
 </table>
+<figure class="small"><img src="img/sampler_stretch.webp" alt="TIME STRETCH"><figcaption>STRETCH: set the length by bars or by the original tempo</figcaption></figure>
 <p>Give it a name and press <b>Use on A01</b> (the selected track): the selection becomes that track's sound. If a save folder is set, it is also saved as a WAV in <b>DBR-1/Samples</b> so you can use it in other projects. ✕ closes the screen without using the recording.</p>
 <h3 id="resample">Recording DBR-1 itself (resampling)</h3>
 <p>Choose <b>DBR-1 output (resample)</b> in IN to record what DBR-1 is playing, as you hear it (after the effects, MASTER and the master filter). Use it to turn a pattern into a single loop, or to make a new sound from an effected one (no microphone permission needed).</p>
+<figure><img src="img/sampler_resample.webp" alt="Resampling"><figcaption>IN = DBR-1 output, recording one hit of A02 with PAD (with PAD off, BARS / AUTO appear)</figcaption></figure>
 <ul>
   <li><b>BARS</b> (OFF / 1 / 2 / 4 / 8): choose a number of bars and press <b>● REC N</b>. The pattern starts from the top and exactly that many bars are recorded from its first sound, then it stops (worked out from the current tempo, so the result loops cleanly).</li>
   <li><b>PAD</b> (OFF / A01–B08): choose a pad and press <b>● REC PAD</b>. The pattern stops, that pad plays once (at full velocity) and everything from that moment until the sound dies away (including effect tails) is recorded, then it stops by itself (cut once it stays below −60 dB for 0.3 s; up to 10 s). Use it to turn a sound with its effects, filter and EQ into one new sound. While a PAD is chosen, BARS / AUTO are not used.</li>
@@ -258,6 +260,8 @@
 </ul>
 <h3 id="slice">Slicing (cut a recording onto separate pads)</h3>
 <p>Cut a recorded rhythm into its hits and put each one on its own track (pad). Open it with <b>SLICE ▸</b> at the right end of the edit row (the part between the yellow handles is sliced).</p>
+<figure><img src="img/sampler_slice.webp" alt="Slicing"><figcaption>Automatically cut into 5 (orange lines = cuts, numbers = slices)</figcaption></figure>
+<figure class="small"><img src="img/sampler_assign.webp" alt="ASSIGN SLICES"><figcaption>Confirming the assignment: choose where each slice goes</figcaption></figure>
 <ul>
   <li>When it opens, cuts are placed automatically at the start of each hit (kick, snare, …). Each press of <b>HITS · LOW / MID / HIGH</b> changes the sensitivity (HIGH cuts finer).</li>
   <li><b>EVEN 4 / 8 / 16</b>: cut into equal parts (to split a loop by beats). <b>CLEAR</b>: remove all cuts.</li>
@@ -376,12 +380,6 @@
   <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's USER adds to or subtracts from the result).</li>
-  <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
-</ul>
-    LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
-  <li>Turn on <b>ERASE</b> and swipe to remove locks or line there. <b>CLEAR</b> removes all locks and lines of the selected parameter. 1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
-  <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value.</li>
-  <li><b>KNOB REC</b> (shown as "REC" on phones and on patterns longer than 16 steps): with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
   <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
 </ul>
 <div class="tip">While playing, the values moved by automation also show on the SOUND, FILTER and FX knobs, the mixer's pan, EQ and faders, and the master filter fader. If the screen feels slow on a less powerful device, turn <b>Animate automation</b> OFF in the logo menu (≡ on phones) to stop only the display (the sound does not change; saved per device).<br>Locks work much like Elektron's parameter locks. On a track with its own length (polyrhythm), DRAW positions follow that track's steps.</div>
