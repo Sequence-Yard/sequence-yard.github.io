@@ -453,11 +453,11 @@
 </table>
 <table>
 <tr><th>FORMAT</th><th>向いている使い方</th></tr>
-<tr><td>WAV</td><td>圧縮なし（16bit ステレオ）。DAW などで編集するとき</td></tr>
+<tr><td>WAV</td><td>圧縮なし（16bit ステレオ）。DAW などで編集するとき。PATTERN / SONG は <b>RATE</b> で 48kHz / 44.1kHz を選べます（DAW のプロジェクトに合わせる。STEMS も同じ）</td></tr>
 <tr><td>M4A</td><td>AAC 256kbps。小さいので LINE・Discord・メール・クラウドに</td></tr>
 <tr><td>MP4 VIDEO</td><td>PATTERN / SONG はパターンの画像付きの動画（720×720）、RECORD は画面録画。X・Instagram・TikTok など、動画で投稿する SNS に</td></tr>
 <tr><td>MIDI</td><td>スタンダード MIDI ファイル（PATTERN / SONG のみ）。DAW やほかのリズムマシンで続きを作るときに。音ごとに 1 トラック（名前はトラック名）、すべて ch 10。ノート番号は MIDI… の NOTES の設定（PADS 36–51 / GM DRUMS）。swing・トラックごとの長さも入り、ミュート中（ソロのときはソロ以外）のトラックは入りません</td></tr>
-<tr><td>STEMS</td><td>ZIP（PATTERN / SONG のみ）。まとめた音（00_mix.wav）と、ステップのあるトラックを 1 つずつ（01_A01_kick.wav …）の WAV（16bit・48kHz ステレオ）。各トラックは自分のリバーブ・ディレイ・FX も入った音で、全部同じ長さ・0:00 から始まるので、DAW に並べるだけでそろいます。ミュート中のトラックは入りません。トラックの数だけ書き出すので、少し時間がかかります</td></tr>
+<tr><td>STEMS</td><td>ZIP（PATTERN / SONG のみ）。まとめた音（00_mix.wav）と、ステップのあるトラックを 1 つずつ（01_A01_kick.wav …）の WAV（16bit ステレオ、48kHz / 44.1kHz）。各トラックは自分のリバーブ・ディレイ・FX も入った音で、全部同じ長さ・0:00 から始まるので、DAW に並べるだけでそろいます。ミュート中のトラックは入りません。トラックの数だけ書き出すので、少し時間がかかります</td></tr>
 </table>
 <figure class="small"><img src="img/recording_bar.webp" alt="録音中のバー"><figcaption>録音・録画中は左上に経過時間と <span class="key">■ STOP</span>（このバーは動画に映りません）</figcaption></figure>
 <p>PATTERN と SONG は、最後にリバーブ・ディレイの余韻が入ります。ファイルは <b>DBR-1/Exports</b> に保存され、終わったら <span class="key">Share</span> でそのまま SNS やメールに送れます。</p>
@@ -603,7 +603,7 @@
 <tr><td>自動保存</td><td>編集の 3 秒後とアプリを閉じたとき（直前の版を予備として保存）</td></tr>
 <tr><td>ファイル</td><td>.dbrproj（プロジェクト。読み込んだ音を含む）/ .dbrpatt（パターン）/ .dbrkit（キット。読み込んだ音を含む）</td></tr>
 <tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples。クラウドは Android の保存・共有から</td></tr>
-<tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 1・96 PPQ・ch 10、パターンとソングのみ）。STEMS（ZIP: mix + トラックごとの WAV、パターンとソングのみ）。WAV（16bit・48kHz ステレオ。録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
+<tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 1・96 PPQ・ch 10、パターンとソングのみ）。STEMS（ZIP: mix + トラックごとの WAV、パターンとソングのみ）。WAV（16bit ステレオ。PATTERN / SONG と STEMS は 48kHz / 44.1kHz、録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
 </table>
 
 <h3>MIDI・オーディオ</h3>
