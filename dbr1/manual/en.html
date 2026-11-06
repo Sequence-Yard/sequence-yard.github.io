@@ -60,7 +60,7 @@
 <tr><td class="n"><span class="num">16</span></td><td>Steps</td><td>Tap to turn on / off. The bar inside shows the velocity</td></tr>
 <tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (1–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE, GAPS</td><td>Spacing used when you swipe across steps (→ <a href="#beat">2</a>)</td></tr>
-<tr><td class="n"><span class="num">19</span></td><td>FLT (master filter)</td><td>Up = high-pass, down = low-pass (→ <a href="#perform">7</a>)</td></tr>
+<tr><td class="n"><span class="num">19</span></td><td>FLT (master filter) / MACRO</td><td>Up = high-pass, down = low-pass. Tap the name above it to switch to MACRO (adds to / subtracts from assigned parameters) (→ <a href="#macro">7</a>)</td></tr>
 <tr><td class="n"><span class="num">20</span></td><td>ROLL, SLIP, REV</td><td>Performance buttons (→ <a href="#perform">7</a>)</td></tr>
 <tr><td class="n"><span class="num">21</span></td><td>Pads</td><td>Hit to play the sound and select that track. While playing, the pad of each track that plays lights up</td></tr>
 <tr><td class="n"><span class="num">22</span></td><td>Tabs</td><td>SOUND / FILTER / VELOCITY / FX / SONG</td></tr>
@@ -75,7 +75,7 @@
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / PADS / SOUND / FILTER / VEL / FX / SONG / MIX (mixer) / AUTO (automation)</td></tr>
-<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter (available on every view)</td></tr>
+<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / MACRO (available on every view)</td></tr>
 </table>
 <div class="cols">
 <figure><img src="img/phone_pads.webp" alt="PADS view"><figcaption>PADS: the 16 pads</figcaption></figure>
@@ -302,6 +302,14 @@
 </table>
 <h3>Master filter (FLT)</h3>
 <p>Move the vertical fader up from the center for a high-pass (thinner sound) or down for a low-pass (darker sound). Around the center it is off. Change its type in the Master part of the FILTER tab.</p>
+<h3 id="macro">MACRO (move any parameters with the fader)</h3>
+<p><b>Tap</b> the name above the fader (<span class="key">FLT</span>) to switch the fader between <b>FLT</b> (master filter) and <b>MACRO</b>. In MACRO, the fader adds to or subtracts from the parameters you assign, all at once (for example: open the grinder's cutoff while deepening the reverb and pulling the kick down).</p>
+<ul>
+  <li><b>Long-press</b> it to open the assignments. <b>+ Add</b> adds a row; pick the target (one of the 16 tracks or FX / MASTER), the parameter and the amount (AMT: −100 to +100%) for each. Up to 8. The same parameter in several rows adds up. The screen also opens if you switch to MACRO with nothing assigned.</li>
+  <li>Moving the fader <b>up from the center adds the amount, down subtracts it</b> (rows with a negative amount go the other way). At the end of the fader you get exactly the amount. It works on the current value (normal value, lock or line), so automation keeps moving; values stop at their limits.</li>
+  <li>Below the fader you see how much is added (+ / −), or the number of assignments (×2 etc.) when it is at the center. With AUTO RETURN on (FILTER tab), the fader returns to the center when you let go.</li>
+  <li>The mode and assignments are saved with the project (the fader position is not; undo does not cover them). Swapping tracks keeps the assignments on the swapped tracks. MACRO does not affect PATTERN / SONG exports; RECORD (recording your performance) captures it as you hear it.</li>
+</ul>
 </section>
 
 <!-- ============================================================ -->
@@ -325,16 +333,30 @@
 </ul>
 <h3 id="automation">Automation (AUTO)</h3>
 <p>Volume, pan, filter, EQ, sends, effects, master volume and more can move within a pattern. On a tablet, tap <span class="key">AUTO</span> in the header; on a phone, open <span class="key">AUTO</span> on the left. Automation is saved with each pattern.</p>
-<figure><img src="img/automation.webp" alt="Automation"><figcaption>A line drawn with DRAW on the crash filter cutoff</figcaption></figure>
+<figure><img src="img/automation.webp" alt="Automation"><figcaption>The parameter list on the left shows each line in small. Lines drawn with LINE and WAVE on the ind kick cutoff</figcaption></figure>
 <ul>
-  <li>The top row picks what to automate: a track (current bank) or <b>FX / MASTER</b> (reverb, delay and distortion settings, master volume, master filter). The next row picks the parameter (a red dot = it has automation).</li>
-  <li><b>LOCK (parameter locks)</b>: drag a step up or down to set the value for that step. On a track, a locked hit plays with that value, and it holds until the next hit (or lock); hits without a lock go back to the normal value. For FX / MASTER, a lock lasts for that step only.</li>
-  <li><b>DRAW</b>: draw a line. Where you drew, the line's value is used; elsewhere the normal value (dotted line). Each step has 8 points, smoothly joined. Three ways to draw:
+  <li><b>Left column</b>: <b>● track name ▾</b> at the top picks what to automate (one of the 8 tracks of the current bank, or <b>FX / MASTER</b> = reverb, delay and distortion settings, master volume, master filter). Below it is the parameter list, grouped into SOUND, FILTER, EQ and SEND (MASTER, REVERB, DELAY and DIST for FX / MASTER). Each row shows that parameter's lines and locks for the whole pattern in small, so you can see at a glance what moves. Tap to select.</li>
+  <li><b>What you draw depends on how you move your finger</b> (no modes to switch):
+    <ul>
+      <li><b>Tap</b> = lock that step to the height you touched (parameter lock).</li>
+      <li><b>Drag up or down</b> = lock. Keep moving sideways to lock the next steps too.</li>
+      <li><b>Swipe sideways or diagonally</b> = draw a line (the shape chosen under <b>LINE</b> at the top).</li>
+      <li><b>Hold (it vibrates), then swipe</b> = erase locks and lines where you swipe.</li>
+    </ul></li>
+  <li><b>Locks</b>: on a track, a locked hit plays with that value, and it holds until the next hit (or lock); hits without a lock go back to the normal value. For FX / MASTER, a lock lasts for that step only.</li>
+  <li><b>Lines</b>: where you drew, the line's value is used; elsewhere the normal value (dotted line). Each step has 8 points, smoothly joined. Three shapes:
     <ul>
       <li><b>FREE</b> = follows your finger.</li>
       <li><b>LINE</b> = a straight line from where you touch to where you let go (fades, a filter that slowly opens).</li>
-      <li><b>WAVE</b> = a waveform. Drag sideways for its length; it moves between the height where you touched and your finger's height. Shapes SIN / TRI / SAW / SQR, one cycle from 1/32 to 1 BAR (1/8T = eighth-note triplets). Great for wobble bass, tremolo and auto-pan.</li>
+      <li><b>WAVE</b> = a waveform. Drag sideways for its length; it moves between the height where you touched and your finger's height. With WAVE selected, a second row shows the shape (SIN / TRI / SAW / SQR) and one cycle (1/32 to 1 BAR, 1/8T = eighth-note triplets). Great for wobble bass, tremolo and auto-pan.</li>
     </ul>
+    LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
+  <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
+  <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
+  <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
+  <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's MACRO adds to or subtracts from the result).</li>
+  <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
+</ul>
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
   <li>Turn on <b>ERASE</b> and swipe to remove locks or line there. <b>CLEAR</b> removes all locks and lines of the selected parameter. 1–4 switch the page shown (shown when the pattern is longer than 16 steps). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value.</li>
@@ -535,6 +557,7 @@
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>Track filter</td><td>LP12, LP24, HP12, HP24, BP, NOTCH; cutoff 20 Hz – 20 kHz, reso</td></tr>
 <tr><td>Master filter (FLT)</td><td>LP / HP (fader down / up) or BP, 12 dB / 24 dB, reso, AUTO RETURN</td></tr>
+<tr><td>MACRO</td><td>Up to 8 assignments (16 tracks × 14 parameters / 12 FX & master parameters), amount −100 to +100% (5% steps). Adds to the current value and stops at the limits</td></tr>
 <tr><td>Reverb</td><td>size, damp, mix, pre-delay (0–200 ms); one shared reverb with a send per track</td></tr>
 <tr><td>Delay</td><td>time, feedback, mix, sync (1/4, 1/8, 1/16, 1/32, 3/8, dotted 1/8, FREE 10 ms – 1 s); stereo, one shared delay</td></tr>
 <tr><td>Distortion</td><td>drive, tone, level; per track</td></tr>
