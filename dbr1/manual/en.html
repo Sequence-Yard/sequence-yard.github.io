@@ -295,7 +295,7 @@
 <table>
 <tr><th>Part</th><th>Action</th><th>What it does</th></tr>
 <tr><td>Track name</td><td>Tap</td><td>Selects the track (no sound)</td></tr>
-<tr><td>EQ (HI / MID / LO)</td><td>Drag up/down / double-tap</td><td>Boost or cut highs (8 kHz and up), mids (around 1 kHz) and lows (100 Hz and below) by up to ±12 dB. Drag up to boost; double-tap for 0. On a phone, tap <span class="key">EQ</span> at the top right to show the knobs in place of the faders</td></tr>
+<tr><td>EQ (HI / MID / LO)</td><td>Drag up/down / double-tap / long-press</td><td>Boost or cut highs (8 kHz and up by default), mids (around 1 kHz) and lows (100 Hz and below) by up to ±12 dB. Drag up to boost; double-tap for 0. <b>Long-press</b> (vibrates) for a slider that sets the band's frequency (LO 30–500 Hz, MID 200 Hz–8 kHz, HI 2–16 kHz; Reset for the default). The frequency is shown at the knob's bottom left, in the track's color once changed. For example: LO at 60 Hz on the kick to add weight only, or MID around 3 kHz on the snare to bring out the attack. On a phone, tap <span class="key">EQ</span> at the top right to show the knobs in place of the faders</td></tr>
 <tr><td>pan</td><td>Drag sideways / double-tap</td><td>Left–right position. Double-tap for C (center)</td></tr>
 <tr><td>Fader</td><td>Drag up/down / double-tap</td><td>Volume (0–127). It moves by how far you drag, not to where you touch. Double-tap for 100 (default)</td></tr>
 <tr><td>Meter</td><td>—</td><td>The track's level (after volume and pan, before effects). Yellow above −6 dB</td></tr>
@@ -580,7 +580,7 @@
 <tr><td>decay</td><td>About 10 ms – 2 s; 127 = no decay</td></tr>
 <tr><td>pan</td><td>L64 – C – R63 (equal power; MIDI 0–127 with 64 at the center)</td></tr>
 <tr><td>Values</td><td>Amounts such as volume, sends and effects read 0–127, the same as MIDI (they match the CC values sent and received). Pitch is in semitones, EQ in dB, cutoff in Hz</td></tr>
-<tr><td>Mixer</td><td>Track EQ (LO 100 Hz shelf / MID 1 kHz peak / HI 8 kHz shelf, ±12 dB each), volume 0–127, pan, S / M; MASTER 0–127 (saved); meters −48 to 0 dB</td></tr>
+<tr><td>Mixer</td><td>Track EQ (LO shelf 30–500 Hz, default 100 Hz / MID peak 200 Hz–8 kHz, default 1 kHz, Q 0.7 / HI shelf 2–16 kHz, default 8 kHz; ±12 dB each; the frequencies are not automatable or CC-mapped), volume 0–127, pan, S / M; MASTER 0–127 (saved); meters −48 to 0 dB</td></tr>
 <tr><td>Reverse</td><td>REV SEQ (step order) / REV SND (samples)</td></tr>
 </table>
 
