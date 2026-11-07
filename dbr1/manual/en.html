@@ -61,7 +61,7 @@
 <tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (1–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE, GAPS</td><td>Spacing used when you swipe across steps (→ <a href="#beat">2</a>)</td></tr>
 <tr><td class="n"><span class="num">19</span></td><td>FLT (master filter) / USER</td><td>Up = high-pass, down = low-pass. Tap the name above it to switch to USER1, USER2 … (adds to / subtracts from assigned parameters); long-press to assign (→ <a href="#macro">7</a>)</td></tr>
-<tr><td class="n"><span class="num">20</span></td><td>ROLL, SLIP, REV</td><td>Performance buttons (→ <a href="#perform">7</a>)</td></tr>
+<tr><td class="n"><span class="num">20</span></td><td>ROLL, SLIP, REV, PERF</td><td>Performance buttons (→ <a href="#perform">7</a>). PERF opens the performance screen (→ <a href="#performscreen">7</a>)</td></tr>
 <tr><td class="n"><span class="num">21</span></td><td>Pads</td><td>Hit to play the sound and select that track. While playing, the pad of each track that plays lights up</td></tr>
 <tr><td class="n"><span class="num">22</span></td><td>Tabs</td><td>SOUND / FILTER / VELOCITY / FX / SONG</td></tr>
 </table>
@@ -74,8 +74,8 @@
 <tr><td class="n"><span class="num">2</span></td><td>Pattern number</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
-<tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / VEL / PADS / SOUND / FILTER / FX / AUTO (automation) / MIX (mixer) / SONG. <b>Long-press a tab (it vibrates) and drag up or down</b> to reorder them to suit your genre or workflow (saved on the device; "Reset tab order" in ≡ restores the default)</td></tr>
-<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / USER (available on every view)</td></tr>
+<tr><td class="n"><span class="num">11</span></td><td>Views</td><td>SEQ (steps) / VEL / PADS / PERF (performance screen, → <a href="#performscreen">7</a>) / SOUND / FILTER / FX / AUTO (automation) / MIX (mixer) / SONG. <b>Long-press a tab (it vibrates) and drag up or down</b> to reorder them to suit your genre or workflow (saved on the device; "Reset tab order" in ≡ restores the default)</td></tr>
+<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>Master filter / USER (available on every view except PERF)</td></tr>
 </table>
 <div class="cols">
 <figure><img src="img/phone_pads.webp" alt="PADS view"><figcaption>PADS: the 16 pads</figcaption></figure>
@@ -323,7 +323,7 @@
 
 <!-- ============================================================ -->
 <section id="perform">
-<h2>7. Performance (ROLL / REV / filter)</h2>
+<h2>7. Performance (ROLL / REV / filter / performance screen)</h2>
 <figure><img src="img/perform_bar.webp" alt="ROLL and REV buttons"></figure>
 <table>
 <tr><th>Button</th><th>Action</th><th>What it does</th></tr>
@@ -344,6 +344,41 @@
   <li>Below the fader you see how much is added (+ / −), or the number of assignments (×2 etc.) when it is at the center. With AUTO RETURN on (FILTER tab), the fader returns to the center when you let go. Switching the role removes the previous role's effect.</li>
   <li>The role and assignments are saved with the project (the fader position is not; undo does not cover them). Swapping tracks keeps the assignments on the swapped tracks. USER does not affect PATTERN / SONG exports; RECORD (recording your performance) captures it as you hear it.</li>
 </ul>
+<h3 id="performscreen">Performance screen (PERF)</h3>
+<figure><img src="img/perform_screen.webp" alt="Performance screen"></figure>
+<p>A screen for playing live while the sequence runs. Place buttons, faders and knobs of any size on an 8×4 grid to build your own performance surface. On tablets, open it with <span class="key">PERF</span> above the pads; on phones, with the <b>PERF</b> tab on the left (below PADS). On tablets, <span class="key">✕</span> at the top right goes back.</p>
+<ul>
+  <li>There are 4 pages. The layout is saved on the device and stays the same whichever project you open (tablet and phone layouts are separate). Page 1 starts with ROLL, MUTE, scene, pattern, pad, FX, FLT and knob controls.</li>
+  <li>Each part can be touched with a different finger at the same time (hold ROLL while moving a fader, for example).</li>
+  <li>The master filter fader is not shown on this screen; place FLT as a part wherever you like.</li>
+</ul>
+<p><b>Arranging (EDIT)</b>: Press <span class="key">EDIT</span> at the top right; empty cells show "+".</p>
+<ul>
+  <li>Tap an empty cell → choose BUTTON / FADER / KNOB to add one (faders take 2 cells vertically).</li>
+  <li>Tap a part to open its settings. Drag it to move it, and drag <b>◢</b> at its bottom right to resize. Parts cannot overlap or go off the grid.</li>
+  <li><span class="key">⋯</span> offers "Clear this page" and "Default layout on this page". <span class="key">DONE</span> finishes.</li>
+</ul>
+<figure><img src="img/perform_item.webp" alt="Part settings"><figcaption>Part settings (button: ACTION, TRACK, PRESS, NAME)</figcaption></figure>
+<table>
+<tr><th>Button ACTION</th><th>What it does</th></tr>
+<tr><td>ROLL</td><td>Choose a LENGTH (1/4–1/32); repeats while held. Make one button per length if you like. With two held, the one pressed last plays; releasing it returns to the other</td></tr>
+<tr><td>REV SEQ, REV SND, SLIP</td><td>Same as the performance buttons above</td></tr>
+<tr><td>PAD</td><td>Plays the track's sound (recorded while REC is on; strength follows the pad velocity setting)</td></tr>
+<tr><td>MUTE, SOLO</td><td>Pick one track under TRACK, or <b>ALL 16 TRACKS</b> (all on — or all off if any is on) or <b>INVERT ALL</b> (flips each of the 16 tracks on ↔ off)</td></tr>
+<tr><td>PATTERN, ◀ PATTERN, PATTERN ▶</td><td>Go to a set pattern number / the previous or next pattern. While playing, the change happens at the end of the bar</td></tr>
+<tr><td>SCENE A, SCENE B, SCENE A⇄B</td><td>Switch the FX scene</td></tr>
+<tr><td>REVERB, DELAY, DIST</td><td>Turn the effect on / off</td></tr>
+</table>
+<p>PRESS: <b>WHILE HELD</b> = only while pressed (returns to the previous state on release), <b>TOGGLE</b> = switches on each press. NAME sets a name of up to 10 characters (empty = automatic).</p>
+<table>
+<tr><th>Fader / knob CONTROLS</th><th>What it does</th></tr>
+<tr><td>FLT</td><td>Master filter (up = high-pass, down = low-pass)</td></tr>
+<tr><td>USER</td><td>Adds / subtracts a USER1–8 assignment (→ <a href="#macro">USER</a>). It adds up with the main fader's USER, and any number can move at once. <b>Edit USER…</b> opens the assignment screen</td></tr>
+<tr><td>PARAMETER</td><td>A single parameter. Under TARGET, choose SELECTED TRACK, a fixed track (14 parameters) or FX / MASTER (11 parameters)</td></tr>
+</table>
+<p>ON RELEASE: <b>RETURN</b> = goes back when you let go (FLT and USER to the center, a parameter to its value before you touched it), <b>STAY</b> = stays. Faders jump to where you touch; knobs turn by dragging up / down (or left / right).</p>
+<figure><img src="img/phone_perform.webp" alt="Performance screen on a phone"><figcaption>Phones: the PERF tab on the left</figcaption></figure>
+<div class="tip">MUTE, SOLO, scene, effect on / off and parameter changes work like the usual controls: ↶ undoes them and they are saved with the project. Moving a parameter while recording (REC on, playing) records it as automation, just like a MIDI CC.</div>
 </section>
 
 <!-- ============================================================ -->
@@ -556,6 +591,7 @@
 <tr><td>Pattern change</td><td>At the end of the bar while playing, immediately when stopped</td></tr>
 <tr><td>Recording</td><td>Quantized to the nearest step; one-bar count-in when starting with REC on</td></tr>
 <tr><td>Roll</td><td>1/4, 1/8, 1/16, 1/32, with or without SLIP</td></tr>
+<tr><td>Performance screen</td><td>8×4 grid × 4 pages (saved on the device, separately for tablet and phone). 16 button actions (while held / toggle), faders and knobs (FLT / USER / a single parameter)</td></tr>
 <tr><td>Undo</td><td>Up to 100 steps (steps, kit, song, pattern tempo)</td></tr>
 <tr><td>Automation</td><td>Per pattern. Per-step locks or a line with 8 points per step. 14 track and 12 FX / master parameters</td></tr>
 </table>

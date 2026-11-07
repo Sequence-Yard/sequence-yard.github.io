@@ -61,7 +61,7 @@
 <tr><td class="n"><span class="num">17</span></td><td>LEN・ページ・FOLLOW</td><td>パターンの長さ（1〜64 ステップ）、表示するページ（1〜4）、ページを再生位置に合わせるか</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE・GAPS</td><td>なぞって入力するときの間隔（→ <a href="#beat">2</a>）</td></tr>
 <tr><td class="n"><span class="num">19</span></td><td>FLT（全体フィルター）/ USER</td><td>上へ動かすとハイパス、下へ動かすとローパス。上の名前のタップで USER1・USER2 …（割り当てたパラメーターの足し引き）に切り替え、長押しで割り当て（→ <a href="#macro">7</a>）</td></tr>
-<tr><td class="n"><span class="num">20</span></td><td>ROLL・SLIP・REV</td><td>演奏用のボタン（→ <a href="#perform">7</a>）</td></tr>
+<tr><td class="n"><span class="num">20</span></td><td>ROLL・SLIP・REV・PERF</td><td>演奏用のボタン（→ <a href="#perform">7</a>）。PERF でパフォーマンス画面（→ <a href="#performscreen">7</a>）</td></tr>
 <tr><td class="n"><span class="num">21</span></td><td>パッド</td><td>叩くと鳴り、そのトラックを選択します。再生中は鳴ったトラックのパッドが光ります</td></tr>
 <tr><td class="n"><span class="num">22</span></td><td>タブ</td><td>SOUND / FILTER / VELOCITY / FX / SONG の切り替え</td></tr>
 </table>
@@ -74,8 +74,8 @@
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
-<tr><td class="n"><span class="num">11</span></td><td>画面の切り替え</td><td>SEQ（ステップ）/ VEL / PADS / SOUND / FILTER / FX / AUTO（オートメーション）/ MIX（ミキサー）/ SONG。<b>長押し（振動）して上下にドラッグ</b>すると並びを入れ替えられます（ジャンルや作り方に合わせて。端末に保存、≡ の「Reset tab order」で元の並びに）</td></tr>
-<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>全体フィルター / USER（どの画面でも使えます）</td></tr>
+<tr><td class="n"><span class="num">11</span></td><td>画面の切り替え</td><td>SEQ（ステップ）/ VEL / PADS / PERF（パフォーマンス画面、→ <a href="#performscreen">7</a>）/ SOUND / FILTER / FX / AUTO（オートメーション）/ MIX（ミキサー）/ SONG。<b>長押し（振動）して上下にドラッグ</b>すると並びを入れ替えられます（ジャンルや作り方に合わせて。端末に保存、≡ の「Reset tab order」で元の並びに）</td></tr>
+<tr><td class="n"><span class="num">12</span></td><td>FLT</td><td>全体フィルター / USER（PERF 以外のどの画面でも使えます）</td></tr>
 </table>
 <div class="cols">
 <figure><img src="img/phone_pads.webp" alt="PADS 画面"><figcaption>PADS: 16 個のパッド</figcaption></figure>
@@ -323,7 +323,7 @@
 
 <!-- ============================================================ -->
 <section id="perform">
-<h2>7. 演奏用の機能（ROLL / REV / フィルター）</h2>
+<h2>7. 演奏用の機能（ROLL / REV / フィルター / パフォーマンス画面）</h2>
 <figure><img src="img/perform_bar.webp" alt="ROLL と REV のボタン"></figure>
 <table>
 <tr><th>ボタン</th><th>操作</th><th>はたらき</th></tr>
@@ -344,6 +344,41 @@
   <li>フェーダーの下には足し引きの量（+ / −）、動かしていないときは割り当ての数（×2 など）が出ます。FILTER タブの AUTO RETURN が ON なら、指を離すと中央（足し引きなし）に戻ります。役割を切り替えると、前の役割の効果は外れます。</li>
   <li>役割と割り当てはプロジェクトに保存されます（フェーダーの位置は保存しません。↶ の対象外）。トラックを入れ替えると、割り当ても付いていきます。音の書き出し（PATTERN / SONG）にはかからず、RECORD（演奏の録音・録画）では聞こえるとおりに残ります。</li>
 </ul>
+<h3 id="performscreen">パフォーマンス画面（PERF）</h3>
+<figure><img src="img/perform_screen.webp" alt="パフォーマンス画面"></figure>
+<p>シーケンスを鳴らしながら演奏するための画面です。8×4 のマス目に、ボタン・フェーダー・ノブを好きな大きさで並べて、自分用の演奏の画面を作れます。タブレットはパッドの上の <span class="key">PERF</span>、スマートフォンは左のタブの <b>PERF</b>（PADS の下）で開きます。タブレットでは右上の <span class="key">✕</span> で元の画面に戻ります。</p>
+<ul>
+  <li>ページは 1〜4 です。配置は端末に保存され、どのプロジェクトを開いても同じです（タブレットとスマートフォンの配置は別々）。最初は 1 ページ目に ROLL・MUTE・シーン・パターン・パッド・FX・FLT・ノブが並んでいます。</li>
+  <li>部品はそれぞれ別の指で同時に触れます（ROLL を押しながらフェーダーを動かす、など）。</li>
+  <li>全体フィルターの縦フェーダーはこの画面には出ません。FLT を部品として好きな場所に置けます。</li>
+</ul>
+<p><b>並べ方（EDIT）</b>: 右上の <span class="key">EDIT</span> を押すと、空いたマスに「+」が出ます。</p>
+<ul>
+  <li>空いたマスをタップ → BUTTON / FADER / KNOB を選んで足します（フェーダーは縦 2 マス）。</li>
+  <li>部品をタップすると設定が開きます。ドラッグで移動、右下の <b>◢</b> をドラッグで大きさを変えます。ほかの部品と重なる場所・はみ出す場所には置けません。</li>
+  <li><span class="key">⋯</span> で「このページを空にする（Clear this page）」「最初の配置にする（Default layout on this page）」。<span class="key">DONE</span> で終わります。</li>
+</ul>
+<figure><img src="img/perform_item.webp" alt="部品の設定"><figcaption>部品の設定（ボタン: ACTION・TRACK・PRESS・NAME）</figcaption></figure>
+<table>
+<tr><th>ボタンの ACTION</th><th>はたらき</th></tr>
+<tr><td>ROLL</td><td>LENGTH（1/4〜1/32）を選び、押している間くり返します。長さごとに別のボタンにできます。2 つ押したときは後から押したほうが鳴り、離すと前のほうに戻ります</td></tr>
+<tr><td>REV SEQ・REV SND・SLIP</td><td>上の演奏用のボタンと同じ</td></tr>
+<tr><td>PAD</td><td>トラックの音を鳴らします（REC 中は記録。強さはパッドの強さの設定）</td></tr>
+<tr><td>MUTE・SOLO</td><td>TRACK で 1 トラックを選ぶほか、<b>ALL 16 TRACKS</b>（16 トラック全部。1 つでもオンなら全部オフ、全部オフなら全部オン）、<b>INVERT ALL</b>（16 トラックのオン・オフをそれぞれ反転）</td></tr>
+<tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中は小節の終わりで切り替わります</td></tr>
+<tr><td>SCENE A・SCENE B・SCENE A⇄B</td><td>FX シーンの切り替え</td></tr>
+<tr><td>REVERB・DELAY・DIST</td><td>エフェクトの ON / OFF</td></tr>
+</table>
+<p>PRESS: <b>WHILE HELD</b> = 押している間だけ（離すと押す前の状態に戻る）、<b>TOGGLE</b> = 押すたびに切り替え。NAME で 10 文字までの名前を付けられます（空 = 自動）。</p>
+<table>
+<tr><th>フェーダー・ノブの CONTROLS</th><th>はたらき</th></tr>
+<tr><td>FLT</td><td>全体フィルター（上 = ハイパス、下 = ローパス）</td></tr>
+<tr><td>USER</td><td>USER1〜8 の割り当てを足し引きします（→ <a href="#macro">USER</a>）。メインフェーダーの USER とも足し合わされ、いくつ同時に動かしてもかまいません。<b>Edit USER…</b> で割り当ての画面へ</td></tr>
+<tr><td>PARAMETER</td><td>パラメーター 1 つ。TARGET で SELECTED TRACK（選択中のトラック）・決まったトラック（14 種類）か、FX / MASTER（11 種類）を選びます</td></tr>
+</table>
+<p>ON RELEASE: <b>RETURN</b> = 指を離すと戻る（FLT・USER は中央、パラメーターは触る前の値）、<b>STAY</b> = そのまま。フェーダーは触れた位置へ動き、ノブは上下（または左右）にドラッグして回します。</p>
+<figure><img src="img/phone_perform.webp" alt="スマートフォンのパフォーマンス画面"><figcaption>スマートフォン: 左のタブの PERF</figcaption></figure>
+<div class="tip">MUTE・SOLO・シーン・エフェクトの ON / OFF、パラメーターの変更は、ふだんの操作と同じように ↶ で戻せて、プロジェクトに保存されます。REC 中に再生しながらパラメーターを動かすと、MIDI の CC と同じようにオートメーションとして記録されます。</div>
 </section>
 
 <!-- ============================================================ -->
@@ -556,6 +591,7 @@
 <tr><td>パターンの切り替え</td><td>再生中は小節（パターン）の終わり、停止中はすぐ</td></tr>
 <tr><td>録音</td><td>いちばん近いステップに記録。REC で再生を始めると 1 小節のカウントイン</td></tr>
 <tr><td>ロール</td><td>1/4・1/8・1/16・1/32、SLIP あり / なし</td></tr>
+<tr><td>パフォーマンス画面</td><td>8×4 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 16 種類（押している間 / 押すたびに切替）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ）</td></tr>
 <tr><td>元に戻す</td><td>100 回まで（ステップ・キット・ソング・パターンのテンポ）</td></tr>
 <tr><td>オートメーション</td><td>パターンごと。ステップごとのロック、または 1 ステップ 8 点の線。トラック 14・FX / MASTER 12 のパラメーター</td></tr>
 </table>
