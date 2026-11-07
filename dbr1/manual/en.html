@@ -213,7 +213,7 @@
 <div>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone, an audio interface or DBR-1 itself; slicing and time stretch are here too → <a href="#sampling">below</a>) / built-in sounds (the kit and the demo songs)</td></tr>
+<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone, an audio interface or DBR-1 itself; slicing and time stretch are here too → <a href="#sampling">below</a>) / <b>Load sound… / Save this sound…</b> (one track's sound — the sample plus its settings such as filter, INSERT and EQ — saved in DBR-1/Sounds and loaded into the selected track; use them as sound presets; undoable) / built-in sounds (the kit and the demo songs)</td></tr>
 <tr><td>start / end</td><td>Which part of the sample plays</td></tr>
 <tr><td>volume / pan</td><td>Level and left-right position</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
@@ -312,10 +312,37 @@
 <figure class="small"><img src="img/tab_fx.webp" alt="FX tab"></figure>
 <div>
 <ul>
-  <li>Choose <b>REVERB</b> (size / damp / mix / pre-dly), <b>DELAY</b> (time / fdbk / mix / sync) or <b>DIST</b> (drive / tone / level) at the top. Each has its own on / off switch.</li>
-  <li><b>wet</b> at the bottom is how much of the effect the selected track gets — the send level for REVERB / DELAY, the amount for DIST. Set it per track.</li>
+  <li>At the top, choose <b>REVERB</b> (size / damp / mix / pre-dly), <b>DELAY</b> (time / fdbk / mix / sync), <b>DIST</b> (drive / tone / level), <b>INSERT</b> (an effect per track) or <b>MASTER</b> (sidechain and glue comp). A lit ● means it is in use.</li>
+  <li>REVERB / DELAY / DIST each have an on / off switch; <b>wet</b> at the bottom is how much the selected track gets — the send level for REVERB / DELAY, the amount for DIST.</li>
   <li>DELAY sync follows the tempo (1/4 to dotted 1/8). Moving time switches to FREE (10 ms – 1 s).</li>
-  <li><b>A / B</b>: each pattern holds two complete effect settings you can switch between while playing.</li>
+  <li><b>SCENE A / B</b> (next to the REVERB / DELAY / DIST name): each pattern holds two complete REVERB / DELAY / DIST settings you can switch between while playing.</li>
+</ul>
+</div>
+</div>
+<h3 id="insert">INSERT (an effect per track)</h3>
+<div class="cols">
+<figure class="small"><img src="img/tab_fx_insert.webp" alt="INSERT"></figure>
+<div>
+<p>Each track can have one effect of its own. It comes after the filter and before DIST, and is saved with the sound (the kit). There are two knobs and <b>mix</b> (how much is blended with the dry sound). Choosing a type sets the knobs to good starting values.</p>
+<table>
+<tr><th>Type</th><th>Knobs</th><th>Use it for</th></tr>
+<tr><td>COMP</td><td>amount · attack (0.5–30 ms)</td><td>Fatter kicks and bass, punchier snares. A longer attack keeps the hit. Level is made up automatically</td></tr>
+<tr><td>CHORUS</td><td>rate (0.1–5 Hz) · depth</td><td>Widening pads, bells and chords</td></tr>
+<tr><td>PHASER</td><td>rate (0.05–4 Hz) · depth</td><td>Swirling hats and synths</td></tr>
+<tr><td>WAH</td><td>sens · reso</td><td>Auto-wah that opens with how hard the sound hits — funk bass and clav</td></tr>
+<tr><td>SWEEP</td><td>rate (2 bars, 1 bar, 1/2, 1/4, 1/8, 1/16) · depth</td><td>A low-pass that opens and closes in time; it lines up at the start of playback</td></tr>
+<tr><td>CRUSH</td><td>bits (16–3) · rate (48k–1.5 kHz)</td><td>Lo-fi grit, old-sampler style</td></tr>
+</table>
+</div>
+</div>
+<h3 id="masterfx">MASTER (sidechain and glue comp)</h3>
+<div class="cols">
+<figure class="small"><img src="img/tab_fx_master.webp" alt="MASTER"></figure>
+<div>
+<ul>
+  <li><b>Sidechain</b>: each time the <b>trigger</b> track (a kick, say) plays, the other tracks dip by <b>depth</b> and come back over <b>release</b> (30–630 ms) — the house / techno "pump". It follows the hits instead of analysing the sound, so it is light; a muted trigger track does not duck.</li>
+  <li><b>glue comp</b>: gentle compression on the whole mix to glue it together (0 = off). It comes after reverb / delay and before the master filter.</li>
+  <li>MASTER settings are saved with the project (not undoable, like the MASTER volume) and apply to exports.</li>
 </ul>
 </div>
 </div>
@@ -374,7 +401,7 @@
 <tr><th>Fader / knob CONTROLS</th><th>What it does</th></tr>
 <tr><td>FLT</td><td>Master filter (up = high-pass, down = low-pass)</td></tr>
 <tr><td>USER</td><td>Adds / subtracts a USER1–8 assignment (→ <a href="#macro">USER</a>). It adds up with the main fader's USER, and any number can move at once. <b>Edit USER…</b> opens the assignment screen</td></tr>
-<tr><td>PARAMETER</td><td>A single parameter. Under TARGET, choose SELECTED TRACK, a fixed track (14 parameters) or FX / MASTER (11 parameters)</td></tr>
+<tr><td>PARAMETER</td><td>A single parameter. Under TARGET, choose SELECTED TRACK, a fixed track (17 parameters) or FX / MASTER (13 parameters)</td></tr>
 </table>
 <p>ON RELEASE: <b>RETURN</b> = goes back when you let go (FLT and USER to the center, a parameter to its value before you touched it), <b>STAY</b> = stays. Faders jump to where you touch; knobs turn by dragging up / down (or left / right).</p>
 <figure><img src="img/phone_perform.webp" alt="Performance screen on a phone"><figcaption>Phones: the PERF tab on the left</figcaption></figure>
@@ -405,7 +432,7 @@
 <figure><img src="img/automation.webp" alt="Automation"><figcaption>The parameter list on the left shows each line in small. Lines drawn with LINE and WAVE on the ind kick cutoff</figcaption></figure>
 <ul>
   <li><b>Target</b>: pick it from the list: a row at the top on tablets, a column on the left on phones (the 8 tracks of the current bank and <b>FX / MASTER</b> = reverb, delay and distortion settings, master volume, master filter; "FX / MST" on phones).</li>
-  <li><b>Parameter list</b>: it is grouped into SOUND, FILTER, EQ and SEND (MASTER, REVERB, DELAY and DIST for FX / MASTER). Each row shows that parameter's lines and locks for the whole pattern in small, so you can see at a glance what moves. Tap to select.</li>
+  <li><b>Parameter list</b>: it is grouped into SOUND, FILTER, EQ, SEND and INSERT (for FX / MASTER: MASTER — volume, master filter, sidechain depth and glue — REVERB, DELAY and DIST). Each row shows that parameter's lines and locks for the whole pattern in small, so you can see at a glance what moves. Tap to select.</li>
   <li><b>Choose what to draw with the buttons at the top</b> (<b>FREE / LINE / WAVE</b> = lines, <b>LOCK</b> = locks):
     <ul>
       <li><b>LOCK</b>: tap = lock that step to the height you touched (parameter lock). Swipe to lock every step your finger passes.</li>
@@ -460,7 +487,7 @@
 <tr><td>Kit</td><td>Sounds and settings of the 16 tracks</td><td>.dbrkit</td></tr>
 </table>
 <h3>The first time</h3>
-<p>Choose a save folder once. DBR-1 creates a <b>DBR-1</b> folder inside it (Projects / Patterns / Kits / Samples).</p>
+<p>Choose a save folder once. DBR-1 creates a <b>DBR-1</b> folder inside it (Projects / Patterns / Kits / Samples, and Sounds once you save a sound).</p>
 <div class="cols">
 <figure><img src="img/folder_intro.webp" alt="Folder intro"><figcaption>1. Press Choose folder</figcaption></figure>
 <figure><img src="img/folder_picker.webp" alt="Folder picker"><figcaption>2. Open a folder such as Documents and tap “Use this folder”</figcaption></figure>
@@ -532,7 +559,8 @@
 <tr><td>Decay / Start / End</td><td>72 / 17 / 18</td><td>Reverb size / damp / mix / pre-delay</td><td>104 / 105 / 106 / 107</td></tr>
 <tr><td>Filter cutoff / reso</td><td>74 / 71</td><td>Delay time / feedback / mix</td><td>108 / 109 / 110</td></tr>
 <tr><td>EQ low / mid / high</td><td>20 / 21 / 22</td><td>Dist drive / tone / level</td><td>111 / 112 / 113</td></tr>
-<tr><td>Reverb / Delay / Dist send</td><td>91 / 92 / 94</td><td></td><td></td></tr>
+<tr><td>Reverb / Delay / Dist send</td><td>91 / 92 / 94</td><td>Sidechain depth / Glue comp</td><td>114 / 115</td></tr>
+<tr><td>Insert A / B / mix</td><td>76 / 77 / 78</td><td></td><td></td></tr>
 </table>
 <ul>
   <li><b>LEARN</b>: a banner appears at the top. Move an on-screen control, then turn a knob on your controller to assign its CC (repeat as often as you like). Tap DONE when finished.</li>
@@ -593,7 +621,7 @@
 <tr><td>Roll</td><td>1/4, 1/8, 1/16, 1/32, with or without SLIP</td></tr>
 <tr><td>Performance screen</td><td>8×4 grid × 4 pages (saved on the device, separately for tablet and phone). 16 button actions (while held / toggle), faders and knobs (FLT / USER / a single parameter)</td></tr>
 <tr><td>Undo</td><td>Up to 100 steps (steps, kit, song, pattern tempo)</td></tr>
-<tr><td>Automation</td><td>Per pattern. Per-step locks or a line with 8 points per step. 14 track and 12 FX / master parameters</td></tr>
+<tr><td>Automation</td><td>Per pattern. Per-step locks or a line with 8 points per step. 17 track and 14 FX / master parameters</td></tr>
 </table>
 
 <h3>Samples and sound</h3>
@@ -625,10 +653,12 @@
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>Track filter</td><td>LP12, LP24, HP12, HP24, BP, NOTCH; cutoff 20 Hz – 20 kHz, reso</td></tr>
 <tr><td>Master filter (FLT)</td><td>LP / HP (fader down / up) or BP, 12 dB / 24 dB, reso, AUTO RETURN</td></tr>
-<tr><td>USER (main fader)</td><td>USER1 to USER8 (names up to 5 letters), up to 16 assignments each (16 tracks × 14 parameters / 12 FX & master parameters), amount −100 to +100% (5% steps). Adds to the current value and stops at the limits</td></tr>
+<tr><td>USER (main fader)</td><td>USER1 to USER8 (names up to 5 letters), up to 16 assignments each (16 tracks × 17 parameters / 14 FX & master parameters), amount −100 to +100% (5% steps). Adds to the current value and stops at the limits</td></tr>
 <tr><td>Reverb</td><td>size, damp, mix, pre-delay (0–200 ms); one shared reverb with a send per track</td></tr>
 <tr><td>Delay</td><td>time, feedback, mix, sync (1/4, 1/8, 1/16, 1/32, 3/8, dotted 1/8, FREE 10 ms – 1 s); stereo, one shared delay</td></tr>
 <tr><td>Distortion</td><td>drive, tone, level; per track</td></tr>
+<tr><td>INSERT</td><td>One per track: COMP, CHORUS, PHASER, WAH, SWEEP (tempo-synced), CRUSH. Two knobs + mix. After the filter, before DIST</td></tr>
+<tr><td>MASTER</td><td>Sidechain (one trigger track, depth, release 30–630 ms) and glue comp (threshold 0 to −24 dB, 2:1 to 4:1)</td></tr>
 <tr><td>Limiter</td><td>Just before the output (from about −1 dBFS, no added latency, also applied to exports)</td></tr>
 <tr><td>Scenes</td><td>Two effect settings (A / B) per pattern</td></tr>
 </table>
@@ -637,8 +667,8 @@
 <table>
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>Autosave</td><td>3 seconds after an edit and when the app closes (the previous version is kept as a backup)</td></tr>
-<tr><td>Files</td><td>.dbrproj (project, includes loaded sounds) / .dbrpatt (pattern) / .dbrkit (kit, includes loaded sounds)</td></tr>
-<tr><td>Location</td><td>DBR-1/Projects, Patterns, Kits and Samples inside the folder you choose; cloud via Android's save and share screens</td></tr>
+<tr><td>Files</td><td>.dbrproj (project, includes loaded sounds) / .dbrpatt (pattern) / .dbrkit (kit, includes loaded sounds) / .dbrsnd (one track's sound, includes the loaded sample)</td></tr>
+<tr><td>Location</td><td>DBR-1/Projects, Patterns, Kits, Samples and Sounds inside the folder you choose; cloud via Android's save and share screens</td></tr>
 <tr><td>Export</td><td>Pattern (×1–16) / song / live recording (up to 10 minutes). MIDI (SMF type 0 / 1, 96 PPQ, channel 10 or channels 1–16, automation as CCs at 8 points per step; pattern and song only). STEMS (ZIP: mix + one WAV per track; pattern and song only). WAV (16-bit stereo; pattern / song and STEMS at 48 or 44.1 kHz, recordings at the device's output rate) / M4A (AAC 256 kbps) / MP4 (H.264 720×720 30 fps + AAC; screen recordings are 1280 wide in the screen's aspect ratio). Saved in DBR-1/Exports</td></tr>
 </table>
 
@@ -649,7 +679,7 @@
 <tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default, note-off after 80 ms)</td></tr>
 <tr><td>Note map</td><td>PADS 36–51 / GM DRUMS</td></tr>
 <tr><td>MIDI clock</td><td>Send (24 PPQN = 24 per quarter note, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
-<tr><td>MIDI CC</td><td>Receive and send. 26 parameters (14 per track, 12 FX / master), editable assignments and LEARN. Selected track / channel = track</td></tr>
+<tr><td>MIDI CC</td><td>Receive and send. 31 parameters (17 per track, 14 FX / master), editable assignments and LEARN. Selected track / channel = track</td></tr>
 <tr><td>Multi-out</td><td>With a USB device that has more than 2 outputs, each track can use its own output pair or a single channel (mono), up to 16 ch. The MAIN pair is selectable too. Test tone per channel</td></tr>
 <tr><td>Audio output</td><td>Stereo at the device's output rate (usually 48 kHz), low-latency path. USB audio supported (switches automatically when plugged in)</td></tr>
 </table>

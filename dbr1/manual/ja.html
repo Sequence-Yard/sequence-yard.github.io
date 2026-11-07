@@ -213,7 +213,7 @@
 <div>
 <table>
 <tr><th>項目</th><th>はたらき</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples…（保存フォルダの Samples から）/ From file…（端末やクラウドのファイル。WAV・MP3 など）/ ● Record (mic / audio input)…（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ 内蔵の音（キットの音とデモソングの音）</td></tr>
+<tr><td>LOAD</td><td>From DBR-1/Samples…（保存フォルダの Samples から）/ From file…（端末やクラウドのファイル。WAV・MP3 など）/ ● Record (mic / audio input)…（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ <b>Load sound… / Save this sound…</b>（1 トラック分の音 = サンプルと音の設定（フィルター・INSERT・EQ など）を DBR-1/Sounds に保存し、選択中のトラックへ読み込む。サウンドプリセットとして使えます。↶ で戻せます）/ 内蔵の音（キットの音とデモソングの音）</td></tr>
 <tr><td>start / end</td><td>サンプルの再生範囲</td></tr>
 <tr><td>volume / pan</td><td>音量と左右の位置</td></tr>
 <tr><td>pitch</td><td>音の高さ（−12〜+12 半音。音の長さも変わります）</td></tr>
@@ -312,10 +312,37 @@
 <figure class="small"><img src="img/tab_fx.webp" alt="FX タブ"></figure>
 <div>
 <ul>
-  <li><b>REVERB</b>（size / damp / mix / pre-dly）、<b>DELAY</b>（time / fdbk / mix / sync）、<b>DIST</b>（drive / tone / level）を上のボタンで選びます。それぞれ ON / OFF できます。</li>
-  <li>下の <b>wet</b> は、選択中のトラックにそのエフェクトをかける量です（REVERB / DELAY はセンド量、DIST はかかり具合）。トラックごとに違う量を設定できます。</li>
+  <li>上のボタンで <b>REVERB</b>（size / damp / mix / pre-dly）、<b>DELAY</b>（time / fdbk / mix / sync）、<b>DIST</b>（drive / tone / level）、<b>INSERT</b>（トラックごとのエフェクト）、<b>MASTER</b>（サイドチェイン・グルーコンプ）を選びます。● が点いているものが使われています。</li>
+  <li>REVERB / DELAY / DIST はそれぞれ ON / OFF でき、下の <b>wet</b> は選択中のトラックにかける量です（REVERB / DELAY はセンド量、DIST はかかり具合）。</li>
   <li>DELAY の sync は 1/4〜付点 8 分のテンポ同期。time を動かすと FREE（10ms〜1s）になります。</li>
-  <li><b>A / B</b>: エフェクトの設定をパターンごとに 2 セット持てます。演奏中に切り替えられます。</li>
+  <li><b>SCENE A / B</b>（REVERB / DELAY / DIST の名前の横）: REVERB / DELAY / DIST の設定をパターンごとに 2 セット持てます。演奏中に切り替えられます。</li>
+</ul>
+</div>
+</div>
+<h3 id="insert">INSERT（トラックごとのエフェクト）</h3>
+<div class="cols">
+<figure class="small"><img src="img/tab_fx_insert.webp" alt="INSERT"></figure>
+<div>
+<p>トラックごとに 1 つ、エフェクトを選んでかけられます。フィルターの後・DIST の前にかかり、音（キット）と一緒に保存されます。つまみは 2 つと <b>mix</b>（原音と混ぜる量）。種類を変えると、つまみはその種類のおすすめの値になります。</p>
+<table>
+<tr><th>種類</th><th>つまみ</th><th>使いどころ</th></tr>
+<tr><td>COMP</td><td>amount（量）・attack（0.5〜30ms）</td><td>キック・ベースを太く、スネアにパンチ。attack を長くすると頭が残る。音量は自動で補う</td></tr>
+<tr><td>CHORUS</td><td>rate（0.1〜5Hz）・depth</td><td>パッド・ベル・コードを広げる</td></tr>
+<tr><td>PHASER</td><td>rate（0.05〜4Hz）・depth</td><td>ハット・シンセのうねり</td></tr>
+<tr><td>WAH</td><td>sens（感度）・reso</td><td>叩いた強さで開くオートワウ。ファンクのベース・クラビに</td></tr>
+<tr><td>SWEEP</td><td>rate（2 小節・1 小節・1/2・1/4・1/8・1/16）・depth</td><td>テンポに合わせて開閉するローパス。再生の頭でそろう</td></tr>
+<tr><td>CRUSH</td><td>bits（16〜3 ビット）・rate（48k〜1.5kHz）</td><td>ローファイ・古いサンプラー風の荒れ</td></tr>
+</table>
+</div>
+</div>
+<h3 id="masterfx">MASTER（サイドチェイン・グルーコンプ）</h3>
+<div class="cols">
+<figure class="small"><img src="img/tab_fx_master.webp" alt="MASTER"></figure>
+<div>
+<ul>
+  <li><b>Sidechain</b>: <b>trigger</b> で選んだトラック（キックなど）が鳴るたびに、ほかのトラックの音量を <b>depth</b> だけ下げ、<b>release</b>（30〜630ms）で戻します。ハウス・テクノの「ポンピング」が作れます。音を分析せず鳴るタイミングで下げるので軽く、ミュート中のトラックでは下げません。</li>
+  <li><b>glue comp</b>: 全体を軽く圧縮してまとまりを出します（0 = OFF）。リバーブ・ディレイの後、全体フィルターの前にかかります。</li>
+  <li>MASTER の設定はプロジェクトに保存されます（↶ の対象外。MASTER の音量と同じ）。書き出しにもかかります。</li>
 </ul>
 </div>
 </div>
@@ -374,7 +401,7 @@
 <tr><th>フェーダー・ノブの CONTROLS</th><th>はたらき</th></tr>
 <tr><td>FLT</td><td>全体フィルター（上 = ハイパス、下 = ローパス）</td></tr>
 <tr><td>USER</td><td>USER1〜8 の割り当てを足し引きします（→ <a href="#macro">USER</a>）。メインフェーダーの USER とも足し合わされ、いくつ同時に動かしてもかまいません。<b>Edit USER…</b> で割り当ての画面へ</td></tr>
-<tr><td>PARAMETER</td><td>パラメーター 1 つ。TARGET で SELECTED TRACK（選択中のトラック）・決まったトラック（14 種類）か、FX / MASTER（11 種類）を選びます</td></tr>
+<tr><td>PARAMETER</td><td>パラメーター 1 つ。TARGET で SELECTED TRACK（選択中のトラック）・決まったトラック（17 種類）か、FX / MASTER（13 種類）を選びます</td></tr>
 </table>
 <p>ON RELEASE: <b>RETURN</b> = 指を離すと戻る（FLT・USER は中央、パラメーターは触る前の値）、<b>STAY</b> = そのまま。フェーダーは触れた位置へ動き、ノブは上下（または左右）にドラッグして回します。</p>
 <figure><img src="img/phone_perform.webp" alt="スマートフォンのパフォーマンス画面"><figcaption>スマートフォン: 左のタブの PERF</figcaption></figure>
@@ -405,7 +432,7 @@
 <figure><img src="img/automation.webp" alt="オートメーション"><figcaption>左がパラメーターの一覧（それぞれの線を小さく表示）。ind kick のカットオフに LINE と WAVE で線を描いたところ</figcaption></figure>
 <ul>
   <li><b>対象</b>: 一覧から選びます。タブレットは上の 1 行、スマートフォンは左の縦の一覧です（表示中のバンクの 8 トラックと <b>FX / MASTER</b> = リバーブ・ディレイ・ディストーションの設定、MASTER の音量、全体フィルター。スマートフォンでは「FX / MST」）。</li>
-  <li><b>パラメーターの一覧</b>: SOUND・FILTER・EQ・SEND（FX / MASTER では MASTER・REVERB・DELAY・DIST）に分けて並びます。各行の右に、パターン全体の線とロックが小さく出るので、どこに動きがあるか一目で分かります。タップで選びます。</li>
+  <li><b>パラメーターの一覧</b>: SOUND・FILTER・EQ・SEND・INSERT（FX / MASTER では MASTER（音量・全体フィルター・サイドチェインの深さ・グルー）・REVERB・DELAY・DIST）に分けて並びます。各行の右に、パターン全体の線とロックが小さく出るので、どこに動きがあるか一目で分かります。タップで選びます。</li>
   <li><b>描くものは上のボタンで選びます</b>（<b>FREE / LINE / WAVE</b> = 線、<b>LOCK</b> = ロック）:
     <ul>
       <li><b>LOCK</b>: タップ = そのステップに、触れた高さでロック（パラメーターロック）。なぞると、指の通ったステップに続けてロックします。</li>
@@ -460,7 +487,7 @@
 <tr><td>Kit</td><td>16 トラックの音と設定</td><td>.dbrkit</td></tr>
 </table>
 <h3>初めて保存するとき</h3>
-<p>保存先のフォルダを一度だけ選びます。選んだフォルダの中に <b>DBR-1</b> フォルダ（Projects / Patterns / Kits / Samples）が作られます。</p>
+<p>保存先のフォルダを一度だけ選びます。選んだフォルダの中に <b>DBR-1</b> フォルダ（Projects / Patterns / Kits / Samples、音を保存すると Sounds）が作られます。</p>
 <div class="cols">
 <figure><img src="img/folder_intro.webp" alt="フォルダの説明"><figcaption>① Choose folder を押す</figcaption></figure>
 <figure><img src="img/folder_picker.webp" alt="フォルダの選択"><figcaption>② Documents などを開いて「このフォルダを使用」</figcaption></figure>
@@ -532,7 +559,8 @@
 <tr><td>Decay / Start / End</td><td>72 / 17 / 18</td><td>Reverb size / damp / mix / pre-delay</td><td>104 / 105 / 106 / 107</td></tr>
 <tr><td>Filter cutoff / reso</td><td>74 / 71</td><td>Delay time / feedback / mix</td><td>108 / 109 / 110</td></tr>
 <tr><td>EQ low / mid / high</td><td>20 / 21 / 22</td><td>Dist drive / tone / level</td><td>111 / 112 / 113</td></tr>
-<tr><td>Reverb / Delay / Dist send</td><td>91 / 92 / 94</td><td></td><td></td></tr>
+<tr><td>Reverb / Delay / Dist send</td><td>91 / 92 / 94</td><td>Sidechain depth / Glue comp</td><td>114 / 115</td></tr>
+<tr><td>Insert A / B / mix</td><td>76 / 77 / 78</td><td></td><td></td></tr>
 </table>
 <ul>
   <li><b>LEARN</b>: 押すと上に案内が出ます。画面のつまみを動かしてから、コントローラーのつまみを回すと、その CC が割り当てられます（続けて何個でも）。終わったら DONE。</li>
@@ -593,7 +621,7 @@
 <tr><td>ロール</td><td>1/4・1/8・1/16・1/32、SLIP あり / なし</td></tr>
 <tr><td>パフォーマンス画面</td><td>8×4 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 16 種類（押している間 / 押すたびに切替）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ）</td></tr>
 <tr><td>元に戻す</td><td>100 回まで（ステップ・キット・ソング・パターンのテンポ）</td></tr>
-<tr><td>オートメーション</td><td>パターンごと。ステップごとのロック、または 1 ステップ 8 点の線。トラック 14・FX / MASTER 12 のパラメーター</td></tr>
+<tr><td>オートメーション</td><td>パターンごと。ステップごとのロック、または 1 ステップ 8 点の線。トラック 17・FX / MASTER 14 のパラメーター</td></tr>
 </table>
 
 <h3>サンプルと音</h3>
@@ -625,10 +653,12 @@
 <tr><th>項目</th><th>仕様</th></tr>
 <tr><td>トラックのフィルター</td><td>LP12・LP24・HP12・HP24・BP・NOTCH。cutoff 20Hz〜20kHz、reso</td></tr>
 <tr><td>全体フィルター（FLT）</td><td>LP / HP（フェーダーの上下）または BP、12dB / 24dB、reso、AUTO RETURN</td></tr>
-<tr><td>USER（メインフェーダー）</td><td>USER1〜USER8（名前は 5 文字まで）、1 つに割り当て 16 まで（16 トラック × 14 パラメーター / FX・MASTER 12 パラメーター）、量 −100〜+100%（5% 刻み）。今の値に足し引きし 0〜最大で止める</td></tr>
+<tr><td>USER（メインフェーダー）</td><td>USER1〜USER8（名前は 5 文字まで）、1 つに割り当て 16 まで（16 トラック × 17 パラメーター / FX・MASTER 14 パラメーター）、量 −100〜+100%（5% 刻み）。今の値に足し引きし 0〜最大で止める</td></tr>
 <tr><td>リバーブ</td><td>size・damp・mix・pre-delay（0〜200ms）。全体に 1 系統、トラックごとに送る量</td></tr>
 <tr><td>ディレイ</td><td>time・feedback・mix・sync（1/4・1/8・1/16・1/32・3/8・付点 8 分・FREE 10ms〜1s）。ステレオ、全体に 1 系統</td></tr>
 <tr><td>ディストーション</td><td>drive・tone・level。トラックごと</td></tr>
+<tr><td>INSERT</td><td>トラックごとに 1 つ: COMP・CHORUS・PHASER・WAH・SWEEP（テンポ同期）・CRUSH。つまみ 2 つ + mix。フィルターの後・DIST の前</td></tr>
+<tr><td>MASTER</td><td>サイドチェイン（きっかけ 1 トラック、depth、release 30〜630ms）・グルーコンプ（しきい値 0〜−24dB、2:1〜4:1）</td></tr>
 <tr><td>リミッター</td><td>出力の直前（約 −1dBFS から。遅延なし、書き出しにもかかる）</td></tr>
 <tr><td>シーン</td><td>エフェクトの設定をパターンごとに A / B の 2 つ</td></tr>
 </table>
@@ -637,8 +667,8 @@
 <table>
 <tr><th>項目</th><th>仕様</th></tr>
 <tr><td>自動保存</td><td>編集の 3 秒後とアプリを閉じたとき（直前の版を予備として保存）</td></tr>
-<tr><td>ファイル</td><td>.dbrproj（プロジェクト。読み込んだ音を含む）/ .dbrpatt（パターン）/ .dbrkit（キット。読み込んだ音を含む）</td></tr>
-<tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples。クラウドは Android の保存・共有から</td></tr>
+<tr><td>ファイル</td><td>.dbrproj（プロジェクト。読み込んだ音を含む）/ .dbrpatt（パターン）/ .dbrkit（キット。読み込んだ音を含む）/ .dbrsnd（1 トラック分の音。読み込んだ音を含む）</td></tr>
+<tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples・Sounds。クラウドは Android の保存・共有から</td></tr>
 <tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 0 / 1・96 PPQ・ch 10 か ch 1〜16、オートメーションは CC（1 ステップ 8 点）、パターンとソングのみ）。STEMS（ZIP: mix + トラックごとの WAV、パターンとソングのみ）。WAV（16bit ステレオ。PATTERN / SONG と STEMS は 48kHz / 44.1kHz、録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
 </table>
 
@@ -649,7 +679,7 @@
 <tr><td>MIDI 出力</td><td>USB-MIDI 1 台。シーケンス・ロール・パッドをノートで送る（既定 10ch、ノートオフは 80ms 後）</td></tr>
 <tr><td>ノートの割り当て</td><td>PADS 36–51 / GM DRUMS</td></tr>
 <tr><td>MIDI クロック</td><td>送信（24 PPQN = 4 分音符あたり 24 個、Start / Stop）/ 受信（Start / Stop / テンポに追従。Start / Stop に従わない設定も可）</td></tr>
-<tr><td>MIDI CC</td><td>受信・送信。26 パラメーター（トラック 14・FX / MASTER 12）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）</td></tr>
+<tr><td>MIDI CC</td><td>受信・送信。31 パラメーター（トラック 17・FX / MASTER 14）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）</td></tr>
 <tr><td>マルチアウト</td><td>USB の機器の出力が 3ch 以上のとき、トラックごとに出力のペアか 1 チャンネル（モノラル）を選べる（最大 16ch）。MAIN のペアも選べる。チャンネルごとのテスト音</td></tr>
 <tr><td>音声出力</td><td>ステレオ、端末の出力レート（多くは 48kHz）。低遅延の経路で再生。USB オーディオに対応（挿すと自動で切り替え）</td></tr>
 </table>
