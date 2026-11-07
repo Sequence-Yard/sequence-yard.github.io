@@ -44,7 +44,7 @@
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), the phone-style layout (Phone layout), About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
-<tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear</td></tr>
+<tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear (also FX only)</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>)</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>Shows tracks A01–A08 or B01–B08</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>Arms recording. Pads you hit while playing are recorded (→ <a href="#rec">4</a>)</td></tr>
@@ -316,6 +316,7 @@
   <li>REVERB / DELAY / DIST each have an on / off switch; <b>wet</b> at the bottom is how much the selected track gets — the send level for REVERB / DELAY, the amount for DIST.</li>
   <li>DELAY sync follows the tempo (1/4 to dotted 1/8). Moving time switches to FREE (10 ms – 1 s).</li>
   <li><b>SCENE A / B</b> (next to the REVERB / DELAY / DIST name): each pattern holds two complete REVERB / DELAY / DIST settings you can switch between while playing.</li>
+  <li><b>GLOBAL</b> (left of the on / off switch): when lit, <b>all patterns share one set of FX</b> (scenes A / B and every track's sends). Switching patterns while playing no longer changes the FX, and a change made in any pattern applies to all. Turning it on copies the current pattern's FX to every pattern (you are asked first if other patterns have different FX). Turning it off keeps the FX as they are, per pattern again. Saved with the project.</li>
 </ul>
 </div>
 </div>
@@ -417,7 +418,7 @@
 <ul>
   <li>There are 100 patterns (00–99). Each holds steps, velocities, length, swing, tempo, effect settings and automation (the kit is shared).</li>
   <li>Changing the pattern while playing switches <b>at the end of the bar</b> (the queued number is outlined). When stopped, it switches at once.</li>
-  <li>Long-press to copy / paste / clear a whole pattern.</li>
+  <li>Long-press to copy / paste / clear a whole pattern. <b>Copy FX only / Paste FX only</b> copy just the effect settings (scenes A / B and sends) to another pattern, leaving its steps alone (↶ undoes it).</li>
 </ul>
 </div>
 </div>

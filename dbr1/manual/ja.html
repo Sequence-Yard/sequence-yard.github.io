@@ -44,7 +44,7 @@
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
-<tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去</td></tr>
+<tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
@@ -316,6 +316,7 @@
   <li>REVERB / DELAY / DIST はそれぞれ ON / OFF でき、下の <b>wet</b> は選択中のトラックにかける量です（REVERB / DELAY はセンド量、DIST はかかり具合）。</li>
   <li>DELAY の sync は 1/4〜付点 8 分のテンポ同期。time を動かすと FREE（10ms〜1s）になります。</li>
   <li><b>SCENE A / B</b>（REVERB / DELAY / DIST の名前の横）: REVERB / DELAY / DIST の設定をパターンごとに 2 セット持てます。演奏中に切り替えられます。</li>
+  <li><b>GLOBAL</b>（ON / OFF スイッチの左）: 点灯させると、FX（シーン A / B・各トラックのセンド量）を<b>全パターンで 1 つ</b>にします。演奏中にパターンを切り替えても FX が変わらず、どのパターンで動かしても全パターンに効きます。点けたときに今のパターンの FX を全パターンに写します（ほかのパターンに違う FX があれば確認が出ます）。消すと、そのときの FX のままパターンごとに戻ります。プロジェクトに保存されます。</li>
 </ul>
 </div>
 </div>
@@ -417,7 +418,7 @@
 <ul>
   <li>パターンは 00〜99 の 100 個。各パターンがステップ・ベロシティ・長さ・スウィング・テンポ・エフェクトの設定・オートメーションを持ちます（音のキットは共通）。</li>
   <li>再生中にパターン番号を変えると、<b>小節の終わり</b>で切り替わります（待っている番号は枠が光ります）。停止中はすぐ切り替わります。</li>
-  <li>長押しで、パターン全体のコピー / ペースト / 消去。</li>
+  <li>長押しで、パターン全体のコピー / ペースト / 消去。<b>Copy FX only / Paste FX only</b> で、FX の設定（シーン A / B・センド量）だけを別のパターンへ写せます（ステップはそのまま、↶ で戻せます）。</li>
 </ul>
 </div>
 </div>
