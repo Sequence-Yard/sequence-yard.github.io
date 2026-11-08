@@ -414,7 +414,7 @@
 <ul>
   <li><b>CHANNEL</b>: <b>ALL</b> (the same message on all 16 channels) or one of 1–16.</li>
   <li><b>CC NUMBER / NOTE / PROGRAM</b>: the number to send (0–127). Notes also show their name (60 = C4).</li>
-  <li>Messages go to the device chosen as <b>OUTPUT</b> in "MIDI…" (logo menu, or ≡ on phones). If none is open, the settings say so in red.</li>
+  <li><b>PORT</b>: where to send. <b>MIDI OUTPUT</b> (default) = the device chosen as OUT in "MIDI…" (logo menu, or ≡ on phones). You can also pick any connected device per part. MIDI interfaces with several outputs list each port ("device · OUT 2"), so synth A can be on OUT 1 and effect B on OUT 2. If a part can't send (no output chosen, or the device is unplugged), its settings say so in red.</li>
   <li>ON RELEASE RETURN: CC and AFTERTOUCH go back to the value before you touched them; CC PAN and PITCH BEND go back to the center (like a pitch-bend wheel).</li>
   <li>Fader and knob positions are not saved (they start at 0, or the center for PAN / BEND). The same value is not sent twice in a row.</li>
   <li>These are sent separately from the sequence's MIDI output (OUTPUT CHANNEL in MIDI…), so you can play the sequence on an external instrument while turning knobs on another channel. Set MIDI clock to SEND to keep the gear at DBR-1's tempo.</li>
@@ -558,7 +558,7 @@
 <tr><th>Item</th><th>What it does</th></tr>
 <tr><td>IN (on/off, CH)</td><td>Incoming notes play tracks and are recorded while REC is on (with their velocity). CH = channel to listen to (ALL / 1–16)</td></tr>
 <tr><td>NOTES</td><td>How note numbers map to tracks. PADS 36–51 = notes 36–51 to A01–B08 in order. GM DRUMS = standard drum notes (kick 36, snare 38, hat 42, …). The same map is used for output</td></tr>
-<tr><td>OUT / OUT CH</td><td>Device and channel to send to (default ch 10). Sends the sequence, rolls and pad hits, delayed to line up with DBR-1's own sound</td></tr>
+<tr><td>OUT / OUT PORT / OUT CH</td><td>Device and channel to send to (default ch 10). For devices with several outputs (MIDI interfaces), OUT PORT picks the port. Sends the sequence, rolls and pad hits, delayed to line up with DBR-1's own sound</td></tr>
 <tr><td>CLOCK</td><td>OFF / SEND (DBR-1 leads: sends tempo clock and Start / Stop) / RECEIVE (follows the connected device's Start / Stop and tempo)</td></tr>
 <tr><td>TIMING</td><td>How MIDI out is timed. APP (default) = DBR-1 sends each message on time / SYSTEM = handed to Android with a timestamp. Which is steadier depends on the device (e.g. SYSTEM on a Lenovo Tab K11, APP on a REDMAGIC 9 Pro). If the other device's tempo display wobbles, try both. Remembered on this device</td></tr>
 <tr><td>PLAY</td><td>Shown only with RECEIVE. FOLLOW (default) = start and stop with the connected device's Start / Stop / IGNORE = start and stop with PLAY on DBR-1; only the clock and tempo follow the device</td></tr>

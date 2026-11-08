@@ -414,7 +414,7 @@
 <ul>
   <li><b>CHANNEL</b>: <b>ALL</b>（1〜16 の全部に同じものを送る）か、1〜16 のどれか 1 つ。</li>
   <li><b>CC NUMBER / NOTE / PROGRAM</b>: 送る番号（0〜127）。ノートは音名も出ます（60 = C4）。</li>
-  <li>送り先は、ロゴ（スマートフォンは ≡）の「MIDI…」の <b>OUTPUT</b> で選んだ機器です。選んでいないときは設定の画面に赤い字で出ます。</li>
+  <li><b>PORT</b>: 送り先。<b>MIDI OUTPUT</b>（既定）= ロゴ（スマートフォンは ≡）の「MIDI…」の OUT で選んだ機器。ほかに、つながっている機器を部品ごとに選べます。出力が 2 つ以上ある MIDI インターフェースは「機器名 · OUT 2」のようにポートごとに出るので、シンセ A は OUT 1、エフェクター B は OUT 2、のように分けられます。送れないとき（出力を選んでいない・機器がつながっていない）は設定の画面に赤い字で出ます。</li>
   <li>ON RELEASE の RETURN: CC・AFTERTOUCH は触る前の値へ、CC PAN・PITCH BEND は真ん中へ戻ります（ピッチベンドのホイールのように使えます）。</li>
   <li>フェーダー・ノブの位置は保存しません（アプリを開き直すと 0、PAN・BEND は真ん中から）。同じ値は続けて送りません。</li>
   <li>シーケンスの MIDI 出力（MIDI… の OUTPUT CHANNEL）とは別に送るので、シーケンスを外部の音源で鳴らしながら、別のチャンネルのつまみを動かせます。MIDI クロックを SEND にすれば、DBR-1 のテンポに機材を合わせられます。</li>
@@ -558,7 +558,7 @@
 <tr><th>項目</th><th>はたらき</th></tr>
 <tr><td>IN（ON / OFF・CH）</td><td>受けたノートでトラックを鳴らします。REC 中なら記録（ベロシティもそのまま）。CH = 受けるチャンネル（ALL / 1〜16）</td></tr>
 <tr><td>NOTES</td><td>ノート番号とトラックの対応。PADS 36–51 = 36〜51 を A01〜B08 に順に。GM DRUMS = 一般的なドラムの番号（kick 36・snare 38・hat 42 …）。出力にも同じ対応を使います</td></tr>
-<tr><td>OUT / OUT CH</td><td>送り先の機器とチャンネル（既定 ch 10）。シーケンス・ROLL・パッドの音を送ります。DBR-1 の音とずれないよう、音の遅れの分だけ遅らせて送ります</td></tr>
+<tr><td>OUT / OUT PORT / OUT CH</td><td>送り先の機器とチャンネル（既定 ch 10）。出力が 2 つ以上ある機器（MIDI インターフェースなど）は OUT PORT で使うポートも選べます。シーケンス・ROLL・パッドの音を送ります。DBR-1 の音とずれないよう、音の遅れの分だけ遅らせて送ります</td></tr>
 <tr><td>CLOCK</td><td>OFF / SEND（DBR-1 がマスター（親）になり、テンポと Start / Stop を送る）/ RECEIVE（つないだ機器に合わせて再生・停止。BPM も追従）</td></tr>
 <tr><td>TIMING</td><td>MIDI を送るタイミングの取り方。APP（既定）= DBR-1 が時刻どおりに送る / SYSTEM = 送る時刻を付けて Android に任せる。どちらが揺れにくいかは端末によって違います（例: Lenovo Tab K11 は SYSTEM、REDMAGIC 9 Pro は APP のほうが安定）。相手の機器のテンポ表示が揺れるときは両方試してください。端末の設定として覚えます</td></tr>
 <tr><td>PLAY</td><td>RECEIVE のときだけ表示。FOLLOW（既定）= 相手の Start / Stop で再生・停止する / IGNORE = 再生・停止は DBR-1 の PLAY で行い、クロックとテンポだけ相手に合わせる</td></tr>
