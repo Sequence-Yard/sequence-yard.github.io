@@ -213,7 +213,14 @@
 <div>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
-<tr><td>LOAD</td><td>From DBR-1/Samples… (the Samples folder) / From file… (a file on the device or in the cloud: WAV, MP3, …) / ● Record (mic / audio input)… (from a microphone, an audio interface or DBR-1 itself; slicing and time stretch are here too → <a href="#sampling">below</a>) / <b>Load sound… / Save this sound…</b> (one track's sound — the sample plus its settings such as filter, INSERT and EQ — saved in DBR-1/Sounds and loaded into the selected track after a confirmation; use them as sound presets; undoable) / built-in sounds (the kit and the demo songs). Tap <b>▶</b> to the right of a built-in sound to audition it without loading it into the track (tap again or ■ to stop). Pitched sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) and chord sounds their chord name (e.g. Dm9); a ~ (cowbell, conga) marks a percussive sound's nearest note. The From DBR-1/Samples… list has ▶ too.<br><small>Auditioning plays the raw sound (the track's pitch, filter and FX are not applied)</small></td></tr>
+<tr><td>LOAD</td><td>Opens the <b>sound browser (SOUNDS)</b>, where you find a sound for the selected track (shown at the top left as "→ A01 …").<br>
+<b>Top tabs</b>: <b>USER</b> (your own sounds: the audio files in DBR-1/Samples and the sounds in DBR-1/Sounds) / <b>PRESET</b> (the 20 built-in sounds: BANK A / BANK B / EXTRA) / <b>DEMO</b> (the demo songs' sounds, by song).<br>
+<b>USER tabs</b>: after ALL and UNSORTED (sounds in no tab) you can make your own tabs and sort sounds into them (<b>+ TAB</b> to add; long-press a tab to rename, move or delete it — deleting a tab keeps its sounds). Choose a sound's tab with <b>TAB ▾</b> on its row.<br>
+<b>Each row</b>: ▶ preview (plays the raw sound without loading it; tap again or ■ to stop) / name (<b>tap to load it into the track</b>; the browser stays open so you can compare) / <b>category</b> (KICK, SNARE, HAT, …; tap to choose, or New category… for your own name; a sound without one shows a faint guess from its name) / format (WAV, MP3, AIFF, …; DBRSND = sample plus settings) / <b>rating ★1–5</b> (tap the same star again for 0) / for USER, ⋯ to share or delete.<br>
+<b>Filters</b>: Search (name or category) / CATEGORY / FORMAT / ★ (n stars or more) / SORT (list order, name, rating, category, newest).<br>
+Bottom row (⋯ on phones): <b>From file…</b> (a file on the device or in the cloud) / <b>● Record…</b> (from a microphone, an audio interface or DBR-1 itself; slicing and time stretch are here too → <a href="#sampling">below</a>) / <b>Save this sound…</b> (saves the selected track's sound — sample plus settings such as filter, INSERT and EQ — in DBR-1/Sounds; if a USER tab is open, it goes into that tab). Loading a .dbrsnd asks first. Undoable.<br>
+Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) and chord sounds their chord name (e.g. Dm9); a ~ (cowbell, conga) marks a percussive sound's nearest note.<br>
+<small>Preview plays the raw sound (the track's pitch, filter and FX are not applied). Categories, ratings and tabs are also copied to DBR-1/sound_library.json in your save folder, so they come back after reinstalling</small></td></tr>
 <tr><td>start / end</td><td>Which part of the sample plays</td></tr>
 <tr><td>volume / pan</td><td>Level and left-right position</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
@@ -518,7 +525,7 @@
   <li>LOAD → choose a type to see the files in the folder, newest first. Tap a name to load it (you are asked before anything is overwritten).</li>
   <li><span class="key">Share</span> sends the file by email, Drive, messages and so on. <span class="key">✕</span> deletes it (with confirmation).</li>
   <li><span class="key">Change folder</span> picks another save folder. <span class="key">Other location…</span> opens a file from anywhere, including the cloud.</li>
-  <li>Copy WAV files from a computer into <b>DBR-1/Samples</b>, then load them from SOUND → LOAD → From DBR-1/Samples….</li>
+  <li>Copy WAV files from a computer into <b>DBR-1/Samples</b>, then load them from the USER tab of SOUND → LOAD.</li>
 </ul>
 <h3>Export (audio, video and MIDI; share on social media and messages)</h3>
 <p>SAVE (≡ on phones) → <b>Audio export…</b> turns your music into an audio, video or MIDI file.</p>
