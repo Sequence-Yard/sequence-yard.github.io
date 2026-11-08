@@ -599,7 +599,7 @@
 </table>
 <ul>
   <li>A track sent to its own output keeps its filter, distortion, EQ, volume and pan (no pan on a single channel), but skips MASTER (master filter, MASTER volume, limiter). Its reverb / delay sends still go to the FX on MAIN.</li>
-  <li><b>Note</b>: multi-out can add latency, and some device and interface combinations give <b>silence or noise</b>. On Android 14 and later DBR-1 asks the system to open the interface at 48 kHz; on older Android the system may open it at its highest rate (e.g. 192 kHz) and stay silent (e.g. a Lenovo Tab M10 3rd Gen with a Scarlett 6i6; on that tablet even stereo and other apps are silent). If so, set MULTI OUT to OFF (stereo).</li>
+  <li><b>Note</b>: multi-out can add latency; on some devices it does not use the system's low-latency path and lags a lot (e.g. about 0.3 s on a REDMAGIC 9 Pro with a Scarlett 6i6, versus about 0.02 s in stereo). Play the pads in stereo (MULTI OUT OFF) and use multi-out for sending tracks to a mixer or recording. Also, and some device and interface combinations give <b>silence or noise</b>. On Android 14 and later DBR-1 asks the system to open the interface at 48 kHz; on older Android the system may open it at its highest rate (e.g. 192 kHz) and stay silent (e.g. a Lenovo Tab M10 3rd Gen with a Scarlett 6i6; on that tablet even stereo and other apps are silent). If so, set MULTI OUT to OFF (stereo).</li>
   <li>Crackle, or sound that seems slightly slow, can also come from power noise. Try unplugging a USB charging cable from the tablet or the interface (confirmed with a Lenovo Tab K11 and a Scarlett 6i6).</li>
   <li>Export and RECORD capture MAIN only.</li>
   <li>Unplug the device and DBR-1 falls back to stereo; plug it back in and multi-out returns.</li>
