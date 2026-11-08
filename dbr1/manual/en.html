@@ -591,6 +591,7 @@
 <figure class="small"><img src="img/audio_dialog.webp" alt="Audio I/O"><figcaption>Audio I/O. With MULTI OUT: ON, each track can have its own output</figcaption></figure>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
+<tr><td>SOUND OUT</td><td>Shown while a USB device is connected. <b>USB</b> (default) = sound comes out of the USB device / <b>THIS DEVICE</b> = sound plays from the tablet or phone itself (wired headphones, then Bluetooth, then the speaker) and the USB device is used only for MIDI and recording input (for example, drive external gear from the interface's MIDI ports while you listen on the tablet). Multi-out is not available with THIS DEVICE. Remembered on this device</td></tr>
 <tr><td>MULTI OUT</td><td>ON opens all of the device's output channels (OFF = the usual stereo 1-2). Remembered on this device</td></tr>
 <tr><td>MAIN OUT</td><td>The pair that carries MAIN (the overall mix, FX and metronome): 1-2 (default) / 3-4 / 5-6 / …</td></tr>
 <tr><td>TRACK OUTPUTS</td><td>Where each of the 16 tracks goes. Tap and pick from the list: MAIN / a pair (3-4, 5-6 …, stereo) / a single channel (3, 4, 5, 6 …, mono). Tracks sent to the same output are summed. In the mixer you can also tap the output under the channel name to choose it (anything but MAIN turns MULTI OUT on; under MASTER you pick the MAIN pair, or "Stereo only" = OFF)</td></tr>
@@ -598,7 +599,8 @@
 </table>
 <ul>
   <li>A track sent to its own output keeps its filter, distortion, EQ, volume and pan (no pan on a single channel), but skips MASTER (master filter, MASTER volume, limiter). Its reverb / delay sends still go to the FX on MAIN.</li>
-  <li>Multi-out bypasses the system mixer, so latency goes up a little (about 21 ms → 28 ms on a Lenovo Tab K11 with a Scarlett 6i6). Export and RECORD capture MAIN only.</li>
+  <li><b>Note</b>: with some device and interface combinations, the system opens outputs with 3 or more channels at a high sample rate (e.g. 192 kHz) and you get <b>silence or noise</b>. This happens in other apps too and DBR-1 cannot change it (e.g. with a Scarlett 6i6: silent on a Lenovo Tab M10 3rd Gen and a REDMAGIC 9 Pro, noisy on a Lenovo Tab K11). If so, set MULTI OUT to OFF (stereo). On some devices even stereo is opened at a high rate and stays silent (Lenovo Tab M10 3rd Gen).</li>
+  <li>Multi-out uses a larger buffer so it does not drop out, which adds latency (about 85 ms on a Lenovo Tab K11 with a Scarlett 6i6). Export and RECORD capture MAIN only.</li>
   <li>Unplug the device and DBR-1 falls back to stereo; plug it back in and multi-out returns.</li>
 </ul>
 </section>

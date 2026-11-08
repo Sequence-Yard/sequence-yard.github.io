@@ -591,6 +591,7 @@
 <figure class="small"><img src="img/audio_dialog.webp" alt="Audio I/O"><figcaption>Audio I/O。MULTI OUT: ON で、トラックごとに出力先を選べます</figcaption></figure>
 <table>
 <tr><th>項目</th><th>内容</th></tr>
+<tr><td>SOUND OUT</td><td>USB の機器をつないでいるときに出ます。<b>USB</b>（既定）= 音を USB の機器から出す / <b>THIS DEVICE</b> = 音は本体（有線のヘッドホン → Bluetooth → スピーカーの順）から出し、USB の機器は MIDI・録音の入力だけに使う（例: オーディオインターフェースの MIDI 端子で外部の機材を鳴らしながら、音はタブレットで聞く）。THIS DEVICE のときはマルチアウトは使えません。端末の設定として覚えます</td></tr>
 <tr><td>MULTI OUT</td><td>ON にすると、機器の全チャンネルで出力します（OFF = いつものステレオ 1-2）。端末の設定として覚えます</td></tr>
 <tr><td>MAIN OUT</td><td>MAIN（全体の音・FX・メトロノーム）を出すペア。1-2（既定）/ 3-4 / 5-6 / …</td></tr>
 <tr><td>TRACK OUTPUTS</td><td>16 トラックそれぞれの出力先。タップして一覧から選びます: MAIN / ペア（3-4・5-6 …、ステレオ）/ 1 チャンネル（3・4・5・6 …、モノラル）。同じ出力に複数のトラックを出すと足されます。ミキサーでも、チャンネル名の下の出力先をタップして選べます（MAIN 以外を選ぶと MULTI OUT も自動で ON になります。MASTER の下では MAIN を出すペアを選べ、「Stereo only」を選ぶと MULTI OUT が OFF になります）</td></tr>
@@ -598,7 +599,8 @@
 </table>
 <ul>
   <li>別の出力へ出したトラックは、トラックのフィルター・ディストーション・EQ・音量・パン（1 チャンネルのときはパンなし）までかかり、MASTER（全体フィルター・MASTER の音量・リミッター）は通りません。リバーブ・ディレイのセンドは MAIN の FX へ送られます。</li>
-  <li>マルチアウト中は OS のミキサーを通らない出力になるため、音の遅れが少し増えます（Lenovo Tab K11 + Scarlett 6i6 で約 21ms → 28ms）。書き出し・録音（RECORD）は MAIN の音だけです。</li>
+  <li><b>ご注意</b>: 端末とオーディオインターフェースの組み合わせによっては、3ch 以上の出力を OS が高いサンプルレート（192kHz など）で開き、<b>音が出ない・ノイズが乗る</b>ことがあります（DBR-1 以外のアプリでも同じで、アプリからは変えられません。例: Scarlett 6i6 で、Lenovo Tab M10 3rd Gen・REDMAGIC 9 Pro は無音、Lenovo Tab K11 はノイズ）。その場合は MULTI OUT を OFF（ステレオ）にしてください。端末によっては、ステレオでも高いサンプルレートで開かれて音が出ないことがあります（Lenovo Tab M10 3rd Gen）。</li>
+  <li>マルチアウト中は途切れないようにバッファを多めに取るので、音の遅れが増えます（Lenovo Tab K11 + Scarlett 6i6 で約 85ms）。書き出し・録音（RECORD）は MAIN の音だけです。</li>
   <li>機器を外すと自動でステレオに戻り、もう一度つなぐとマルチアウトに戻ります。</li>
 </ul>
 </section>
