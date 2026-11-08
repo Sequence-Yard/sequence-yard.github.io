@@ -398,15 +398,28 @@
 <tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中は小節の終わりで切り替わります</td></tr>
 <tr><td>SCENE A・SCENE B・SCENE A⇄B</td><td>FX シーンの切り替え</td></tr>
 <tr><td>REVERB・DELAY・DIST</td><td>エフェクトの ON / OFF</td></tr>
+<tr><td>MIDI</td><td>外部の機材へ MIDI を送ります（下の「MIDI の部品」）。SEND で <b>NOTE</b>（押す = ノートオン、離す / もう一度押す = ノートオフ。VALUE = ベロシティ）/ <b>CC</b>（押す = VALUE、離す / もう一度押す = 0）/ <b>PROGRAM</b>（押したときにプログラムチェンジ）</td></tr>
 </table>
 <p>PRESS: <b>WHILE HELD</b> = 押している間だけ（離すと押す前の状態に戻る）、<b>TOGGLE</b> = 押すたびに切り替え。NAME で 10 文字までの名前を付けられます（空 = 自動）。</p>
 <table>
 <tr><th>フェーダー・ノブの CONTROLS</th><th>はたらき</th></tr>
 <tr><td>FLT</td><td>全体フィルター（上 = ハイパス、下 = ローパス）</td></tr>
 <tr><td>USER</td><td>USER1〜8 の割り当てを足し引きします（→ <a href="#macro">USER</a>）。メインフェーダーの USER とも足し合わされ、いくつ同時に動かしてもかまいません。<b>Edit USER…</b> で割り当ての画面へ</td></tr>
+<tr><td>MIDI (external)</td><td>外部の機材へ MIDI を送ります。SEND で値の形を選びます: <b>CC 0–127</b>（下 = 0、上 = 127）/ <b>CC PAN</b>（真ん中 = 64。表示は L64〜C〜R63、パンのように真ん中のあるパラメーター向け）/ <b>PITCH BEND</b>（14bit、真ん中 = 0）/ <b>AFTERTOUCH</b>（チャンネルプレッシャー 0〜127）</td></tr>
 <tr><td>PARAMETER</td><td>パラメーター 1 つ。TARGET で SELECTED TRACK（選択中のトラック）・決まったトラック（17 種類）か、FX / MASTER（13 種類）を選びます</td></tr>
 </table>
 <p>ON RELEASE: <b>RETURN</b> = 指を離すと戻る（FLT・USER は中央、パラメーターは触る前の値）、<b>STAY</b> = そのまま。フェーダーは触れた位置へ動き、ノブは上下（または左右）にドラッグして回します。ゆっくり動かすと細かく、速く動かすほど大きく（最大 4 倍）変わるので、端から端まで 1 回で動かせます。</p>
+<h3>MIDI の部品</h3>
+<p>DBR-1 をマスターにして、外部のシンセやエフェクター、照明などを操作するための部品です。ボタンの ACTION の <b>MIDI</b>、フェーダー・ノブの CONTROLS の <b>MIDI (external)</b> で選びます。</p>
+<ul>
+  <li><b>CHANNEL</b>: <b>ALL</b>（1〜16 の全部に同じものを送る）か、1〜16 のどれか 1 つ。</li>
+  <li><b>CC NUMBER / NOTE / PROGRAM</b>: 送る番号（0〜127）。ノートは音名も出ます（60 = C4）。</li>
+  <li>送り先は、ロゴ（スマートフォンは ≡）の「MIDI…」の <b>OUTPUT</b> で選んだ機器です。選んでいないときは設定の画面に赤い字で出ます。</li>
+  <li>ON RELEASE の RETURN: CC・AFTERTOUCH は触る前の値へ、CC PAN・PITCH BEND は真ん中へ戻ります（ピッチベンドのホイールのように使えます）。</li>
+  <li>フェーダー・ノブの位置は保存しません（アプリを開き直すと 0、PAN・BEND は真ん中から）。同じ値は続けて送りません。</li>
+  <li>シーケンスの MIDI 出力（MIDI… の OUTPUT CHANNEL）とは別に送るので、シーケンスを外部の音源で鳴らしながら、別のチャンネルのつまみを動かせます。MIDI クロックを SEND にすれば、DBR-1 のテンポに機材を合わせられます。</li>
+</ul>
+<figure class="small"><img src="img/perform_midi.webp" alt="MIDI の部品の設定"><figcaption>ボタンの MIDI（NOTE・チャンネル・ノート番号・ベロシティ）</figcaption></figure>
 <figure><img src="img/phone_perform.webp" alt="スマートフォンのパフォーマンス画面"><figcaption>スマートフォン: 左のタブの PERF</figcaption></figure>
 <div class="tip">この画面の MUTE・SOLO・シーン・エフェクトの ON / OFF は演奏の操作として扱い、↶（元に戻す）の履歴には入りません（長く演奏しても、それまでの編集を戻せます。あとで ↶ しても演奏した状態はそのまま）。状態はプロジェクトに保存されます。パラメーターの変更はふだんのつまみと同じく ↶ で戻せます。REC 中に再生しながらパラメーターを動かすと、MIDI の CC と同じようにオートメーションとして記録されます。</div>
 </section>
@@ -622,7 +635,7 @@
 <tr><td>パターンの切り替え</td><td>再生中は小節（パターン）の終わり、停止中はすぐ</td></tr>
 <tr><td>録音</td><td>いちばん近いステップに記録。REC で再生を始めると 1 小節のカウントイン</td></tr>
 <tr><td>ロール</td><td>1/4・1/8・1/16・1/32、SLIP あり / なし</td></tr>
-<tr><td>パフォーマンス画面</td><td>18×10 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 16 種類（押している間 / 押すたびに切替）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ）</td></tr>
+<tr><td>パフォーマンス画面</td><td>18×10 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 17 種類（押している間 / 押すたびに切替。MIDI の NOTE / CC / PROGRAM を含む）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ / MIDI の CC・CC PAN・PITCH BEND・AFTERTOUCH、チャンネル ALL / 1〜16）</td></tr>
 <tr><td>元に戻す</td><td>100 回まで（ステップ・キット・ソング・パターンのテンポ）</td></tr>
 <tr><td>オートメーション</td><td>パターンごと。ステップごとのロック、または 1 ステップ 8 点の線。トラック 17・FX / MASTER 14 のパラメーター</td></tr>
 </table>

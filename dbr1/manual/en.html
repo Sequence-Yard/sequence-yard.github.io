@@ -398,15 +398,28 @@
 <tr><td>PATTERN, ◀ PATTERN, PATTERN ▶</td><td>Go to a set pattern number / the previous or next pattern. While playing, the change happens at the end of the bar</td></tr>
 <tr><td>SCENE A, SCENE B, SCENE A⇄B</td><td>Switch the FX scene</td></tr>
 <tr><td>REVERB, DELAY, DIST</td><td>Turn the effect on / off</td></tr>
+<tr><td>MIDI</td><td>Sends MIDI to external gear (see "MIDI parts" below). SEND: <b>NOTE</b> (press = note on, release / press again = note off; VALUE = velocity) / <b>CC</b> (press = VALUE, release / press again = 0) / <b>PROGRAM</b> (a program change when pressed)</td></tr>
 </table>
 <p>PRESS: <b>WHILE HELD</b> = only while pressed (returns to the previous state on release), <b>TOGGLE</b> = switches on each press. NAME sets a name of up to 10 characters (empty = automatic).</p>
 <table>
 <tr><th>Fader / knob CONTROLS</th><th>What it does</th></tr>
 <tr><td>FLT</td><td>Master filter (up = high-pass, down = low-pass)</td></tr>
 <tr><td>USER</td><td>Adds / subtracts a USER1–8 assignment (→ <a href="#macro">USER</a>). It adds up with the main fader's USER, and any number can move at once. <b>Edit USER…</b> opens the assignment screen</td></tr>
+<tr><td>MIDI (external)</td><td>Sends MIDI to external gear. SEND picks the value format: <b>CC 0–127</b> (bottom = 0, top = 127) / <b>CC PAN</b> (center = 64, shown L64 – C – R63, for parameters with a center such as pan) / <b>PITCH BEND</b> (14-bit, center = 0) / <b>AFTERTOUCH</b> (channel pressure 0–127)</td></tr>
 <tr><td>PARAMETER</td><td>A single parameter. Under TARGET, choose SELECTED TRACK, a fixed track (17 parameters) or FX / MASTER (13 parameters)</td></tr>
 </table>
 <p>ON RELEASE: <b>RETURN</b> = goes back when you let go (FLT and USER to the center, a parameter to its value before you touched it), <b>STAY</b> = stays. Faders jump to where you touch; knobs turn by dragging up / down (or left / right). Move slowly for fine steps; the faster you move, the bigger the change (up to 4×), so one flick goes end to end.</p>
+<h3>MIDI parts</h3>
+<p>Parts for running external synths, effects, lights and so on with DBR-1 as the master. Choose <b>MIDI</b> as a button's ACTION, or <b>MIDI (external)</b> under a fader's or knob's CONTROLS.</p>
+<ul>
+  <li><b>CHANNEL</b>: <b>ALL</b> (the same message on all 16 channels) or one of 1–16.</li>
+  <li><b>CC NUMBER / NOTE / PROGRAM</b>: the number to send (0–127). Notes also show their name (60 = C4).</li>
+  <li>Messages go to the device chosen as <b>OUTPUT</b> in "MIDI…" (logo menu, or ≡ on phones). If none is open, the settings say so in red.</li>
+  <li>ON RELEASE RETURN: CC and AFTERTOUCH go back to the value before you touched them; CC PAN and PITCH BEND go back to the center (like a pitch-bend wheel).</li>
+  <li>Fader and knob positions are not saved (they start at 0, or the center for PAN / BEND). The same value is not sent twice in a row.</li>
+  <li>These are sent separately from the sequence's MIDI output (OUTPUT CHANNEL in MIDI…), so you can play the sequence on an external instrument while turning knobs on another channel. Set MIDI clock to SEND to keep the gear at DBR-1's tempo.</li>
+</ul>
+<figure class="small"><img src="img/perform_midi.webp" alt="MIDI part settings"><figcaption>A MIDI button (NOTE, channel, note number, velocity)</figcaption></figure>
 <figure><img src="img/phone_perform.webp" alt="Performance screen on a phone"><figcaption>Phones: the PERF tab on the left</figcaption></figure>
 <div class="tip">MUTE, SOLO, scene and effect on / off on this screen count as playing, not editing: they are not added to the ↶ (undo) history, so a long performance never pushes out your edits, and a later ↶ leaves what you played as it is. Their state is saved with the project. Parameter changes can be undone like the usual knobs. Moving a parameter while recording (REC on, playing) records it as automation, just like a MIDI CC.</div>
 </section>
@@ -622,7 +635,7 @@
 <tr><td>Pattern change</td><td>At the end of the bar while playing, immediately when stopped</td></tr>
 <tr><td>Recording</td><td>Quantized to the nearest step; one-bar count-in when starting with REC on</td></tr>
 <tr><td>Roll</td><td>1/4, 1/8, 1/16, 1/32, with or without SLIP</td></tr>
-<tr><td>Performance screen</td><td>18×10 grid × 4 pages (saved on the device, separately for tablet and phone). 16 button actions (while held / toggle), faders and knobs (FLT / USER / a single parameter)</td></tr>
+<tr><td>Performance screen</td><td>18×10 grid × 4 pages (saved on the device, separately for tablet and phone). 17 button actions (while held / toggle; includes MIDI NOTE / CC / PROGRAM), faders and knobs (FLT / USER / a single parameter / MIDI CC, CC PAN, PITCH BEND, AFTERTOUCH on channel ALL or 1–16)</td></tr>
 <tr><td>Undo</td><td>Up to 100 steps (steps, kit, song, pattern tempo)</td></tr>
 <tr><td>Automation</td><td>Per pattern. Per-step locks or a line with 8 points per step. 17 track and 14 FX / master parameters</td></tr>
 </table>
