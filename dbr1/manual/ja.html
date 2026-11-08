@@ -42,14 +42,14 @@
 <figure><img src="img/tablet_overview.webp" alt="タブレットの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、STOP の後の PLAY を頭から / 続きから（After STOP）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>メトロノームの ON / OFF</td></tr>
-<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止</td></tr>
+<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止。止めた後の PLAY は、既定では頭から再生します。メニューの <b>After STOP</b> を <b>continue</b> にすると、止めた位置の続きから再生します（パターン・ソングの行がそのままのとき。止めている間にパターンを選び直すと頭から。ソングを最後まで再生したときも頭から。MIDI クロックを送っていれば、位置（Song Position Pointer）と Continue を送ります）</td></tr>
 <tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す（↶ で戻せます）</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>元に戻す / やり直す（最大 100 回）</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>リズムに合わせて叩くとテンポを設定</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="スマートフォンの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、After STOP、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
