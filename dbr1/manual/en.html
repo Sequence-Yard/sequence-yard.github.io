@@ -466,7 +466,7 @@ Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) an
       <li>The one you are not drawing is shown faint, so locks and lines stay easy to tell apart. Where a step has both, the lock wins.</li>
     </ul></li>
   <li><b>Locks</b>: on a track, a locked hit plays with that value, and it holds until the next hit (or lock); hits without a lock go back to the normal value. For FX / MASTER, a lock lasts for that step only.</li>
-  <li><b>Sounding notes follow too</b>: pitch, decay and end (start when reversed) change not only at the start of a note but while it is still sounding, following lines, locks and knob moves (draw a line over a long sound and its pitch moves as it plays, in semitone steps). Moving end before the current position stops the note with a short fade.</li>
+  <li><b>Sounding notes follow too</b>: pitch, decay and end (start when reversed) change not only at the start of a note but while it is still sounding, following lines, locks and knob moves (draw a line over a long sound and its pitch glides as it plays). Moving end before the current position stops the note with a short fade.<br><small>With lines and knob moves, pitch also takes values between semitones, so it glides smoothly. Locks snap to whole semitones, so use a lock when a step needs an exact note.</small></li>
   <li><b>Lines</b>: where you drew, the line's value is used; elsewhere the normal value (dotted line). The strip at the very bottom of the drawing area is below 0: touching it still gives 0 (so you can draw 0 even on devices where a swipe up from the screen edge goes home). Each step has 8 points, smoothly joined. Three shapes:
     <ul>
       <li><b>FREE</b> = follows your finger.</li>
