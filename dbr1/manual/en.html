@@ -139,7 +139,7 @@
 </table>
 <div class="tip">Probability is rolled again on every pass. Exports (PATTERN / SONG) follow the probabilities too, and stems play on exactly the same steps as the mix. MIDI files ignore probability and write every note; ratchets are written as separate notes.</div>
 <h3>Length and pages</h3>
-<p>Tap <span class="key">LEN</span> to open a menu and set the pattern length from 1 to 64 steps (1 step = a 16th note): − / + change it by one, and buttons pick common lengths. A longer pattern is filled by repeating what is already there.</p>
+<p>Tap <span class="key">LEN</span> to open a menu and set the pattern length from 1 to 64 steps (1 step = a 16th note): − / + change it by one, and buttons pick common lengths (picking one closes the menu). A longer pattern is filled by repeating what is already there.</p>
 <div class="tip">For time signatures other than 4/4 (including odd meters), change the length to match: 3/4 = 12, 7/8 = 14, 5/4 = 20, 7/4 = 28 steps. Steps past the length on the last page are dimmed and cannot be entered. The metronome restarts its count at the top of the pattern, so the downbeat always lands on the first step.</div>
 <p>Buttons 1–4 choose the page on screen (a dot marks the page that is playing). Long-press a page to copy / paste / clear it (all A/B tracks).</p>
 <p>With <span class="key">FOLLOW</span> on, the page on screen follows the playhead during playback (for live play). With it off, the page you chose stays put (for programming).</p>
@@ -466,6 +466,7 @@ Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) an
       <li>The one you are not drawing is shown faint, so locks and lines stay easy to tell apart. Where a step has both, the lock wins.</li>
     </ul></li>
   <li><b>Locks</b>: on a track, a locked hit plays with that value, and it holds until the next hit (or lock); hits without a lock go back to the normal value. For FX / MASTER, a lock lasts for that step only.</li>
+  <li><b>Sounding notes follow too</b>: pitch, decay and end (start when reversed) change not only at the start of a note but while it is still sounding, following lines, locks and knob moves (draw a line over a long sound and its pitch moves as it plays, in semitone steps). Moving end before the current position stops the note with a short fade.</li>
   <li><b>Lines</b>: where you drew, the line's value is used; elsewhere the normal value (dotted line). The strip at the very bottom of the drawing area is below 0: touching it still gives 0 (so you can draw 0 even on devices where a swipe up from the screen edge goes home). Each step has 8 points, smoothly joined. Three shapes:
     <ul>
       <li><b>FREE</b> = follows your finger.</li>
