@@ -242,11 +242,12 @@
 <div class="tip">音を差し替えたとき、トラック名が元の音の名前のままなら新しい音の名前に変わります。<br>LOAD メニューの「Built-in kit」で 16 トラックを内蔵の音に戻せます（パターンはそのまま）。</div>
 <h3 id="generate">音を作る（GENERATE）</h3>
 <p>SOUND タブの LOAD の画面の右上 <span class="key">✦ GENERATE…</span>（スマートフォンは <span class="key">✦ GEN</span>）で、波形を組み合わせて自分の音を作れます。できた音はサンプリングの画面に渡して、選択中のトラックに入れます。プリセットにない音が欲しいときや、ベース・コード・パッド・ドラムを手早く作りたいときに使います。</p>
-<figure><img src="img/generate.webp" alt="GENERATE の画面"><figcaption>GENERATE。左が波形 A / B とそれぞれの形、右上ができた音（合成後）の波形</figcaption></figure>
+<figure><img src="img/generate.webp" alt="GENERATE の画面"><figcaption>GENERATE（画像は前の版）</figcaption></figure>
+<p>画面はスクロールせず、左のタブでページを切り替えます（タブレット = <b>WAVE A · B</b> / <b>KEY · AMP · FILTER</b>、スマートフォン = WAVE A / WAVE B / KEY / AMP / FILTER。左手でタブ、右手で操作）。上の行にできた音（合成後）の波形・名前・長さと、🎲 RANDOM・▶ PLAY・<b>HOLD</b>・USE → EDIT… があります。<b>HOLD</b> を点けると、できた音をくり返し鳴らし続けます。そのままフィルターなどを動かすと、鳴っている位置のまま新しい音に切り替わるので、変化を聴きながら調整できます（もう一度押すか PLAY で止まります）。</p>
 <ol class="steps">
-  <li><b>WAVE A</b> で元になる波形を選ぶ: <b>BASIC</b>（SINE / TRI / SAW / SQUARE / PULSE）・<b>SYNTH</b>（SUPERSAW / FM / ORGAN / PLUCK / SYNC）・<b>DRUM</b>（KICK / SNARE / CLAP / HAT / TOM / RIM / BELL / ZAP）・<b>NOISE</b>（WHITE / PINK / BROWN）・<b>SAMPLE</b>（キットの 16 トラックの音か、保存フォルダの Samples の音。録音した音も使えます）</li>
+  <li><b>WAVE A</b> で元になる波形を選ぶ: <b>BASIC</b>（SINE / TRI / SAW / SQUARE / PULSE）・<b>SYNTH</b>（SUPERSAW / FM / ORGAN / PLUCK / SYNC）・<b>INST</b>（生楽器っぽい音: PIANO / E.PIANO / GUITAR / BASS / STRINGS / MARIMBA / VIBES / BRASS / FLUTE / CHIME）・<b>DRUM</b>（KICK / SNARE / CLAP / HAT / TOM / RIM / BELL / ZAP）・<b>NOISE</b>（WHITE / PINK / BROWN）・<b>SAMPLE</b>（キットの 16 トラックの音か、保存フォルダの Samples の音。録音した音も使えます）</li>
   <li>重ねたいときは <b>WAVE B (layer)</b> を on にして、2 つ目の波形を選ぶ（例: SAW に 1 オクターブ下の SINE、キックにノイズ）。波形は最大 2 つです</li>
-  <li>それぞれ <b>TUNE</b>（±24 半音）・<b>SHAPE</b>（波形ごとに意味が変わります: FOLD = 折り返しのゆがみ、WIDTH = パルスの幅、DETUNE = スーパーソウの広がり、INDEX = FM の深さ、DRAWBAR = オルガンの倍音、DAMP = 弦のこもり、SYNC = シンクの強さ、DECAY = ドラムの長さ、START = サンプルの再生開始位置）・<b>LEVEL</b> を決める</li>
+  <li>それぞれ <b>TUNE</b>（±24 半音）・<b>SHAPE</b>（波形ごとに意味が変わります: FOLD = 折り返しのゆがみ、WIDTH = パルスの幅、DETUNE = スーパーソウの広がり、INDEX = FM の深さ、DRAWBAR = オルガンの倍音、DAMP = 弦のこもり、SYNC = シンクの強さ、TONE = 明るさ、BARK = エレピの硬さ、ENSEMBLE = ストリングスの広がり、HARD = マレットの硬さ、TREMOLO = ビブラフォンの揺れ、BRIGHT = ブラスの明るさ、BREATH = フルートの息、DECAY = ドラムの長さ、START = サンプルの再生開始位置）・<b>LEVEL</b> を決める</li>
   <li><b>AMP</b>（ATTACK / LENGTH = 押している長さ / DECAY / SUSTAIN / RELEASE）と <b>FILTER</b>（OFF / LP / HP / BP、CUTOFF・RESO・ENV = エンベロープでカットオフを動かす量・ENV DEC）、<b>DRIVE</b>（歪み）を決める</li>
   <li><b>KEY / CHORD</b> で音名（C〜B・OCTAVE 1〜6）と、単音（NOTE）かコード（OCT / 5 / MAJ / m / sus2 / sus4 / dim / aug / 7 / M7 / m7 / add9 / m9）を選ぶと、その音が鳴ります。▶ PLAY でもう一度鳴らせます</li>
   <li>気に入ったら <span class="key">USE → EDIT…</span>。サンプリングの画面で範囲・名前・KEY（音名・コード名が入っています）を確かめて、<b>Use on …</b> でトラックに入れます（Samples に WAV でも保存）</li>
@@ -674,7 +675,7 @@
 <tr><td>サンプルレート</td><td>8〜192kHz（出力のレートに合わせて再生）</td></tr>
 <tr><td>長さ</td><td>1 つにつき 60 秒まで（長いファイルは最初の 60 秒を使用）</td></tr>
 <tr><td>ファイルの大きさ</td><td>100MB まで</td></tr>
-<tr><td>GENERATE</td><td>波形 2 つまで（BASIC 5・SYNTH 5・DRUM 8・NOISE 3・SAMPLE）、AMP（ADSR）・FILTER（LP / HP / BP、エンベロープ付き）・DRIVE、キー C1〜B6 × 単音 / コード 13 種。48kHz・モノラル・最長 8 秒で計算し、サンプリングの画面で整えて使う</td></tr>
+<tr><td>GENERATE</td><td>波形 2 つまで（BASIC 5・SYNTH 5・INST 10・DRUM 8・NOISE 3・SAMPLE）、AMP（ADSR）・FILTER（LP / HP / BP、エンベロープ付き）・DRIVE、キー C1〜B6 × 単音 / コード 13 種。48kHz・モノラル・最長 8 秒で計算し、サンプリングの画面で整えて使う</td></tr>
 <tr><td>サンプリング</td><td>内蔵マイク / USB の入力機器 / DBR-1 自身の出力（リサンプリング、BARS 1〜8 小節・PAD の単音は最長 10 秒）から 60 秒まで（48kHz、モノラル。ステレオは L+R / L / R、3ch 以上の機器はチャンネルの番号で選ぶ）。スライス最大 16、タイムストレッチ 50〜200%（音の高さはそのまま）。WAV（16bit、RATE で 8〜32kHz にも）で保存。BIT 12 / 8 も選べる</td></tr>
 <tr><td>チャンネル</td><td>モノラルで再生（ステレオは左右を合わせる）</td></tr>
 <tr><td>メモリ</td><td>16bit で保持。メモリにあるのは今のキットの音だけ（16 音）</td></tr>
