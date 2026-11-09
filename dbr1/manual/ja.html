@@ -218,7 +218,7 @@
 <b>USER のタブ</b>: ALL / UNSORTED（どのタブにも入れていない音）の右に、自分でタブを作って音を振り分けられます（<b>+ TAB</b> で作る、タブの長押しで名前の変更・並べ替え・削除。タブを消しても音は消えません）。各行の <b>TAB ▾</b> で入れるタブを選びます。<br>
 <b>各行</b>: ▶ 試聴（トラックに入れずに原音を鳴らす。もう一度か ■ で止まる）/ 名前（<b>タップでトラックへ</b>。画面は閉じないので続けて聴き比べられます）/ <b>カテゴリ</b>（KICK・SNARE・HAT など。タップで選ぶ・New category… で自由な名前も。決めていない音は名前から推測したカテゴリを薄く表示）/ <b>KEY</b>（音の高さ。例: E2・C#5、和音は Dm9 など、音程のはっきりしない打楽器・環境音・ノイズは UNKNOWN。内蔵の音は作ったときの音名、自分の音は DBR-1 が音を調べて推定したキーを薄く表示（初めて開いたときに順に調べます。「…」は調べている途中）。タップでキーの画面: チューナー（推定の音名・ずれ（セント）・周波数）と <b>Use …</b>（オススメのキーにする）、OCTAVE と 12 音のボタン、UNKNOWN、Chord / other…（和音などを入力）、Auto（決めたキーを消して推定に戻す）。決めたキーは濃い色）/ 形式（WAV・MP3・AIFF など、DBRSND = サンプルと音の設定）/ <b>お気に入り度 ★1〜5</b>（同じ ★ をもう一度で 0）/ USER は ⋯ で共有・削除。<br>
 <b>絞り込み</b>: Search（名前・カテゴリ・キー）/ CATEGORY / FORMAT / ★（★n 以上）/ SORT（並び: 一覧の順・名前・お気に入り度・カテゴリ・キー（低い音から）・新しい順）。<br>
-下の段（スマホは ⋯）: <b>From file…</b>（端末やクラウドのファイル）/ <b>● Record…</b>（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ <b>Save this sound…</b>（選択中のトラックの音 = サンプルと音の設定（フィルター・INSERT・EQ など）を DBR-1/Sounds に保存。USER のタブを開いているとそのタブに入ります）。.dbrsnd を入れるときは確認が出ます。↶ で戻せます。<br>
+下の段（スマホは ⋯）: <b>From file…</b>（端末やクラウドのファイル）/ <b>● Record…</b>（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ 右上の <b>✦ GENERATE…</b>（波形を組み合わせて音を作る → <a href="#generate">下</a>）/ <b>Save this sound…</b>（選択中のトラックの音 = サンプルと音の設定（フィルター・INSERT・EQ など）を DBR-1/Sounds に保存。USER のタブを開いているとそのタブに入ります）。.dbrsnd を入れるときは確認が出ます。↶ で戻せます。<br>
 音程のある内蔵の音には音名（例: D5。A4 = 440Hz、中央のド = C4）、和音の音にはコード名（例: Dm9）が書いてあります。~ が付いたもの（カウベル・コンガ）は、打楽器でいちばん近い音です。<br>
 <small>※ 試聴は原音のまま鳴らします（トラックの pitch・フィルター・FX はかかりません）。カテゴリ・★・タブは保存フォルダの DBR-1/sound_library.json にも控えが残るので、アプリを入れ直しても戻ります</small></td></tr>
 <tr><td>start / end</td><td>サンプルの再生範囲</td></tr>
@@ -240,6 +240,19 @@
 <tr><td>ステレオ</td><td>左右を合わせてモノラルにします</td></tr>
 </table>
 <div class="tip">音を差し替えたとき、トラック名が元の音の名前のままなら新しい音の名前に変わります。<br>LOAD メニューの「Built-in kit」で 16 トラックを内蔵の音に戻せます（パターンはそのまま）。</div>
+<h3 id="generate">音を作る（GENERATE）</h3>
+<p>SOUND タブの LOAD の画面の右上 <span class="key">✦ GENERATE…</span>（スマートフォンは <span class="key">✦ GEN</span>）で、波形を組み合わせて自分の音を作れます。できた音はサンプリングの画面に渡して、選択中のトラックに入れます。プリセットにない音が欲しいときや、ベース・コード・パッド・ドラムを手早く作りたいときに使います。</p>
+<figure><img src="img/generate.webp" alt="GENERATE の画面"><figcaption>GENERATE。左が波形 A / B とそれぞれの形、右上ができた音（合成後）の波形</figcaption></figure>
+<ol class="steps">
+  <li><b>WAVE A</b> で元になる波形を選ぶ: <b>BASIC</b>（SINE / TRI / SAW / SQUARE / PULSE）・<b>SYNTH</b>（SUPERSAW / FM / ORGAN / PLUCK / SYNC）・<b>DRUM</b>（KICK / SNARE / CLAP / HAT / TOM / RIM / BELL / ZAP）・<b>NOISE</b>（WHITE / PINK / BROWN）・<b>SAMPLE</b>（キットの 16 トラックの音か、保存フォルダの Samples の音。録音した音も使えます）</li>
+  <li>重ねたいときは <b>WAVE B (layer)</b> を on にして、2 つ目の波形を選ぶ（例: SAW に 1 オクターブ下の SINE、キックにノイズ）。波形は最大 2 つです</li>
+  <li>それぞれ <b>TUNE</b>（±24 半音）・<b>SHAPE</b>（波形ごとに意味が変わります: FOLD = 折り返しのゆがみ、WIDTH = パルスの幅、DETUNE = スーパーソウの広がり、INDEX = FM の深さ、DRAWBAR = オルガンの倍音、DAMP = 弦のこもり、SYNC = シンクの強さ、DECAY = ドラムの長さ、START = サンプルの再生開始位置）・<b>LEVEL</b> を決める</li>
+  <li><b>AMP</b>（ATTACK / LENGTH = 押している長さ / DECAY / SUSTAIN / RELEASE）と <b>FILTER</b>（OFF / LP / HP / BP、CUTOFF・RESO・ENV = エンベロープでカットオフを動かす量・ENV DEC）、<b>DRIVE</b>（歪み）を決める</li>
+  <li><b>KEY / CHORD</b> で音名（C〜B・OCTAVE 1〜6）と、単音（NOTE）かコード（OCT / 5 / MAJ / m / sus2 / sus4 / dim / aug / 7 / M7 / m7 / add9 / m9）を選ぶと、その音が鳴ります。▶ PLAY でもう一度鳴らせます</li>
+  <li>気に入ったら <span class="key">USE → EDIT…</span>。サンプリングの画面で範囲・名前・KEY（音名・コード名が入っています）を確かめて、<b>Use on …</b> でトラックに入れます（Samples に WAV でも保存）</li>
+</ol>
+<div class="tip">ドラムとノイズにはキーがありません（KEY / CHORD は使わず、高さは TUNE で）。音程のある波形とドラムを重ねたときは、キー・コードは音程のある波形だけにかかります。<br><b>🎲 RANDOM</b> で波形とつまみをでたらめに選んで鳴らします（キー・コードはそのまま）。思いがけない音から作り始めるのに便利です。<br>同じ設定なら毎回同じ音になります。設定はアプリを終えるまで残るので、閉じて開き直しても続きから作れます。サンプルの音は、元の音の高さを推定して（わからなければ C4 として）キーに合わせます。</div>
+
 <h3 id="sampling">録音して使う（サンプリング）</h3>
 <figure><img src="img/sampler.webp" alt="SAMPLING"><figcaption>録る → 範囲を選ぶ → 整える → Use でトラックへ</figcaption></figure>
 <p>SOUND タブの LOAD →「● Record (mic / audio input)…」で、マイクやオーディオインターフェースから録った音を、選択中のトラックに入れられます。初めて開いたときはマイクの使用の許可を求められます（録音はこの画面でだけ使い、録った音は端末の外へ送りません）。DBR-1 自身の音を録る（<a href="#resample">リサンプリング</a>）、録ったリズムを切って別々のパッドに入れる（<a href="#slice">スライス</a>）、長さを変える（STRETCH）もこの画面で行います。</p>
@@ -661,6 +674,7 @@
 <tr><td>サンプルレート</td><td>8〜192kHz（出力のレートに合わせて再生）</td></tr>
 <tr><td>長さ</td><td>1 つにつき 60 秒まで（長いファイルは最初の 60 秒を使用）</td></tr>
 <tr><td>ファイルの大きさ</td><td>100MB まで</td></tr>
+<tr><td>GENERATE</td><td>波形 2 つまで（BASIC 5・SYNTH 5・DRUM 8・NOISE 3・SAMPLE）、AMP（ADSR）・FILTER（LP / HP / BP、エンベロープ付き）・DRIVE、キー C1〜B6 × 単音 / コード 13 種。48kHz・モノラル・最長 8 秒で計算し、サンプリングの画面で整えて使う</td></tr>
 <tr><td>サンプリング</td><td>内蔵マイク / USB の入力機器 / DBR-1 自身の出力（リサンプリング、BARS 1〜8 小節・PAD の単音は最長 10 秒）から 60 秒まで（48kHz、モノラル。ステレオは L+R / L / R、3ch 以上の機器はチャンネルの番号で選ぶ）。スライス最大 16、タイムストレッチ 50〜200%（音の高さはそのまま）。WAV（16bit、RATE で 8〜32kHz にも）で保存。BIT 12 / 8 も選べる</td></tr>
 <tr><td>チャンネル</td><td>モノラルで再生（ステレオは左右を合わせる）</td></tr>
 <tr><td>メモリ</td><td>16bit で保持。メモリにあるのは今のキットの音だけ（16 音）</td></tr>
