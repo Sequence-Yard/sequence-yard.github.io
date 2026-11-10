@@ -102,7 +102,7 @@
   <li>Templates use the 8 tracks of BANK A (kick to tom lo). You are asked before anything is overwritten. Undo (↶) brings them back (with TEMPO set to GLOBAL, the BPM is not undone).</li>
 </ul>
 <h3 id="demosongs">Listen to the demo songs</h3>
-<p>LOAD → “<b>Demo songs…</b>” loads six songs made only with DBR-1's own features. Press PLAY to hear them all the way through (PLAY mode is SONG). You can watch how they are built while they play: automation (AUTO), FX scenes, per-pattern tempo, basslines made with pitch locks and more.</p>
+<p>LOAD → “<b>Demo songs…</b>” loads seven songs made only with DBR-1's own features. Press PLAY to hear them all the way through (PLAY mode is SONG). You can watch how they are built while they play: automation (AUTO), FX scenes, per-pattern tempo, basslines made with pitch locks and more.</p>
 <div class="cols">
 <figure class="small"><img src="img/demo_songs.webp" alt="Demo songs dialog"><figcaption>Demo songs…</figcaption></figure>
 <div>
@@ -114,10 +114,11 @@
 <tr><td>Haze Yard</td><td>Ambient (100 BPM) → dream pop (112 BPM). Minimal, poppy sequences of different lengths (an arpeggio, stars and blips looping every 12, 7 and 5 steps) scattered across a vast, ocean- or space-like reverb, with a tape-like wobbling delay</td></tr>
 <tr><td>Candy Yard</td><td>Uptempo chiptune (150 BPM). Every sound is made like an old game console's sound chip: only pulse waves, a triangle wave and noise, with 16 volume levels and pitch that moves in 1/60-second steps. Fast arpeggios play the chords, moved with pitch locks. The lead has an echo 3 steps behind, a "pickup" blip loops every 5 steps (per-track length), a tom rolls in 1/16T, and the final chorus jumps up a whole step</td></tr>
 <tr><td>Velvet Sequence</td><td>R&amp;B / neo soul (84 BPM). Opens with vinyl crackle and a muffled electric piano, then a lazy, swung groove (SWING 28), an 808 bass whose pitch glides along a drawn line (AUTO), a tremolo electric piano (a pan line), an "ooh" choir and a smooth lead. The second verse rolls its hi-hats in 1/16T</td></tr>
+<tr><td>Neon Drift</td><td>Trance (138 BPM). Over a four-on-the-floor kick, 16th hi-hats and a rolling off-beat bass, a stab looping every 6 steps, a rim every 7 and an acid line every 12 drift against each other: a hypnotic groove that keeps the same shape yet slowly changes. Fragments of a voice echo through the delay. It stays on one chord for a long time, then the breakdown finally opens up a chord progression and pads, a 1/16T snare roll and a noise sweep lift it, and everything comes in. A sidechain from the kick (FX → MASTER) makes the whole mix pump</td></tr>
 </table>
 <ul>
   <li>A demo song loads as a project, so it replaces all patterns, the kit and the BPM (you are asked first, and ↶ brings them back). Save your work first if you want to keep it.</li>
-  <li>The 96 sounds of the songs are also in the SOUND tab's LOAD list (DEMO · song name), ready for your own tracks. The demo songs stop at the end (→ ONCE in the SONG tab).</li>
+  <li>The 112 sounds of the songs are also in the SOUND tab's LOAD list (DEMO · song name), ready for your own tracks. The demo songs stop at the end (→ ONCE in the SONG tab).</li>
 </ul>
 </div>
 </div>
@@ -228,7 +229,7 @@
 <div class="note">Pressing STOP during playback silences everything that is playing. Playing the same track again also stops its previous sound.</div>
 <h3 id="soundbrowser">Sound browser (LOAD)</h3>
 <p>Opens the <b>sound browser (SOUNDS)</b>, where you find a sound for the selected track (shown at the top left as "→ A01 …").</p>
-<p><b>Top tabs</b>: <b>USER</b> (your own sounds: the audio files in DBR-1/Samples and the sounds in DBR-1/Sounds) / <b>PRESET</b> (the 20 built-in sounds: BANK A / BANK B / EXTRA) / <b>DEMO</b> (the demo songs' sounds, by song).</p>
+<p><b>Top tabs</b>: <b>USER</b> (your own sounds: the audio files in DBR-1/Samples and the sounds in DBR-1/Sounds) / <b>PRESET</b> (the 36 built-in sounds: BANK A / BANK B / EXTRA / POP) / <b>DEMO</b> (the demo songs' sounds, by song).</p>
 <p><b>USER tabs</b>: after ALL and UNSORTED (sounds in no tab) you can make your own tabs and sort sounds into them (<b>+ TAB</b> to add; long-press a tab to rename, move or delete it — deleting a tab keeps its sounds). Choose a sound's tab with <b>TAB ▾</b> on its row.</p>
 <p><b>Each row</b>: ▶ preview (plays the raw sound without loading it; tap again or ■ to stop) / name (<b>tap to load it into the track</b>; the browser stays open so you can compare) / <b>category</b> (KICK, SNARE, HAT, …; tap to choose, or New category… for your own name; a sound without one shows a faint guess from its name) / <b>KEY</b> (the pitch, e.g. E2 or C#5; chords such as Dm9; UNKNOWN for drums, ambience and noise without a clear pitch. Built-in sounds show the note they were made at; your own sounds show, faintly, the key DBR-1 detected by listening to them — they are checked one by one the first time, "…" while in progress. Tap it to open the key picker: a tuner (detected note, offset in cents, frequency) with <b>Use …</b> for the suggested key, OCTAVE and 12 note buttons, UNKNOWN, Chord / other… to type a chord, and Auto to clear your key and go back to the detected one. Keys you set are shown in a strong colour) / format (WAV, MP3, AIFF, …; DBRSND = sample plus settings) / <b>rating ★1–5</b> (tap the same star again for 0) / for USER, ⋯ to share or delete.</p>
 <p><b>Filters</b>: Search (name, category or group; a key only on an exact match such as C#5) / CATEGORY / FORMAT / ★ (n stars or more) / SORT (list order, name, rating, category, key from low to high, newest).</p>
@@ -684,8 +685,8 @@
 <tr><td>Sampling</td><td>Built-in mic / USB input / DBR-1's own output (resampling, BARS 1–8, PAD one-shots up to 10 s), up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available). Up to 16 slices; time stretch 50–200% (pitch unchanged)</td></tr>
 <tr><td>Channels</td><td>Played as mono (stereo files are mixed down)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
-<tr><td>Built-in sounds</td><td>116 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 96 from the demo songs, 44.1 kHz / 16-bit). The 43 pitched ones show a note or chord name (A4 = 440 Hz)</td></tr>
-<tr><td>Demo songs</td><td>6 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard / Candy Yard / Velvet Sequence, about 2 minutes each)</td></tr>
+<tr><td>Built-in sounds</td><td>148 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 16 in POP and 112 from the demo songs, 44.1 kHz / 16-bit). The 56 pitched ones show a note or chord name (A4 = 440 Hz)</td></tr>
+<tr><td>Demo songs</td><td>7 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard / Candy Yard / Velvet Sequence / Neon Drift, about 2 minutes each)</td></tr>
 <tr><td>Polyphony</td><td>One sound per track (a new hit quickly fades out the previous one)</td></tr>
 <tr><td>Play modes</td><td>ONE SHOT / GATE (one step) / BAR (until the end of the pattern); STOP silences everything</td></tr>
 <tr><td>Choke groups</td><td>4 (a sound in the group stops the others within about 5 ms)</td></tr>
