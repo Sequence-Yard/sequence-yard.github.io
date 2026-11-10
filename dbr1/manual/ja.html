@@ -213,12 +213,12 @@
 <div>
 <table>
 <tr><th>項目</th><th>はたらき</th></tr>
-<tr><td>LOAD</td><td><b>音の管理画面（SOUNDS）</b>が開き、選択中のトラック（右上の「→ A01 …」）に入れる音を探せます。<br>
+<tr><td>LOAD</td><td><b>音の管理画面（SOUNDS）</b>が開き、選択中のトラック（左上の「→ A01 …」）に入れる音を探せます。<br>
 <b>上のタブ</b>: <b>USER</b>（自分の音 = 保存フォルダの DBR-1/Samples の音声ファイルと DBR-1/Sounds の音）/ <b>PRESET</b>（内蔵の 20 音。BANK A / BANK B / EXTRA）/ <b>DEMO</b>（デモソングの音。曲ごと）。<br>
 <b>USER のタブ</b>: ALL / UNSORTED（どのタブにも入れていない音）の右に、自分でタブを作って音を振り分けられます（<b>+ TAB</b> で作る、タブの長押しで名前の変更・並べ替え・削除。タブを消しても音は消えません）。各行の <b>TAB ▾</b> で入れるタブを選びます。<br>
 <b>各行</b>: ▶ 試聴（トラックに入れずに原音を鳴らす。もう一度か ■ で止まる）/ 名前（<b>タップでトラックへ</b>。画面は閉じないので続けて聴き比べられます）/ <b>カテゴリ</b>（KICK・SNARE・HAT など。タップで選ぶ・New category… で自由な名前も。決めていない音は名前から推測したカテゴリを薄く表示）/ <b>KEY</b>（音の高さ。例: E2・C#5、和音は Dm9 など、音程のはっきりしない打楽器・環境音・ノイズは UNKNOWN。内蔵の音は作ったときの音名、自分の音は DBR-1 が音を調べて推定したキーを薄く表示（初めて開いたときに順に調べます。「…」は調べている途中）。タップでキーの画面: チューナー（推定の音名・ずれ（セント）・周波数）と <b>Use …</b>（オススメのキーにする）、OCTAVE と 12 音のボタン、UNKNOWN、Chord / other…（和音などを入力）、Auto（決めたキーを消して推定に戻す）。決めたキーは濃い色）/ 形式（WAV・MP3・AIFF など、DBRSND = サンプルと音の設定）/ <b>お気に入り度 ★1〜5</b>（同じ ★ をもう一度で 0）/ USER は ⋯ で共有・削除。<br>
-<b>絞り込み</b>: Search（名前・カテゴリ・キー）/ CATEGORY / FORMAT / ★（★n 以上）/ SORT（並び: 一覧の順・名前・お気に入り度・カテゴリ・キー（低い音から）・新しい順）。<br>
-下の段（スマホは ⋯）: <b>From file…</b>（端末やクラウドのファイル）/ <b>● Record…</b>（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ 右上の <b>✦ GENERATE…</b>（波形を組み合わせて音を作る → <a href="#generate">下</a>）/ <b>Save this sound…</b>（選択中のトラックの音 = サンプルと音の設定（フィルター・INSERT・EQ など）を DBR-1/Sounds に保存。USER のタブを開いているとそのタブに入ります）。.dbrsnd を入れるときは確認が出ます。↶ で戻せます。<br>
+<b>絞り込み</b>: Search（名前・カテゴリ・グループ。キーは C#5 のように完全に一致したもの）/ CATEGORY / FORMAT / ★（★n 以上）/ SORT（並び: 一覧の順・名前・お気に入り度・カテゴリ・キー（低い音から）・新しい順）。<br>
+下の段（スマホは ⋯）: <b>From file…</b>（端末やクラウドのファイル）/ <b>● Record…</b>（マイク・オーディオインターフェース・DBR-1 自身の音から録る。スライス・タイムストレッチもここ → <a href="#sampling">下</a>）/ 右上の <b>✦ GENERATE…</b>（波形を組み合わせて音を作る → <a href="#generate">下</a>）/ <b>Save this sound…</b>（選択中のトラックの音 = サンプルと音の設定（フィルター・INSERT・EQ など）を DBR-1/Sounds に保存。USER のタブを開いているとそのタブに入ります）/ <b>Change folder</b>（USER のとき。保存フォルダを選び直す）。.dbrsnd を入れるときは確認が出ます。↶ で戻せます。<br>
 音程のある内蔵の音には音名（例: D5。A4 = 440Hz、中央のド = C4）、和音の音にはコード名（例: Dm9）が書いてあります。~ が付いたもの（カウベル・コンガ）は、打楽器でいちばん近い音です。<br>
 <small>※ 試聴は原音のまま鳴らします（トラックの pitch・フィルター・FX はかかりません）。カテゴリ・★・タブは保存フォルダの DBR-1/sound_library.json にも控えが残るので、アプリを入れ直しても戻ります</small></td></tr>
 <tr><td>start / end</td><td>サンプルの再生範囲</td></tr>
@@ -247,12 +247,12 @@
 <ol class="steps">
   <li><b>WAVE A</b> で元になる波形を選ぶ: <b>BASIC</b>（SINE / TRI / SAW / SQUARE / PULSE）・<b>SYNTH</b>（SUPERSAW / FM / ORGAN / PLUCK / SYNC）・<b>INST</b>（生楽器っぽい音: PIANO / E.PIANO / GUITAR / BASS / STRINGS / MARIMBA / VIBES / BRASS / FLUTE / CHIME）・<b>DRUM</b>（KICK / SNARE / CLAP / HAT / TOM / RIM / BELL / ZAP）・<b>NOISE</b>（WHITE / PINK / BROWN）・<b>SAMPLE</b>（キットの 16 トラックの音か、保存フォルダの Samples の音。録音した音も使えます）</li>
   <li><b>WAVE B</b> を on にすると、2 つ目の波形で A を<b>変調</b>するか、A に<b>重ね</b>ます（右上で選ぶ）。<b>FM</b>（既定）= B で A の位相を揺らす（金属的・ベル・うなる音。B の TUNE で響きが変わります）/ <b>RING</b> = A と B を掛け合わせる（リングモジュレーション）/ <b>AM</b> = B で A の音量を揺らす / <b>LAYER</b> = 重ねる（例: SAW に 1 オクターブ下の SINE、キックにノイズ）。FM・RING・AM では B 自体は聞こえず、B の LEVEL が深さ（<b>DEPTH</b>）になります。どの波形の組み合わせにも掛かります（ドラム・サンプルを変調しても OK）</li>
-  <li>それぞれ <b>TUNE</b>（±24 半音）・<b>SHAPE</b>（波形ごとに意味が変わります: FOLD = 折り返しのゆがみ、WIDTH = パルスの幅、DETUNE = スーパーソウの広がり、INDEX = FM の深さ、DRAWBAR = オルガンの倍音、DAMP = 弦のこもり、SYNC = シンクの強さ、TONE = 明るさ、BARK = エレピの硬さ、ENSEMBLE = ストリングスの広がり、HARD = マレットの硬さ、TREMOLO = ビブラフォンの揺れ、BRIGHT = ブラスの明るさ、BREATH = フルートの息、DECAY = ドラムの長さ、START = サンプルの再生開始位置）・<b>LEVEL</b> を決める</li>
+  <li>それぞれ <b>TUNE</b>（±24 半音）・<b>SHAPE</b>（波形ごとに意味が変わります: FOLD = 折り返しのゆがみ、WIDTH = パルスの幅、DETUNE = スーパーソウの広がり、INDEX = FM の深さ、DRAWBAR = オルガンの倍音、DAMP = 弦のこもり、SYNC = シンクの強さ、TONE = 明るさ、BARK = エレピの硬さ、ENSEMBLE = ストリングスの広がり、HARD = マレットの硬さ、TREMOLO = ビブラフォンの揺れ、BRIGHT = ブラスの明るさ、BREATH = フルートの息、DECAY = ドラムの長さ、START = サンプルの再生開始位置）・<b>LEVEL</b> を決める（NOISE には TUNE がありません）</li>
   <li><b>AMP</b>（ATTACK / LENGTH = 押している長さ / DECAY / SUSTAIN / RELEASE）と <b>FILTER</b>（OFF / LP / HP / BP、CUTOFF・RESO・ENV = エンベロープでカットオフを動かす量・ENV DEC）、<b>DRIVE</b>（歪み）を決める</li>
   <li><b>KEY / CHORD</b> で音名（C〜B・OCTAVE 1〜6）と、単音（NOTE）かコード（OCT / 5 / MAJ / m / sus2 / sus4 / dim / aug / 7 / M7 / m7 / add9 / m9）を選ぶと、その音が鳴ります。▶ PLAY でもう一度鳴らせます</li>
   <li>気に入ったら <span class="key">USE → EDIT…</span>。サンプリングの画面で範囲・名前・KEY（音名・コード名が入っています）を確かめて、<b>Use on …</b> でトラックに入れます（Samples に WAV でも保存）</li>
 </ol>
-<div class="tip">ドラムとノイズにはキーがありません（KEY / CHORD は使わず、高さは TUNE で）。音程のある波形とドラムを重ねたときは、キー・コードは音程のある波形だけにかかります。<br><b>🎲 RANDOM</b> で波形とつまみをでたらめに選んで鳴らします（キー・コードはそのまま）。思いがけない音から作り始めるのに便利です。<br>同じ設定なら毎回同じ音になります。設定はアプリを終えるまで残るので、閉じて開き直しても続きから作れます。サンプルの音は、元の音の高さを推定して（わからなければ C4 として）キーに合わせます。</div>
+<div class="tip">ドラムとノイズにはキーがありません（KEY / CHORD は使わず、ドラムの高さは TUNE で）。音程のある波形とドラムを重ねたときは、キー・コードは音程のある波形だけにかかります。<br><b>🎲 RANDOM</b> で波形とつまみをでたらめに選んで鳴らします（キー・コードはそのまま）。思いがけない音から作り始めるのに便利です。<br>同じ設定なら毎回同じ音になります。設定はアプリを終えるまで残るので、閉じて開き直しても続きから作れます。サンプルの音は、元の音の高さを推定して（わからなければ C4 として）キーに合わせます。</div>
 
 <h3 id="sampling">録音して使う（サンプリング）</h3>
 <figure><img src="img/sampler.webp" alt="SAMPLING"><figcaption>録る → 範囲を選ぶ → 整える → Use でトラックへ</figcaption></figure>
@@ -418,7 +418,7 @@
 <tr><td>REV SEQ・REV SND・SLIP</td><td>上の演奏用のボタンと同じ</td></tr>
 <tr><td>PAD</td><td>トラックの音を鳴らします（REC 中は記録。強さはパッドの強さの設定）</td></tr>
 <tr><td>MUTE・SOLO</td><td>TRACK で 1 トラックを選ぶほか、<b>ALL 16 TRACKS</b>（16 トラック全部。1 つでもオンなら全部オフ、全部オフなら全部オン）、<b>INVERT ALL</b>（16 トラックのオン・オフをそれぞれ反転）</td></tr>
-<tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中に切り替わるタイミングは、ふだんはメニューの Pattern switch のとおり。PATTERN のボタンは <b>SWITCH</b> でボタンごとに BAR / BEAT / NOW を選べます。PRESS を <b>WHILE HELD</b> にすると、押している間だけそのパターンになり、離すと元のパターンに戻ります（NOW と組み合わせると、押している間だけのフィルインに）</td></tr>
+<tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中に切り替わるタイミングは、ふだんはメニューの Pattern switch のとおり。PATTERN のボタンは <b>SWITCH (while playing)</b> でボタンごとに DEFAULT（メニューのとおり、既定）/ BAR / BEAT / NOW を選べます。PRESS を <b>WHILE HELD</b> にすると、押している間だけそのパターンになり、離すと元のパターンに戻ります（離すまでに別のパターンを選んでいたら、そちらのまま。NOW と組み合わせると、押している間だけのフィルインに）</td></tr>
 <tr><td>SCENE A・SCENE B・SCENE A⇄B</td><td>FX シーンの切り替え</td></tr>
 <tr><td>REVERB・DELAY・DIST</td><td>エフェクトの ON / OFF</td></tr>
 <tr><td>MIDI</td><td>外部の機材へ MIDI を送ります（下の「MIDI の部品」）。SEND で <b>NOTE</b>（押す = ノートオン、離す / もう一度押す = ノートオフ。VALUE = ベロシティ）/ <b>CC</b>（押す = VALUE、離す / もう一度押す = 0）/ <b>PROGRAM</b>（押したときにプログラムチェンジ）</td></tr>
@@ -510,7 +510,7 @@
 <h3>パターンごとのテンポ（TEMPO: PATTERN / GLOBAL）</h3>
 <p>スライダーの下の <span class="key">TEMPO</span> で、テンポの持ち方を選びます。</p>
 <ul>
-  <li><b>PATTERN</b>（既定）: テンポはパターンごとです。BPM を変えると今のパターンのテンポになり、パターンを切り替えるとテンポも変わります（再生中は小節の終わりで、SONG でも行ごとに）。↶ でテンポも戻せます。</li>
+  <li><b>PATTERN</b>（既定）: テンポはパターンごとです。BPM を変えると今のパターンのテンポになり、パターンを切り替えるとテンポも変わります（再生中はパターンが切り替わる所で = メニューの Pattern switch のとおり、SONG でも行ごとに）。↶ でテンポも戻せます。</li>
   <li>まだ何も入っていないパターンは、その前のテンポを引き継ぎ、音を入れた時点のテンポを覚えます。</li>
   <li><b>GLOBAL</b>: 全パターンで 1 つのテンポです。ライブでパターンを切り替えてもテンポを変えたくないときに。PATTERN に戻すと、各パターンのテンポに戻ります。</li>
   <li>MIDI クロックを受けている（RECEIVE）間は、つないだ機器のテンポに従います。</li>
@@ -664,7 +664,7 @@
 <tr><td>パターンの切り替え</td><td>再生中はパターンの終わり / 次の拍 / 次の 16 分（Pattern switch・PERF のボタンごと）、停止中はすぐ</td></tr>
 <tr><td>録音</td><td>いちばん近いステップに記録。REC で再生を始めると 1 小節のカウントイン</td></tr>
 <tr><td>ロール</td><td>1/4・1/8・1/16・1/32、SLIP あり / なし</td></tr>
-<tr><td>パフォーマンス画面</td><td>18×10 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 17 種類（押している間 / 押すたびに切替。MIDI の NOTE / CC / PROGRAM を含む）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ / MIDI の CC・CC PAN・PITCH BEND・AFTERTOUCH、チャンネル ALL / 1〜16）</td></tr>
+<tr><td>パフォーマンス画面</td><td>18×10 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 17 種類（押している間 / 押すたびに切替。MIDI の NOTE / CC / PROGRAM を含む）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ / MIDI の CC・CC PAN・PITCH BEND・AFTERTOUCH。チャンネルは 1〜16 から複数 / ALL、送り先も複数）</td></tr>
 <tr><td>元に戻す</td><td>100 回まで（ステップ・キット・ソング・パターンのテンポ）</td></tr>
 <tr><td>オートメーション</td><td>パターンごと。ステップごとのロック、または 1 ステップ 8 点の線。トラック 17・FX / MASTER 14 のパラメーター</td></tr>
 </table>
