@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="タブレットの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、STOP の後の PLAY を頭から / 続きから（After STOP）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="スマートフォンの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、After STOP、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、After STOP、Pattern switch、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
@@ -418,7 +418,7 @@
 <tr><td>REV SEQ・REV SND・SLIP</td><td>上の演奏用のボタンと同じ</td></tr>
 <tr><td>PAD</td><td>トラックの音を鳴らします（REC 中は記録。強さはパッドの強さの設定）</td></tr>
 <tr><td>MUTE・SOLO</td><td>TRACK で 1 トラックを選ぶほか、<b>ALL 16 TRACKS</b>（16 トラック全部。1 つでもオンなら全部オフ、全部オフなら全部オン）、<b>INVERT ALL</b>（16 トラックのオン・オフをそれぞれ反転）</td></tr>
-<tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中は小節の終わりで切り替わります</td></tr>
+<tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中に切り替わるタイミングは、ふだんはメニューの Pattern switch のとおり。PATTERN のボタンは <b>SWITCH</b> でボタンごとに BAR / BEAT / NOW を選べます。PRESS を <b>WHILE HELD</b> にすると、押している間だけそのパターンになり、離すと元のパターンに戻ります（NOW と組み合わせると、押している間だけのフィルインに）</td></tr>
 <tr><td>SCENE A・SCENE B・SCENE A⇄B</td><td>FX シーンの切り替え</td></tr>
 <tr><td>REVERB・DELAY・DIST</td><td>エフェクトの ON / OFF</td></tr>
 <tr><td>MIDI</td><td>外部の機材へ MIDI を送ります（下の「MIDI の部品」）。SEND で <b>NOTE</b>（押す = ノートオン、離す / もう一度押す = ノートオフ。VALUE = ベロシティ）/ <b>CC</b>（押す = VALUE、離す / もう一度押す = 0）/ <b>PROGRAM</b>（押したときにプログラムチェンジ）</td></tr>
@@ -455,7 +455,8 @@
 <div>
 <ul>
   <li>パターンは 00〜99 の 100 個。各パターンがステップ・ベロシティ・長さ・スウィング・テンポ・エフェクトの設定・オートメーションを持ちます（音のキットは共通）。</li>
-  <li>再生中にパターン番号を変えると、<b>小節の終わり</b>で切り替わります（待っている番号は枠が光ります）。停止中はすぐ切り替わります。</li>
+  <li>再生中にパターン番号を変えると、既定では<b>小節（パターン）の終わり</b>で切り替わります（待っている番号は枠が光ります）。停止中はすぐ切り替わります。</li>
+  <li>ロゴ（スマホは ≡）のメニューの <b>Pattern switch</b> で、再生中に切り替わるタイミングを選べます（タップで BAR → BEAT → NOW）。<b>BAR</b>（既定）= パターンの終わりで、次のパターンの頭から / <b>BEAT</b> = 次の拍で / <b>NOW</b> = 次の 16 分で。BEAT と NOW は再生位置をそのままに中身だけ入れ替えるので、リズムが途切れません（次のパターンのほうが短ければ、その長さで折り返した位置から）。パフォーマンス画面の PATTERN ボタンと合わせると、パターンを使ったリアルタイムの演奏ができます。</li>
   <li>長押しで、パターン全体のコピー / ペースト / 消去。<b>Copy FX only / Paste FX only</b> で、FX の設定（シーン A / B・センド量）だけを別のパターンへ写せます（ステップはそのまま、↶ で戻せます）。</li>
 </ul>
 </div>
@@ -660,7 +661,7 @@
 <tr><td>スウィング</td><td>0〜100（パターンごと。100 で裏の 16 分音符が半ステップ遅れる）</td></tr>
 <tr><td>テンポ</td><td>20〜300 BPM</td></tr>
 <tr><td>ソング</td><td>99 行まで。1 行 = パターン × くり返し 1〜99 回</td></tr>
-<tr><td>パターンの切り替え</td><td>再生中は小節（パターン）の終わり、停止中はすぐ</td></tr>
+<tr><td>パターンの切り替え</td><td>再生中はパターンの終わり / 次の拍 / 次の 16 分（Pattern switch・PERF のボタンごと）、停止中はすぐ</td></tr>
 <tr><td>録音</td><td>いちばん近いステップに記録。REC で再生を始めると 1 小節のカウントイン</td></tr>
 <tr><td>ロール</td><td>1/4・1/8・1/16・1/32、SLIP あり / なし</td></tr>
 <tr><td>パフォーマンス画面</td><td>18×10 のマス目 × 4 ページ（端末に保存。タブレット・スマートフォン別）。ボタン 17 種類（押している間 / 押すたびに切替。MIDI の NOTE / CC / PROGRAM を含む）、フェーダー・ノブ（FLT / USER / パラメーター 1 つ / MIDI の CC・CC PAN・PITCH BEND・AFTERTOUCH、チャンネル ALL / 1〜16）</td></tr>

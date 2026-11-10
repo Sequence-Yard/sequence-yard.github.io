@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="Tablet screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), whether PLAY after STOP starts over or continues (After STOP), the phone-style layout (Phone layout), About</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), whether PLAY after STOP starts over or continues (After STOP), when a pattern change happens while playing (Pattern switch), the phone-style layout (Phone layout), About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear (also FX only)</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>)</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="Phone screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, After STOP, About. On a tablet set to Phone layout, <b>Tablet layout</b> at the top switches back</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, After STOP, Pattern switch, About. On a tablet set to Phone layout, <b>Tablet layout</b> at the top switches back</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>Pattern number</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
@@ -418,7 +418,7 @@ Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) an
 <tr><td>REV SEQ, REV SND, SLIP</td><td>Same as the performance buttons above</td></tr>
 <tr><td>PAD</td><td>Plays the track's sound (recorded while REC is on; strength follows the pad velocity setting)</td></tr>
 <tr><td>MUTE, SOLO</td><td>Pick one track under TRACK, or <b>ALL 16 TRACKS</b> (all on — or all off if any is on) or <b>INVERT ALL</b> (flips each of the 16 tracks on ↔ off)</td></tr>
-<tr><td>PATTERN, ◀ PATTERN, PATTERN ▶</td><td>Go to a set pattern number / the previous or next pattern. While playing, the change happens at the end of the bar</td></tr>
+<tr><td>PATTERN, ◀ PATTERN, PATTERN ▶</td><td>Go to a set pattern number / the previous or next pattern. While playing, the change follows Pattern switch in the menu; a PATTERN button can set its own timing with <b>SWITCH</b> (BAR / BEAT / NOW). With PRESS set to <b>WHILE HELD</b>, the pattern plays only while you hold the button and goes back to the previous one when you let go (with NOW, a hold-to-play fill)</td></tr>
 <tr><td>SCENE A, SCENE B, SCENE A⇄B</td><td>Switch the FX scene</td></tr>
 <tr><td>REVERB, DELAY, DIST</td><td>Turn the effect on / off</td></tr>
 <tr><td>MIDI</td><td>Sends MIDI to external gear (see "MIDI parts" below). SEND: <b>NOTE</b> (press = note on, release / press again = note off; VALUE = velocity) / <b>CC</b> (press = VALUE, release / press again = 0) / <b>PROGRAM</b> (a program change when pressed)</td></tr>
@@ -455,7 +455,8 @@ Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) an
 <div>
 <ul>
   <li>There are 100 patterns (00–99). Each holds steps, velocities, length, swing, tempo, effect settings and automation (the kit is shared).</li>
-  <li>Changing the pattern while playing switches <b>at the end of the bar</b> (the queued number is outlined). When stopped, it switches at once.</li>
+  <li>Changing the pattern while playing switches <b>at the end of the bar (pattern)</b> by default (the queued number is outlined). When stopped, it switches at once.</li>
+  <li><b>Pattern switch</b> in the logo menu (≡ on phones) sets when the change happens while playing (tap to go BAR → BEAT → NOW). <b>BAR</b> (default) = at the end of the pattern, starting the next one from the top / <b>BEAT</b> = on the next beat / <b>NOW</b> = on the next 16th step. BEAT and NOW keep the playback position and only swap the contents, so the groove never breaks (if the next pattern is shorter, it wraps at its own length). Together with the PATTERN buttons on the performance screen, you can play live with patterns.</li>
   <li>Long-press to copy / paste / clear a whole pattern. <b>Copy FX only / Paste FX only</b> copy just the effect settings (scenes A / B and sends) to another pattern, leaving its steps alone (↶ undoes it).</li>
 </ul>
 </div>
@@ -660,7 +661,7 @@ Pitched built-in sounds show their note (e.g. D5; A4 = 440 Hz, middle C = C4) an
 <tr><td>Swing</td><td>0–100 per pattern (100 delays off-beat 16ths by half a step)</td></tr>
 <tr><td>Tempo</td><td>20–300 BPM</td></tr>
 <tr><td>Song</td><td>Up to 99 rows; each row = pattern × 1–99 repeats</td></tr>
-<tr><td>Pattern change</td><td>At the end of the bar while playing, immediately when stopped</td></tr>
+<tr><td>Pattern change</td><td>While playing: at the end of the pattern / the next beat / the next 16th (Pattern switch, or per PERF button); immediately when stopped</td></tr>
 <tr><td>Recording</td><td>Quantized to the nearest step; one-bar count-in when starting with REC on</td></tr>
 <tr><td>Roll</td><td>1/4, 1/8, 1/16, 1/32, with or without SLIP</td></tr>
 <tr><td>Performance screen</td><td>18×10 grid × 4 pages (saved on the device, separately for tablet and phone). 17 button actions (while held / toggle; includes MIDI NOTE / CC / PROGRAM), faders and knobs (FLT / USER / a single parameter / MIDI CC, CC PAN, PITCH BEND, AFTERTOUCH on channel ALL or 1–16)</td></tr>
