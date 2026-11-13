@@ -45,12 +45,12 @@
 <tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
-<tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）</td></tr>
+<tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）。ミキサー・AUTO・PERF の画面では、端末の「戻る」でその画面を閉じます</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>メトロノームの ON / OFF</td></tr>
 <tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止。止めた後の PLAY は、既定では頭から再生します。メニューの <b>After STOP</b> を <b>continue</b> にすると、止めた位置の続きから再生します（パターン・ソングの行がそのままのとき。止めている間にパターンを選び直すと頭から。ソングを最後まで再生したときも頭から。MIDI クロックを送っていれば、位置（Song Position Pointer）と Continue を送ります）</td></tr>
-<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す（↶ で戻せます）</td></tr>
+<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す（確認が出ます。↶ で戻せます）</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>元に戻す / やり直す（最大 100 回）</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>リズムに合わせて叩くとテンポを設定</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>テンポ。タップでスライダー、長押しで数字入力（→ <a href="#tempo">9</a>）</td></tr>
@@ -499,7 +499,7 @@
     LINE と WAVE は、指を離すまで何度でも描き直せます（描き始める前の線に戻してから描きます）。</li>
   <li>1〜4 で表示するページを切り替えます（パターンが 16 ステップより長いときに表示。スマートフォンでは FOLLOW は「FLW」）。<b>FOLLOW</b> を ON にすると、再生中は表示するページが再生位置に付いていきます（SEQ の FOLLOW と同じ設定で、どちらで切り替えても両方に効きます。指で描いている間はページを動かしません）。</li>
   <li><b>⋯</b>: 「Clear（パラメーター名）」で選んだパラメーターのロックと線を全部消します。<b>KNOB REC</b> もここで選びます: <span class="key">REC</span> を点けて再生中に画面のつまみ（または MIDI の CC）を動かすと、その動きを記録します。DRAW（既定）= 線として、LOCK = 近いステップのロックとして。OFF = 記録しない（つまみは普通に値を変えます）。記録している間、元の値は変わりません。</li>
-  <li><b>スマートフォン</b>: 右上の <b>FULL</b> で全画面になり、上のボタン列と左のタブが消えて広く描けます。全画面では ▶ / ■（再生・停止）と <b>EXIT</b>（戻る）が右上に出ます。</li>
+  <li><b>スマートフォン</b>: 右上の <b>FULL</b> で全画面になり、上のボタン列と左のタブが消えて広く描けます。全画面では ▶ / ■（再生・停止）と <b>EXIT</b>（戻る）が右上に出ます。端末の「戻る」でも全画面をやめます。</li>
   <li>優先の順は「動かしている最中のつまみ ＞ ロック ＞ 線 ＞ 元の値」です（メインフェーダーの USER は、その結果に足し引きします）。</li>
   <li>↶（元に戻す）で取り消せます。CLEAR（ヘッダー）はステップと一緒にロックも消し、線は残します。</li>
 </ul>

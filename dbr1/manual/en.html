@@ -45,12 +45,12 @@
 <tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), whether PLAY after STOP starts over or continues (After STOP), when a pattern change happens while playing (Pattern switch), the phone-style layout (Phone layout), About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear (also FX only)</td></tr>
-<tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>)</td></tr>
+<tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>). On the mixer, AUTO and PERF screens, the device Back button closes that screen</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>Shows tracks A01–A08 or B01–B08</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>Arms recording. Pads you hit while playing are recorded (→ <a href="#rec">4</a>)</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>Metronome on / off</td></tr>
 <tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>Start and stop. By default PLAY after STOP starts from the top. Set <b>After STOP</b> in the menu to <b>continue</b> to carry on from where you stopped (while the pattern / song row is unchanged; choosing a pattern while stopped, or playing a song to its end, starts over. When sending MIDI clock, DBR-1 sends the position (Song Position Pointer) and Continue)</td></tr>
-<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>Clears the steps of the bank on screen (↶ brings them back)</td></tr>
+<tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>Clears the steps of the bank on screen (asks first; ↶ brings them back)</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>Undo / redo (up to 100 steps)</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>Tap along with the beat to set the tempo</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>Tempo. Tap for a slider, long-press to type a number (→ <a href="#tempo">9</a>)</td></tr>
@@ -499,7 +499,7 @@
     LINE and WAVE redraw as you move until you let go (starting again from the line as it was before).</li>
   <li>1–4 switch the page shown (shown when the pattern is longer than 16 steps; FOLLOW reads "FLW" on phones). With <b>FOLLOW</b> on, the page follows the playback position (it is the same setting as FOLLOW in SEQ: switching either one changes both; the page stays put while you are drawing).</li>
   <li><b>⋯</b>: "Clear (parameter name)" removes all locks and lines of the selected parameter. <b>KNOB REC</b> is here too: with <span class="key">REC</span> on and playing, moving an on-screen control (or a MIDI CC) records the movement. DRAW (default) = as a line, LOCK = as a lock on the nearest step. OFF = don't record; the control changes the value as usual. While recording, the normal value is left unchanged.</li>
-  <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right.</li>
+  <li><b>Phones</b>: <b>FULL</b> at the top right hides the top buttons and the left tabs so you can draw on almost the whole screen. In full screen, ▶ / ■ (play / stop) and <b>EXIT</b> appear at the top right. The device Back button also leaves full screen.</li>
   <li>Priority: a control you are moving now &gt; lock &gt; line &gt; normal value (the main fader's USER adds to or subtracts from the result).</li>
   <li>Undo (↶) works. CLEAR in the header clears locks along with the steps and keeps lines.</li>
 </ul>
