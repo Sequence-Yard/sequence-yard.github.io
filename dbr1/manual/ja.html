@@ -545,12 +545,14 @@
 <h3>保存する</h3>
 <figure><img src="img/save_dialog.webp" alt="保存の画面"></figure>
 <p>SAVE → 種類を選ぶと名前の入力画面が出ます。そのまま <span class="key">Save</span> で保存できます。同じ名前のファイルがあるときは上書きしてよいか確認します。<span class="key">Other location…</span> を選ぶと Android の保存画面から Google ドライブなどのクラウドにも保存できます。</p>
+<p>名前には日本語・絵文字も使えます。ファイル名に使えない記号（<b>\ / : * ? " &lt; &gt; |</b>）は「_」に、前後の空白とドットは除いて保存します（大文字・小文字だけが違う名前は同じファイルとして上書きの確認が出ます）。</p>
 <h3>読み込む・共有する</h3>
 <figure><img src="img/load_list.webp" alt="読み込みの一覧"></figure>
 <ul>
   <li>LOAD → 種類を選ぶと、フォルダの中のファイルが新しい順に並びます。名前をタップすると、上書きの確認のあとで読み込みます。</li>
   <li><span class="key">Share</span>: メール・Google ドライブ・メッセージなどで送ります。<span class="key">✕</span>: 削除（確認あり）。</li>
-  <li><span class="key">Change folder</span>: 保存先を変更。<span class="key">Other location…</span>: クラウドなどほかの場所から開く。</li>
+  <li><span class="key">Change folder</span>: 保存先を変更。<span class="key">Other location…</span>: クラウドなどほかの場所から開く。保存先を変えても、前のフォルダのファイルは移しません（ファイルの管理アプリで DBR-1 フォルダごと移せば、そのまま使えます）。選ぶのは DBR-1 フォルダか、その上のフォルダです（中の Projects などを選ぶと選び直しを求めます）。</li>
+  <li>一覧に出るのは各フォルダの直下のファイルだけです。ファイルの管理アプリで中にフォルダを作って整理すると、その中のファイルは一覧に出ません。</li>
   <li>パソコンから <b>DBR-1/Samples</b> に WAV などを入れておくと、SOUND の LOAD の USER タブから読み込めます。</li>
 </ul>
 <h3>書き出し（音声・動画・MIDI。SNS・メールで共有）</h3>

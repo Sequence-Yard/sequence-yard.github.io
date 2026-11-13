@@ -545,12 +545,14 @@
 <h3>Saving</h3>
 <figure><img src="img/save_dialog.webp" alt="Save dialog"></figure>
 <p>SAVE → choose a type, then press <span class="key">Save</span> (you can keep the suggested name). If a file with the same name exists, you are asked before it is overwritten. <span class="key">Other location…</span> opens Android's save screen, so you can save straight to Google Drive or other cloud storage.</p>
+<p>Names can use any language and emoji. Characters that file names cannot hold (<b>\ / : * ? " &lt; &gt; |</b>) become "_", and spaces and dots at either end are removed. Names that differ only in upper/lower case count as the same file, so you are asked before overwriting.</p>
 <h3>Loading and sharing</h3>
 <figure><img src="img/load_list.webp" alt="Load list"></figure>
 <ul>
   <li>LOAD → choose a type to see the files in the folder, newest first. Tap a name to load it (you are asked before anything is overwritten).</li>
   <li><span class="key">Share</span> sends the file by email, Drive, messages and so on. <span class="key">✕</span> deletes it (with confirmation).</li>
-  <li><span class="key">Change folder</span> picks another save folder. <span class="key">Other location…</span> opens a file from anywhere, including the cloud.</li>
+  <li><span class="key">Change folder</span> picks another save folder. <span class="key">Other location…</span> opens a file from anywhere, including the cloud. Changing the folder does not move your files (move the whole DBR-1 folder with a file manager to keep using them). Pick the DBR-1 folder or the folder above it; if you pick a folder inside DBR-1, such as Projects, you are asked to choose again.</li>
+  <li>The lists show only the files directly in each folder. Files you put into subfolders with a file manager do not appear.</li>
   <li>Copy WAV files from a computer into <b>DBR-1/Samples</b>, then load them from the USER tab of SOUND → LOAD.</li>
 </ul>
 <h3>Export (audio, video and MIDI; share on social media and messages)</h3>
