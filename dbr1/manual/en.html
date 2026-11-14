@@ -220,6 +220,7 @@
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
 <tr><td>LOAD</td><td>Opens the <b>sound browser (SOUNDS)</b> to replace the selected track's sound (→ <a href="#soundbrowser">Sound browser</a> below)</td></tr>
+<tr id="padmidi"><td>MIDI</td><td><b>Assigns MIDI to the pad</b> (makes it a pad that plays an external instrument). When ON, wherever this track plays (steps, pad taps, ROLL, ratchets) it sends the chosen notes to the MIDI… OUT device. <b>CHANNEL</b> = SINGLE (one) / MULTI (tap to add or remove; sends to several channels at once). <b>NOTE</b> = the pitch (−OCT / −1 / +1 / +OCT) and NOTE (single note), OCT, 5, MAJ, m, sus2, sus4, dim, aug, 7, M7, m7, add9 or m9 (chords). <b>LENGTH</b> = how long each note lasts (1/32, 1/16, 1/8, 1/4, 1/2, 1 = whole note, at the current tempo). <b>SAMPLE</b> = MIDI only (the default; this track's sample is silent) / MIDI + sample. Velocity is the step's or pad's. Try it with ▶ TEST. While assigned, the MIDI button turns blue and the waveform shows what is sent. The setting is part of the track's sound, saved in project, kit and sound files, and undoable with ↶. MIDI export (SMF) writes the same notes, channels and lengths. MIDI…'s NOTES / OUT CH mapping is used only for tracks without an assignment</td></tr>
 <tr><td>start / end</td><td>Which part of the sample plays</td></tr>
 <tr><td>volume / pan</td><td>Level and left-right position</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (the length changes too)</td></tr>
@@ -742,7 +743,7 @@
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>MIDI in</td><td>USB-MIDI. Note-on plays and records tracks (with velocity). Channel ALL / 1–16</td></tr>
 <tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default). Note length follows the track's play mode: ONE SHOT = 80 ms / GATE = one step (triplets, ratchets and ROLL use their own length) / BAR = to the end of the pattern</td></tr>
-<tr><td>Note map</td><td>PADS 36–51 / GM DRUMS</td></tr>
+<tr><td>Note map</td><td>PADS 36–51 / GM DRUMS. Per-pad MIDI (SOUND's MIDI): one or several of channels 1–16, a note 0–127 or a chord (14 kinds, up to 5 notes), length 1/32 to a whole note, with or without the sample</td></tr>
 <tr><td>MIDI clock</td><td>Send (24 PPQN = 24 per quarter note, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
 <tr><td>MIDI CC</td><td>Receive and send. 31 parameters (17 per track, 14 FX / master), editable assignments and LEARN. Selected track / channel = track. Default numbers: see “<a href="#ccmap">MIDI CC assignments</a>” below</td></tr>
 <tr><td>Multi-out</td><td>With a USB device that has more than 2 outputs, each track can use its own output pair or a single channel (mono), up to 16 ch. The MAIN pair is selectable too. Test tone per channel</td></tr>

@@ -220,6 +220,7 @@
 <table>
 <tr><th>項目</th><th>はたらき</th></tr>
 <tr><td>LOAD</td><td><b>音の管理画面（SOUNDS）</b>を開いて、選択中のトラックの音を差し替えます（→ <a href="#soundbrowser">下の「音の管理画面」</a>）</td></tr>
+<tr id="padmidi"><td>MIDI</td><td><b>パッドに MIDI を割り当てます</b>（外部の音源を鳴らすパッドにする）。ON にすると、このトラックが鳴る所（ステップ・パッドのタップ・ROLL・ラチェット）で、決めたノートを MIDI… の OUT の機器へ送ります。<b>CHANNEL</b> = SINGLE（1 つ）/ MULTI（タップで足す・外す、複数のチャンネルへ同時に）、<b>NOTE</b> = 音の高さ（−OCT / −1 / +1 / +OCT）と NOTE（単音）・OCT・5・MAJ・m・sus2・sus4・dim・aug・7・M7・m7・add9・m9（和音）、<b>LENGTH</b> = ノートの長さ（1/32・1/16・1/8・1/4・1/2・1 = 全音符。今のテンポで）、<b>SAMPLE</b> = MIDI only（既定、このトラックのサンプルは鳴らさない）/ MIDI + sample。ベロシティはステップ・パッドの強さ。▶ TEST で試せます。割り当て中は MIDI のボタンが青くなり、波形の所に送る内容が出ます。設定はトラックの音と一緒にプロジェクト・キット・音のファイルに保存され、↶ で戻せます。MIDI の書き出し（SMF）も同じノート・チャンネル・長さで書きます。MIDI… の NOTES / OUT CH の対応は、割り当てのないトラックだけに使います</td></tr>
 <tr><td>start / end</td><td>サンプルの再生範囲</td></tr>
 <tr><td>volume / pan</td><td>音量と左右の位置</td></tr>
 <tr><td>pitch</td><td>音の高さ（−12〜+12 半音。音の長さも変わります）</td></tr>
@@ -742,7 +743,7 @@
 <tr><th>項目</th><th>仕様</th></tr>
 <tr><td>MIDI 入力</td><td>USB-MIDI。ノートオンでトラックを鳴らす・録音（ベロシティ付き）。チャンネル ALL / 1〜16</td></tr>
 <tr><td>MIDI 出力</td><td>USB-MIDI 1 台。シーケンス・ロール・パッドをノートで送る（既定 10ch）。ノートの長さはトラックの鳴り方に合わせる: ONE SHOT = 80ms / GATE = 1 ステップ（3 連符・ラチェット・ROLL はその長さ）/ BAR = パターンの終わりまで</td></tr>
-<tr><td>ノートの割り当て</td><td>PADS 36–51 / GM DRUMS</td></tr>
+<tr><td>ノートの割り当て</td><td>PADS 36–51 / GM DRUMS。パッドごとの MIDI の割り当て（SOUND の MIDI）: チャンネル 1〜16 の 1 つか複数・ノート 0〜127 の単音か和音（14 種、最大 5 音）・長さ 1/32〜全音符・サンプルを鳴らすか</td></tr>
 <tr><td>MIDI クロック</td><td>送信（24 PPQN = 4 分音符あたり 24 個、Start / Stop）/ 受信（Start / Stop / テンポに追従。Start / Stop に従わない設定も可）</td></tr>
 <tr><td>MIDI CC</td><td>受信・送信。31 パラメーター（トラック 17・FX / MASTER 14）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）。既定の番号は下の「<a href="#ccmap">MIDI CC の割り当て</a>」</td></tr>
 <tr><td>マルチアウト</td><td>USB の機器の出力が 3ch 以上のとき、トラックごとに出力のペアか 1 チャンネル（モノラル）を選べる（最大 16ch）。MAIN のペアも選べる。チャンネルごとのテスト音</td></tr>
