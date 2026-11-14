@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="タブレットの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、トラック名に触れたとき・ステップを入れたときに音を鳴らすか（Sound on track tap / Sound on step input）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）。ミキサー・AUTO・PERF の画面では、端末の「戻る」でその画面を閉じます</td></tr>
@@ -56,7 +56,7 @@
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>テンポ。タップでスライダー、長押しで数字入力（→ <a href="#tempo">9</a>）</td></tr>
 <tr><td class="n"><span class="num">13</span></td><td>SWING / ALL S / ALL M</td><td>スウィング（横にドラッグ）と、バンク全体のソロ / ミュート</td></tr>
 <tr><td class="n"><span class="num">14</span></td><td>再生位置</td><td>今鳴っているステップ。録音のカウントイン中は赤く光ります。鳴ったステップのボタンもパッドと同じように一瞬光ります</td></tr>
-<tr><td class="n"><span class="num">15</span></td><td>トラック名・S・M</td><td>タップで選択、長押しでメニュー（→ <a href="#track">3</a>）。S = ソロ、M = ミュート</td></tr>
+<tr><td class="n"><span class="num">15</span></td><td>トラック名・S・M</td><td>タップで選択（その音が鳴ります）、長押しでメニュー（→ <a href="#track">3</a>）。S = ソロ、M = ミュート</td></tr>
 <tr><td class="n"><span class="num">16</span></td><td>ステップ</td><td>タップで ON / OFF。中のバーの高さは音の強さ（ベロシティ）</td></tr>
 <tr><td class="n"><span class="num">17</span></td><td>LEN・ページ・FOLLOW</td><td>パターンの長さ（1〜64 ステップ）、表示するページ（1〜4）、ページを再生位置に合わせるか</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE・GAPS</td><td>なぞって入力するときの間隔（→ <a href="#beat">2</a>）</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="スマートフォンの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、After STOP、Pattern switch、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ メニュー</td><td>保存・読み込み、メトロノーム、Manual、MIDI…、Audio I/O…、Animate automation、Sound on track tap、Sound on step input、After STOP、Pattern switch、About。タブレットで Phone layout にしているときは、いちばん上の <b>Tablet layout</b> で元の配置に戻ります</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>パターン番号</td><td>タブレットと同じ</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL・長さ・SLIP・REV</td><td>長さはタップで 1/4 → 1/8 → 1/16 → 1/32 と切り替え</td></tr>
 <tr><td class="n"><span class="num">4〜10</span></td><td>BANK・REC・▶・CLR・↶↷・TAP・BPM</td><td>タブレットと同じ</td></tr>
@@ -173,7 +173,7 @@
 <ul>
   <li><b>S（ソロ）</b>: バンクの中でソロのトラックだけを鳴らします。<b>M（ミュート）</b>: 鳴らしません。</li>
   <li><b>ALL S / ALL M</b>: 表示中のバンクをまとめて切り替えます（1 つでも ON なら全部 OFF、なければ全部 ON）。</li>
-  <li>トラック名のタップでは音は鳴りません（演奏中に触っても邪魔にならないように）。</li>
+  <li>トラック名をタップすると、そのトラックの音が鳴ります。止まっているときにステップを入れたときも、その強さで鳴ります（再生中は、シーケンサがその位置で鳴らします）。鳴らしたくないとき（演奏中に触っても邪魔にならないように）は、ロゴ / ≡ のメニューの <b>Sound on track tap</b>・<b>Sound on step input</b> を OFF にしてください。</li>
   <li>色は名前と同じくキット（音の設定）の一部です。プロジェクト・キットのファイルに保存され、↶ で戻せます。Swap with… で入れ替えると色も一緒に移り、LOAD の「Built-in kit」で最初の色に戻ります。</li>
 </ul>
 <h3 id="triplet">3 連符（Steps）</h3>
@@ -324,7 +324,7 @@
 <figure><img src="img/mixer.webp" alt="ミキサー"><figcaption>ミキサー。オーディオインターフェースをつないでいると、名前の下で出力先を選べます（例: kick = OUT 3-4、snare = OUT 5）</figcaption></figure>
 <table>
 <tr><th>部品</th><th>操作</th><th>はたらき</th></tr>
-<tr><td>トラック名</td><td>タップ</td><td>そのトラックを選択（音は出ません）</td></tr>
+<tr><td>トラック名</td><td>タップ</td><td>そのトラックを選択して音を鳴らす（Sound on track tap が OFF なら選択だけ）</td></tr>
 <tr><td>EQ（HI / MID / LO）</td><td>上下にドラッグ / ダブルタップ / 長押し</td><td>高音（既定 8kHz〜）・中音（既定 1kHz 付近）・低音（既定 100Hz 以下）を ±12dB で上げ下げ。上へ動かすと強く、ダブルタップで 0。<b>長押し</b>（振動）でそのバンドの周波数のスライダーが出ます（LO 30〜500Hz・MID 200Hz〜8kHz・HI 2k〜16kHz、Reset で既定）。つまみの左下が今の周波数で、既定から変えるとトラックの色になります。例: キックの LO を 60Hz にして重さだけ足す、スネアの MID を 3kHz 付近で上げてアタックを出す。スマートフォンは右上の <span class="key">EQ</span> でフェーダーと切り替えて表示します</td></tr>
 <tr><td>pan</td><td>横にドラッグ / ダブルタップ</td><td>左右の位置。ダブルタップで C（中央）</td></tr>
 <tr><td>フェーダー</td><td>上下にドラッグ / ダブルタップ</td><td>音量（0〜127）。触った所へ飛ばず、動かした分だけ変わります。ダブルタップで 100（初期値）</td></tr>

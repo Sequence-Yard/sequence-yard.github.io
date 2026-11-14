@@ -42,7 +42,7 @@
 <figure><img src="img/tablet_overview.webp" alt="Tablet screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), whether PLAY after STOP starts over or continues (After STOP), when a pattern change happens while playing (Pattern switch), the phone-style layout (Phone layout), About</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this Manual, MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), moving knobs with automation (Animate automation), whether tapping a track name or entering a step plays the sound (Sound on track tap / Sound on step input), whether PLAY after STOP starts over or continues (After STOP), when a pattern change happens while playing (Pattern switch), the phone-style layout (Phone layout), About</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>)</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap the number to type it; long-press for Copy / Paste / Clear (also FX only)</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX switches between the step view and the mixer (→ <a href="#mixer">Mixer</a>); AUTO opens the automation view (→ <a href="#automation">Automation</a>). On the mixer, AUTO and PERF screens, the device Back button closes that screen</td></tr>
@@ -56,7 +56,7 @@
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>Tempo. Tap for a slider, long-press to type a number (→ <a href="#tempo">9</a>)</td></tr>
 <tr><td class="n"><span class="num">13</span></td><td>SWING / ALL S / ALL M</td><td>Swing (drag sideways), and solo / mute for the whole bank</td></tr>
 <tr><td class="n"><span class="num">14</span></td><td>Position</td><td>The step that is playing. Lights red during the recording count-in. The step buttons that play also flash, like the pads</td></tr>
-<tr><td class="n"><span class="num">15</span></td><td>Track name, S, M</td><td>Tap to select, long-press for the track menu (→ <a href="#track">3</a>). S = solo, M = mute</td></tr>
+<tr><td class="n"><span class="num">15</span></td><td>Track name, S, M</td><td>Tap to select (the sound plays), long-press for the track menu (→ <a href="#track">3</a>). S = solo, M = mute</td></tr>
 <tr><td class="n"><span class="num">16</span></td><td>Steps</td><td>Tap to turn on / off. The bar inside shows the velocity</td></tr>
 <tr><td class="n"><span class="num">17</span></td><td>LEN, pages, FOLLOW</td><td>Pattern length (1–64 steps), the page on screen (1–4), and whether the page follows the playhead</td></tr>
 <tr><td class="n"><span class="num">18</span></td><td>SWIPE, GAPS</td><td>Spacing used when you swipe across steps (→ <a href="#beat">2</a>)</td></tr>
@@ -70,7 +70,7 @@
 <figure><img src="img/phone_overview.webp" alt="Phone screen"></figure>
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, After STOP, Pattern switch, About. On a tablet set to Phone layout, <b>Tablet layout</b> at the top switches back</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>≡ menu</td><td>Save / load, Metronome, Manual, MIDI, Audio I/O, Animate automation, Sound on track tap, Sound on step input, After STOP, Pattern switch, About. On a tablet set to Phone layout, <b>Tablet layout</b> at the top switches back</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>Pattern number</td><td>Same as on the tablet</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>ROLL, length, SLIP, REV</td><td>Tap the length to cycle 1/4 → 1/8 → 1/16 → 1/32</td></tr>
 <tr><td class="n"><span class="num">4–10</span></td><td>BANK, REC, ▶, CLR, ↶↷, TAP, BPM</td><td>Same as on the tablet</td></tr>
@@ -173,7 +173,7 @@
 <ul>
   <li><b>S (solo)</b> plays only the soloed tracks of the bank. <b>M (mute)</b> silences a track.</li>
   <li><b>ALL S / ALL M</b> switch the whole bank on screen (if any is on, all go off; otherwise all go on).</li>
-  <li>Tapping a track name does not play a sound, so you can select tracks while performing.</li>
+  <li>Tapping a track name plays that track's sound. Entering a step while stopped plays it too, at the step's velocity (while playing, the sequencer plays it in time). To keep them silent — for example to select tracks while performing — turn off <b>Sound on track tap</b> and <b>Sound on step input</b> in the logo / ≡ menu.</li>
   <li>The color belongs to the kit, like the name. It is saved in project and kit files and can be undone with ↶. Swap with… moves the color along, and LOAD → "Built-in kit" restores the original colors.</li>
 </ul>
 <h3 id="triplet">Triplets (Steps)</h3>
@@ -324,7 +324,7 @@
 <figure><img src="img/mixer.webp" alt="Mixer"><figcaption>The mixer. With an audio interface connected, choose each output under the name (e.g. kick = OUT 3-4, snare = OUT 5)</figcaption></figure>
 <table>
 <tr><th>Part</th><th>Action</th><th>What it does</th></tr>
-<tr><td>Track name</td><td>Tap</td><td>Selects the track (no sound)</td></tr>
+<tr><td>Track name</td><td>Tap</td><td>Select the track and play its sound (select only when Sound on track tap is OFF)</td></tr>
 <tr><td>EQ (HI / MID / LO)</td><td>Drag up/down / double-tap / long-press</td><td>Boost or cut highs (8 kHz and up by default), mids (around 1 kHz) and lows (100 Hz and below) by up to ±12 dB. Drag up to boost; double-tap for 0. <b>Long-press</b> (vibrates) for a slider that sets the band's frequency (LO 30–500 Hz, MID 200 Hz–8 kHz, HI 2–16 kHz; Reset for the default). The frequency is shown at the knob's bottom left, in the track's color once changed. For example: LO at 60 Hz on the kick to add weight only, or MID around 3 kHz on the snare to bring out the attack. On a phone, tap <span class="key">EQ</span> at the top right to show the knobs in place of the faders</td></tr>
 <tr><td>pan</td><td>Drag sideways / double-tap</td><td>Left–right position. Double-tap for C (center)</td></tr>
 <tr><td>Fader</td><td>Drag up/down / double-tap</td><td>Volume (0–127). It moves by how far you drag, not to where you touch. Double-tap for 100 (default)</td></tr>
