@@ -597,7 +597,9 @@
 <tr><td>OUT / OUT PORT / OUT CH</td><td>送り先の機器とチャンネル（既定 ch 10）。出力が 2 つ以上ある機器（MIDI インターフェースなど）は OUT PORT で使うポートも選べます。シーケンス・ROLL・パッドの音を送ります。DBR-1 の音とずれないよう、音の遅れの分だけ遅らせて送ります</td></tr>
 <tr><td>CLOCK</td><td>OFF / SEND（DBR-1 がマスター（親）になり、テンポと Start / Stop を送る）/ RECEIVE（つないだ機器に合わせて再生・停止。BPM も追従）</td></tr>
 <tr><td>TIMING</td><td>MIDI を送るタイミングの取り方。APP（既定）= DBR-1 が時刻どおりに送る / SYSTEM = 送る時刻を付けて Android に任せる。どちらが揺れにくいかは端末によって違います（例: Lenovo Tab K11 は SYSTEM、REDMAGIC 9 Pro は APP のほうが安定）。相手の機器のテンポ表示が揺れるときは両方試してください。端末の設定として覚えます</td></tr>
+<tr><td>OFFSET</td><td>DBR-1 が送るもの（クロック・ノート）全体の時刻の微調整（−100〜+100 ms）。+ = 遅く / − = 早く。DBR-1 は、音が実際に聞こえる時刻に合わせて MIDI を送ります（音の出力の遅れの分だけ遅らせる）。それでも相手の機器が早い・遅いと感じるときに、耳で合わせてください</td></tr>
 <tr><td>PLAY</td><td>RECEIVE のときだけ表示。FOLLOW（既定）= 相手の Start / Stop で再生・停止する / IGNORE = 再生・停止は DBR-1 の PLAY で行い、クロックとテンポだけ相手に合わせる</td></tr>
+<tr><td>SYNC</td><td>RECEIVE のときだけ表示。<b>AUTO</b>（既定 ON）= DBR-1 の音の出力の遅れの分だけ先に刻み、DBR-1 の音が相手の機器の音とそろって聞こえるようにします（OFF にすると、DBR-1 の音は遅れの分だけ後ろにずれます）。数字（−100〜+100 ms）は微調整で、+ = DBR-1 を遅く / − = 早く。再生を始めた直後は、最初の数ステップをかけて少しずつ合わせます</td></tr>
 <tr><td>CC</td><td>SEND = 画面のつまみを動かすと CC を送る（OUT の機器へ）。CC MAP… = CC とパラメーターの対応の一覧。LEARN = 割り当てを覚えさせる</td></tr>
 <tr><td>TARGET</td><td>トラックのパラメーターの CC がどのトラックを動かすか。SELECTED TRACK（既定）= 選択中のトラック（IN の CH で受け、OUT CH で送る）/ CH 1-16 = TRACKS: MIDI チャンネル 1〜16 がそれぞれトラック A01〜B08 に対応</td></tr>
 <tr><td>Last input</td><td>最後に受けたノートと、鳴らしたトラック。割り当ての確認に</td></tr>
