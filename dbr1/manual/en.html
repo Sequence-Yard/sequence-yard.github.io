@@ -601,7 +601,7 @@
 <tr><td>OFFSET</td><td>Fine timing for everything DBR-1 sends (clock and notes), −100 to +100 ms. + = later / − = earlier. DBR-1 sends MIDI when its sound is actually heard (delayed by its sound output delay). Use this, by ear, if the other device still sounds early or late</td></tr>
 <tr><td>PLAY</td><td>Shown only with RECEIVE. FOLLOW (default) = start and stop with the connected device's Start / Stop / IGNORE = start and stop with PLAY on DBR-1; only the clock and tempo follow the device</td></tr>
 <tr><td>SYNC</td><td>Shown only with RECEIVE. <b>AUTO</b> (on by default) = DBR-1 plays ahead by its own sound output delay, so its sound lines up with the other device (with AUTO off, DBR-1 trails by that delay). The number (−100 to +100 ms) fine-tunes it: + = DBR-1 later / − = earlier. Right after playback starts, DBR-1 eases into place over the first few steps</td></tr>
-<tr><td>CC</td><td>SEND = moving an on-screen control sends its CC (to the OUT device). CC MAP… = the list of CCs and parameters. LEARN = teach an assignment</td></tr>
+<tr><td>CC</td><td>SEND (off by default) = moving an on-screen control sends its CC (to the OUT device). CC MAP… = the list of CCs and parameters. LEARN = teach an assignment</td></tr>
 <tr><td>TARGET</td><td>Which track the track-parameter CCs move. SELECTED TRACK (default) = the selected track (received on IN CH, sent on OUT CH) / CH 1-16 = TRACKS = MIDI channels 1–16 are tracks A01–B08</td></tr>
 <tr><td>Last input</td><td>The last note received and the track it played — handy for checking the mapping</td></tr>
 </table>
@@ -622,7 +622,7 @@
 <ul>
   <li><b>LEARN</b>: a banner appears at the top. Move an on-screen control, then turn a knob on your controller to assign its CC (repeat as often as you like). Tap DONE when finished.</li>
   <li><b>CC MAP…</b>: tap a number to type it, × removes it, Default restores the original assignments. One CC moves one parameter.</li>
-  <li>With SEND on, controls you move on screen are sent as CCs (received CCs are not echoed back). With SELECTED TRACK, choosing another track sends all of its values so a controller with displays stays in sync.</li>
+  <li>With SEND on (off by default), controls you move on screen are sent as CCs (received CCs are not echoed back), only when you move them. <b>Note</b>: CCs go to OUT CH, the same channel as the notes. The default assignments use the common numbers (7 = volume, 10 = pan, 91 = reverb…), so a synth or sound module on OUT will change its own volume or pan too. If you only play an external instrument, leave SEND off.</li>
   <li>CCs received while playing with REC on are recorded as automation (→ <a href="#automation">Automation</a>).</li>
 </ul>
 <h3>USB audio</h3>
