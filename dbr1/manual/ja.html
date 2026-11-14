@@ -651,6 +651,7 @@
 <tr><th>こんなとき</th><th>確かめること</th></tr>
 <tr><td>叩いてから音が出るまで遅れる</td><td>Bluetooth のイヤホン・スピーカーは大きく遅れます。有線のヘッドホンか本体のスピーカー、USB オーディオを使ってください。遅れの目安は About の「Output latency」に出ます（端末によって 20〜60ms 程度）</td></tr>
 <tr><td>音が途切れる</td><td>About の「underruns」が増えていないか。ほかのアプリを閉じると改善することがあります</td></tr>
+<tr><td>USB のオーディオインターフェースからプチッというノイズが出る</td><td>Audio I/O の LATENCY を STABLE にしてみてください。それでも出るときは、端末とインターフェースの組み合わせによるものかもしれません（DBR-1 で録音した WAV を別のアプリで再生しても同じように鳴るなら、DBR-1 では直せません。例: Lenovo Tab M10 3rd Gen は Android がインターフェースを 96kHz で開き、ノイズが乗りました）。ハブを使わず直接つなぐ、別のケーブルを試す、音は本体から出す（Audio I/O の SOUND OUT: THIS DEVICE）、を試してください</td></tr>
 <tr><td>保存したファイルが一覧に出ない</td><td>LOAD の一覧の上に表示されているフォルダが保存先と同じか。Change folder で選び直せます</td></tr>
 <tr><td>MIDI 機器が反応しない</td><td>MIDI… の Connected に機器名が出ているか、IN が ON か、CH が合っているか。Last input で受けた内容を確認できます</td></tr>
 <tr><td>操作を間違えた</td><td>↶（元に戻す）で最大 100 回まで戻せます。TEMPO が GLOBAL のときの BPM・再生・パターン番号の移動・端末の設定は対象外です</td></tr>

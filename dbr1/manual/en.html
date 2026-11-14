@@ -651,6 +651,7 @@
 <tr><th>Problem</th><th>Check</th></tr>
 <tr><td>The sound comes late after a tap</td><td>Bluetooth headphones and speakers add a lot of delay. Use wired headphones, the built-in speaker or USB audio. About shows the “Output latency” (about 20–60 ms depending on the device)</td></tr>
 <tr><td>The sound breaks up</td><td>Check whether “underruns” in About increases. Closing other apps can help</td></tr>
+<tr><td>Crackle from a USB audio interface</td><td>Try LATENCY: STABLE in Audio I/O. If it stays, it may come from the combination of the device and the interface (if a WAV recorded in DBR-1 crackles the same way when another app plays it, DBR-1 cannot fix it; e.g. on a Lenovo Tab M10 3rd Gen, Android opens the interface at 96 kHz and the output crackled). Try connecting without a hub, another cable, or playing from the device itself (SOUND OUT: THIS DEVICE in Audio I/O)</td></tr>
 <tr><td>A saved file is not in the list</td><td>Make sure the folder shown at the top of the LOAD list is where you saved. Change folder lets you pick it again</td></tr>
 <tr><td>A MIDI device does nothing</td><td>In MIDI…, check that the device is listed under Connected, IN is on and the channel matches. Last input shows what arrives</td></tr>
 <tr><td>I made a mistake</td><td>↶ undoes up to 100 steps. The tempo with TEMPO set to GLOBAL, play / stop, moving between patterns and device settings are not undone</td></tr>
