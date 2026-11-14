@@ -738,7 +738,7 @@
 <table>
 <tr><th>Item</th><th>Spec</th></tr>
 <tr><td>MIDI in</td><td>USB-MIDI. Note-on plays and records tracks (with velocity). Channel ALL / 1–16</td></tr>
-<tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default, note-off after 80 ms)</td></tr>
+<tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default). Note length follows the track's play mode: ONE SHOT = 80 ms / GATE = one step (triplets, ratchets and ROLL use their own length) / BAR = to the end of the pattern</td></tr>
 <tr><td>Note map</td><td>PADS 36–51 / GM DRUMS</td></tr>
 <tr><td>MIDI clock</td><td>Send (24 PPQN = 24 per quarter note, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
 <tr><td>MIDI CC</td><td>Receive and send. 31 parameters (17 per track, 14 FX / master), editable assignments and LEARN. Selected track / channel = track</td></tr>
