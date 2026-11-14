@@ -742,9 +742,46 @@
 <tr><td>MIDI 出力</td><td>USB-MIDI 1 台。シーケンス・ロール・パッドをノートで送る（既定 10ch）。ノートの長さはトラックの鳴り方に合わせる: ONE SHOT = 80ms / GATE = 1 ステップ（3 連符・ラチェット・ROLL はその長さ）/ BAR = パターンの終わりまで</td></tr>
 <tr><td>ノートの割り当て</td><td>PADS 36–51 / GM DRUMS</td></tr>
 <tr><td>MIDI クロック</td><td>送信（24 PPQN = 4 分音符あたり 24 個、Start / Stop）/ 受信（Start / Stop / テンポに追従。Start / Stop に従わない設定も可）</td></tr>
-<tr><td>MIDI CC</td><td>受信・送信。31 パラメーター（トラック 17・FX / MASTER 14）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）</td></tr>
+<tr><td>MIDI CC</td><td>受信・送信。31 パラメーター（トラック 17・FX / MASTER 14）、割り当ての編集と LEARN。動かす先は選択中のトラック / MIDI チャンネル = トラック（TARGET）。既定の番号は下の「<a href="#ccmap">MIDI CC の割り当て</a>」</td></tr>
 <tr><td>マルチアウト</td><td>USB の機器の出力が 3ch 以上のとき、トラックごとに出力のペアか 1 チャンネル（モノラル）を選べる（最大 16ch）。MAIN のペアも選べる。チャンネルごとのテスト音</td></tr>
 <tr><td>音声出力</td><td>ステレオ、端末の出力レート（多くは 48kHz）。低遅延の経路で再生。USB オーディオに対応（挿すと自動で切り替え）</td></tr>
+</table>
+
+<h3 id="ccmap">MIDI CC の割り当て（既定）</h3>
+<p>MIDI… の CC MAP… で変えられます（0〜119、LEARN でも）。<b>トラック</b>の CC は TARGET で動かす先が決まります（SELECTED TRACK = 選択中のトラック・IN CH で受けて OUT CH で送る / CH 1-16 = TRACKS = チャンネル 1〜16 が A01〜B08）。<b>全体</b>の CC はどのチャンネルでも受け、OUT CH で送ります。送るのは CC: SEND が ON のときに、画面のつまみを動かしたときだけです。右の列は MIDI の規格での一般的な意味です。同じチャンネルのシンセ・音源モジュールはその意味で反応するので（例: 7 = 音量）、外部の音源をつなぐときは SEND を OFF にするか、割り当てを外してください。120〜127（チャンネルモード: All Sound Off・Reset All Controllers など）は使いません。既定の割り当てに 0 / 32（バンク）・1（モジュレーション）・6 / 38（データエントリー）・64（サステイン）・96〜101（RPN / NRPN）は使っていません。</p>
+<table>
+<tr><th>CC</th><th>パラメーター</th><th>対象</th><th>値</th><th>MIDI での一般的な意味</th></tr>
+<tr><td>7</td><td>volume</td><td>トラック</td><td>0〜127</td><td>チャンネルボリューム</td></tr>
+<tr><td>10</td><td>pan</td><td>トラック</td><td>64 = 中央</td><td>パン</td></tr>
+<tr><td>16</td><td>pitch</td><td>トラック</td><td>64 = 中央</td><td>汎用 1</td></tr>
+<tr><td>72</td><td>decay</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 3（リリース）</td></tr>
+<tr><td>17</td><td>start</td><td>トラック</td><td>0〜127</td><td>汎用 2</td></tr>
+<tr><td>18</td><td>end</td><td>トラック</td><td>0〜127</td><td>汎用 3</td></tr>
+<tr><td>74</td><td>フィルターの cutoff</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 5（明るさ）</td></tr>
+<tr><td>71</td><td>フィルターの reso</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 2（レゾナンス）</td></tr>
+<tr><td>20</td><td>EQ LO</td><td>トラック</td><td>64 = 中央</td><td>未定義</td></tr>
+<tr><td>21</td><td>EQ MID</td><td>トラック</td><td>64 = 中央</td><td>未定義</td></tr>
+<tr><td>22</td><td>EQ HI</td><td>トラック</td><td>64 = 中央</td><td>未定義</td></tr>
+<tr><td>91</td><td>リバーブのセンド</td><td>トラック</td><td>0〜127</td><td>エフェクト 1（リバーブ）</td></tr>
+<tr><td>92</td><td>ディレイのセンド</td><td>トラック</td><td>0〜127</td><td>エフェクト 2（トレモロ）</td></tr>
+<tr><td>94</td><td>ディストーション</td><td>トラック</td><td>0〜127</td><td>エフェクト 4（セレステ）</td></tr>
+<tr><td>76</td><td>INSERT A</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 7（ビブラートの速さ）</td></tr>
+<tr><td>77</td><td>INSERT B</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 8（ビブラートの深さ）</td></tr>
+<tr><td>78</td><td>INSERT の mix</td><td>トラック</td><td>0〜127</td><td>サウンドコントローラー 9（ビブラートの遅れ）</td></tr>
+<tr><td>102</td><td>MASTER の音量</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>103</td><td>全体フィルター</td><td>全体</td><td>64 = 中央</td><td>未定義</td></tr>
+<tr><td>104</td><td>リバーブ size</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>105</td><td>リバーブ damp</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>106</td><td>リバーブ mix</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>107</td><td>リバーブ pre-dly</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>108</td><td>ディレイ time</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>109</td><td>ディレイ fdbk</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>110</td><td>ディレイ mix</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>111</td><td>ディストーション drive</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>112</td><td>ディストーション tone</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>113</td><td>ディストーション level</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>114</td><td>サイドチェインの深さ</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
+<tr><td>115</td><td>グルーコンプ</td><td>全体</td><td>0〜127</td><td>未定義</td></tr>
 </table>
 
 <h3>動作環境</h3>

@@ -742,9 +742,46 @@
 <tr><td>MIDI out</td><td>One USB-MIDI device. Sends the sequence, rolls and pad hits as notes (channel 10 by default). Note length follows the track's play mode: ONE SHOT = 80 ms / GATE = one step (triplets, ratchets and ROLL use their own length) / BAR = to the end of the pattern</td></tr>
 <tr><td>Note map</td><td>PADS 36–51 / GM DRUMS</td></tr>
 <tr><td>MIDI clock</td><td>Send (24 PPQN = 24 per quarter note, Start / Stop) / receive (follows Start / Stop and tempo; Start / Stop can be ignored)</td></tr>
-<tr><td>MIDI CC</td><td>Receive and send. 31 parameters (17 per track, 14 FX / master), editable assignments and LEARN. Selected track / channel = track</td></tr>
+<tr><td>MIDI CC</td><td>Receive and send. 31 parameters (17 per track, 14 FX / master), editable assignments and LEARN. Selected track / channel = track. Default numbers: see “<a href="#ccmap">MIDI CC assignments</a>” below</td></tr>
 <tr><td>Multi-out</td><td>With a USB device that has more than 2 outputs, each track can use its own output pair or a single channel (mono), up to 16 ch. The MAIN pair is selectable too. Test tone per channel</td></tr>
 <tr><td>Audio output</td><td>Stereo at the device's output rate (usually 48 kHz), low-latency path. USB audio supported (switches automatically when plugged in)</td></tr>
+</table>
+
+<h3 id="ccmap">MIDI CC assignments (default)</h3>
+<p>Change them in MIDI… → CC MAP… (0–119, or with LEARN). <b>Track</b> CCs go where TARGET says (SELECTED TRACK = the selected track, received on IN CH and sent on OUT CH / CH 1-16 = TRACKS = channels 1–16 are A01–B08). <b>Global</b> CCs are received on any channel and sent on OUT CH. They are sent only with CC: SEND on, and only when you move a control on screen. The last column is the usual meaning in the MIDI standard. A synth or sound module on the same channel reacts to that meaning (e.g. 7 = volume), so turn SEND off or remove the assignment when an external instrument is connected. 120–127 (channel mode: All Sound Off, Reset All Controllers…) are not used. The defaults do not use 0 / 32 (bank), 1 (modulation), 6 / 38 (data entry), 64 (sustain) or 96–101 (RPN / NRPN).</p>
+<table>
+<tr><th>CC</th><th>Parameter</th><th>Scope</th><th>Value</th><th>Usual MIDI meaning</th></tr>
+<tr><td>7</td><td>Volume</td><td>Track</td><td>0–127</td><td>Channel Volume</td></tr>
+<tr><td>10</td><td>Pan</td><td>Track</td><td>64 = centre</td><td>Pan</td></tr>
+<tr><td>16</td><td>Pitch</td><td>Track</td><td>64 = centre</td><td>General Purpose 1</td></tr>
+<tr><td>72</td><td>Decay</td><td>Track</td><td>0–127</td><td>Sound Controller 3 (Release Time)</td></tr>
+<tr><td>17</td><td>Start</td><td>Track</td><td>0–127</td><td>General Purpose 2</td></tr>
+<tr><td>18</td><td>End</td><td>Track</td><td>0–127</td><td>General Purpose 3</td></tr>
+<tr><td>74</td><td>Filter cutoff</td><td>Track</td><td>0–127</td><td>Sound Controller 5 (Brightness)</td></tr>
+<tr><td>71</td><td>Filter reso</td><td>Track</td><td>0–127</td><td>Sound Controller 2 (Resonance)</td></tr>
+<tr><td>20</td><td>EQ low</td><td>Track</td><td>64 = centre</td><td>undefined</td></tr>
+<tr><td>21</td><td>EQ mid</td><td>Track</td><td>64 = centre</td><td>undefined</td></tr>
+<tr><td>22</td><td>EQ high</td><td>Track</td><td>64 = centre</td><td>undefined</td></tr>
+<tr><td>91</td><td>Reverb send</td><td>Track</td><td>0–127</td><td>Effects 1 Depth (Reverb)</td></tr>
+<tr><td>92</td><td>Delay send</td><td>Track</td><td>0–127</td><td>Effects 2 Depth (Tremolo)</td></tr>
+<tr><td>94</td><td>Distortion</td><td>Track</td><td>0–127</td><td>Effects 4 Depth (Celeste)</td></tr>
+<tr><td>76</td><td>Insert A</td><td>Track</td><td>0–127</td><td>Sound Controller 7 (Vibrato Rate)</td></tr>
+<tr><td>77</td><td>Insert B</td><td>Track</td><td>0–127</td><td>Sound Controller 8 (Vibrato Depth)</td></tr>
+<tr><td>78</td><td>Insert mix</td><td>Track</td><td>0–127</td><td>Sound Controller 9 (Vibrato Delay)</td></tr>
+<tr><td>102</td><td>Master volume</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>103</td><td>Master filter</td><td>Global</td><td>64 = centre</td><td>undefined</td></tr>
+<tr><td>104</td><td>Reverb size</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>105</td><td>Reverb damp</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>106</td><td>Reverb mix</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>107</td><td>Reverb pre-delay</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>108</td><td>Delay time</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>109</td><td>Delay feedback</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>110</td><td>Delay mix</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>111</td><td>Dist drive</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>112</td><td>Dist tone</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>113</td><td>Dist level</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>114</td><td>Sidechain depth</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
+<tr><td>115</td><td>Glue comp</td><td>Global</td><td>0–127</td><td>undefined</td></tr>
 </table>
 
 <h3>Requirements</h3>
