@@ -323,7 +323,7 @@
 
 <h3 id="mixer">Mixer (final levels and panning)</h3>
 <p>Shows the 8 tracks of the current bank plus MASTER so you can balance the whole mix in one place. On a tablet, <span class="key">MIX</span> in the header switches between the step view and the mixer; on a phone, open <span class="key">MIX</span> on the left. Use BANK A / B for the other bank.</p>
-<figure><img src="img/mixer.webp" alt="Mixer"><figcaption>The mixer. With an audio interface connected, choose each output under the name (e.g. kick = OUT 3-4, snare = OUT 5)</figcaption></figure>
+<figure><img src="img/mixer.webp" alt="Mixer"><figcaption>The mixer. With an audio interface connected, choose each output under the name; MASTER has an EQ and FX (shows how many are on)</figcaption></figure>
 <table>
 <tr><th>Part</th><th>Action</th><th>What it does</th></tr>
 <tr><td>Track name</td><td>Tap</td><td>Select the track and play its sound (select only when Sound on track tap is OFF)</td></tr>
@@ -336,6 +336,7 @@
 <tr><td>MASTER EQ (HI / MID / LO)</td><td>Same as the track EQ</td><td>Shapes the whole mix by ±12 dB (long-press for the frequency). On a phone, <span class="key">EQ</span> swaps it with the fader</td></tr>
 <tr><td>MASTER FX</td><td>Tap</td><td>Up to 3 effects on the whole mix (the <b>MASTER FX</b> screen). For each of 1, 2 and 3 pick the same kinds as INSERT (COMP, CHORUS, PHASER, WAH, SWEEP, CRUSH, FLANGE) and set its two knobs and mix. They work in stereo; CHORUS, PHASER and FLANGE sweep the left and right sides apart for width. Order: after the reverb / delay returns → 1 → 2 → 3 → MASTER EQ → glue comp → master filter → MASTER volume. The button shows how many are on (FX 2, etc.)</td></tr>
 </table>
+<figure class="small"><img src="img/master_fx.webp" alt="MASTER FX"><figcaption>MASTER FX (FX on the mixer's MASTER): three effects on the whole mix</figcaption></figure>
 <div class="tip">EQ is saved with each track's sound (the kit). Volume, pan and S / M are the same values as in the SOUND tab and the sequencer: change them in either place, and ↶ undoes them. MASTER (volume, EQ and FX) is saved with the project and applies to exports too (not undoable, and not part of automation or CC). If CLIP lights (or the limiter makes the sound feel squashed), lower MASTER or the loudest tracks.</div>
 </section>
 
@@ -410,6 +411,8 @@
 <h3 id="performscreen">Performance screen (PERF)</h3>
 <figure><img src="img/perform_screen.webp" alt="Performance screen"><figcaption>Page 1 (first layout)</figcaption></figure>
 <figure><img src="img/perform_mixer.webp" alt="Performance screen page 2"><figcaption>Page 2 (first layout): a 16-track mini mixer</figcaption></figure>
+<figure><img src="img/perform_mpc.webp" alt="Performance screen page 3"><figcaption>Page 3 (first layout): MPC-style</figcaption></figure>
+<figure><img src="img/perform_midicon.webp" alt="Performance screen page 4"><figcaption>Page 4 (first layout): MIDI-controller-style (controls the MIDI… OUT device on CH 16)</figcaption></figure>
 <p>A screen for playing live while the sequence runs. Place buttons, faders and knobs of any size on an 18×10 grid to build your own performance surface. On tablets, open it with <span class="key">PERF</span> above the pads; on phones, with the <b>PERF</b> tab on the left (below PADS). On tablets, <span class="key">✕</span> at the top right goes back.</p>
 <ul>
   <li>There are 4 pages. The layout is saved on the device and stays the same whichever project you open (tablet and phone layouts are separate). Page 1 starts with 16 buttons on the left (ROLL, MUTE, scene, pattern, REV and FX), the FLT and MASTER (volume) faders in the middle and four reverb / delay knobs on the right. Page 2 is a 16-track mini mixer (one column per track: EQ HI / MID / LO knobs, mute (M), a PAN knob and a volume fader; FLT and MASTER on the right). Page 3 is MPC-style: a wide touch strip (FLT) and four knobs (FLT, REV MIX, DLY MIX, DLY FB) on top, NOTE RPT (1/16 ROLL while held) and REV SEQ, five volume faders bottom left (A01, A02, A03, B01, MASTER) and 4×4 pads bottom right (A01… from the bottom row). Page 4 is MIDI-controller-style and controls the MIDI… OUT device (all on CH 16: 8 knobs = CC 22–29, 8 faders = CC 31–38, 8 buttons = notes C4–G4, pitch bend on the right). If you already had a layout from an earlier version, these are added once to pages 3 and 4 when they are empty. "Default layout on this page" in EDIT's ⋯ menu brings back that page's first layout at any time.<br><small>Layouts made with earlier versions (8×4 grid) are stretched to fit 18×10.</small></li>
@@ -597,6 +600,7 @@
 <h2>11. MIDI and USB audio</h2>
 <p>Connect a USB-MIDI device (pad controller, keyboard, the MIDI ports of an audio interface, …) and DBR-1 uses it automatically. Settings are under <b>MIDI…</b> in the logo menu (≡ on phones).</p>
 <figure class="small"><img src="img/midi_dialog.webp" alt="MIDI settings"></figure>
+<figure class="small"><img src="img/notes_edit.webp" alt="NOTES EDIT"><figcaption>NOTES EDIT…: the note for each pad (LEARN takes it from your MIDI controller)</figcaption></figure>
 <table>
 <tr><th>Item</th><th>What it does</th></tr>
 <tr><td>IN (on/off, CH)</td><td>Incoming notes play tracks and are recorded while REC is on (with their velocity). CH = channel to listen to (ALL / 1–16)</td></tr>

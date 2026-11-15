@@ -323,7 +323,7 @@
 
 <h3 id="mixer">ミキサー（音量・定位の仕上げ）</h3>
 <p>表示中のバンクの 8 トラックと MASTER を並べ、全体のバランスをまとめて整える画面です。タブレットはヘッダーの <span class="key">MIX</span> でステップの画面と切り替え、スマートフォンは左の <span class="key">MIX</span> で開きます。もう一方のバンクは BANK A / B で切り替えます。</p>
-<figure><img src="img/mixer.webp" alt="ミキサー"><figcaption>ミキサー。オーディオインターフェースをつないでいると、名前の下で出力先を選べます（例: kick = OUT 3-4、snare = OUT 5）</figcaption></figure>
+<figure><img src="img/mixer.webp" alt="ミキサー"><figcaption>ミキサー。オーディオインターフェースをつないでいると、名前の下で出力先を選べます。MASTER には EQ と FX（使っている数）</figcaption></figure>
 <table>
 <tr><th>部品</th><th>操作</th><th>はたらき</th></tr>
 <tr><td>トラック名</td><td>タップ</td><td>そのトラックを選択して音を鳴らす（Sound on track tap が OFF なら選択だけ）</td></tr>
@@ -336,6 +336,7 @@
 <tr><td>MASTER の EQ（HI / MID / LO）</td><td>トラックの EQ と同じ</td><td>全体の音色を ±12dB で整えます（長押しで周波数）。スマートフォンは <span class="key">EQ</span> でフェーダーと切り替え</td></tr>
 <tr><td>MASTER の FX</td><td>タップ</td><td>全体にかけるエフェクトを 3 つまで（<b>MASTER FX</b> の画面）。1・2・3 それぞれで INSERT と同じ種類（COMP・CHORUS・PHASER・WAH・SWEEP・CRUSH・FLANGE）を選び、つまみ 2 つと mix を決めます。左右にかかり、CHORUS・PHASER・FLANGE は左右で揺れをずらして広げます。かかる順は リバーブ・ディレイの後 → 1 → 2 → 3 → MASTER の EQ → グルーコンプ → 全体フィルター → MASTER の音量。使っている数がボタンに出ます（FX 2 など）</td></tr>
 </table>
+<figure class="small"><img src="img/master_fx.webp" alt="MASTER FX"><figcaption>MASTER FX（ミキサーの MASTER の FX から）: 全体にかけるエフェクト 3 つ</figcaption></figure>
 <div class="tip">EQ はトラックの音（キット）と一緒に保存されます。volume・pan・S / M は SOUND タブやシーケンサと同じ値です。どちらで変えても同じで、↶ で元に戻せます。MASTER（音量・EQ・FX）はプロジェクトに保存され、書き出しにもかかります（↶ の対象外。オートメーション・CC の対象外）。CLIP が点くとき（またはリミッターで音が詰まって聞こえるとき）は、MASTER か大きいトラックを下げてください。</div>
 </section>
 
@@ -410,6 +411,8 @@
 <h3 id="performscreen">パフォーマンス画面（PERF）</h3>
 <figure><img src="img/perform_screen.webp" alt="パフォーマンス画面"><figcaption>1 ページ目（最初の配置）</figcaption></figure>
 <figure><img src="img/perform_mixer.webp" alt="パフォーマンス画面の 2 ページ目"><figcaption>2 ページ目（最初の配置）: 16 トラックのミニミキサー</figcaption></figure>
+<figure><img src="img/perform_mpc.webp" alt="パフォーマンス画面の 3 ページ目"><figcaption>3 ページ目（最初の配置）: MPC 風</figcaption></figure>
+<figure><img src="img/perform_midicon.webp" alt="パフォーマンス画面の 4 ページ目"><figcaption>4 ページ目（最初の配置）: MIDI コントローラー風（MIDI… の OUT の機器を CH 16 で操作）</figcaption></figure>
 <p>シーケンスを鳴らしながら演奏するための画面です。18×10 のマス目に、ボタン・フェーダー・ノブを好きな大きさで並べて、自分用の演奏の画面を作れます。タブレットはパッドの上の <span class="key">PERF</span>、スマートフォンは左のタブの <b>PERF</b>（PADS の下）で開きます。タブレットでは右上の <span class="key">✕</span> で元の画面に戻ります。</p>
 <ul>
   <li>ページは 1〜4 です。配置は端末に保存され、どのプロジェクトを開いても同じです（タブレットとスマートフォンの配置は別々）。最初は 1 ページ目の左にボタン 16 個（ROLL・MUTE・シーン・パターン・REV・FX）、真ん中に FLT と MASTER（音量）のフェーダー、右にリバーブ・ディレイのノブ 4 つが並んでいます。2 ページ目は 16 トラックのミニミキサーです（トラックごとに縦 1 列で、上から EQ HI / MID / LO のノブ・ミュート（M）・PAN のノブ・音量のフェーダー。右端に FLT と MASTER）。3 ページ目は MPC 風（上に横長のタッチストリップ（FLT）とノブ 4 つ（FLT・REV MIX・DLY MIX・DLY FB）、NOTE RPT（1/16 の ROLL、押している間）と REV SEQ、左下に音量のフェーダー 5 本（A01・A02・A03・B01・MASTER）、右下に 4×4 のパッド（下の段から A01〜））。4 ページ目は MIDI コントローラー風で、MIDI… の OUT の機器を操作します（すべて CH 16: ノブ 8 つ = CC 22〜29、フェーダー 8 本 = CC 31〜38、ボタン 8 つ = ノート C4〜G4、右端にピッチベンド）。以前の版から使っている配置でも、3・4 ページ目が空なら 1 回だけ入ります。EDIT の ⋯ の「Default layout on this page」でいつでもそのページの最初の配置に戻せます。<br><small>※ 以前の版（8×4 のマス目）で作った配置は、そのまま 18×10 に引き伸ばして表示します。</small></li>
@@ -597,6 +600,7 @@
 <h2>11. MIDI と USB オーディオ</h2>
 <p>USB-MIDI の機器（パッドコントローラー・キーボード・オーディオインターフェースの MIDI 端子など）を USB でつなぐと、自動で使えるようになります。設定はロゴ（スマートフォンは ≡）のメニューの <b>MIDI…</b>。</p>
 <figure class="small"><img src="img/midi_dialog.webp" alt="MIDI の設定"></figure>
+<figure class="small"><img src="img/notes_edit.webp" alt="NOTES の EDIT"><figcaption>NOTES の EDIT…: パッドごとのノート番号（LEARN で MIDI の機器から）</figcaption></figure>
 <table>
 <tr><th>項目</th><th>はたらき</th></tr>
 <tr><td>IN（ON / OFF・CH）</td><td>受けたノートでトラックを鳴らします。REC 中なら記録（ベロシティもそのまま）。CH = 受けるチャンネル（ALL / 1〜16）</td></tr>
