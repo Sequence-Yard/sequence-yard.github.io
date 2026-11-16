@@ -42,11 +42,11 @@
 <figure><img src="img/tablet_overview.webp" alt="タブレットの画面"></figure>
 <table>
 <tr><th class="n">#</th><th>名前</th><th>はたらき</th></tr>
-<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（Manual）、MIDI の設定（MIDI…）、オーディオの入出力（Audio I/O…）、オートメーションの動きの表示（Animate automation）、トラック名に触れたとき・ステップを入れたときに音を鳴らすか（Sound on track tap / Sound on step input）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、スマートフォンと同じ配置にする（Phone layout）、アプリの情報（About）</td></tr>
+<tr><td class="n"><span class="num">1</span></td><td>ロゴ</td><td>タップでメニュー: この説明書（<b>Manual</b>）、デモソング（<b>Demo songs…</b>）、ジャンルのテンプレート（<b>Templates…</b>）、設定（<b>Settings…</b>）、このアプリについて（<b>About</b>）。<b>Settings…</b> には、MIDI の設定（MIDI…）・オーディオの入出力（Audio I/O…）、STOP の後の PLAY を頭から / 続きから（After STOP）、再生中のパターンの切り替えのタイミング（Pattern switch）、トラック名に触れたとき・ステップを入れたときに音を鳴らすか（Sound on track tap / Sound on step input）、オートメーションの動きの表示（Animate automation）、スマートフォンと同じ配置にする（Phone layout）が、それぞれ短い説明つきで並びます。初めて起動したときは、デモ曲を聴く / テンプレートから始める / そのまま始める、を選ぶカードが出ます</td></tr>
 <tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>プロジェクト・パターン・キットの保存と読み込み（→ <a href="#save">10</a>）。LOAD の Templates… でジャンルの定番ビート（→ <a href="#templates">2</a>）、Demo songs… でデモソング（→ <a href="#demosongs">2</a>）</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>パターン番号</td><td>◀ ▶ で切り替え（00〜99）。数字のタップで直接入力、長押しでコピー / ペースト / 消去（FX だけのコピー / ペーストも）</td></tr>
-<tr><td class="n"><span class="num">4</span></td><td>MIX / AUTO</td><td>MIX = ステップの画面とミキサーの切り替え（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーションの画面（→ <a href="#automation">オートメーション</a>）。ミキサー・AUTO・PERF の画面では、端末の「戻る」でその画面を閉じます</td></tr>
-<tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え</td></tr>
+<tr><td class="n"><span class="num">4</span></td><td>SEQ / MIX / AUTO / PERF</td><td>左の大きな場所に出す画面の切り替え（今の画面が点灯）。SEQ = ステップ、MIX = ミキサー（→ <a href="#mixer">ミキサー</a>）、AUTO = オートメーション（→ <a href="#automation">オートメーション</a>）、PERF = パフォーマンス画面（→ <a href="#performscreen">7</a>）。ミキサー・AUTO・PERF の画面では、端末の「戻る」でその画面を閉じます</td></tr>
+<tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え。今のバンクは、トラックの並びの背景の色（A = 緑、B = 紫）と左の帯でも分かります。パッドで別のバンクのトラックを選ぶとバンクも切り替わり、スイッチと帯が少しの間光ります</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>メトロノームの ON / OFF</td></tr>
 <tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止。止めた後の PLAY は、既定では頭から再生します。メニューの <b>After STOP</b> を <b>continue</b> にすると、止めた位置の続きから再生します（パターン・ソングの行がそのままのとき。止めている間にパターンを選び直すと頭から。ソングを最後まで再生したときも頭から。MIDI クロックを送っていれば、位置（Song Position Pointer）と Continue を送ります）</td></tr>
@@ -54,16 +54,16 @@
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>元に戻す / やり直す（最大 100 回）</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>リズムに合わせて叩くとテンポを設定</td></tr>
 <tr><td class="n"><span class="num">12</span></td><td>BPM</td><td>テンポ。タップでスライダー、長押しで数字入力（→ <a href="#tempo">9</a>）</td></tr>
-<tr><td class="n"><span class="num">13</span></td><td>SWING / ALL S / ALL M</td><td>スウィング（横にドラッグ）と、バンク全体のソロ / ミュート</td></tr>
+<tr><td class="n"><span class="num">13</span></td><td>SWING / ALL S / ALL M</td><td>スウィング（タップでスライダー、横にドラッグでも変更）と、バンク全体のソロ / ミュート</td></tr>
 <tr><td class="n"><span class="num">14</span></td><td>再生位置</td><td>今鳴っているステップ。録音のカウントイン中は赤く光ります。鳴ったステップのボタンもパッドと同じように一瞬光ります</td></tr>
-<tr><td class="n"><span class="num">15</span></td><td>トラック名・S・M</td><td>タップで選択（その音が鳴ります）、長押しでメニュー（→ <a href="#track">3</a>）。S = ソロ、M = ミュート</td></tr>
+<tr><td class="n"><span class="num">15</span></td><td>トラック名・S・M</td><td>タップで選択（その音が鳴ります）、長押しでメニュー（→ <a href="#track">3</a>）。名前の下の <b>⋯</b> は長押しでメニューが出る印（パターン番号も同じ）。S = ソロ、M = ミュート</td></tr>
 <tr><td class="n"><span class="num">16</span></td><td>ステップ</td><td>タップで ON / OFF。中のバーの高さは音の強さ（ベロシティ）</td></tr>
 <tr><td class="n"><span class="num">17</span></td><td>LEN・ページ・FOLLOW</td><td>パターンの長さ（1〜64 ステップ）、表示するページ（1〜4）、ページを再生位置に合わせるか</td></tr>
-<tr><td class="n"><span class="num">18</span></td><td>SWIPE・GAPS</td><td>なぞって入力するときの間隔（→ <a href="#beat">2</a>）</td></tr>
+<tr><td class="n"><span class="num">18</span></td><td>SWIPE</td><td>なぞって入力するときの間隔と GAPS。タップで説明つきのメニュー（→ <a href="#beat">2</a>）</td></tr>
 <tr><td class="n"><span class="num">19</span></td><td>FLT（全体フィルター）/ USER</td><td>上へ動かすとハイパス、下へ動かすとローパス。上の名前のタップで USER1・USER2 …（割り当てたパラメーターの足し引き）に切り替え、長押しで割り当て（→ <a href="#macro">7</a>）</td></tr>
-<tr><td class="n"><span class="num">20</span></td><td>ROLL・SLIP・REV・PERF</td><td>演奏用のボタン（→ <a href="#perform">7</a>）。PERF でパフォーマンス画面（→ <a href="#performscreen">7</a>）</td></tr>
-<tr><td class="n"><span class="num">21</span></td><td>パッド</td><td>叩くと鳴り、そのトラックを選択します。再生中は鳴ったトラックのパッドが光ります。右下の数字はノート番号（MIDI… の NOTES の対応。MIDI の機器から鳴らすときの番号・外へ送る番号）。パッドに MIDI を割り当てていれば「MIDI 60」のように、送るノート（和音は根音）を出します</td></tr>
-<tr><td class="n"><span class="num">22</span></td><td>タブ</td><td>SOUND / FILTER / VELOCITY / FX / SONG の切り替え</td></tr>
+<tr><td class="n"><span class="num">20</span></td><td>ROLL・SLIP・REV</td><td>演奏用のボタン（→ <a href="#perform">7</a>）</td></tr>
+<tr><td class="n"><span class="num">21</span></td><td>パッド</td><td>叩くと鳴り、そのトラックを選択します（別のバンクのパッドならバンクも切り替わります）。再生中は鳴ったトラックのパッドが光ります。MIDI の機器をつないでいると、右下にノート番号（MIDI… の NOTES の対応。MIDI の機器から鳴らすときの番号・外へ送る番号）が出ます。パッドに MIDI を割り当てていれば「MIDI 60」のように、送るノート（和音は根音）を出します</td></tr>
+<tr><td class="n"><span class="num">22</span></td><td>タブ</td><td>SOUND / FILTER / VELOCITY / FX / SONG の切り替え。タブの下に、いま触っているトラックの名前と色が出ます</td></tr>
 </table>
 
 <h3>スマートフォン</h3>
@@ -82,7 +82,7 @@
 <figure><img src="img/phone_sound.webp" alt="SOUND 画面"><figcaption>SOUND など: 左のリストでトラックを選んで設定</figcaption></figure>
 <figure><img src="img/phone_mix.webp" alt="MIX 画面"><figcaption>MIX: ミキサー（EQ はボタンでフェーダーと切り替え）</figcaption></figure>
 </div>
-<div class="tip">タブレットでも、ロゴのメニューの <b>Phone layout</b> でこの配置にできます（ボタンや文字はスマートフォンより大きめ、1 画面ずつ大きく表示。PADS のパッドが大きくなるので演奏向き）。端末ごとに保存され、≡ のメニューの <b>Tablet layout</b> で戻ります。</div>
+<div class="tip">タブレットでも、ロゴのメニューの Settings… の <b>Phone layout</b> でこの配置にできます（ボタンや文字はスマートフォンより大きめ、1 画面ずつ大きく表示。PADS のパッドが大きくなるので演奏向き）。端末ごとに保存され、≡ のメニューの <b>Tablet layout</b> で戻ります。</div>
 <div class="tip">横幅の狭いスマートフォンでは、ROLL の横の <span class="key">⋯</span> にロールの長さ・SLIP・REV がまとまります。パターン番号の ◀ ▶ は省かれるので、数字をタップして入力してください。</div>
 </section>
 
@@ -150,7 +150,7 @@
 <p>1〜4 のボタンで表示するページを切り替えます（再生中のページには点が付きます）。ページの長押しで、そのページ（A / B 全トラック）のコピー / ペースト / 消去ができます。</p>
 <p><span class="key">FOLLOW</span> を ON にすると、再生中は表示するページが再生位置に付いていきます（演奏向け）。OFF のときは選んだページのままです（打ち込み向け）。</p>
 <h3>スウィング</h3>
-<p><span class="key">SWING</span> を横にドラッグして 0〜100 を設定します。裏の 16 分音符が遅れて、跳ねたノリになります。パターンごとの設定です。</p>
+<p><span class="key">SWING</span> をタップすると、スライダー（−1 / +1 付き）が出ます。横にドラッグしても変えられます（0〜100）。裏の 16 分音符が遅れて、跳ねたノリになります。パターンごとの設定です。</p>
 </section>
 
 <!-- ============================================================ -->
@@ -173,7 +173,7 @@
 <ul>
   <li><b>S（ソロ）</b>: バンクの中でソロのトラックだけを鳴らします。<b>M（ミュート）</b>: 鳴らしません。</li>
   <li><b>ALL S / ALL M</b>: 表示中のバンクをまとめて切り替えます（1 つでも ON なら全部 OFF、なければ全部 ON）。</li>
-  <li>トラック名をタップすると、そのトラックの音が鳴ります。止まっているときにステップを入れたときも、その強さで鳴ります（再生中は、シーケンサがその位置で鳴らします）。鳴らしたくないとき（演奏中に触っても邪魔にならないように）は、ロゴ / ≡ のメニューの <b>Sound on track tap</b>・<b>Sound on step input</b> を OFF にしてください。</li>
+  <li>トラック名をタップすると、そのトラックの音が鳴ります。止まっているときにステップを入れたときも、その強さで鳴ります（再生中は、シーケンサがその位置で鳴らします）。鳴らしたくないとき（演奏中に触っても邪魔にならないように）は、ロゴのメニューの Settings…（スマートフォンは ≡ のメニュー）の <b>Sound on track tap</b>・<b>Sound on step input</b> を OFF にしてください。</li>
   <li>色は名前と同じくキット（音の設定）の一部です。プロジェクト・キットのファイルに保存され、↶ で戻せます。Swap with… で入れ替えると色も一緒に移り、LOAD の「Built-in kit」で最初の色に戻ります。</li>
 </ul>
 <h3 id="triplet">3 連符（Steps）</h3>
@@ -413,7 +413,7 @@
 <figure><img src="img/perform_mixer.webp" alt="パフォーマンス画面の 2 ページ目"><figcaption>2 ページ目（最初の配置）: 16 トラックのミニミキサー</figcaption></figure>
 <figure><img src="img/perform_mpc.webp" alt="パフォーマンス画面の 3 ページ目"><figcaption>3 ページ目（最初の配置）: MPC 風</figcaption></figure>
 <figure><img src="img/perform_midicon.webp" alt="パフォーマンス画面の 4 ページ目"><figcaption>4 ページ目（最初の配置）: MIDI コントローラー風（MIDI… の OUT の機器を CH 16 で操作）</figcaption></figure>
-<p>シーケンスを鳴らしながら演奏するための画面です。18×10 のマス目に、ボタン・フェーダー・ノブを好きな大きさで並べて、自分用の演奏の画面を作れます。タブレットはパッドの上の <span class="key">PERF</span>、スマートフォンは左のタブの <b>PERF</b>（PADS の下）で開きます。タブレットでは右上の <span class="key">✕</span> で元の画面に戻ります。</p>
+<p>シーケンスを鳴らしながら演奏するための画面です。18×10 のマス目に、ボタン・フェーダー・ノブを好きな大きさで並べて、自分用の演奏の画面を作れます。タブレットはヘッダーの <span class="key">PERF</span>、スマートフォンは左のタブの <b>PERF</b>（PADS の下）で開きます。タブレットでは右上の <span class="key">✕</span> で元の画面に戻ります。</p>
 <ul>
   <li>ページは 1〜4 です。配置は端末に保存され、どのプロジェクトを開いても同じです（タブレットとスマートフォンの配置は別々）。最初は 1 ページ目の左にボタン 16 個（ROLL・MUTE・シーン・パターン・REV・FX）、真ん中に FLT と MASTER（音量）のフェーダー、右にリバーブ・ディレイのノブ 4 つが並んでいます。2 ページ目は 16 トラックのミニミキサーです（トラックごとに縦 1 列で、上から EQ HI / MID / LO のノブ・ミュート（M）・PAN のノブ・音量のフェーダー。右端に FLT と MASTER）。3 ページ目は MPC 風（上に横長のタッチストリップ（FLT）とノブ 4 つ（FLT・REV MIX・DLY MIX・DLY FB）、NOTE RPT（1/16 の ROLL、押している間）と REV SEQ、左下に音量のフェーダー 5 本（A01・A02・A03・B01・MASTER）、右下に 4×4 のパッド（下の段から A01〜））。4 ページ目は MIDI コントローラー風で、MIDI… の OUT の機器を操作します（すべて CH 16: ノブ 8 つ = CC 22〜29、フェーダー 8 本 = CC 31〜38、ボタン 8 つ = ノート C4〜G4、右端にピッチベンド）。以前の版から使っている配置でも、3・4 ページ目が空なら 1 回だけ入ります。EDIT の ⋯ の「Default layout on this page」でいつでもそのページの最初の配置に戻せます。<br><small>※ 以前の版（8×4 のマス目）で作った配置は、そのまま 18×10 に引き伸ばして表示します。</small></li>
   <li>1 マスはボタンには小さめですが、フェーダーにはちょうどよい太さです。ボタンは 2×2 マスくらいが押しやすい大きさです。小さいノブは文字を減らしてノブを大きく描きます。<b>フェーダー・ノブを触っている間は、上に名前と値が大きく出ます</b>（指で隠れても読めます）。フェーダーは横長に置くと横向きになります（左 = 0、右 = 最大。パンなど真ん中のあるものは真ん中から左右）。<b>ダブルタップ</b>で 0 に戻ります（パン・EQ・ピッチなど真ん中のあるもの、FLT・USER は真ん中）。スマートフォンで 1 マスにしたノブは名前・値を出さずノブだけ、ボタンは小さな文字で表示します。</li>
@@ -453,7 +453,7 @@
 <ul>
   <li><b>CHANNEL</b>: 送るチャンネル。<b>複数選べます</b>（数字のタップで足す / 外す。例: 1・3・10 に同じものを送る）。<b>ALL</b> は 1〜16 の全部（もう一度押すと 1 だけに戻る）。最後の 1 つは外せません。部品には「CH 1,3,10」「CH 1-4,10」（1〜4 と 10）のように番号で表示し、4 つ以上に分かれるときは「CH 1,3 +3」（ほかに 3 つ）と出ます。</li>
   <li><b>CC NUMBER / NOTE / PROGRAM</b>: 送る番号（0〜127）。ノートは音名も出ます（60 = C4）。</li>
-  <li><b>SEND TO</b>: 送り先。<b>複数選べます</b>（タップで足す / 外す。1 つの部品で 2 台のシンセを同時に動かす、など）。<b>MIDI OUTPUT</b>（既定）= ロゴ（スマートフォンは ≡）の「MIDI…」の OUT で選んだ機器。ほかに、つながっている機器を部品ごとに選べます。出力が 2 つ以上ある MIDI インターフェースは「機器名 · OUT 2」のようにポートごとに出るので、シンセ A は OUT 1、エフェクター B は OUT 2、のように分けられます。送れないとき（出力を選んでいない・機器がつながっていない）は設定の画面に赤い字で出ます。</li>
+  <li><b>SEND TO</b>: 送り先。<b>複数選べます</b>（タップで足す / 外す。1 つの部品で 2 台のシンセを同時に動かす、など）。<b>MIDI OUTPUT</b>（既定）= ロゴのメニューの Settings…（スマートフォンは ≡ のメニュー）の「MIDI…」の OUT で選んだ機器。ほかに、つながっている機器を部品ごとに選べます。出力が 2 つ以上ある MIDI インターフェースは「機器名 · OUT 2」のようにポートごとに出るので、シンセ A は OUT 1、エフェクター B は OUT 2、のように分けられます。送れないとき（出力を選んでいない・機器がつながっていない）は設定の画面に赤い字で出ます。</li>
   <li>ON RELEASE の RETURN: CC・AFTERTOUCH は触る前の値へ、CC PAN・PITCH BEND は真ん中へ戻ります（ピッチベンドのホイールのように使えます）。</li>
   <li>フェーダー・ノブの位置は保存しません（アプリを開き直すと 0、PAN・BEND は真ん中から）。同じ値は続けて送りません。</li>
   <li>シーケンスの MIDI 出力（MIDI… の OUTPUT CHANNEL）とは別に送るので、シーケンスを外部の音源で鳴らしながら、別のチャンネルのつまみを動かせます。MIDI クロックを SEND にすれば、DBR-1 のテンポに機材を合わせられます。</li>
@@ -472,7 +472,7 @@
 <ul>
   <li>パターンは 00〜99 の 100 個。各パターンがステップ・ベロシティ・長さ・スウィング・テンポ・エフェクトの設定・オートメーションを持ちます（音のキットは共通）。</li>
   <li>再生中にパターン番号を変えると、既定では<b>小節（パターン）の終わり</b>で切り替わります（待っている番号は枠が光ります）。停止中はすぐ切り替わります。</li>
-  <li>ロゴ（スマホは ≡）のメニューの <b>Pattern switch</b> で、再生中に切り替わるタイミングを選べます（タップで BAR → BEAT → NOW）。<b>BAR</b>（既定）= パターンの終わりで、次のパターンの頭から / <b>BEAT</b> = 次の拍で / <b>NOW</b> = 次の 16 分で。BEAT と NOW は再生位置をそのままに中身だけ入れ替えるので、リズムが途切れません（次のパターンのほうが短ければ、その長さで折り返した位置から）。パフォーマンス画面の PATTERN ボタンと合わせると、パターンを使ったリアルタイムの演奏ができます。</li>
+  <li>ロゴのメニューの Settings…（スマホは ≡ のメニュー）の <b>Pattern switch</b> で、再生中に切り替わるタイミングを選べます（タブレットは BAR / BEAT / NOW のボタン、スマホはタップで BAR → BEAT → NOW）。<b>BAR</b>（既定）= パターンの終わりで、次のパターンの頭から / <b>BEAT</b> = 次の拍で / <b>NOW</b> = 次の 16 分で。BEAT と NOW は再生位置をそのままに中身だけ入れ替えるので、リズムが途切れません（次のパターンのほうが短ければ、その長さで折り返した位置から）。パフォーマンス画面の PATTERN ボタンと合わせると、パターンを使ったリアルタイムの演奏ができます。</li>
   <li>長押しで、パターン全体のコピー / ペースト / 消去。<b>Copy FX only / Paste FX only</b> で、FX の設定（シーン A / B・センド量）だけを別のパターンへ写せます（ステップはそのまま、↶ で戻せます）。</li>
 </ul>
 </div>
@@ -511,7 +511,7 @@
   <li>優先の順は「動かしている最中のつまみ ＞ ロック ＞ 線 ＞ 元の値」です（メインフェーダーの USER は、その結果に足し引きします）。</li>
   <li>↶（元に戻す）で取り消せます。CLEAR（ヘッダー）はステップと一緒にロックも消し、線は残します。</li>
 </ul>
-<div class="tip">再生中は、オートメーションで動いている値が SOUND・FILTER・FX のつまみ、ミキサーの pan・EQ・フェーダー、全体フィルターのフェーダーにも表示されます。性能の低い端末で画面が重いときは、ロゴ（スマートフォンは ≡）のメニューの <b>Animate automation</b> を OFF にすると表示だけを止められます（音は変わりません。端末ごとの設定）。<br>ロックは Elektron のパラメーターロックに近い動きです。トラックごとの長さ（ポリリズム）を設定したトラックでは、DRAW の線の位置もそのトラックのステップで数えます。</div>
+<div class="tip">再生中は、オートメーションで動いている値が SOUND・FILTER・FX のつまみ、ミキサーの pan・EQ・フェーダー、全体フィルターのフェーダーにも表示されます。性能の低い端末で画面が重いときは、ロゴのメニューの Settings…（スマートフォンは ≡ のメニュー）の <b>Animate automation</b> を OFF にすると表示だけを止められます（音は変わりません。端末ごとの設定）。<br>ロックは Elektron のパラメーターロックに近い動きです。トラックごとの長さ（ポリリズム）を設定したトラックでは、DRAW の線の位置もそのトラックのステップで数えます。</div>
 </section>
 
 <!-- ============================================================ -->
@@ -598,7 +598,7 @@
 <!-- ============================================================ -->
 <section id="midi">
 <h2>11. MIDI と USB オーディオ</h2>
-<p>USB-MIDI の機器（パッドコントローラー・キーボード・オーディオインターフェースの MIDI 端子など）を USB でつなぐと、自動で使えるようになります。設定はロゴ（スマートフォンは ≡）のメニューの <b>MIDI…</b>。</p>
+<p>USB-MIDI の機器（パッドコントローラー・キーボード・オーディオインターフェースの MIDI 端子など）を USB でつなぐと、自動で使えるようになります。設定はロゴのメニューの Settings…（スマートフォンは ≡ のメニュー）の <b>MIDI…</b>。</p>
 <figure class="small"><img src="img/midi_dialog.webp" alt="MIDI の設定"></figure>
 <figure class="small"><img src="img/notes_edit.webp" alt="NOTES の EDIT"><figcaption>NOTES の EDIT…: パッドごとのノート番号（LEARN で MIDI の機器から）</figcaption></figure>
 <table>
@@ -643,7 +643,7 @@
 <h3>USB オーディオ</h3>
 <p>USB オーディオインターフェースや USB-C ヘッドホンは、挿すと自動でそちらから音が出ます。今の出力先は About（ロゴのメニュー）で確認できます。</p>
 <h3 id="multiout">マルチアウト（Audio I/O…）</h3>
-<p>出力が 3 チャンネル以上のオーディオインターフェース（例: Scarlett 6i6 は 6 チャンネル）なら、トラックごとに別の出力へ出して、ミキサーの別々のチャンネルで受けられます。ロゴ（スマートフォンは ≡）のメニューの <b>Audio I/O…</b> で設定します。</p>
+<p>出力が 3 チャンネル以上のオーディオインターフェース（例: Scarlett 6i6 は 6 チャンネル）なら、トラックごとに別の出力へ出して、ミキサーの別々のチャンネルで受けられます。ロゴのメニューの Settings…（スマートフォンは ≡ のメニュー）の <b>Audio I/O…</b> で設定します。</p>
 <figure class="small"><img src="img/audio_dialog.webp" alt="Audio I/O"><figcaption>Audio I/O。MULTI OUT: ON で、トラックごとに出力先を選べます</figcaption></figure>
 <table>
 <tr><th>項目</th><th>内容</th></tr>
