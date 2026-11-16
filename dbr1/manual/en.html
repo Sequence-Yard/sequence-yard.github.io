@@ -246,7 +246,7 @@
 <tr><td>Formats</td><td>WAV, AIFF, MP3, M4A (AAC), OGG, FLAC</td></tr>
 <tr><td>Sample rate</td><td>8–192 kHz</td></tr>
 <tr><td>Length</td><td>Up to 60 seconds each (only the first 60 seconds of a longer file are used)</td></tr>
-<tr><td>Stereo</td><td>Mixed down to mono</td></tr>
+<tr><td>Stereo</td><td>Played in stereo (files whose left and right are identical are treated as mono; 3 or more channels are mixed to mono). For a stereo sound, pan works as a balance control (it turns down the opposite side)</td></tr>
 </table>
 <div class="tip">When you replace a sound, the track name follows the new sound if you had not renamed it.<br>“Built-in kit” in the LOAD menu returns all 16 tracks to the built-in sounds (patterns are kept).</div>
 <h3 id="generate">Making your own sounds (GENERATE)</h3>
@@ -268,7 +268,7 @@
 <p>SOUNDS… → “● Record…” in the SOUND tab records from a microphone or an audio interface and puts the sound on the selected track. The first time, Android asks for permission to use the microphone (it is used only on this screen, and recordings never leave your device). Recording DBR-1 itself (<a href="#resample">resampling</a>), cutting a rhythm onto separate pads (<a href="#slice">slicing</a>) and changing the length (STRETCH) are also done on this screen.</p>
 <figure><img src="img/sampler_input.webp" alt="IN / CH"><figcaption>Choosing the input: IN picks the device, CH the channels to record (on a Scarlett 6i6: 1+2 / 3+4 / 5+6 / 1–6)</figcaption></figure>
 <ol>
-  <li><b>Choose the input</b>: IN selects the built-in mic or a USB device (audio interface etc.). CH picks the channels to record: L+R / L / R on stereo devices; on devices with 3 or more channels, 1+2 / 3+4 / … (two channels mixed) or 1 / 2 / … (a single channel). Check the level on the meter (red at the right end means the sound is clipping or about to). When the surroundings are loud or the sound is too hot, lower the recording level with <b>LEVEL</b> to the right of the meter (−30 to +12 dB, default 0 dB; quiet sounds can be raised). It applies to the meter, the AUTO trigger and the recording, can be changed while recording, and is kept on the device.<br><small>Android does not let apps change the microphone's own sensitivity, so LEVEL scales the sound after it arrives. A sound loud enough to distort in the microphone itself stays distorted when you lower LEVEL (move away from the mic instead).</small></li>
+  <li><b>Choose the input</b>: IN selects the built-in mic or a USB device (audio interface etc.). CH picks the channels to record: L+R (stereo) / L / R (mono) on stereo devices; on devices with 3 or more channels, 1+2 / 3+4 / … (a stereo pair) or 1 / 2 / … (a single channel). Check the level on the meter (red at the right end means the sound is clipping or about to). When the surroundings are loud or the sound is too hot, lower the recording level with <b>LEVEL</b> to the right of the meter (−30 to +12 dB, default 0 dB; quiet sounds can be raised). It applies to the meter, the AUTO trigger and the recording, can be changed while recording, and is kept on the device.<br><small>Android does not let apps change the microphone's own sensitivity, so LEVEL scales the sound after it arrives. A sound loud enough to distort in the microphone itself stays distorted when you lower LEVEL (move away from the mic instead).</small></li>
   <li><b>Record</b>: ● REC starts and ■ STOP ends the recording (up to 60 seconds). With <b>AUTO</b> (-40 / -30 / -20 dB), ● ARM waits and starts recording when the sound goes over the line on the meter (the 0.1 s before it is kept; the first 0.4 s after ARM is ignored so the tap itself does not start it. If noise alone is over the line, raise the AUTO line (-40 → -30 → -20 dB)). ▶ PATTERN plays the pattern while you record.</li>
   <li><b>Edit</b>: drag the yellow handles on the waveform to choose the part to use (drag elsewhere to make a new selection; tap to move the nearer handle there).</li>
 </ol>
@@ -291,7 +291,7 @@
 <p><b>KEY</b> in the bottom row is a tuner: it checks the pitch of the selection and shows e.g. "KEY E2" or "KEY A3 −12¢" (UNKNOWN if there is no clear pitch). Tap it to choose another key in the key picker. When <b>Use on A01</b> saves the sound to DBR-1/Samples, this key goes into the KEY column of the sound browser.</p>
 <p>Give it a name and press <b>Use on A01</b> (the selected track): the selection becomes that track's sound. If a save folder is set, it is also saved as a WAV in <b>DBR-1/Samples</b> so you can use it in other projects. ✕ closes the screen without using the recording.</p>
 <h3 id="resample">Recording DBR-1 itself (resampling)</h3>
-<p>Choose <b>DBR-1 output (resample)</b> in IN to record what DBR-1 is playing, as you hear it (after the effects, MASTER and the master filter). Use it to turn a pattern into a single loop, or to make a new sound from an effected one (no microphone permission needed).</p>
+<p>Choose <b>DBR-1 output (resample)</b> in IN to record what DBR-1 is playing, as you hear it (after the effects, MASTER and the master filter), in stereo. Use it to turn a pattern into a single loop, or to make a new sound from an effected one (no microphone permission needed).</p>
 <figure><img src="img/sampler_resample.webp" alt="Resampling"><figcaption>IN = DBR-1 output, recording one hit of A02 with PAD (with PAD off, BARS / AUTO appear)</figcaption></figure>
 <ul>
   <li><b>BARS</b> (OFF / 1 / 2 / 4 / 8): choose a number of bars and press <b>● REC N</b>. The pattern starts from the top and exactly that many bars are recorded from its first sound, then it stops (worked out from the current tempo, so the result loops cleanly). A bar counts as 16 steps (4/4). When BARS is on, the length it will record (e.g. "1 BAR = 16 steps (4/4) at 120 BPM → records 2.00 s") is shown below REC. If the pattern length does not fit whole bars (12 steps, for example), or the tempo comes from MIDI clock, the take may not end where a loop ends, and an orange note says so; trim the take afterwards.</li>
@@ -719,8 +719,8 @@
 <tr><td>Length</td><td>Up to 60 seconds each (only the first 60 seconds of a longer file are used)</td></tr>
 <tr><td>File size</td><td>Up to 100 MB</td></tr>
 <tr><td>GENERATE</td><td>Up to 2 waves (BASIC 5, SYNTH 5, INST 10, DRUM 8, NOISE 3, SAMPLE), AMP (ADSR), FILTER (LP / HP / BP with envelope), DRIVE; keys C1–B6 × single note / 13 chord types. Rendered at 48 kHz mono, up to 8 seconds, then trimmed and used via the sampling screen</td></tr>
-<tr><td>Sampling</td><td>Built-in mic / USB input / DBR-1's own output (resampling, BARS 1–8, PAD one-shots up to 10 s), up to 60 seconds (48 kHz, mono; stereo inputs as L+R / L / R, devices with 3+ channels by channel number). Saved as 16-bit WAV (RATE can lower it to 8–32 kHz; BIT 12 / 8 also available). Up to 16 slices; time stretch 50–200% (pitch unchanged)</td></tr>
-<tr><td>Channels</td><td>Played as mono (stereo files are mixed down)</td></tr>
+<tr><td>Sampling</td><td>Built-in mic / USB input / DBR-1's own output (resampling, BARS 1–8, PAD one-shots up to 10 s), up to 60 seconds (48 kHz; two channels (L+R, 1+2 …) and resampling record in stereo, L / R or a single channel in mono, identical left and right become mono). Editing, slicing and STRETCH keep both channels aligned. Saved as 16-bit WAV (2 channels when stereo; RATE can lower it to 8–32 kHz; BIT 12 / 8 also available). Up to 16 slices; time stretch 50–200% (pitch unchanged)</td></tr>
+<tr><td>Channels</td><td>Mono or stereo (a stereo sound goes through the track filter, INSERT, DIST and EQ on both sides; pan is a balance control)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
 <tr><td>Built-in sounds</td><td>211 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 32 in POP and TRANCE and 159 from the demo songs, 44.1 kHz / 16-bit). The 82 pitched ones show a note or chord name (A4 = 440 Hz)</td></tr>
 <tr><td>Demo songs</td><td>10 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard / Candy Yard / Velvet Sequence / Abyss Yard / Driving Sequence / Container Yard / Sequence Orbit, about 2 minutes each)</td></tr>
@@ -730,7 +730,7 @@
 <tr><td>start / end</td><td>0–127 (the part of the sample that plays)</td></tr>
 <tr><td>pitch</td><td>−12 to +12 semitones (changes playback speed)</td></tr>
 <tr><td>decay</td><td>About 10 ms – 2 s; 127 = no decay</td></tr>
-<tr><td>pan</td><td>L64 – C – R63 (equal power; MIDI 0–127 with 64 at the center)</td></tr>
+<tr><td>pan</td><td>L64 – C – R63 (equal power for mono sounds, balance for stereo sounds; MIDI 0–127 with 64 at the center)</td></tr>
 <tr><td>Values</td><td>Amounts such as volume, sends and effects read 0–127, the same as MIDI (they match the CC values sent and received). Pitch is in semitones, EQ in dB, cutoff in Hz</td></tr>
 <tr><td>Mixer</td><td>Track EQ (LO shelf 30–500 Hz, default 100 Hz / MID peak 200 Hz–8 kHz, default 1 kHz, Q 0.7 / HI shelf 2–16 kHz, default 8 kHz; ±12 dB each; the frequencies are not automatable or CC-mapped), volume 0–127, pan, S / M; MASTER 0–127 (saved); meters −48 to 0 dB</td></tr>
 <tr><td>Reverse</td><td>REV SEQ (step order) / REV SND (samples)</td></tr>
