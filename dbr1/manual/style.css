@@ -93,3 +93,29 @@ ol.steps li { margin: 4px 0; }
   .wrap { padding: 12px 12px 48px; }
   section { padding: 6px 14px 16px; }
 }
+
+/* クイックスタート（quick_ja.html / quick_en.html、2026-11-17） */
+.qs-intro { font-size: 15px; }
+.qs-words { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; margin: 8px 0 0; list-style: none; font-size: 15px; }
+.qs-words b { color: var(--accent); }
+.qs-step {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 20px 16px; margin: 14px 0;
+}
+.qs-step h2 { display: flex; align-items: center; gap: 12px; border: 0; margin: 0 0 2px; padding: 0; font-size: 20px; }
+.qs-step h2 .n {
+  flex: none; width: 34px; height: 34px; border-radius: 17px; background: var(--accent); color: #fff;
+  font-size: 17px; text-align: center; line-height: 34px;
+}
+.qs-step.sub h2 .n { background: var(--accent-b); font-size: 14px; }
+.qs-step .goal { color: var(--sub); margin: 0 0 6px 46px; font-size: 15px; }
+.qs-step ol { margin: 6px 0; padding-left: 24px; }
+.qs-step ol li { margin: 3px 0; }
+.qs-step figure { margin: 10px 0 4px; max-width: 400px; }
+.qs-step .tip { margin: 8px 0 0; }
+.qs-link { margin: 10px 0 0; }
+.qs-link a {
+  display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+  border-radius: 10px; padding: 6px 14px; font-weight: 600;
+}
+.ph { color: var(--sub); font-size: .92em; }
