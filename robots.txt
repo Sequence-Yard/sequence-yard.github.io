@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sequence-yard.github.io/sitemap.xml
