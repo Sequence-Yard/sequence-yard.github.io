@@ -119,3 +119,4 @@ ol.steps li { margin: 4px 0; }
   border-radius: 10px; padding: 6px 14px; font-weight: 600;
 }
 .ph { color: var(--sub); font-size: .92em; }
+.qs-step figure.wide { max-width: 680px; }
