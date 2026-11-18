@@ -14,30 +14,54 @@
 <meta property="og:image" content="https://sequence-yard.github.io/dbr1/og.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DBR-1 Sampling Rhythm Machine", "alternateName": "DBR-1", "operatingSystem": "Android", "applicationCategory": "MultimediaApplication", "description": "DBR-1 is a sampling rhythm machine (drum machine and beat maker) for Android phones and tablets: 16-track step sequencer, pads, sampling, FX, automation and MIDI. Free, no ads, no in-app purchases.", "url": "https://sequence-yard.github.io/dbr1/", "image": "https://sequence-yard.github.io/dbr1/icon.png", "inLanguage": ["ja", "en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "Sequence Yard", "url": "https://sequence-yard.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DBR-1 Sampling Rhythm Machine", "alternateName": "DBR-1", "operatingSystem": "Android", "applicationCategory": "MultimediaApplication", "description": "DBR-1 is a sampling rhythm machine (drum machine and beat maker) for Android phones and tablets: 16-track step sequencer, pads, sampling, FX, automation and MIDI. Free, no ads, no in-app purchases.", "url": "https://sequence-yard.github.io/dbr1/", "image": "https://sequence-yard.github.io/dbr1/icon.png", "screenshot": "https://sequence-yard.github.io/dbr1/img/tablet_1_sequencer.webp", "inLanguage": ["ja", "en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "Sequence Yard", "url": "https://sequence-yard.github.io/", "sameAs": ["https://www.youtube.com/@sequence_yard"]}}</script>
 <style>
-  :root { --bg:#f6f5f1; --card:#fff; --text:#2c2c2a; --sub:#5f5e5a; --line:#e2e0d8; --accent:#1d9e75; }
+  :root { --bg:#f6f5f1; --card:#fff; --text:#2c2c2a; --sub:#5f5e5a; --line:#e2e0d8; --accent:#1d9e75; --chip:#e6f4ee; --yt:#d93a39; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#161616; --card:#1f1f1e; --text:#e8e7e2; --sub:#a3a29c; --line:#333; --accent:#5dcaa5; }
+    :root { --bg:#161616; --card:#1f1f1e; --text:#e8e7e2; --sub:#a3a29c; --line:#333; --accent:#5dcaa5; --chip:#1d3029; --yt:#f07a79; }
   }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--text);
          font: 16px/1.7 "Roboto","Noto Sans JP","Hiragino Sans",sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
   a { color: var(--accent); }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 24px; margin:16px 0; }
-  .app { display:flex; gap:16px; align-items:center; }
-  .app img { width:72px; height:72px; border-radius:16px; flex:none; }
-  h1 { margin:0 0 4px; font-size:1.7em; letter-spacing:1px; }
-  h2 { margin:0; font-size:1.25em; }
+  img { max-width:100%; height:auto; display:block; }
+  .hero { display:flex; gap:18px; align-items:center; }
+  .hero img { width:88px; height:88px; border-radius:20px; flex:none; }
+  h1 { margin:0; font-size:2.1em; letter-spacing:2px; line-height:1.2; }
+  h2 { font-size:1.35em; margin:44px 0 4px; }
+  h2 small { font-size:.62em; color:var(--sub); font-weight:normal; margin-left:.5em; }
   p { margin:.4em 0; }
-  .sub { color:var(--sub); font-size:.92em; }
-  ul.links { padding-left:1.2em; margin:.6em 0 0; }
+  .sub { color:var(--sub); }
+  .lead { font-size:1.12em; margin:22px 0 6px; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; padding:0; list-style:none; }
+  .chips li { background:var(--chip); color:var(--accent); border-radius:999px; padding:3px 12px; font-size:.88em; font-weight:bold; }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 8px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; border-radius:12px; padding:9px 16px; font-weight:bold; text-decoration:none; border:2px solid var(--accent); }
+  .btn.main { background:var(--accent); color:#fff; }
+  .btn.soon { border-style:dashed; color:var(--sub); border-color:var(--sub); cursor:default; font-weight:normal; }
+  .btn.yt { border-color:var(--yt); color:var(--yt); }
+  .shot { margin:22px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 6px 24px rgba(0,0,0,.08); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr)); gap:14px; margin-top:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  .card h3 { margin:0 0 4px; font-size:1.05em; }
+  .card p { font-size:.93em; }
+  .card .en { color:var(--sub); font-size:.86em; margin-top:6px; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:12px; margin-top:14px; }
+  .gallery figure { margin:0; }
+  .gallery img { border-radius:10px; border:1px solid var(--line); }
+  .gallery figcaption { font-size:.85em; color:var(--sub); margin-top:4px; }
+  ul.links { list-style:none; padding:0; margin:14px 0 0; display:grid; grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr)); gap:10px; }
+  ul.links a { display:block; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; text-decoration:none; color:var(--text); }
+  ul.links a b { color:var(--accent); }
+  ul.links a span { display:block; color:var(--sub); font-size:.86em; }
+  footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--sub); font-size:.88em; }
 </style>
 </head>
 <body>
 <main>
-<div class="app">
+
+<div class="hero">
   <img src="icon.png" alt="DBR-1">
   <div>
     <h1>DBR-1</h1>
@@ -45,22 +69,96 @@
   </div>
 </div>
 
-<div class="card">
-  <p>16 トラックのステップシーケンサー、パッド演奏とリアルタイム録音、フィルター・FX・オートメーション、ソング、サンプリング（ステレオ）、MIDI に対応したリズムマシン（ドラムマシン・ビートメイカー）です。演奏を画面ごと動画にして、そのまま共有できます。無料・広告なし・課金なし。</p>
-  <p class="sub">A drum machine and beat maker for Android: a 16-track step sequencer with pads and live recording, filters, FX, automation, song mode, stereo sampling and MIDI. Record your play as a video and share it. Free, no ads, no in-app purchases.</p>
-  <p class="sub">Google Play: end of November 2026</p>
-  <ul class="links">
-    <li><a href="manual/quick_ja.html"><b>クイックスタート</b>（はじめての方へ: 1 曲できるまで）</a></li>
-    <li><a href="manual/quick_en.html"><b>Quick Start</b> (new to DBR-1: from your first sound to a finished song)</a></li>
-    <li><a href="manual/ja.html">取扱説明書（日本語）</a></li>
-    <li><a href="manual/en.html">User manual (English)</a></li>
-    <li><a href="manual/midi-clock_ja.html">MIDI クロックの正確さ（しくみ・測った結果・同期のしかた）</a></li>
-    <li><a href="manual/midi-clock_en.html">MIDI clock timing (how it works, what we measured, how to sync)</a></li>
-    <li><a href="https://sequence-yard.github.io/dbr1-privacy/">プライバシーポリシー / Privacy policy</a></li>
-  </ul>
+<p class="lead">なぞって打ち込み、パッドを叩き、自分で録った音で演奏。作ったビートは画面ごと動画にして、そのままシェアできます。</p>
+<p class="sub">Swipe in beats, play the pads, sample your own sounds and perform live. Record the screen with its sound and share it in a tap.</p>
+
+<ul class="chips">
+  <li>無料 / Free</li><li>広告なし / No ads</li><li>アプリ内課金なし / No in-app purchases</li><li>アカウント不要 / No account</li><li>ネット接続なし / No internet access</li>
+</ul>
+
+<div class="btns">
+  <span class="btn soon">Google Play: 2026 年 11 月末〜12 月初め公開予定 / Coming late November 2026</span>
+</div>
+<div class="btns">
+  <a class="btn main" href="manual/quick_ja.html">クイックスタート</a>
+  <a class="btn" href="manual/quick_en.html">Quick Start</a>
+  <a class="btn yt" href="https://www.youtube.com/@sequence_yard" target="_blank" rel="noopener">▶ YouTube</a>
 </div>
 
-<p class="sub"><a href="../">Sequence Yard</a></p>
+<div class="shot"><img src="img/tablet_1_sequencer.webp" width="1600" height="1000" alt="DBR-1 のシーケンサーの画面（タブレット） / DBR-1 sequencer on a tablet"></div>
+
+<h2>できること<small>Features</small></h2>
+<div class="grid">
+  <div class="card">
+    <h3>ステップシーケンサー</h3>
+    <p>16 トラック × 100 パターン、1〜64 ステップ（変拍子も）。なぞって一括入力、ベロシティ・確率・ラチェット、トラックごとの長さ（ポリリズム）と 3 連符、スウィング、ソングモード。</p>
+    <p class="en">16 tracks × 100 patterns of 1–64 steps. Swipe to fill, velocity, probability and ratchets, per-track lengths and triplets, swing, song mode.</p>
+  </div>
+  <div class="card">
+    <h3>パッドと演奏</h3>
+    <p>16 パッドでリアルタイム録音（カウントイン・メトロノーム）。ROLL・逆再生、ボタン・フェーダー・ノブを自由に並べる PERF 画面。</p>
+    <p class="en">16 pads with live recording, count-in and metronome. Rolls, reverse, and a PERF screen you lay out yourself.</p>
+  </div>
+  <div class="card">
+    <h3>音とサンプリング</h3>
+    <p>オリジナルの内蔵音 341 音。WAV・MP3 などの読み込み（ステレオのまま）、マイク・オーディオインターフェース・自分の出力から録音、スライス、タイムストレッチ。GENERATE で新しい音も作れます。</p>
+    <p class="en">341 original built-in sounds. Load your own files (stereo stays stereo), sample from a mic, an interface or DBR-1 itself, slice, time-stretch, and make new sounds with GENERATE.</p>
+  </div>
+  <div class="card">
+    <h3>エフェクトとミキサー</h3>
+    <p>音ごとのフィルターと INSERT、リバーブ・ディレイ・ディストーション、マスターのサイドチェイン・コンプ・EQ、DJ 風の全体フィルター。3 バンド EQ のミキサーとマルチアウト。</p>
+    <p class="en">Per-sound filter and insert FX, reverb, delay, distortion, master sidechain, comp and EQ, a DJ-style master filter, a mixer with EQ, and multi-out.</p>
+  </div>
+  <div class="card">
+    <h3>オートメーション</h3>
+    <p>ステップごとのパラメーターロック、指で描く線・直線・波形、REC 中のつまみや MIDI CC の記録。</p>
+    <p class="en">Parameter locks, freehand lines, ramps and waveforms drawn with a finger, and knob / CC recording.</p>
+  </div>
+  <div class="card">
+    <h3>MIDI（USB）</h3>
+    <p>キーボード・パッドで演奏、外部の音源へ送信、MIDI クロックのマスター / スレーブ、CC と LEARN、プログラムチェンジ、MIDI ファイルの書き出し。<a href="manual/midi-clock_ja.html">クロックの正確さ</a>も測って公開しています。</p>
+    <p class="en">Play from controllers, drive external gear, clock master or slave, CC with LEARN, program change, MIDI file export. <a href="manual/midi-clock_en.html">See how we measured the clock.</a></p>
+  </div>
+  <div class="card">
+    <h3>録画・書き出し・保存</h3>
+    <p>演奏を画面ごと MP4 に録画（許可不要・指の位置も映る）。WAV / M4A / MP4 / トラックごとのステムで書き出し。プロジェクトは音ごとファイルに保存、自動保存も。</p>
+    <p class="en">Record the screen with its sound (no permission needed, touches shown). Export WAV, M4A, MP4 or stems. Projects are saved as files with their samples, plus autosave.</p>
+  </div>
+  <div class="card">
+    <h3>タブレットにもスマホにも</h3>
+    <p>タブレットは全体を 1 画面で、スマホは画面を切り替えて同じ操作感で。デモソング 10 曲とテンプレートですぐ始められます。</p>
+    <p class="en">Everything on one screen on tablets, switchable views on phones. Ten demo songs and genre templates to start from.</p>
+  </div>
+</div>
+
+<h2>画面<small>Screens</small></h2>
+<div class="gallery">
+  <figure><img src="img/tablet_2_mixer.webp" loading="lazy" width="960" height="600" alt="ミキサー / Mixer"><figcaption>ミキサー / Mixer</figcaption></figure>
+  <figure><img src="img/tablet_3_automation.webp" loading="lazy" width="960" height="600" alt="オートメーション / Automation"><figcaption>オートメーション / Automation</figcaption></figure>
+  <figure><img src="img/tablet_5_fx.webp" loading="lazy" width="960" height="600" alt="エフェクト / Effects"><figcaption>エフェクト / Effects</figcaption></figure>
+  <figure><img src="img/tablet_4_sampler.webp" loading="lazy" width="960" height="600" alt="サンプリング / Sampler"><figcaption>サンプリング / Sampler</figcaption></figure>
+  <figure><img src="img/tablet_7_generate.webp" loading="lazy" width="960" height="600" alt="音を作る GENERATE / Sound generator"><figcaption>音を作る GENERATE / Sound generator</figcaption></figure>
+  <figure><img src="img/phone_2_pads.webp" loading="lazy" width="960" height="480" alt="スマホのパッド / Pads on a phone"><figcaption>スマホのパッド / Pads on a phone</figcaption></figure>
+</div>
+
+<h2>動画<small>Videos</small></h2>
+<p>使い方のショート動画と、デモソングの演奏を YouTube で公開しています。<br><span class="sub">Short how-to videos and demo song performances on YouTube.</span></p>
+<div class="btns"><a class="btn yt" href="https://www.youtube.com/@sequence_yard" target="_blank" rel="noopener">▶ youtube.com/@sequence_yard</a></div>
+
+<h2>説明書<small>Manuals</small></h2>
+<ul class="links">
+  <li><a href="manual/quick_ja.html"><b>クイックスタート</b><span>はじめての方へ: 1 曲できるまで</span></a></li>
+  <li><a href="manual/quick_en.html"><b>Quick Start</b><span>From your first sound to a finished song</span></a></li>
+  <li><a href="manual/ja.html"><b>取扱説明書</b><span>すべての機能（日本語）</span></a></li>
+  <li><a href="manual/en.html"><b>User manual</b><span>Every feature (English)</span></a></li>
+  <li><a href="manual/midi-clock_ja.html"><b>MIDI クロックの正確さ</b><span>しくみ・測った結果・同期のしかた</span></a></li>
+  <li><a href="manual/midi-clock_en.html"><b>MIDI clock timing</b><span>How it works, what we measured, how to sync</span></a></li>
+</ul>
+
+<footer>
+  <p>Android 9 以降・横向き専用 / Android 9 or later, landscape only</p>
+  <p><a href="https://sequence-yard.github.io/dbr1-privacy/">プライバシーポリシー / Privacy policy</a> · <a href="https://www.youtube.com/@sequence_yard" target="_blank" rel="noopener">YouTube</a> · <a href="../">Sequence Yard</a></p>
+</footer>
 </main>
 </body>
 </html>
