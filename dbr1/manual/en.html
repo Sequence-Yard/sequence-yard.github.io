@@ -56,7 +56,7 @@
 <table>
 <tr><th class="n">#</th><th>Name</th><th>What it does</th></tr>
 <tr><td class="n"><span class="num">1</span></td><td>Logo</td><td>Tap for the menu: this <b>Manual</b>, <b>Demo songs…</b>, genre <b>Templates…</b>, <b>Settings…</b> and <b>About</b>. <b>Settings…</b> gathers MIDI settings (MIDI…), audio inputs and outputs (Audio I/O…), whether PLAY after STOP starts over or continues (After STOP), when a pattern change happens while playing (Pattern switch), whether tapping a track name or entering a step plays the sound (Sound on track tap / Sound on step input), moving knobs with automation (Animate automation) and the phone-style screen (Phone layout), each with a short explanation. The first time you open DBR-1, a card lets you choose: listen to a demo song, start from a template, or start right away. The top of the menu shows the name of the open project (PROJECT: …)</td></tr>
-<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>). <b>New project…</b> at the top of LOAD starts an empty project (all patterns and the song cleared, the built-in kit, 120 BPM; you can save first, and ↶ brings the old one back). SAVE → Project starts with the name of the open project (the file you loaded or saved, or the demo song's title), so OK overwrites it</td></tr>
+<tr><td class="n"><span class="num">2</span></td><td>SAVE / LOAD</td><td>Save and load projects, patterns and kits (→ <a href="#save">10</a>). LOAD → Templates… for classic genre beats (→ <a href="#templates">2</a>), Demo songs… for the demo songs (→ <a href="#demosongs">2</a>), Built-in kits… for ready-made kits (→ <a href="#builtinkits">2</a>). <b>New project…</b> at the top of LOAD starts an empty project (all patterns and the song cleared, the built-in kit, 120 BPM; you can save first, and ↶ brings the old one back). SAVE → Project starts with the name of the open project (the file you loaded or saved, or the demo song's title), so OK overwrites it</td></tr>
 <tr><td class="n"><span class="num">3</span></td><td>Pattern number</td><td>◀ ▶ to change (00–99). Tap for the <b>pattern list</b> (10 × 10; numbers with content are tinted, the current one is green; tap to switch. Phones show the same list in the middle of the screen). Long-press for the menu: <b>Duplicate to next empty</b> (copies the current pattern to the next empty number and moves there — handy for variations), copy / paste / clear, and copy / paste FX only. The list has Duplicate to next empty too. <b>Rename…</b> in the menu names a pattern (“Intro”, “Drop”…, up to 12 characters); the name shows in the pattern list</td></tr>
 <tr><td class="n"><span class="num">4</span></td><td>SEQ / MIX / AUTO / PERF / SONG</td><td>Chooses what the large area on the left shows (the current one lights up). SEQ = steps, MIX = mixer (→ <a href="#mixer">Mixer</a>), AUTO = automation (→ <a href="#automation">Automation</a>), PERF = performance screen (→ <a href="#performscreen">7</a>), SONG = song screen (→ <a href="#songscreen">8</a>). On any screen other than SEQ, the device Back button closes that screen</td></tr>
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>Shows tracks A01–A08 or B01–B08. The current bank also shows as the tint behind the tracks (A = green, B = purple) and the stripe on their left. Hitting a pad of the other bank switches the bank too, and the switch and stripe flash briefly</td></tr>
@@ -132,8 +132,22 @@
 </table>
 <ul>
   <li>A demo song loads as a project, so it replaces all patterns, the kit and the BPM (you are asked first, and ↶ brings them back). Save your work first if you want to keep it.</li>
+  <li>To use only a song's kit (its 16 sounds) with your own patterns, pick it in Built-in kits… below.</li>
   <li>The 159 sounds of the songs are also in the SOUND tab's SOUNDS… list (DEMO · song name), ready for your own tracks. The demo songs stop at the end (→ ONCE in the SONG tab).</li>
 </ul>
+<h3 id="builtinkits">Swap in a built-in kit (Built-in kits…)</h3>
+<p>LOAD → “<b>Built-in kits…</b>” replaces the sounds of all 16 tracks at once. <b>Your patterns are kept</b>, so the beat you programmed plays with new sounds (you are asked first, and ↶ brings the old kit back).</p>
+<table>
+<tr><th>Kit</th><th>What's in it</th></tr>
+<tr><td>DBR-1</td><td>The original kit (what “Built-in kit” used to do; the colors go back too)</td></tr>
+<tr><td>808</td><td>Classic drum machine: 808 kick, snare and three toms, clap, claves, maracas, conga, cowbell and 808 bass</td></tr>
+<tr><td>ACOUSTIC</td><td>Real-drum style: kick, snare, rimshot, three toms, brushes, tambourine, shaker, cajon and upright bass</td></tr>
+<tr><td>CHIPTUNE</td><td>Game console style: pulse (12.5, 25, 50%), triangle and arpeggio synths and bass, with 8-bit drums</td></tr>
+<tr><td>LATIN</td><td>Congas, bongos, timbales, cowbell, agogo, claves, guiro, maracas, cabasa and whistle</td></tr>
+<tr><td>SYNTH</td><td>Sequence synths, basses and pads (all in C) with kick, snare and a riser</td></tr>
+<tr><td>POP / TRANCE</td><td>The 16 sounds of PRESET → POP / TRANCE</td></tr>
+<tr><td>The 10 demo songs</td><td>That song's kit, with the same sound settings (pitch, filter, INSERT, EQ, CHOKE and so on). FX sends belong to the patterns, so they stay as they are</td></tr>
+</table>
 <h3>Swiping</h3>
 <ul>
   <li><b>Swipe sideways</b> to set several steps of one track at once, every SWIPE interval (1/16, 1/8, 3/16, 1/4, 1/2). On a triplet track the interval keeps the same time where the cells allow it (1/8 = half a beat, 1/4 = 1 beat, 1/2 = 2 beats) and otherwise uses the nearest triplet length (1/16 → 1/16T, 3/16 → 1/4T). On a 1/16T track, 1/8 lights every third cell. On a 1/8T track half a beat does not fit the cells, so 1/16 and 1/8 both light every cell.</li>
@@ -183,7 +197,7 @@
   <li><b>S (solo)</b> plays only the soloed tracks of the bank. <b>M (mute)</b> silences a track.</li>
   <li><b>ALL S / ALL M</b> switch the whole bank on screen (if any is on, all go off; otherwise all go on).</li>
   <li>Tapping a track name plays that track's sound. Entering a step while stopped plays it too, at the step's velocity (while playing, the sequencer plays it in time). To keep them silent — for example to select tracks while performing — turn off <b>Sound on track tap</b> and <b>Sound on step input</b> in Settings… (logo menu; ≡ → Settings… on phones).</li>
-  <li>The color belongs to the kit, like the name. It is saved in project and kit files and can be undone with ↶. Swap with… moves the color along, and LOAD → "Built-in kit" restores the original colors.</li>
+  <li>The color belongs to the kit, like the name. It is saved in project and kit files and can be undone with ↶. Swap with… moves the color along, and LOAD → "Built-in kits…" → DBR-1 restores the original colors.</li>
 </ul>
 <h3 id="triplet">Triplets (Steps)</h3>
 <p>Use <b>Steps</b> in the track-name long-press menu to turn a single track into triplets. A triplet track shows 12 cells (1/8T) or 24 cells (1/16T) across one page (one bar), with 3 or 6 cells per beat, so you can line it up by eye with the 16th notes on the other tracks. 1/8T or 1/16T appears under the track name.</p>
@@ -238,7 +252,7 @@
 <div class="note">Pressing STOP during playback silences everything that is playing. Playing the same track again also stops its previous sound.</div>
 <h3 id="soundbrowser">Sound browser (SOUNDS…)</h3>
 <p>Opens the <b>sound browser (SOUNDS)</b>, where you find a sound for the selected track (shown at the top left as "→ A01 …").</p>
-<p><b>Top tabs</b>: <b>USER</b> (your own sounds: the audio files in DBR-1/Samples and the sounds in DBR-1/Sounds) / <b>PRESET</b> (the 52 built-in sounds: BANK A / BANK B / EXTRA / POP / TRANCE) / <b>DEMO</b> (the demo songs' sounds, by song).</p>
+<p><b>Top tabs</b>: <b>USER</b> (your own sounds: the audio files in DBR-1/Samples and the sounds in DBR-1/Sounds) / <b>PRESET</b> (the 156 built-in sounds: BANK A / BANK B / EXTRA; by type KICK 10, SNARE 10, TOM 6 (808 and acoustic hi / mid / lo), PERC 27 (maracas, tambourine, cajon, guiro and other GM percussion), BASS 10 (all in C2), SYNTH 12 (chiptune and sequence sounds in C4), PAD 8 (supersaw, metallic, sweep), VOX 6 (a count: five to zero), FX 15 (GM-style effects and more); POP / TRANCE) / <b>DEMO</b> (the demo songs' sounds, by song).</p>
 <p><b>USER tabs</b>: after ALL and UNSORTED (sounds in no tab) you can make your own tabs and sort sounds into them (<b>+ TAB</b> to add; long-press a tab to rename, move or delete it — deleting a tab keeps its sounds). Choose a sound's tab with <b>TAB ▾</b> on its row.</p>
 <p><b>Each row</b>: ▶ preview (plays the raw sound without loading it; tap again or ■ to stop) / name (<b>tap to load it into the track</b>; the browser stays open so you can compare) / <b>category</b> (KICK, SNARE, HAT, …; tap to choose, or New category… for your own name; a sound without one shows a faint guess from its name) / <b>KEY</b> (the pitch, e.g. E2 or C#5; chords such as Dm9; UNKNOWN for drums, ambience and noise without a clear pitch. Built-in sounds show the note they were made at; your own sounds show, faintly, the key DBR-1 detected by listening to them — they are checked one by one the first time, "…" while in progress. Tap it to open the key picker: a tuner (detected note, offset in cents, frequency) with <b>Use …</b> for the suggested key, OCTAVE and 12 note buttons, UNKNOWN, Chord / other… to type a chord, and Auto to clear your key and go back to the detected one. Keys you set are shown in a strong colour) / format (WAV, MP3, AIFF, …; DBRSND = sample plus settings) / <b>rating ★1–5</b> (tap the same star again for 0) / for USER, ⋯ to share or delete.</p>
 <p><b>Filters</b>: Search (name, category or group; a key only on an exact match such as C#5) / CATEGORY / FORMAT / ★ (n stars or more) / SORT (list order, name, rating, category, key from low to high, newest).</p>
@@ -253,7 +267,7 @@
 <tr><td>Length</td><td>Up to 60 seconds each (only the first 60 seconds of a longer file are used)</td></tr>
 <tr><td>Stereo</td><td>Played in stereo (files whose left and right are identical are treated as mono; 3 or more channels are mixed to mono). For a stereo sound, pan works as a balance control (it turns down the opposite side)</td></tr>
 </table>
-<div class="tip">When you replace a sound, the track name follows the new sound if you had not renamed it.<br>“Built-in kit” in the LOAD menu returns all 16 tracks to the built-in sounds (patterns are kept).</div>
+<div class="tip">When you replace a sound, the track name follows the new sound if you had not renamed it.<br>“Built-in kits…” in the LOAD menu swaps all 16 tracks for a built-in kit or a demo song's kit (patterns are kept → <a href="#builtinkits">2</a>).</div>
 <h3 id="generate">Making your own sounds (GENERATE)</h3>
 <p>Tap <span class="key">✦ Generate…</span> in the bottom row of the SOUND tab's SOUNDS… screen (<span class="key">✦ GEN</span> at the top right on phones) to build a sound from waveforms. The result goes to the sampling screen, and from there into the selected track. Use it when the presets don't have what you need, or to quickly make basses, chords, pads and drums.</p>
 <figure><img src="img/generate.webp" alt="GENERATE screen"><figcaption>GENERATE (picture from an earlier version)</figcaption></figure>
@@ -728,7 +742,7 @@
 <tr><td>Sampling</td><td>Built-in mic / USB input / DBR-1's own output (resampling, BARS 1–8, PAD one-shots up to 10 s), up to 60 seconds (48 kHz; two channels (L+R, 1+2 …) and resampling record in stereo, L / R or a single channel in mono, identical left and right become mono). Editing, slicing and STRETCH keep both channels aligned. Saved as 16-bit WAV (2 channels when stereo; RATE can lower it to 8–32 kHz; BIT 12 / 8 also available). Up to 16 slices; time stretch 50–200% (pitch unchanged)</td></tr>
 <tr><td>Channels</td><td>Mono or stereo (a stereo sound goes through the track filter, INSERT, DIST and EQ on both sides; pan is a balance control)</td></tr>
 <tr><td>Memory</td><td>Held as 16-bit; only the sounds of the current kit (16) stay in memory</td></tr>
-<tr><td>Built-in sounds</td><td>211 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 32 in POP and TRANCE and 159 from the demo songs, 44.1 kHz / 16-bit). The 82 pitched ones show a note or chord name (A4 = 440 Hz)</td></tr>
+<tr><td>Built-in sounds</td><td>315 (16 in the kit + 4 extra, 44.1 kHz / 24-bit; 104 PRESET sounds by type, 32 in POP and TRANCE and 159 from the demo songs, 44.1 kHz / 16-bit). The 117 pitched ones show a note or chord name (A4 = 440 Hz). The counting voice (VOX) was made with the open-source speech synthesizer eSpeak NG</td></tr>
 <tr><td>Demo songs</td><td>10 (Sequence Yard / Let's Play Sequence / Yard Lights / Haze Yard / Candy Yard / Velvet Sequence / Abyss Yard / Driving Sequence / Container Yard / Sequence Orbit, about 2 minutes each)</td></tr>
 <tr><td>Polyphony</td><td>One sound per track (a new hit quickly fades out the previous one)</td></tr>
 <tr><td>Play modes</td><td>ONE SHOT / GATE (one step) / BAR (until the end of the pattern); STOP silences everything</td></tr>
