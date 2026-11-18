@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIDI クロックの正確さ | DBR-1 Android 用サンプリング・リズムマシン</title>
+<meta name="description" content="DBR-1 が Android で MIDI クロックをどう送っているか、専用機と同じ方法で測った結果、マスターとして使うときにいちばん安定するつなぎ方と設定。">
+<link rel="canonical" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_ja.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sequence Yard">
+<meta property="og:title" content="MIDI クロックの正確さ | DBR-1">
+<meta property="og:description" content="DBR-1 が Android で MIDI クロックをどう送っているか、専用機と同じ方法で測った結果、いちばん安定する同期のしかた。">
+<meta property="og:url" content="https://sequence-yard.github.io/dbr1/manual/midi-clock_ja.html">
+<meta property="og:image" content="https://sequence-yard.github.io/dbr1/og.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ja" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_ja.html">
+<link rel="alternate" hreflang="en" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_en.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <span class="lang"><a href="midi-clock_en.html">English</a></span>
+  <h1>DBR-1</h1>
+  <p>MIDI クロックの正確さ — しくみ・測った結果・同期のしかた</p>
+</header>
+
+<p>DBR-1 を MIDI クロックのマスター（CLOCK: SEND）にして、ほかの機材を動かす人向けのページです。Android の上で DBR-1 がクロックをどう送っているか、何を測ったか、どのつなぎ方と設定がいちばん安定するかをまとめました。設定の項目そのものは<a href="ja.html">取扱説明書</a>の MIDI の章にあります。</p>
+
+<h2>1. まとめ</h2>
+<ul>
+  <li><b>DBR-1 はクロックの時刻を正確に決めています。</b>1 つ 1 つのクロックに付ける時刻の誤差は、どのテンポでも最大で音声の 1 サンプル（約 0.02ms）です。</li>
+  <li><b>ふだんのクロックは、専用機と同じくらい安定しています。</b>PC で測ると、ふだんのずれは、同じ方法で測った専用のグルーヴボックスと同じでした（中央値 約 0.2ms）。</li>
+  <li><b>違いは「ときどき遅れるクロック」です。</b>試したタブレットでは、50 個に 1 個ほどが 1ms 以上遅れて届きました（専用機は 500 個に 1 個ほど）。その大半は、DBR-1 が渡した後の Android の中で起きていて、アプリからは減らせません。</li>
+  <li><b>聴いてわかるリズムのずれは、ほぼありません。</b>平均のテンポはずれていきません。PC から USB で送るクロックや、機材どうしのクロックにも、1ms 前後の揺れはふつうにあります。</li>
+</ul>
+
+<h2>2. DBR-1 のクロックの送り方</h2>
+<h3>時刻は音声エンジンが決める</h3>
+<p>MIDI クロックはテンポの数字を運びません。受ける機器が、クロック（4 分音符に 24 個）の間隔から自分でテンポを求めます。なので、1 つ 1 つのクロックが時刻どおりに出ることが大事です。</p>
+<ul>
+  <li>DBR-1 のシーケンサーは音声の処理の中で動き、サンプル単位で数えています。クロックもそこで数え、8 分音符ごとに合わせ直します。スウィングで遅らせるのは裏のステップだけなので、クロックは揺れません。</li>
+  <li>メッセージには「届ける時刻」を付けます。DBR-1 自身の音が実際に聞こえる時刻です。外の機材と DBR-1 の音が一緒に鳴るようにするためです（必要なら MIDI… の OFFSET で手で前後できます）。</li>
+  <li>音声の処理が呼ばれる時刻そのものは、数 ms 揺れます。DBR-1 はこの揺れを MIDI に乗せません。時刻の基準は鳴らしたサンプル数で進め、本当の時計にはごくゆっくりだけ寄せます。</li>
+</ul>
+<h3>画面の処理に止められない送り方</h3>
+<ul>
+  <li>送るのは Java の外で動くネイティブのスレッドなので、画面の処理やメモリの片付け（GC）に止められません（SENDER: NEW、Android 10 以上）。</li>
+  <li><b>別々の CPU コアに置いた 3 本のスレッドが、同じ予定を競って送ります。</b>その時刻に動けたスレッドが送ります。Android ではアプリが自分のスレッドを最優先にできず、優先度の高い処理がコアを使うと、ふつうのスレッドは数 ms 止められることがあります。別々のコアで競わせることで、それがまれになりました（試したタブレットで平均の遅れ 0.01〜0.03ms）。</li>
+  <li>書き込む順番は守るので、ノートオフが次のノートオンを追い越すことはありません。</li>
+</ul>
+<h3>線の上ではクロックを優先する</h3>
+<ul>
+  <li>MIDI 端子（5 ピン）は 1 バイトに約 0.32ms、ノートや CC 1 つで約 1ms かかります。拍の直前にノートオフがまとまると、次のクロックが数 ms 待たされることがありました。</li>
+  <li>DBR-1 は線が空く時刻を数えていて、ノートや CC が次のクロックまでに流れ終わらないなら、そのクロックの直後に回します。クロック・Start・Stop を先に送ります。オートメーションの CC は、1 つのパラメーターにつき約 12ms おきに間引きます。</li>
+</ul>
+
+<h2>3. 測った結果</h2>
+<p>測り方: タブレット（Lenovo Tab K11、Android 15）を USB の MIDI モードで Windows の PC につなぎ、PC の小さなプログラムでクロック 1 つ 1 つが届いた時刻を記録しました。それを「まったく揺れないテンポの直線」と比べています。基準として、専用のグルーヴボックスも同じ方法で測りました。USB は MIDI を 1ms ごとに運ぶので、この方法では約 0.3ms より細かい差は見えません。</p>
+
+<h3>専用機との比較（134 BPM）</h3>
+<table>
+<tr><th></th><th>ずれの中央値</th><th>90% が収まる幅</th><th>1ms 超</th><th>2ms 超</th><th>最大</th><th>1 拍ごとのテンポの標準偏差</th></tr>
+<tr><td>専用のグルーヴボックス</td><td>0.19ms</td><td>0.46ms</td><td>0.19%</td><td>0%</td><td>1.2ms</td><td>0.13 BPM</td></tr>
+<tr><td>DBR-1（Lenovo Tab K11）</td><td>0.22ms</td><td>0.51ms</td><td>1.97%</td><td>0.56%</td><td>5.1ms</td><td>0.17 BPM</td></tr>
+</table>
+
+<h3>テンポを変えると</h3>
+<table>
+<tr><th>テンポ</th><th>ずれの中央値</th><th>90% が収まる幅</th><th>1 拍ごとのテンポの標準偏差</th></tr>
+<tr><td>84 BPM</td><td>0.22ms</td><td>0.55ms</td><td>0.07 BPM</td></tr>
+<tr><td>134 BPM</td><td>0.21ms</td><td>0.53ms</td><td>0.22 BPM</td></tr>
+<tr><td>174 BPM</td><td>0.21ms</td><td>0.52ms</td><td>0.31 BPM</td></tr>
+</table>
+<div class="tip"><b>速いテンポほど、相手のテンポ表示が動いて見えるわけ</b>: 時間で見た揺れは、どのテンポでも同じです。ところが受ける機器は決まった個数のクロックの間隔からテンポを求めるので、速いテンポではその間隔が短く、同じ揺れがテンポの数字では大きく出ます（だいたいテンポの 2 乗に比例）。DBR-1 に限らず、どのクロックでも同じです。</div>
+
+<h3>アプリの中では</h3>
+<p>エンジンだけを動かすテストでは、84〜174 BPM・スウィングあり・半端なパターンの長さ・音声の処理の呼ばれ方の揺れありの条件で、クロックの時刻の誤差は最大 1 サンプル、平均のテンポのずれは 0.0006 BPM 以内でした。タブレットの上で、クロックを Android に渡し終わるまで 1ms を超えたのは約 0.3% です。PC で見えたそれ以外の遅れは、渡した後で起きています。</p>
+
+<h3>効かなかったこと</h3>
+<ul>
+  <li><b>時刻を付けて Android に送ってもらう</b>（前の送り方の TIMING: SYSTEM）。Android はミリ秒単位で待つので、クロックごとに 0〜1ms、ばらばらに遅れました。今の送り方は、いつも時刻ちょうどに自分で送ります。</li>
+  <li><b>クロックの直前に 1 バイト送って Android の MIDI の処理を起こしておく</b>。中央値が悪くなったので、やめました。</li>
+  <li><b>オーディオインターフェースで Android の MIDI の処理を通らずに送る</b>。USB の機器へ直接送るのは MIDI だけの機器ならうまくいきます（USB DIRECT）が、音声も扱う機器では音の出力が途切れました。今は MIDI だけの機器にだけ使います。</li>
+</ul>
+
+<h2>4. DBR-1 をマスターにするとき</h2>
+<h3>つなぎ方（安定する順）</h3>
+<ol>
+  <li><b>MIDI だけの USB の機器 + USB DIRECT を ON</b>: MIDI インターフェースや、MIDI OUT 端子のあるキーボード・コントローラー（その端子から機材へ）。Android の MIDI の処理を通りません。ON の間、その機器からの MIDI IN は使えません。OFF にした後は機器を挿し直してください。</li>
+  <li><b>ふつうの送り方</b>: オーディオインターフェースの MIDI OUT、USB で音声も送れるシンセ、PC など。正確さは 3 章のとおりです。音声も扱う機器は自動で見分けて、いつもこちらになります。</li>
+  <li><b>Bluetooth の MIDI</b> は遅れと揺れが大きく、クロックには向きません（DBR-1 は Bluetooth MIDI に対応していません）。</li>
+</ul>
+<ul>
+  <li>USB で音声も送れるシンセは、USB の設定を「MIDI だけ」にしないと、音声の機器として扱われます。Android が DBR-1 の音の出力先をそのシンセに切り替えることもあります。</li>
+  <li>出口（ポート）が複数ある機器は、OUT PORT で裏の MIDI OUT 端子につながる出口を選びます（多くは 2 番目）。機器の側で、USB から来た MIDI を MIDI OUT へ流す設定が要ることもあります。</li>
+</ul>
+
+<h3>MIDI… の設定</h3>
+<ul>
+  <li><b>SENDER: NEW</b>（既定）。OLD は NEW で困ったときだけ。</li>
+  <li><b>CLOCK: SEND</b> でクロックと Start / Stop を送ります。STOP の後に続きから再生すると、位置（Song Position Pointer）と Continue を送ります。</li>
+  <li><b>PROGRAM: OUT</b> を ON にすると、パターンが変わったときにプログラムチェンジ（番号 = パターン番号）を、新しいパターンの最初のノートより先に送ります。プログラムチェンジでパターンを切り替える機材なら、小節の頭で一緒に切り替わります。</li>
+  <li><b>OFFSET</b> は、送るもの全体を早く・遅くします。揺れは変わりません。</li>
+</ul>
+
+<h3>MIDI 端子を混ませない</h3>
+<p>クロックが待たされることはありませんが、5 ピンの端子が混んでいると、ノートや CC は数 ms 遅れて届くことがあります。複数のチャンネルへの和音、速いテンポで MIDI を割り当てたパッドがたくさん、たくさんの CC の動き、が重なると混みます。外の機材が使わないチャンネルは機材の側で無視する設定にするか、MIDI… の NOTES / CC のチェックを外してください。</p>
+
+<h3>端末のこと</h3>
+<ul>
+  <li>再生中、送信は CPU の 1 コアの 2 割弱を使います。時刻ちょうどに送るため、直前は眠らずに待っています。</li>
+  <li>端末が熱いときや省電力モードでは、ときどきの遅れが増えることがあります。</li>
+  <li>音の出力先が変わる（USB の音声の機器を抜き挿しする）と、時刻の基準を取り直すので、その瞬間はテンポがよれます。再生中は避けてください。</li>
+</ul>
+
+<div class="note"><b>揺れが気になるときは</b>、別に親（MIDI クロックの専用機・DAW・リズムマシンなど）を用意して、DBR-1（CLOCK: RECEIVE）とほかの機材をその親で動かすのがおすすめです。DBR-1 は自分の時計で刻みながら受けたクロックになめらかに合わせるので、クロックの小さな揺れでリズムが揺れません。なお、DBR-1 自身の音は音声エンジンが時刻を決めているので、どの場合も MIDI クロックの揺れの影響を受けません。</div>
+
+<h2>5. わかっている限界</h2>
+<ul>
+  <li>測定はほとんど 1 台のタブレット（Lenovo Tab K11）で行いました。CPU のコアやスケジューラが違う端末では、数字が変わることがあります。</li>
+  <li>USB DIRECT の道と、5 ピンの MIDI ケーブルの上の信号は、PC の方法では測れません。私たちの環境では USB DIRECT のほうが安定して感じられましたが、数字はありません。</li>
+  <li>タブレットを USB の MIDI 機器として PC につないだとき（「Android USB周辺機器ポート」）は、Stop が PC に届きません。オーディオインターフェース・MIDI の機器・USB DIRECT では、Stop と Continue が届きます。</li>
+</ul>
+
+<p><a href="ja.html">← 取扱説明書</a> · <a href="../">DBR-1</a></p>
+
+</div>
+</body>
+</html>

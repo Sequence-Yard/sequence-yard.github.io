@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIDI Clock Timing | DBR-1 Sampling Rhythm Machine for Android</title>
+<meta name="description" content="How DBR-1 sends MIDI clock on Android, how we measured it against dedicated hardware, and how to get the steadiest sync when DBR-1 is the master.">
+<link rel="canonical" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_en.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sequence Yard">
+<meta property="og:title" content="MIDI Clock Timing | DBR-1">
+<meta property="og:description" content="How DBR-1 sends MIDI clock on Android, how we measured it against dedicated hardware, and how to get the steadiest sync.">
+<meta property="og:url" content="https://sequence-yard.github.io/dbr1/manual/midi-clock_en.html">
+<meta property="og:image" content="https://sequence-yard.github.io/dbr1/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ja" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_ja.html">
+<link rel="alternate" hreflang="en" href="https://sequence-yard.github.io/dbr1/manual/midi-clock_en.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="cover">
+  <span class="lang"><a href="midi-clock_ja.html">日本語</a></span>
+  <h1>DBR-1</h1>
+  <p>MIDI clock timing — how it works, what we measured, how to sync</p>
+</header>
+
+<p>This page is for people who use DBR-1 as the MIDI clock master (CLOCK: SEND) to drive other gear. It explains how DBR-1 sends clock on Android, what we measured, and which connections and settings give the steadiest sync. The settings themselves are described in the <a href="en.html">user manual</a> (MIDI chapter).</p>
+
+<h2>1. In short</h2>
+<ul>
+  <li><b>DBR-1 schedules every clock exactly.</b> The time it gives each clock is off by at most one audio sample (about 0.02 ms), at any tempo.</li>
+  <li><b>Normally the clock is as steady as dedicated hardware.</b> Measured on a computer, the typical deviation was the same as a dedicated hardware groovebox measured the same way (median about 0.2 ms).</li>
+  <li><b>The difference is the occasional late clock.</b> On our test tablet about 1 clock in 50 arrived more than 1 ms late (the hardware: about 1 in 500). Most of this happens inside Android after DBR-1 hands the message over, so the app cannot remove it.</li>
+  <li><b>To the ear the rhythm is practically unaffected.</b> The average tempo does not drift, and a wobble of around 1 ms is common for clock sent from a computer over USB or between two pieces of hardware.</li>
+</ul>
+
+<h2>2. How DBR-1 sends clock</h2>
+<h3>Timing comes from the audio engine</h3>
+<p>MIDI clock carries no tempo number: the receiving device works out the tempo from the time between clocks (24 per quarter note). So every clock has to leave on time.</p>
+<ul>
+  <li>DBR-1's sequencer runs inside the audio processing and counts in samples. The clock is counted there too and realigned every eighth note. Swing delays only the off-beat steps, so it never bends the clock.</li>
+  <li>Each message gets a delivery time: when DBR-1's own sound will actually be heard. That way external gear and DBR-1 play together. (OFFSET in MIDI… shifts this by hand if needed.)</li>
+  <li>The audio callbacks themselves arrive with a few milliseconds of jitter. DBR-1 does not pass that on: its time base advances by the number of samples played and is pulled toward the real clock only very gently.</li>
+</ul>
+<h3>A sender that the screen cannot pause</h3>
+<ul>
+  <li>Messages are sent by native threads outside the Java runtime, so screen work and garbage collection cannot pause them (SENDER: NEW, Android 10 or later).</li>
+  <li><b>Three sender threads on different CPU cores race to send the same schedule</b>; whichever is running at the right moment sends. On Android an app cannot give its threads real-time priority, and an ordinary thread can be held up for several milliseconds when a higher-priority thread takes its core. Racing on separate cores made those stalls rare: average delay 0.01–0.03 ms on our test tablet.</li>
+  <li>Messages are still written in order, so a note-off never overtakes the next note-on.</li>
+</ul>
+<h3>The clock gets priority on the wire</h3>
+<ul>
+  <li>A 5-pin MIDI port needs about 0.32 ms per byte, about 1 ms for a note or CC. A burst of note-offs just before a beat could hold the next clock back by several milliseconds.</li>
+  <li>DBR-1 keeps track of when the wire will be free. If a note or CC cannot finish before the next clock, it is sent right after that clock instead. Clock, Start and Stop go first. Automation CCs are thinned to about one every 12 ms per parameter.</li>
+</ul>
+
+<h2>3. What we measured</h2>
+<p>Method: the tablet (Lenovo Tab K11, Android 15) was connected to a Windows PC by USB in MIDI mode, and a small program on the PC logged the arrival time of every clock. We compared each clock with a perfectly straight tempo line. A dedicated hardware groovebox was measured the same way as a reference. USB carries MIDI in 1 ms frames, so differences finer than about 0.3 ms cannot be seen with this method.</p>
+
+<h3>Against dedicated hardware (134 BPM)</h3>
+<table>
+<tr><th></th><th>Median deviation</th><th>90% within</th><th>Over 1 ms</th><th>Over 2 ms</th><th>Largest</th><th>Tempo std. dev. per beat</th></tr>
+<tr><td>Dedicated hardware groovebox</td><td>0.19 ms</td><td>0.46 ms</td><td>0.19%</td><td>0%</td><td>1.2 ms</td><td>0.13 BPM</td></tr>
+<tr><td>DBR-1 on Lenovo Tab K11</td><td>0.22 ms</td><td>0.51 ms</td><td>1.97%</td><td>0.56%</td><td>5.1 ms</td><td>0.17 BPM</td></tr>
+</table>
+
+<h3>At different tempos</h3>
+<table>
+<tr><th>Tempo</th><th>Median deviation</th><th>90% within</th><th>Tempo std. dev. per beat</th></tr>
+<tr><td>84 BPM</td><td>0.22 ms</td><td>0.55 ms</td><td>0.07 BPM</td></tr>
+<tr><td>134 BPM</td><td>0.21 ms</td><td>0.53 ms</td><td>0.22 BPM</td></tr>
+<tr><td>174 BPM</td><td>0.21 ms</td><td>0.52 ms</td><td>0.31 BPM</td></tr>
+</table>
+<div class="tip"><b>Why the tempo display moves more at fast tempos</b>: the timing wobble is the same at every tempo. But a receiver computes the tempo from the time between a fixed number of clocks, and at a fast tempo that time is shorter, so the same wobble becomes a bigger tempo number (roughly with the square of the tempo). This is true for any clock source, not only DBR-1.</div>
+
+<h3>Inside the app</h3>
+<p>In an engine-only test across 84–174 BPM, with swing, odd pattern lengths and jittery audio callbacks, the scheduled clock times were off by at most one sample and the average tempo was within 0.0006 BPM. On the tablet, about 0.3% of clocks took more than 1 ms to hand over to Android; the rest of the late clocks seen on the PC happened after that point.</p>
+
+<h3>What did not help</h3>
+<ul>
+  <li><b>Letting Android send at a given time</b> (time-stamped sending, TIMING: SYSTEM in the old sender). Android waits in whole milliseconds, so each clock left 0–1 ms late, differently every time. The new sender always sends immediately at the right time instead.</li>
+  <li><b>A "wake-up" byte just before each clock</b> to get Android's MIDI service ready. It made the median worse, so it was dropped.</li>
+  <li><b>Bypassing Android's MIDI service on audio interfaces</b>. Sending straight to the USB device works for MIDI-only devices (USB DIRECT), but on a device that also carries audio it made the audio output drop out. DBR-1 now uses USB DIRECT only on MIDI-only devices.</li>
+</ul>
+
+<h2>4. Using DBR-1 as the master</h2>
+<h3>Connections, steadiest first</h3>
+<ol>
+  <li><b>A MIDI-only USB device with USB DIRECT on</b>: a MIDI interface, or a keyboard / controller with a MIDI OUT port (drive your gear from that port). This skips Android's MIDI service. While it is on, MIDI IN from that device is not available; after turning it off, re-plug the device.</li>
+  <li><b>The normal path</b>: an audio interface's MIDI OUT, a synth that also carries audio over USB, a computer. Accuracy as in section 3. Devices that carry audio are detected and always use this path.</li>
+  <li><b>Bluetooth MIDI</b> has more delay and wobble and is not suitable for clock. (DBR-1 does not support Bluetooth MIDI.)</li>
+</ol>
+<ul>
+  <li>A synth that sends audio over USB counts as an audio device unless you set its USB mode to MIDI only. Android may also switch DBR-1's sound output to it.</li>
+  <li>Devices with several ports: choose the port that feeds the rear MIDI OUT in OUT PORT (often the second one). Some devices need a setting to pass USB MIDI to their MIDI OUT.</li>
+</ul>
+
+<h3>Settings in MIDI…</h3>
+<ul>
+  <li><b>SENDER: NEW</b> (default). Use OLD only if NEW gives trouble.</li>
+  <li><b>CLOCK: SEND</b> sends clock and Start / Stop. Continuing after STOP sends Song Position Pointer and Continue.</li>
+  <li><b>PROGRAM: OUT</b> sends a program change (number = pattern) when the pattern changes, ahead of the new pattern's first note, so gear that switches patterns by program change follows at the bar.</li>
+  <li><b>OFFSET</b> moves everything DBR-1 sends earlier or later. It does not change the wobble.</li>
+</ul>
+
+<h3>Keep the MIDI port from getting crowded</h3>
+<p>The clock is never held back, but on a 5-pin port notes and CCs can arrive a few ms late when it is busy: chords on several channels, many pads with MIDI assigned at a fast tempo and lots of moving CCs add up. If the external device ignores a channel, set it to ignore that channel, or uncheck NOTES / CC in MIDI….</p>
+
+<h3>About the device</h3>
+<ul>
+  <li>While playing, the sender uses a little under 20% of one CPU core: it waits awake just before each clock so it can send on time.</li>
+  <li>A hot device or battery saver can make the occasional late clock more frequent.</li>
+  <li>Changing the audio output (plugging or unplugging a USB audio device) resets the time base, so the tempo wobbles at that moment. Avoid it while playing.</li>
+</ul>
+
+<div class="note"><b>If the wobble bothers you</b>, use a separate master (a dedicated MIDI clock, a DAW, a drum machine…) and run both DBR-1 (CLOCK: RECEIVE) and your other gear from it. DBR-1 keeps its own time and lines up smoothly with the incoming clock, so small wobble in the clock does not shake its rhythm. DBR-1's own sound is timed by the audio engine and is not affected by MIDI clock wobble in any case.</div>
+
+<h2>5. Known limits</h2>
+<ul>
+  <li>Most measurements were made on one tablet (Lenovo Tab K11). Other devices have different CPU cores and schedulers, so the numbers may differ.</li>
+  <li>The USB DIRECT path and the signal on a 5-pin MIDI cable could not be measured with the PC method; on our setup USB DIRECT felt steadier, but we have no numbers for it.</li>
+  <li>When the tablet is connected to a computer as a USB MIDI device ("Android USB Peripheral Port"), Stop is not delivered to the computer. Through audio interfaces, MIDI devices and USB DIRECT, Stop and Continue work.</li>
+</ul>
+
+<p><a href="en.html">← User manual</a> · <a href="../">DBR-1</a></p>
+
+</div>
+</body>
+</html>
