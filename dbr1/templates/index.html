@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DBR-1 背景のテンプレート / Background templates</title>
+<meta name="description" content="DBR-1 のパフォーマンス画面の背景を自分で作るためのテンプレート（PNG）。タブレット用・スマートフォン用。 / PNG templates for making your own DBR-1 perform-screen backgrounds, for tablets and phones.">
+<link rel="canonical" href="https://sequence-yard.github.io/dbr1/templates/">
+<style>
+  :root { --bg:#f6f5f1; --card:#fff; --text:#2c2c2a; --sub:#5f5e5a; --line:#e2e0d8; --accent:#1d9e75; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#161616; --card:#1f1f1e; --text:#e8e7e2; --sub:#a3a29c; --line:#333; --accent:#5dcaa5; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font: 16px/1.7 "Roboto","Noto Sans JP","Hiragino Sans",sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  a { color: var(--accent); }
+  img { max-width:100%; height:auto; display:block; }
+  h1 { margin:0 0 8px; font-size:1.8em; line-height:1.3; }
+  h2 { font-size:1.25em; margin:36px 0 4px; }
+  h2 small, h1 small { font-size:.6em; color:var(--sub); font-weight:normal; margin-left:.5em; }
+  p { margin:.4em 0; }
+  .sub { color:var(--sub); }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:16px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; }
+  .card img { border-radius:8px; }
+  .card b { display:block; margin:8px 0 4px; }
+  .dl { display:flex; flex-wrap:wrap; gap:8px; }
+  .dl a { border:2px solid var(--accent); border-radius:10px; padding:4px 10px; font-weight:bold; text-decoration:none; font-size:.92em; }
+  table { border-collapse:collapse; margin:8px 0; font-size:.95em; }
+  th, td { border:1px solid var(--line); padding:4px 10px; text-align:left; }
+  ol, ul { padding-left:1.4em; }
+  footer { margin-top:48px; color:var(--sub); font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+<p><a href="../">← DBR-1</a></p>
+<h1>背景のテンプレート<small>Background templates</small></h1>
+<p>パフォーマンス画面（PERF）の背景を自分で作るための下絵です。アプリに入っている 4 枚の板を、背景を置く場所の大きさの PNG にしました。<br>
+<span class="sub">Starting points for your own perform-screen (PERF) backgrounds: the four panels built into the app, as PNGs sized for the background area.</span></p>
+
+<div class="grid">
+  <div class="card"><img src="thumb_black_plain.webp" width="480" height="253" alt="BLACK PLAIN" loading="lazy"><b>BLACK PLAIN</b>
+    <div class="dl"><a href="dbr1_black_plain_tablet_1900x1000.png" download>Tablet 1900×1000</a><a href="dbr1_black_plain_phone_2200x830.png" download>Phone 2200×830</a></div></div>
+  <div class="card"><img src="thumb_white_plain.webp" width="480" height="253" alt="WHITE PLAIN" loading="lazy"><b>WHITE PLAIN</b>
+    <div class="dl"><a href="dbr1_white_plain_tablet_1900x1000.png" download>Tablet 1900×1000</a><a href="dbr1_white_plain_phone_2200x830.png" download>Phone 2200×830</a></div></div>
+  <div class="card"><img src="thumb_black_panel.webp" width="480" height="253" alt="BLACK PANEL" loading="lazy"><b>BLACK PANEL</b>
+    <div class="dl"><a href="dbr1_black_panel_tablet_1900x1000.png" download>Tablet 1900×1000</a><a href="dbr1_black_panel_phone_2200x830.png" download>Phone 2200×830</a></div></div>
+  <div class="card"><img src="thumb_white_panel.webp" width="480" height="253" alt="WHITE PANEL" loading="lazy"><b>WHITE PANEL</b>
+    <div class="dl"><a href="dbr1_white_panel_tablet_1900x1000.png" download>Tablet 1900×1000</a><a href="dbr1_white_panel_phone_2200x830.png" download>Phone 2200×830</a></div></div>
+</div>
+
+<h2>使い方<small>How to use</small></h2>
+<ol>
+  <li>使う端末に合う大きさの PNG をダウンロードして、好きな画像編集アプリで絵や文字を描き足します。</li>
+  <li>DBR-1 の PERF で <b>EDIT</b> → <b>⋯</b> → <b>Background…</b> → <b>Choose image…</b> で、その画像を選びます。</li>
+</ol>
+<p class="sub">Download the PNG for your device, draw on it in any image editor, then in DBR-1 open PERF → <b>EDIT</b> → <b>⋯</b> → <b>Background…</b> → <b>Choose image…</b> and pick it.</p>
+
+<h2>大きさの目安<small>Sizes</small></h2>
+<table>
+  <tr><th>端末 / Device</th><th>背景を置く場所の横:縦 / Area aspect</th><th>テンプレート / Template</th></tr>
+  <tr><td>タブレット / Tablet</td><td>約 1.9:1（1920×1200 の画面で約 1870×1000）</td><td>1900×1000</td></tr>
+  <tr><td>横にしたスマートフォン / Phone (landscape)</td><td>約 2.5〜2.7:1（2400×1080 前後の画面で約 2200×830）</td><td>2200×830</td></tr>
+</table>
+<ul>
+  <li>比が違う画面では、真ん中を残して上下か左右を切って表示します。大事な絵は端から少し離して置いてください。<br><span class="sub">On screens with a different aspect, the image is cropped from the middle, so keep important artwork a little away from the edges.</span></li>
+  <li>画像はアプリの中に写されます（画面より大きければ画面の大きさまで縮めます）。<br><span class="sub">The image is copied into the app (scaled down to the screen size if larger).</span></li>
+  <li>自分の画像を背景にしたときは、部品はマス目の場所いっぱいに並びます（アプリの中の板を選んだときだけ、木の側板と板の縁の内側に収めます）。木の部分に部品を重ねたくないときは、端の列・行を空けて置いてください。<br><span class="sub">With your own image, parts use the whole grid area (only the built-in panels keep parts inside the wooden sides and edges), so leave the outer columns and rows empty if you don't want parts over the wood.</span></li>
+</ul>
+
+<footer>
+  <p>DBR-1 の背景の下絵としてお使いください。 / For making DBR-1 backgrounds.</p>
+  <p><a href="../">DBR-1</a> · <a href="../manual/ja.html">取扱説明書</a> · <a href="../manual/en.html">User manual</a></p>
+</footer>
+</main>
+</body>
+</html>
