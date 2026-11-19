@@ -446,7 +446,18 @@
   <li>空いたマスをタップ → BUTTON / FADER / KNOB を選んで足します（フェーダーは縦 2 マス）。</li>
   <li>部品をタップすると設定が開きます。ドラッグで移動、右下の <b>◢</b> をドラッグで大きさを変えます。ほかの部品と重なる場所・はみ出す場所には置けません。</li>
   <li>設定のいちばん下の <b>COLOR</b> で部品の色を選べます（<b>Choose…</b> = 20 色か Other… で自由な色、<b>AUTO</b> = 役割やトラックの色。トラックの色を変えると追従します）。</li>
-  <li><span class="key">⋯</span> で「このページを空にする（Clear this page）」「最初の配置にする（Default layout on this page）」。<span class="key">DONE</span> で終わります。</li>
+  <li><b>見た目</b>（設定の COLOR の下）: 自分好みに飾って、世界に 1 つだけのコントローラーにできます。
+    <ul>
+      <li><b>STYLE</b>: ボタンは STANDARD / <b>RUBBER PAD</b>（ゴムのパッド。押すと下から光る）/ <b>ROUND</b>（丸いボタン）/ <b>KEY + LED</b>（昔の機材の押しボタン。上の LED が光る）。フェーダー・ノブは STANDARD / <b>VINTAGE</b>（クリーム色のつまみ・目盛り付きのフェーダー）/ <b>DARK</b>（黒いつまみと周りの LED）/ <b>CHROME</b>（銀色）。「このページ全部にそろえる」で、同じページの同じ種類の部品に STYLE・BACKGROUND・LIGHT・TEXT をまとめて写せます。</li>
+      <li><b>SYMBOL</b>（ボタン）: 文字の代わりに ● REC・▶ PLAY・■ STOP・▶/■・❚❚・◀◀・▶▶ の記号を描きます。</li>
+      <li><b>IMAGE</b>（ボタン）: <b>Choose image…</b> で好きな画像をボタンにします（文字は自動で消えます。透明のある PNG も使えます）。</li>
+      <li><b>LIGHT</b>（ボタン）: <b>GLOW</b> = 押したとき・ON のときに光る / <b>NO LIGHT</b> = 光らない（押すと少し沈むだけ）。</li>
+      <li><b>BACKGROUND</b>: <b>CLEAR</b> で部品の枠と塗りを消して透明にします（ページの背景の画像が見えます）。ボタンは STANDARD か画像のときに選べます。</li>
+      <li><b>TEXT</b>: 名前・状態・値の文字を出すか（HIDE でも、フェーダー・ノブを触っている間の吹き出しは出ます）。</li>
+    </ul>
+  </li>
+  <li><b>背景の画像</b>: EDIT の <span class="key">⋯</span> →「<b>Background image…</b>」で、ページごとに好きな画像を背面に置けます（はみ出す分は切って、マス目の場所いっぱいに表示）。「Remove background image」で外します。画像はアプリの中に小さくして写すので、元の写真を消しても表示されます。</li>
+  <li><span class="key">⋯</span> で「このページを空にする（Clear this page）」「最初の配置にする（Default layout on this page）」「背景の画像（Background image…）」。<span class="key">DONE</span> で終わります。</li>
 </ul>
 <figure><img src="img/perform_item.webp" alt="部品の設定"><figcaption>部品の設定（ボタン: ACTION・TRACK・PRESS・NAME）</figcaption></figure>
 <table>
@@ -458,6 +469,7 @@
 <tr><td>PATTERN・◀ PATTERN・PATTERN ▶</td><td>決めた番号のパターンへ / 前・次のパターンへ。再生中に切り替わるタイミングは、ふだんはメニューの Pattern switch のとおり。PATTERN のボタンは <b>SWITCH (while playing)</b> でボタンごとに DEFAULT（メニューのとおり、既定）/ BAR / BEAT / NOW を選べます。PRESS を <b>WHILE HELD</b> にすると、押している間だけそのパターンになり、離すと元のパターンに戻ります（離すまでに別のパターンを選んでいたら、そちらのまま。NOW と組み合わせると、押している間だけのフィルインに）</td></tr>
 <tr><td>SCENE A・SCENE B・SCENE A⇄B</td><td>FX シーンの切り替え</td></tr>
 <tr><td>REVERB・DELAY・DIST</td><td>エフェクトの ON / OFF</td></tr>
+<tr><td>PLAY・STOP・REC</td><td>再生 / 停止（ヘッダーの PLAY と同じ）・停止・REC の点灯。選ぶと ▶/■・■・● の記号が付きます</td></tr>
 <tr><td>MIDI</td><td>外部の機材へ MIDI を送ります（下の「MIDI の部品」）。SEND で <b>NOTE</b>（押す = ノートオン、離す / もう一度押す = ノートオフ。VALUE = ベロシティ。CHORD で和音も）/ <b>CC</b>（押す = VALUE、離す / もう一度押す = 0）/ <b>PROGRAM</b>（押したときにプログラムチェンジ）</td></tr>
 </table>
 <p>PRESS: <b>WHILE HELD</b> = 押している間だけ（離すと押す前の状態に戻る）、<b>TOGGLE</b> = 押すたびに切り替え。NAME で 10 文字までの名前を付けられます（空 = 自動）。</p>

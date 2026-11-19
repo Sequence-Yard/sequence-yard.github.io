@@ -446,7 +446,18 @@
   <li>Tap an empty cell → choose BUTTON / FADER / KNOB to add one (faders take 2 cells vertically).</li>
   <li>Tap a part to open its settings. Drag it to move it, and drag <b>◢</b> at its bottom right to resize. Parts cannot overlap or go off the grid.</li>
   <li><b>COLOR</b> at the bottom of the settings sets the part's colour (<b>Choose…</b> = 20 colours or Other… for any colour, <b>AUTO</b> = the colour of its role or track, which follows track colour changes).</li>
-  <li><span class="key">⋯</span> offers "Clear this page" and "Default layout on this page". <span class="key">DONE</span> finishes.</li>
+  <li><b>Look</b> (below COLOR in the settings): decorate it your way and make a one-of-a-kind controller.
+    <ul>
+      <li><b>STYLE</b>: buttons can be STANDARD / <b>RUBBER PAD</b> (lights up from underneath when pressed) / <b>ROUND</b> / <b>KEY + LED</b> (an old-gear push key; the LED on top lights). Faders and knobs can be STANDARD / <b>VINTAGE</b> (cream knob, fader with a scale) / <b>DARK</b> (black knob with an LED ring) / <b>CHROME</b> (silver). "Apply look to all on this page" copies STYLE, BACKGROUND, LIGHT and TEXT to every part of the same kind on the page.</li>
+      <li><b>SYMBOL</b> (buttons): draws ● REC, ▶ PLAY, ■ STOP, ▶/■, ❚❚, ◀◀ or ▶▶ instead of the text.</li>
+      <li><b>IMAGE</b> (buttons): <b>Choose image…</b> turns any picture into the button (the text is hidden automatically; transparent PNGs work too).</li>
+      <li><b>LIGHT</b> (buttons): <b>GLOW</b> = lights up when pressed / on, <b>NO LIGHT</b> = never lights (it just sinks a little when pressed).</li>
+      <li><b>BACKGROUND</b>: <b>CLEAR</b> removes the part's frame and fill so the page image shows through. For buttons it is available with STANDARD or an image.</li>
+      <li><b>TEXT</b>: shows or hides the name / state / value text (with HIDE, the bubble still appears while you touch a fader or knob).</li>
+    </ul>
+  </li>
+  <li><b>Background image</b>: EDIT's <span class="key">⋯</span> → "<b>Background image…</b>" puts any picture behind a page (it fills the grid area, cropping the overflow). "Remove background image" takes it off. The picture is copied into the app at a smaller size, so it stays even if you delete the original photo.</li>
+  <li><span class="key">⋯</span> offers "Clear this page", "Default layout on this page" and "Background image…". <span class="key">DONE</span> finishes.</li>
 </ul>
 <figure><img src="img/perform_item.webp" alt="Part settings"><figcaption>Part settings (button: ACTION, TRACK, PRESS, NAME)</figcaption></figure>
 <table>
@@ -458,6 +469,7 @@
 <tr><td>PATTERN, ◀ PATTERN, PATTERN ▶</td><td>Go to a set pattern number / the previous or next pattern. While playing, the change follows Pattern switch in the menu; a PATTERN button can set its own timing with <b>SWITCH (while playing)</b> (DEFAULT = follow the menu, the default / BAR / BEAT / NOW). With PRESS set to <b>WHILE HELD</b>, the pattern plays only while you hold the button and goes back to the previous one when you let go (unless you picked another pattern meanwhile; with NOW, a hold-to-play fill)</td></tr>
 <tr><td>SCENE A, SCENE B, SCENE A⇄B</td><td>Switch the FX scene</td></tr>
 <tr><td>REVERB, DELAY, DIST</td><td>Turn the effect on / off</td></tr>
+<tr><td>PLAY, STOP, REC</td><td>Play / stop (like PLAY in the header), stop, and arm REC. Choosing one adds the ▶/■, ■ or ● symbol</td></tr>
 <tr><td>MIDI</td><td>Sends MIDI to external gear (see "MIDI parts" below). SEND: <b>NOTE</b> (press = note on, release / press again = note off; VALUE = velocity; CHORD for chords) / <b>CC</b> (press = VALUE, release / press again = 0) / <b>PROGRAM</b> (a program change when pressed)</td></tr>
 </table>
 <p>PRESS: <b>WHILE HELD</b> = only while pressed (returns to the previous state on release), <b>TOGGLE</b> = switches on each press. NAME sets a name of up to 10 characters (empty = automatic).</p>
