@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DBR-1 背景のテンプレート / Background templates</title>
-<meta name="description" content="DBR-1 のパフォーマンス画面の背景を自分で作るためのテンプレート（PNG）。タブレット用・スマートフォン用。 / PNG templates for making your own DBR-1 perform-screen backgrounds, for tablets and phones.">
+<title>DBR-1 テンプレート / Templates</title>
+<meta name="description" content="DBR-1 のパフォーマンス画面の背景・ノブ・ボタン・フェーダーを自分で作るためのテンプレート（PNG）。 / PNG templates for making your own DBR-1 perform-screen backgrounds, knobs, buttons and faders.">
 <link rel="canonical" href="https://sequence-yard.github.io/dbr1/templates/">
 <style>
   :root { --bg:#f6f5f1; --card:#fff; --text:#2c2c2a; --sub:#5f5e5a; --line:#e2e0d8; --accent:#1d9e75; }
@@ -37,7 +37,7 @@
 <body>
 <main>
 <p><a href="../">← DBR-1</a></p>
-<h1>背景のテンプレート<small>Background templates</small></h1>
+<h1>テンプレート<small>Templates</small></h1>
 <p>パフォーマンス画面（PERF）の背景を自分で作るための下絵です。アプリに入っている 4 枚の板を、背景を置く場所の大きさの PNG にしました。<b>GUIDE</b> の付いたものには、部品が並ぶ範囲を示すピンクの破線が引いてあります。<br>
 <span class="sub">Starting points for your own perform-screen (PERF) backgrounds: the four panels built into the app, as PNGs sized for the background area. The <b>GUIDE</b> versions have a pink dashed line showing where the parts go.</span></p>
 
@@ -56,14 +56,14 @@
     <div class="dl" style="margin-top:6px"><a href="dbr1_white_panel_tablet_1900x1000.png" download>Tablet 1900×1000</a><a href="dbr1_white_panel_phone_2200x830.png" download>Phone 2200×830</a></div></div>
 </div>
 
-<h2>使い方<small>How to use</small></h2>
+<h2>背景の使い方<small>Backgrounds: how to use</small></h2>
 <ol>
   <li>使う端末に合う大きさの PNG をダウンロードして、好きな画像編集アプリで絵や文字を描き足します。</li>
   <li>DBR-1 の PERF で <b>EDIT</b> → <b>⋯</b> → <b>Background…</b> → <b>Choose image…</b> → <b>TEMPLATE</b> を選んで、その画像を選びます。部品がガイドの線の内側に並びます（線は消してから読み込んでかまいません）。</li>
 </ol>
 <p class="sub">Download the PNG for your device, draw on it in any image editor, then in DBR-1 open PERF → <b>EDIT</b> → <b>⋯</b> → <b>Background…</b> → <b>Choose image…</b> → <b>TEMPLATE</b> and pick it. The parts sit inside the guide line (you can erase the line before loading).</p>
 
-<h2>大きさの目安<small>Sizes</small></h2>
+<h2>背景の大きさの目安<small>Background sizes</small></h2>
 <table>
   <tr><th>端末 / Device</th><th>背景を置く場所の横:縦 / Area aspect</th><th>テンプレート / Template</th></tr>
   <tr><td>タブレット / Tablet</td><td>約 1.9:1（1920×1200 の画面で約 1870×1000）</td><td>1900×1000</td></tr>
@@ -74,6 +74,22 @@
   <li>画像はアプリの中に写されます（画面より大きければ画面の大きさまで縮めます）。<br><span class="sub">The image is copied into the app (scaled down to the screen size if larger).</span></li>
   <li><b>WALLPAPER</b> で読み込んだ画像では、部品は場所いっぱいに並びます（縮めません）。<br><span class="sub">With <b>WALLPAPER</b>, parts use the whole area (not shrunk).</span></li>
 </ul>
+
+<h2>部品のテンプレート（MY SKIN）<small>Part templates (MY SKIN)</small></h2>
+<p>ノブ・ボタン・フェーダーも自分の画像にできます。PERF の <b>EDIT</b> で部品をタップ → <b>STYLE</b> の最後の <b>+ MY SKIN…</b> で画像を選びます（一度作れば、ほかの部品でも一覧から選べます）。ピンクの線はガイドです（消してから読み込んでください）。見本はアプリの部品をこの決まりに合わせたものです。<br>
+<span class="sub">Knobs, buttons and faders can use your own pictures too. In PERF <b>EDIT</b>, tap a part → <b>+ MY SKIN…</b> at the end of the <b>STYLE</b> list and pick a picture (once made, it can be chosen for other parts from the list). The pink lines are guides (erase them before loading). The samples are the app's own parts redrawn to these rules.</span></p>
+<img src="thumb_parts.webp" width="735" height="420" alt="MY SKIN samples" loading="lazy" style="border-radius:12px;margin:12px 0">
+<table>
+  <tr><th>部品 / Part</th><th>決まり / Rules</th><th>テンプレート / Template</th><th>見本 / Sample</th></tr>
+  <tr><td>KNOB</td><td>正方形・背景は透明。指す印を真上（= 真ん中の値）に。アプリが ±135° 回し、周りの印はアプリが描く<br><span class="sub">Square, transparent background, pointer straight up (= centre value). The app turns it ±135° and draws the marks around it.</span></td>
+    <td><a href="dbr1_knob_template_512.png" download>512×512</a></td><td><a href="dbr1_knob_sample_512.png" download>KNOB</a></td></tr>
+  <tr><td>BUTTON</td><td>正方形。外側 1/4（線の外）は角として伸ばさない。ON（光っているとき）はなくても可（OFF を部品の色で光らせる）<br><span class="sub">Square. The outer quarter (outside the lines) stays unstretched as corners. ON (lit) is optional; without it, OFF lights up in the part colour.</span></td>
+    <td><a href="dbr1_button_template_512.png" download>512×512</a></td><td><a href="dbr1_button_sample_off_512.png" download>OFF</a> · <a href="dbr1_button_sample_on_512.png" download>ON</a></td></tr>
+  <tr><td>FADER PLATE</td><td>縦長。上下 1/10（実線の外）は伸ばさない端。つまみの中心は実線の間を動く<br><span class="sub">Tall. The top and bottom tenth (outside the solid lines) are fixed ends; the cap centre moves between the lines.</span></td>
+    <td><a href="dbr1_fader_plate_template_200x1000.png" download>200×1000</a></td><td><a href="dbr1_fader_plate_sample_200x1000.png" download>PLATE</a></td></tr>
+  <tr><td>FADER CAP</td><td>板と同じ横幅。中心（横線）が値の位置。なくても可<br><span class="sub">Same width as the plate. Its centre (the line) marks the value. Optional.</span></td>
+    <td><a href="dbr1_fader_cap_template_200x200.png" download>200×200</a></td><td><a href="dbr1_fader_cap_sample_200x204.png" download>CAP</a></td></tr>
+</table>
 
 <footer>
   <p>DBR-1 の背景の下絵としてお使いください。 / For making DBR-1 backgrounds.</p>
