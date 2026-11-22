@@ -458,16 +458,18 @@
           <li>フェーダー: <b>PLATE</b>（縦長の板、例: 200×1000）と <b>CAP</b>（つまみ、板と同じ横幅、例: 200×200。なくても可）。板の上下 1/10 は伸ばさない端で、つまみの中心はその境目の間を動きます。横長に置くと 90° 回して描きます。</li>
         </ul>
         MY SKIN の画像は縦横とも 16 ピクセル以上にしてください。ガイドの線つきのテンプレートと見本の PNG は <a href="https://sequence-yard.github.io/dbr1/templates/">sequence-yard.github.io/dbr1/templates/</a> にあります。</li>
-      <li><b>MATERIAL</b>（写真のような部品とホイール）: 部品の素材の色を変えます。光の当たり方・影・筋はそのままです。写真のようなフェーダーはつまみ（CAP）と板（PLATE）を別々に。<b>ORIGINAL</b> で元の色に戻します。</li>
+      <li><b>MATERIAL</b>（写真のような部品・ホイール・VINTAGE / DARK / CHROME のノブとフェーダー）: 部品の素材の色を変えます。光の当たり方・影・筋はそのままです。VINTAGE / DARK / CHROME はキャップ（CAP）の色。写真のようなフェーダーはつまみ（CAP）と板（PLATE）を別々に。<b>ORIGINAL</b> で元の色に戻します。</li>
       <li><b>SYMBOL</b>（ボタン）: 文字の代わりに ● REC・▶ PLAY・■ STOP・▶/■・❚❚・◀◀・▶▶ の記号を描きます。</li>
       <li><b>IMAGE</b>（ボタン）: <b>Choose image…</b> で好きな画像をボタンにします（文字は自動で消えます。透明のある PNG も使えます）。</li>
       <li><b>LIGHT</b>（ボタン）: <b>GLOW</b> = 押したとき・ON のときに光る / <b>NO LIGHT</b> = 光らない（押すと少し沈むだけ）。</li>
       <li><b>BACKGROUND</b>: <b>CLEAR</b> で部品の枠と塗りを消して透明にします（ページの背景の画像が見えます）。ボタンは STANDARD か画像のときに選べます。</li>
-      <li><b>TEXT</b>: 文字を行ごとに出すか消すか選べます: <b>NAME</b>（部品の名前。ボタンは大きい文字）/ <b>PART</b>（トラック名・MIDI のチャンネルの行。ボタンは下の小さな文字）/ <b>VALUE</b>（フェーダー・ノブの値）。消しても、フェーダー・ノブを触っている間の吹き出しは出ます。<b>COLOR</b> で文字の色も選べます（<b>AUTO</b> = 部品・背景に合わせた色）。</li>
+      <li><b>TEXT</b>: 文字を行ごとに出すか消すか選べます: <b>NAME</b>（部品の名前。ボタンは大きい文字）/ <b>PART</b>（トラック名・MIDI のチャンネルの行。ボタンは下の小さな文字）/ <b>VALUE</b>（フェーダー・ノブの値）。行ごとに <b>S / M / L / XL</b> で文字の大きさも選べます（既定 M。部品に入らない分は欠けます）。消しても、フェーダー・ノブを触っている間の吹き出しは出ます。<b>COLOR</b> で文字の色も選べます（<b>AUTO</b> = 部品・背景に合わせた色）。</li>
     </ul>
   </li>
   <li><b>背景</b>: EDIT の <span class="key">⋯</span> →「<b>Background…</b>」で、ページごとに背面を選べます: NONE（なし）/ <b>BLACK PANEL</b>・<b>WHITE PANEL</b>（木の側板とねじの付いた板。画面の形に合わせて伸ばし、ねじは元の大きさのまま）/ <b>BLACK PLAIN</b>・<b>WHITE PLAIN</b>（同じ板から線とねじを除いたもの）/ 自分の画像（<b>Choose image…</b>。はみ出す分は切って、マス目の場所いっぱいに表示）。自分の画像は読み込むときに使い方を選べます（あとから一覧の下の MY IMAGE で切り替え）: <b>TEMPLATE</b> = 部品を板のテンプレートのガイドの線の内側に並べる / <b>WALLPAPER</b> = 部品を場所いっぱいに並べる（縮めない）。板を選んだページでは、部品は木の側板と板の縁の内側に並び、CLEAR にした部品の文字が板に合う色になります。画像はアプリの中に写す（大きすぎれば画面の大きさまで縮める）ので、元の写真を消しても表示されます。読めない（壊れた）画像と 3 億画素を超える画像は読み込みません。<br><small>画像の大きさの目安: 背景を置く場所の横:縦は、タブレットで約 1.9:1（1920×1200 の画面で約 1870×1000 ピクセル）、横にしたスマートフォンで約 2.5〜2.7:1（2400×1080 前後の画面で約 2200×830 ピクセル）。比が違う画像は真ん中を残して上下か左右を切ります。ボタンの画像は 2×2 マスで 200〜300 ピクセルほどの正方形が目安です（512 ピクセルより大きければ縮めます）。<br>例: タブレット用は 1900×1000、スマートフォン用は 2200×830 で作ると、ほぼ切られずに表示されます。4 枚の板をこの大きさにした PNG（部品が来る範囲を示すガイドの線つき・線なし）を、背景を作る下絵として <a href="https://sequence-yard.github.io/dbr1/templates/">sequence-yard.github.io/dbr1/templates/</a> で配布しています（アプリの説明書から開くとブラウザで開きます）。テンプレートから作った画像は TEMPLATE で読み込むと、部品がガイドの線の内側に並びます（線は消してから読み込んでかまいません）。</small></li>
-  <li><span class="key">⋯</span> で「このページを空にする（Clear this page）」「最初の配置にする（Default layout on this page）」「背景（Background…）」。<span class="key">DONE</span> で終わります。</li>
+  <li><span class="key">⋯</span> で「このページを空にする（Clear this page）」「最初の配置にする（Default layout on this page）」「背景（Background…）」「配置の書き出し（Export layout…）」「配置の読み込み（Import layout…）」。<span class="key">DONE</span> で終わります。</li>
+  <li><b>配置の書き出し・読み込み</b>: 8 ページすべて（部品・背景・見た目・使っている画像と MY SKIN）を 1 つの <b>.dbrperf</b> ファイルにして、保存フォルダの <b>DBR-1/Performance</b> に保存します。読み込むと今の 8 ページを置き換えます（確認が出ます）。ファイルの中の MY SKIN は今の一覧に足します（64 まで）。別の端末に写す・人と分け合う・控えを取るときに。タブレットとスマートフォンの配置はどちらにも読み込めます。</li>
+  <li>ジェスチャー操作の端末では、画面の下の端（OS のジェスチャーが優先される帯）に部品がかからないよう、その分だけ下を空けて並べます。</li>
 </ul>
 <figure><img src="img/perform_item.webp" alt="部品の設定"><figcaption>部品の設定（ボタン: ACTION・TRACK・PRESS・NAME）</figcaption></figure>
 <table>
@@ -800,7 +802,7 @@
 <tr><th>項目</th><th>仕様</th></tr>
 <tr><td>自動保存</td><td>編集の 3 秒後とアプリを閉じたとき（直前の版を予備として保存）</td></tr>
 <tr><td>ファイル</td><td>.dbrproj（プロジェクト。読み込んだ音を含む）/ .dbrpatt（パターン）/ .dbrkit（キット。読み込んだ音を含む）/ .dbrsnd（1 トラック分の音。読み込んだ音を含む）</td></tr>
-<tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples・Sounds。クラウドは Android の保存・共有から</td></tr>
+<tr><td>保存先</td><td>選んだフォルダの中の DBR-1/Projects・Patterns・Kits・Samples・Sounds・Performance（パフォーマンス画面の配置 .dbrperf）。クラウドは Android の保存・共有から</td></tr>
 <tr><td>書き出し</td><td>パターン（×1〜16）/ ソング / 演奏の録音（最大 10 分）。MIDI（SMF Type 0 / 1・96 PPQ・ch 10 か ch 1〜16、オートメーションは CC（1 ステップ 8 点）、パターンとソングのみ）。STEMS（ZIP: mix + トラックごとの WAV、パターンとソングのみ）。WAV（16bit ステレオ。PATTERN / SONG と STEMS は 48kHz / 44.1kHz、録音は端末の出力レート）/ M4A（AAC 256kbps）/ MP4（H.264 720×720 30fps + AAC。演奏の録画は画面と同じ縦横比で幅 1280）。DBR-1/Exports に保存</td></tr>
 </table>
 
