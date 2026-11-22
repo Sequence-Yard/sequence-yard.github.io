@@ -57,6 +57,10 @@
   ul.links a span { display:block; color:var(--sub); font-size:.86em; }
   .video { position:relative; aspect-ratio:16/9; margin:14px 0 6px; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#000; }
   .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .vgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr)); gap:8px 16px; margin-top:6px; }
+  .vgrid figure { margin:0; }
+  .vgrid figcaption { font-size:.88em; color:var(--sub); }
+  .vgrid figcaption b { color:var(--text); display:block; }
   footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--sub); font-size:.88em; }
 </style>
 </head>
@@ -144,9 +148,25 @@
 </div>
 
 <h2>動画<small>Videos</small></h2>
-<p>使い方のショート動画と、デモソングの演奏を YouTube で公開しています。<br><span class="sub">Short how-to videos and demo song performances on YouTube.</span></p>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLN99t_O-VNWo" title="DBR-1 Demo Songs（デモソングのプレイリスト / demo song playlist）" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="sub">デモソング 10 曲のプレイリスト（アプリの LOAD → Demo songs… で同じ曲を開いて、中身を見たり鳴らしたりできます） / The ten demo songs. Open them in the app from LOAD → Demo songs… to see how they are made.</p>
+<p>使い方の動画（タブレット・スマホ）、ジャンル別の打ち込み、デモソングの演奏を YouTube で公開しています。<br><span class="sub">How-to videos (tablet and phone), beat-making by genre, and demo song performances on YouTube.</span></p>
+<div class="vgrid">
+  <figure>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLSx_kr9O_YZ0" title="DBR-1 使い方（タブレット） / How to use DBR-1 (tablet)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <figcaption><b>使い方（タブレット） / How to use (tablet)</b>1 本 1〜2 分 × 6 本。はじめに・音を変える・パターンとソング・演奏・サンプリング・保存と書き出し / Six 1–2 minute videos, from your first beat to exporting.</figcaption>
+  </figure>
+  <figure>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLLqSBPtJowA8" title="DBR-1 使い方（スマホ） / How to use DBR-1 (phone)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <figcaption><b>使い方（スマホ） / How to use (phone)</b>タブレット版と同じ 6 本を、スマホの画面で / The same six topics on the phone layout.</figcaption>
+  </figure>
+  <figure>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLHKmZyR0xdRw" title="DBR-1 ビギナーズガイド：10 ジャンルの打ち込み / Beginner's guide: beat-making in 10 genres" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <figcaption><b>ビギナーズガイド：10 ジャンルの打ち込み / Beginner's guide: 10 genres</b>Hip-Hop から Afrobeats まで、各 2 分で一から打ち込み（基本形はアプリの Templates… にも） / Build each genre from scratch in about two minutes. The basic beats are also in the app's Templates….</figcaption>
+  </figure>
+  <figure>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLN99t_O-VNWo" title="DBR-1 Demo Songs（デモソングのプレイリスト / demo song playlist）" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <figcaption><b>デモソング / Demo songs</b>10 曲の演奏。アプリの LOAD → Demo songs… で同じ曲を開いて、中身を見たり鳴らしたりできます / The ten demo songs. Open them in the app from LOAD → Demo songs… to see how they are made.</figcaption>
+  </figure>
+</div>
 <div class="btns"><a class="btn yt" href="https://www.youtube.com/@sequence_yard" target="_blank" rel="noopener">▶ youtube.com/@sequence_yard</a></div>
 
 <h2>説明書<small>Manuals</small></h2>
