@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://sequence-yard.github.io/dbr1/og.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DBR-1 Sampling Rhythm Machine", "alternateName": "DBR-1", "operatingSystem": "Android", "applicationCategory": "MultimediaApplication", "description": "DBR-1 is a sampling rhythm machine (drum machine and beat maker) for Android phones and tablets: 16-track step sequencer, pads, sampling, FX, automation and MIDI. Free, no ads, no in-app purchases.", "url": "https://sequence-yard.github.io/dbr1/", "image": "https://sequence-yard.github.io/dbr1/icon.png", "screenshot": "https://sequence-yard.github.io/dbr1/img/tablet_1_sequencer.webp", "inLanguage": ["ja", "en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "Sequence Yard", "url": "https://sequence-yard.github.io/", "sameAs": ["https://www.youtube.com/@sequence_yard"]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DBR-1 Sampling Rhythm Machine", "alternateName": "DBR-1", "operatingSystem": "Android", "applicationCategory": "MultimediaApplication", "description": "DBR-1 is a sampling rhythm machine (drum machine and beat maker) for Android phones and tablets: 16-track step sequencer, pads, sampling, FX, automation and MIDI. Free, no ads, no in-app purchases.", "url": "https://sequence-yard.github.io/dbr1/", "image": "https://sequence-yard.github.io/dbr1/icon.png", "screenshot": "https://sequence-yard.github.io/dbr1/img/tablet_1_sequencer.webp", "inLanguage": ["ja", "en"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "installUrl": "https://play.google.com/store/apps/details?id=com.sy.dbr1.app", "downloadUrl": "https://play.google.com/store/apps/details?id=com.sy.dbr1.app", "author": {"@type": "Organization", "name": "Sequence Yard", "url": "https://sequence-yard.github.io/", "sameAs": ["https://www.youtube.com/@sequence_yard"]}}</script>
 <style>
   :root { --bg:#f6f5f1; --card:#fff; --text:#2c2c2a; --sub:#5f5e5a; --line:#e2e0d8; --accent:#1d9e75; --chip:#e6f4ee; --yt:#d93a39; }
   @media (prefers-color-scheme: dark) {
@@ -39,7 +39,9 @@
   .btns { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 8px; }
   .btn { display:inline-flex; align-items:center; gap:8px; border-radius:12px; padding:9px 16px; font-weight:bold; text-decoration:none; border:2px solid var(--accent); }
   .btn.main { background:var(--accent); color:#fff; }
-  .btn.soon { border-style:dashed; color:var(--sub); border-color:var(--sub); cursor:default; font-weight:normal; }
+  .btn.play { background:#1f1f1e; border-color:#1f1f1e; color:#fff; padding:10px 20px; font-size:1.08em; }
+  .btn.play small { display:block; font-weight:normal; font-size:.72em; opacity:.85; }
+  @media (prefers-color-scheme: dark) { .btn.play { background:#fff; border-color:#fff; color:#161616; } }
   .btn.yt { border-color:var(--yt); color:var(--yt); }
   .shot { margin:22px 0 0; border-radius:14px; overflow:hidden; border:1px solid var(--line); box-shadow:0 6px 24px rgba(0,0,0,.08); }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr)); gap:14px; margin-top:14px; }
@@ -83,7 +85,7 @@
 </ul>
 
 <div class="btns">
-  <span class="btn soon">Google Play: 2026 年 11 月末〜12 月初め公開予定 / Coming late November 2026</span>
+  <a class="btn play" href="https://play.google.com/store/apps/details?id=com.sy.dbr1.app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14.5-8.5a1 1 0 0 0 0-1.72L6.5 2.64A1 1 0 0 0 5 3.5z"/></svg><span>Google Play で配信中<small>Get it on Google Play</small></span></a>
 </div>
 <div class="btns">
   <a class="btn main" href="manual/quick_ja.html">クイックスタート</a>
