@@ -64,7 +64,7 @@
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>表示するトラック（A01〜A08 / B01〜B08）の切り替え。今のバンクは、トラックの並びの背景の色（A = 緑、B = 紫）と左の帯でも分かります。パッドで別のバンクのトラックを選ぶとバンクも切り替わり、スイッチと帯が少しの間光ります</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>録音の待機。点灯中に再生してパッドを叩くと、ステップに記録されます（→ <a href="#rec">4</a>）</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>メトロノームの ON / OFF</td></tr>
-<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止。止めた後の PLAY は、既定では頭から再生します。メニューの <b>After STOP</b> を <b>continue</b> にすると、止めた位置の続きから再生します（パターン・ソングの行がそのままのとき。止めている間にパターンを選び直すと頭から。ソングを最後まで再生したときも頭から。MIDI クロックを送っていれば、位置（Song Position Pointer）と Continue を送ります）</td></tr>
+<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>再生と停止。PLAY モードが SONG のときはボタンが <b>▶ SONG</b>（紫）になり、ソング全体を再生します（編集中のパターンだけ鳴らすには、SONG タブの PLAY を PATTERN に）。止めた後の PLAY は、既定では頭から再生します。メニューの <b>After STOP</b> を <b>continue</b> にすると、止めた位置の続きから再生します（パターン・ソングの行がそのままのとき。止めている間にパターンを選び直すと頭から。ソングを最後まで再生したときも頭から。MIDI クロックを送っていれば、位置（Song Position Pointer）と Continue を送ります）</td></tr>
 <tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>表示中のバンクのステップを消す（確認が出ます。↶ で戻せます）</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>元に戻す / やり直す（最大 100 回）</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>リズムに合わせて叩くとテンポを設定</td></tr>
@@ -562,7 +562,9 @@
 <ul>
   <li><span class="key">+ ADD</span> で行を追加します（パターンの一覧から選んで足す。行のパターン番号のタップでも一覧から選び直せます）。各行は「パターン番号 × くり返す回数」（最大 99 行）。▲▼ で並べ替え、✕ で削除。スマートフォンでは、各行にパターンの中身の小さな絵が出ます（タップでそのパターンを SEQ で開く）。</li>
   <li><b>PLAY: SONG</b> にしてから PLAY を押すと、並べた順に再生します。最後まで行ったときの動きは隣のボタンで選びます: <b>↻ LOOP</b> = 先頭に戻ってくり返す（既定）、<b>→ ONCE</b> = 1 回で止める。この設定はプロジェクトに保存されます。再生中に PATTERN ⇄ SONG を切り替えると、再生は止まります。</li>
+  <li>SONG の間は、ヘッダー（スマートフォンは上の段）の再生ボタンが <b>▶ SONG</b>（紫）になります。デモ曲は SONG で読み込まれます。最初に SONG のままパターンを直したときは、その場で PATTERN に切り替えられる案内が 1 回出ます。</li>
 </ul>
+<div class="tip">曲の作り方の流れ: ① SEQ でパターンを作る（例: 00 = イントロ、01 = サビ）→ ② SONG で行を足して並べ、くり返す回数を決める → ③ PLAY を SONG にして <b>▶ SONG</b> で通して聴く → ④ パターンを直すときは PATTERN に戻し、そのパターンだけを鳴らしながら直す。</div>
 <h3 id="songscreen">ソングの画面（タブレット: ヘッダーの SONG）</h3>
 <figure><img src="img/song_screen.webp" alt="ソングの画面"><figcaption>左がソングの並び（行ごとにパターンの中身の小さな絵）、右がパターンの一覧。再生中の行は緑</figcaption></figure>
 <ul>

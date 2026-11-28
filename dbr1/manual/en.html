@@ -64,7 +64,7 @@
 <tr><td class="n"><span class="num">5</span></td><td>BANK A / B</td><td>Shows tracks A01–A08 or B01–B08. The current bank also shows as the tint behind the tracks (A = green, B = purple) and the stripe on their left. Hitting a pad of the other bank switches the bank too, and the switch and stripe flash briefly</td></tr>
 <tr><td class="n"><span class="num">6</span></td><td>REC</td><td>Arms recording. Pads you hit while playing are recorded (→ <a href="#rec">4</a>)</td></tr>
 <tr><td class="n"><span class="num">7</span></td><td>METRO</td><td>Metronome on / off</td></tr>
-<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>Start and stop. By default PLAY after STOP starts from the top. Set <b>After STOP</b> in the menu to <b>continue</b> to carry on from where you stopped (while the pattern / song row is unchanged; choosing a pattern while stopped, or playing a song to its end, starts over. When sending MIDI clock, DBR-1 sends the position (Song Position Pointer) and Continue)</td></tr>
+<tr><td class="n"><span class="num">8</span></td><td>PLAY / STOP</td><td>Start and stop. When the PLAY mode is SONG, the button reads <b>▶ SONG</b> (purple) and plays the whole song (to hear only the pattern you are editing, set PLAY to PATTERN in the SONG tab). By default PLAY after STOP starts from the top. Set <b>After STOP</b> in the menu to <b>continue</b> to carry on from where you stopped (while the pattern / song row is unchanged; choosing a pattern while stopped, or playing a song to its end, starts over. When sending MIDI clock, DBR-1 sends the position (Song Position Pointer) and Continue)</td></tr>
 <tr><td class="n"><span class="num">9</span></td><td>CLEAR</td><td>Clears the steps of the bank on screen (asks first; ↶ brings them back)</td></tr>
 <tr><td class="n"><span class="num">10</span></td><td>↶ ↷</td><td>Undo / redo (up to 100 steps)</td></tr>
 <tr><td class="n"><span class="num">11</span></td><td>TAP</td><td>Tap along with the beat to set the tempo</td></tr>
@@ -562,7 +562,9 @@
 <ul>
   <li><span class="key">+ ADD</span> adds a row (pick the pattern from the pattern list; tap a row's pattern number to pick it again). Each row is “pattern × repeats” (up to 99 rows). ▲▼ reorder, ✕ deletes. On phones, each row also shows a small picture of the pattern's steps (tap it to open that pattern in SEQ).</li>
   <li>With <b>PLAY: SONG</b>, PLAY plays the rows in order. The button next to it sets what happens at the end: <b>↻ LOOP</b> = back to the top and repeat (default), <b>→ ONCE</b> = play once and stop. This is saved with the project. Switching between PATTERN and SONG while playing stops playback.</li>
+  <li>While SONG is on, the play button in the header (the top row on phones) reads <b>▶ SONG</b> (purple). Demo songs load in SONG mode. The first time you edit a pattern in SONG mode, a hint appears once with a button to switch to PATTERN right there.</li>
 </ul>
+<div class="tip">Making a song: ① build patterns in SEQ (e.g. 00 = intro, 01 = chorus) → ② add rows in SONG and set how many times each repeats → ③ set PLAY to SONG and play it through with <b>▶ SONG</b> → ④ to fix a pattern, switch back to PATTERN and edit it while only that pattern plays.</div>
 <h3 id="songscreen">Song screen (tablet: SONG in the header)</h3>
 <figure><img src="img/song_screen.webp" alt="Song screen"><figcaption>The song rows on the left (each with a small picture of the pattern), the pattern list on the right. The playing row is green</figcaption></figure>
 <ul>
